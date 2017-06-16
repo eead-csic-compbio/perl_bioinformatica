@@ -1,5 +1,5 @@
 
-# Perl en bioinformatica
+# Perl en bioinformática
 
 [Bruno Contreras-Moreira](http://www.eead.csic.es/compbio)
 
