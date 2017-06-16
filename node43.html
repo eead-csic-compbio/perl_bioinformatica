@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Declaraci&#243;n de subrutinas y alcance de las variables</TITLE>
-<META NAME="description" CONTENT="Declaraci&#243;n de subrutinas y alcance de las variables">
+<TITLE>Ejemplo de alcance de variables</TITLE>
+<META NAME="description" CONTENT="Ejemplo de alcance de variables">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,7 +18,6 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="next" HREF="node45.html">
 <LINK REL="previous" HREF="node42.html">
 <LINK REL="up" HREF="node42.html">
 <LINK REL="next" HREF="node44.html">
@@ -40,7 +39,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html769"
+<A NAME="tex2html771"
   HREF="node42.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
@@ -52,116 +51,61 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   HREF="node44.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html778"
-  HREF="node44.html">Ejemplo de alcance de variables</A></b>  Arriba: <b><A NAME="tex2html776"
-  HREF="node42.html">Subrutinas y paso de par&#225;metros</A></b>  Anterior: <b><A NAME="tex2html770"
-  HREF="node42.html">Subrutinas y paso de par&#225;metros</A></b></fieldset></div></DIV>
+  HREF="node44.html">Subrutinas que devuelven valores</A></b>  Arriba: <b><A NAME="tex2html776"
+  HREF="node42.html">Declaraci&#243;n de subrutinas y alcance</A></b>  Anterior: <b><A NAME="tex2html772"
+  HREF="node42.html">Declaraci&#243;n de subrutinas y alcance</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00311000000000000000">
-Declaraci&#243;n de subrutinas y alcance de las variables</A>
-</H2>
+<H3><A NAME="SECTION00311100000000000000">
+Ejemplo de alcance de variables</A>
+</H3>
 
 <P>
-Declarar una subrutina en Perl es muy sencillo, es un bloque de c&#243;digo precedido de 
-la palabra reservada  <i> sub  </i> y un nombre, que, como las variables, debe empezar por 
-un car&#225;cter alfanum&#233;rico o un '_'. 
-
-<P>
-Puedes declarar subrutinas en cualquier posici&#243;n de
-un programa en Perl, pero por cuesti&#243;n de estilo es costumbre declararlas todas juntas
-por ejemplo al final del programa principal.
-
-<P>
-<PRE>
-#!/usr/bin/perl -w 
-# Ejemplo escrito por Bruno Contreras en Julio de 2005
-
-use strict; 
-
-mi_subrutina();     # invocación de la subrutina: el intérprete busca 
-                    # ahora la declaración de mi_subrutina y la encuentra 
-                    # más adelante en el mismo archivo; en ese momento
-                    # interrumpe la ejecución del programa principal y
-                    # ejecuta el código de la subrutina. El programa
-                    # principal se reanuda al terminar mi_subrutina 
-
-######## declaraciones de subrutinas ######################################
-
-sub mi_subrutina     
-{
-	# código propio de la subrutina
-	print "mi primera subrutina\n";
-}
-</PRE>
-
-<P>
-Si la ejecuci&#243;n de la subrutina requiere el paso de datos externos a la subrutina, normalmente
-esos datos se pasan como par&#225;metros en el momento de la invocaci&#243;n:
+A parte de 
+<code>@_</code> , 
+las subrutinas pueden acceder a otras variables globales. Para probar
+esto os pido que ejecut&#233;is este programita, observ&#233;is la salida y luego lo modifiqu&#233;is para 
+demostrar que la subrutina puede hacer exactamente los mismos c&#225;lculos recibiendo como
+par&#225;metros los datos necesarios. ¿No os parece que se hace m&#225;s f&#225;cil comprender el 
+funcionamiento de 
+<code>printBLAST</code> 
+en la versi&#243;n modificada, ya que no hay que buscar en el 
+c&#243;digo de donde vienen las variables utilizadas?
 
 <P>
 <PRE>
 #!/usr/bin/perl -w 
-# Ejemplo escrito por Bruno Contreras en Julio de 2005
+# Ejemplo escrito por Bruno Contreras
 
 use strict; 
 
-my ($arg1,$arg2) = (1,2);
-my @arg3 = (3,4,5);
+my ($evalue,$identities,$queryseq,$subjectseq);
 
-mi_subrutina($arg1,$arg2,@arg3);  # paso de tres parámetros
+$evalue = 4e-34;
+$identities = 87;
+$queryseq = "MARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYKKNIGKFQEEANIYAAKTAVTA";
+$subjectseq = "MARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKKNIGKFQEEANIYAAKTAVTA";
+
+# programa principal
+my @blastdata = ($evalue,$identities,$queryseq,$subjectseq);
+
+# + codigo 
+
+printBLAST();
 
 ######## declaraciones de subrutinas ######################################
 
-sub mi_subrutina     
+sub printBLAST     
 {
-	my($sarg1,$sarg2,@sarg3) = @_;   # así recibe la subrutina los parámetros pasados, 
-	                                 # copiándolos del arreglo global @_ a variables locales
-	
-	print "subrutina con parámetros\n";
+	print "evalue $blastdata[0]\n";
+	print "alignment:\n$blastdata[2]\n$blastdata[3]\n";                      
 }
 </PRE>
 
 <P>
-El paso de par&#225;metros a una subrutina
-depende de la variable especial 
-<code>@_</code>, 
-que ya mencionamos en <A HREF="node13.html#varEspecial">2.3.4</A>, que es un ejemplo
-de variable global <A NAME="1460"></A>, a la que se puede acceder desde cualquier 
-lugar de un programa.
-
-<P>
-A diferencia de 
-<code>@_</code>, 
-las variables que se declaran dentro de una subrutina, como 
-<code>my($sarg1,$sarg2,@sarg3)</code> , 
-son por defecto variables locales, <A NAME="1461"></A>
-que dejan de existir cuando se termina la ejecuci&#243;n de la subrutina y que no pueden ser accedidas 
-si no es desde la misma subrutina.
-
-<P>
-Aunque en teor&#237;a una subrutina puede acceder a variables globales, declaradas fuera 
-de ella, es conveniente limitar el accesos a aquellas variables que se pasen como par&#225;metros, 
-para facilitar la comprensi&#243;n del c&#243;digo que escrib&#225;is y la correcci&#243;n de posibles errores.
-
-<P>
-Es posible declarar firmas ( <i> signatures  </i>) de subrutinas, especificando los par&#225;metros que recibe al declararla, pero es una 
-caracter&#237;stica experimental. Puedes leer sobre esto en 
-<A NAME="tex2html52"
-  HREF="https://perldoc.perl.org/perlsub.html">https://perldoc.perl.org/perlsub.html</A>.
-
-<P>
-<BR><HR>
-<!--Table of Child-Links-->
-<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
-
-<UL CLASS="ChildLinks">
-<LI><A NAME="tex2html779"
-  HREF="node44.html">Ejemplo de alcance de variables</A>
-</UL>
-<!--End of Table of Child-Links-->
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html769"
+<A NAME="tex2html771"
   HREF="node42.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 

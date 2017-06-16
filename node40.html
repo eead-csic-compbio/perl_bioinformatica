@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Ejercicios con llamadas al sistema operativo</TITLE>
-<META NAME="description" CONTENT="Ejercicios con llamadas al sistema operativo">
+<TITLE>Fundamentos de Perl5 (2)</TITLE>
+<META NAME="description" CONTENT="Fundamentos de Perl5 (2)">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,8 +18,9 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="previous" HREF="node39.html">
-<LINK REL="up" HREF="node39.html">
+<LINK REL="next" HREF="node77.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="bioinfoPerl.html">
 <LINK REL="next" HREF="node41.html">
 <!--google-->
 <script type="text/javascript">
@@ -39,168 +40,145 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html698"
+<A NAME="tex2html697"
   HREF="node39.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html702"
-  HREF="node39.html">
+<A NAME="tex2html703"
+  HREF="bioinfoPerl.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html704"
+<A NAME="tex2html705"
   HREF="node41.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html705"
-  HREF="node41.html">Fundamentos de Perl5 (2)</A></b>  Arriba: <b><A NAME="tex2html703"
-  HREF="node39.html">Llamadas al sistema operativo</A></b>  Anterior: <b><A NAME="tex2html699"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html706"
+  HREF="node41.html">Subrutinas y paso de par&#225;metros</A></b>  Arriba: <b><A NAME="tex2html704"
+  HREF="bioinfoPerl.html">Perl en bioinform&#225;tica</A></b>  Anterior: <b><A NAME="tex2html698"
   HREF="node39.html">Llamadas al sistema operativo</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION002101000000000000000"></A> <A NAME="problSO"></A>
+<H1><A NAME="SECTION00300000000000000000"></A> <A NAME="sem2"></A>
 <BR>
-Ejercicios con llamadas al sistema operativo
-</H2>
+Fundamentos de Perl5 (2)
+</H1>
 
 <P>
-Os propongo ahora un ejercicio basado en dos programas muy importantes de la bioinform&#225;tica,
-BLAST y CLUSTALW,que deber&#233;is tener instalados en vuestro sistema. Las tareas que os pido son:
+Se podr&#237;a decir que con lo visto hasta ahora podr&#237;as ya lanzaros a atacar problemas
+bioinform&#225;ticos con Perl. Sin embargo, todav&#237;a no sab&#233;is c&#243;mo escribir programas 
+de forma estructurada, con bloques de c&#243;digo separados en forma de subrutinas, ni c&#243;mo 
+aprovechar m&#243;dulos escritos por otra gente y disponibles en Internet. Tambi&#233;n es &#250;til 
+crear tus propias estructuras de datos, m&#225;s all&#225; de los arreglos y las tablas, para 
+representar de forma adecuada datos complejos. Por todas estas razones vamos a seguir
+profundizando un poco m&#225;s en Perl, para que saqu&#233;is el m&#225;ximo partido al lenguaje y 
+a los millones de l&#237;neas de c&#243;digo Perl que hay distribuidas por Internet.
 
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html707"
+  HREF="node41.html">Subrutinas y paso de par&#225;metros</A>
 <UL>
-<LI>elegid una prote&#237;na problema, por ejemplo en SWISSPROT, o una con la que hay&#225;is trabajado 
-</LI>
-<LI>copiad una biblioteca de secuencias para BLAST del <A NAME="tex2html50"
-  HREF="ftp://ftp.ncbi.nlm.nih.gov/blast/db">NCBI</A>.
-</LI>
-<LI>formatead la biblioteca con el programa 
-<code>formatdb</code> de BLAST.
-</LI>
-<LI>escribid un programa, basado en el c&#243;digo <A HREF="node36.html#problBLAST">2.8.3</A>, que ejecute BLAST con vuestra prote&#237;na problema
-y tome los potenciales hom&#243;logos encontrados y construya con ellos un alineamiento m&#250;ltiple usando CLUSTALW.
-</LI>
+<LI><A NAME="tex2html708"
+  HREF="node42.html">Declaraci&#243;n de subrutinas y alcance de las variables</A>
+<UL>
+<LI><A NAME="tex2html709"
+  HREF="node43.html">Ejemplo de alcance de variables</A>
 </UL>
-
-<P>
-Para terminar este cap&#237;tulo os muestro un programa que usa el programa externo 
-<code>curl</code> (hay otras posibilidades, como 
-<code>wget</code>) 
-<A NAME="913"></A> <A NAME="914"></A> para hacer m&#250;ltiples peticiones a un servidor web de forma autom&#225;tica. A veces hay que recurrir
-a este tipo de soluciones, por ejemplo si la versi&#243;n web es la &#250;nica accesible para un programa. Pero recordad que 
-antes de hacer este tipo de cosas es una buena idea escribir a la persona responsable de ese servidor web y 
-pedirle permiso. Es posible que os recomienden qu&#233; hora del d&#237;a es mejor para estos trabajos grandes, para no saturar 
-sus m&#225;quinas. 
-
-<P>
-<PRE> 
-#!/usr/bin/perl -w
-# written by Bruno Contreras, July 2005
-
-# program get_thermo_gibbs_energies.pl, that submits a series of dna sequences in FASTA format
-# to the webserver http://wings.buffalo.edu/gsa/dna/dk/WEBTHERMODYN and retrieves their Gibbs 
-# energy profile
-
-# This shows how scripts can be written to serialize web form submissions
-
-# For different webservers you need to read the source code of the the submission
-# page (rigth mouse button on any browser) to check out the variables involved
-
-# These are the variables for this example, that I got from my browser
-
-#&lt;form  enctype="multipart/form-data" method="POST" action="webthermodyn.cgi"&gt;
-#&lt;input type=text name=temperature value=37&gt; 
-#&lt;input type=text name=saltconc value=10&gt;
-#&lt;input type=text name=molecule value=""&gt;
-#&lt;select name="shape" value="Linear"&gt;
-#&lt;INPUT TYPE="radio" NAME="inputmode" VALUE="input"&gt; 
-#&lt;textarea name="sequence" value=""&gt;
-#&lt;INPUT TYPE="radio" NAME="allpart" VALUE="ALL"&gt; 
-#&lt;input type=text name=step value=50&gt;
-#&lt;input type=text value=100 name=windowsize&gt;
-#&lt;input type=text value=1 name=marknum&gt;
-#&lt;input type=submit value="SUBMIT QUERY"&gt;  
-
-
-
-use strict;
-
-######################################################################
-
-my $progname = "get_thermo_freeenergies.pl";
-my $thermodynCGI = "http://wings.buffalo.edu/gsa/dna/dk/WEBTHERMODYN/webthermodyn.cgi";
-my $waittime = 5; # wait 5 seconds between submissions 
-
-my $curl_options = "-F temperature=37 -F sign=positive -F saltconc=10 -F shape=Linear -F inputmode=input -F allpart=ALL -F step=25 -F windowsize=25 -F marknum=5 -F timelimit=90 ";
-	
-## parse DNA sequences file in fasta ################################
-
-my (@DNA,@NAME);
-my ($dnaseq,$dnaseqname,$n_of_seqs) = ("","",0);
-
-open(FASTADNA,$ARGV[0]) || die "#$progname : need a valid DNA fasta file to run properly, exit... \n";
-while(&lt;FASTADNA&gt;)
-{
-	next if(/^$/);
-	
-	if(/\&gt;/)
-	{
-		if($dnaseq)
-		{
-			push(@DNA,$dnaseq);
-			push(@NAME,$dnaseqname);
-			$dnaseq = ""; 
-			$dnaseqname = "";
-		}	
-		$dnaseqname = substr((split)[0],1);
-		$n_of_seqs++;
-	}
-	else { $dnaseq .= (split)[0];}
-}
-close(FASTADNA);
-
-print "#$progname : sequences read $n_of_seqs (from $ARGV[0])\n";
-
-## get free energy profiles for each sequence ########################
-
-my ($seq,$s);
-
-for($seq=0;$seq&lt;scalar(@DNA);$seq++)
-{
-	my $request = $curl_options . "-F sequence=$DNA[$seq] -F molecule=$NAME[$seq]";
-	
-	open(CURL,"curl $request $thermodynCGI |") || die "#$progname : cannot run curl $request $thermodynCGI ...exit\n";
-	while(&lt;CURL&gt;)
-	{
-		if(/DATADIR/)
-		{
-			my $results = (split(/\"\&gt;ASCII/,$_))[0];
-			$results = (split(/HREF=\"/,$results))[2];
-			
-			open(RES,"curl $results |" ) || die "#$progname : cannot read $results ...exit\n";
-			while(&lt;RES&gt;)
-			{
-				print;
-			}
-			close(RES);
-		}
-
-	}
-	close(CURL);
-	
-	sleep $waittime;   # wait this time before the next submission is delivered
-}
-</PRE> 
-
-<P>
+<LI><A NAME="tex2html710"
+  HREF="node44.html">Subrutinas que devuelven valores</A>
+<LI><A NAME="tex2html711"
+  HREF="node45.html">Paso de par&#225;metros por valor y por referencia</A>
+<LI><A NAME="tex2html712"
+  HREF="node46.html">Funciones recursivas</A>
+<LI><A NAME="tex2html713"
+  HREF="node47.html">Ventajas de usar subrutinas</A>
+<LI><A NAME="tex2html714"
+  HREF="node48.html">Ejercicios con subrutinas</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html715"
+  HREF="node49.html">Estructuras de datos m&#225;s complicadas</A>
+<UL>
+<LI><A NAME="tex2html716"
+  HREF="node50.html">Arreglos de arreglos</A>
+<LI><A NAME="tex2html717"
+  HREF="node51.html">Tablas de tablas,  <i> Hashes of hashes  </i></A>
+<LI><A NAME="tex2html718"
+  HREF="node52.html">Combinaciones de arreglos y tablas</A>
+<LI><A NAME="tex2html719"
+  HREF="node53.html">Registros</A>
+<LI><A NAME="tex2html720"
+  HREF="node54.html">Colas y pilas como arreglos</A>
+<LI><A NAME="tex2html721"
+  HREF="node55.html">Grafos y &#225;rboles</A>
+<LI><A NAME="tex2html722"
+  HREF="node56.html">Ejercicio con estructuras de datos</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html723"
+  HREF="node57.html">Objetos en Perl</A>
+<UL>
+<LI><A NAME="tex2html724"
+  HREF="node58.html">Atributos e identidad de un objeto (con programaci&#243;n estructurada)</A>
+<LI><A NAME="tex2html725"
+  HREF="node59.html">M&#233;todos de un objeto (con programaci&#243;n estructurada)</A>
+<LI><A NAME="tex2html726"
+  HREF="node60.html">Implementando una clase en Perl</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html727"
+  HREF="node61.html">Paquetes y m&#243;dulos</A>
+<UL>
+<LI><A NAME="tex2html728"
+  HREF="node62.html">Paquetes y m&#243;dulos del int&#233;rprete Perl</A>
+<LI><A NAME="tex2html729"
+  HREF="node63.html">CPAN</A>
+<LI><A NAME="tex2html730"
+  HREF="node64.html">Creaci&#243;n de paquetes y m&#243;dulos</A>
+<LI><A NAME="tex2html731"
+  HREF="node65.html">Utilizaci&#243;n de paquetes y m&#243;dulos desde un programa</A>
+<LI><A NAME="tex2html732"
+  HREF="node66.html">Ejercicio de creaci&#243;n de paquetes</A>
+<LI><A NAME="tex2html733"
+  HREF="node67.html">Algunos paquetes y programas Perl &#250;tiles en aplicaciones bioinform&#225;ticas</A>
+<UL>
+<LI><A NAME="tex2html734"
+  HREF="node68.html">Getopt::Std</A>
+<LI><A NAME="tex2html735"
+  HREF="node69.html">LWP</A>
+<LI><A NAME="tex2html736"
+  HREF="node70.html">XML y JSON</A>
+<LI><A NAME="tex2html737"
+  HREF="node71.html">RemoteRestMap</A>
+<LI><A NAME="tex2html738"
+  HREF="node72.html">GD::Graph</A>
+<LI><A NAME="tex2html739"
+  HREF="node73.html">GraphViz</A>
+<LI><A NAME="tex2html740"
+  HREF="node74.html">SOAP y web servicios</A>
+<LI><A NAME="tex2html741"
+  HREF="node75.html">Otros m&#243;dulos y programas</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html742"
+  HREF="node76.html">Limitaciones num&#233;ricas de Perl5</A>
+</UL>
+<!--End of Table of Child-Links-->
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html698"
+<A NAME="tex2html697"
   HREF="node39.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html702"
-  HREF="node39.html">
+<A NAME="tex2html703"
+  HREF="bioinfoPerl.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html704"
+<A NAME="tex2html705"
   HREF="node41.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

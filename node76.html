@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Otros m&#243;dulos y programas</TITLE>
-<META NAME="description" CONTENT="Otros m&#243;dulos y programas">
+<TITLE>Limitaciones num&#233;ricas de Perl5</TITLE>
+<META NAME="description" CONTENT="Limitaciones num&#233;ricas de Perl5">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,8 +18,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="previous" HREF="node75.html">
-<LINK REL="up" HREF="node68.html">
+<LINK REL="previous" HREF="node61.html">
+<LINK REL="up" HREF="node40.html">
 <LINK REL="next" HREF="node77.html">
 <!--google-->
 <script type="text/javascript">
@@ -39,100 +39,101 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1122"
+<A NAME="tex2html1121"
   HREF="node75.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1126"
-  HREF="node68.html">
+<A NAME="tex2html1125"
+  HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1128"
+<A NAME="tex2html1127"
   HREF="node77.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1129"
-  HREF="node77.html">Limitaciones num&#233;ricas de Perl5</A></b>  Arriba: <b><A NAME="tex2html1127"
-  HREF="node68.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1123"
-  HREF="node75.html">SOAP y web servicios</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1128"
+  HREF="node77.html">DBI y BioPerl</A></b>  Arriba: <b><A NAME="tex2html1126"
+  HREF="node40.html">Fundamentos de Perl5 (2)</A></b>  Anterior: <b><A NAME="tex2html1122"
+  HREF="node75.html">Otros m&#243;dulos y programas</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H3><A NAME="SECTION00346800000000000000">
-Otros m&#243;dulos y programas</A>
-</H3>
+<H1><A NAME="SECTION00350000000000000000">
+Limitaciones num&#233;ricas de Perl5</A>
+</H1>
 
 <P>
-Aqu&#237; enumero algunos m&#243;dulos y programas escritos en Perl que me han resultado muy &#250;tiles en ocasiones:
+En los foros se suele comentar la potencia de Perl5 para manipular cadenas de caracteres, que de hecho
+es para lo que se dise&#241;&#243; el lenguaje. Podemos preguntarnos adem&#225;s qu&#233; capacidad tiene el lenguaje 
+para las operaciones aritm&#233;ticas con n&#250;meros reales, algo que normalmente no se ve en el c&#243;digo y
+queda escondido en los detalles de la compilaci&#243;n. Para entender la cuesti&#243;n veamos
+un ejemplo programado en C y en Perl:
 
 <P>
-
-<UL>
-<LI><A NAME="tex2html79"
-  HREF="http://perldoc.perl.org/FindBin.html">FindBin</A>, m&#243;dulo core para obtener en tiempo real la ruta completa de un  <i> script  </i>.
-
-<P>
-</LI>
-<LI><A NAME="tex2html80"
-  HREF="http://search.cpan.org/perldoc?Parallel%3A%3AForkManager">Parallel::ForkManager</A>, para distribuir trabajos en entornos multicore, 
-como por ejemplo en el  <i> script  </i> <A NAME="tex2html81"
-  HREF="https://github.com/eead-csic-compbio/get_homologues/blob/master/_split_blast.pl">_split_blast.pl</A>,
-que forma parte de la suite <A NAME="tex2html82"
-  HREF="https://github.com/eead-csic-compbio/get_homologues">GET_HOMOLOGUES</A>, escrita mayormente en Perl5.
+<PRE>
+/* Ejemplo de Julio Freyre */
+#include &lt;stdio.h&gt;
+void main() 
+{
+   for(float x = 0; x &lt; 1; x += .1) 
+      printf("%f es menor que 1\n", x);
+}
+</PRE>
 
 <P>
-</LI>
-<LI><A NAME="tex2html83"
-  HREF="http://bioinfoperl.blogspot.com.es/2014/12/perl-module-kseqklib-parse-fastq-fasta-files.html">kseq::klib</A>
-para leer
-de manera eficiente ficheros FASTQ.
+Ahora la versión en Perl:
 
 <P>
-</LI>
-<LI><A NAME="tex2html84"
-  HREF="http://search.cpan.org/perldoc?Statistics%3A%3AR">Statistics-R</A>
-para interaccionar con el entorno R,
-muy poderoso en estad&#237;stica e inteligencia artificial.
+<PRE>
+# este programa muestra el error que acumula perl al sumar reales
+for(my $x = 0; $x &lt; 1; $x += .1) 
+{
+   print("$x es menor que 1\n");
+}
+
+# el error es de 1e-16, este programa ya funciona como se espera en arquitecturas i586 y SPARC
+my $error = 1e-16;
+for(my $x = 0; $x+$error &lt; 1; $x += .1) 
+{
+   print("$x es menor que 1\n");
+}
+</PRE>
 
 <P>
-</LI>
-<LI><A NAME="tex2html85"
-  HREF="https://metacpan.org/pod/Spreadsheet::ParseXLSX">Spreadsheet::ParseXLSX</A>
-para leer datos de hojas Excel XLSX, como en 
-<A NAME="tex2html86"
-  HREF="http://bioinfoperl.blogspot.com.es/2016/10/tsv-de-hojas-xlsx.html">este ejemplo</A>
-<P>
-</LI>
-<LI>El programa <A NAME="tex2html87"
-  HREF="http://sourceforge.net/projects/bio-mview/files/bio-mview/mview-1.49/">mview</A>
-sirve para representar en forma de alineamiento m&#250;ltiple la salida de BLAST o de cualquier otro programa que genera formatos FASTA. 
-Por ejemplo, este archivo de salida de  <i> blastpgp  </i> <A NAME="tex2html88"
-  HREF="./problemas/1lfu_nr.blast">1lfu_nr.blast</A>
-podemos convertirlo a <A NAME="tex2html89"
-  HREF="./problemas/1lfu_nr.html">1lfu_nr.html</A>. 
-Hay un ejemplo detallado en el <A NAME="tex2html90"
-  HREF="http://www.eead.csic.es/compbio/material/bioperl/node44.html">Taller de (bio)perl</A>.
+Si prob&#225;is estos programitas ver&#233;is la limitaci&#243;n de Perl al manejar n&#250;meros reales. ¿Qu&#233; se 
+puede hacer para resolver esto? La soluci&#243;n m&#225;s sencilla es utilizar un m&#243;dulo de CPAN que se 
+llama <A NAME="tex2html95"
+  HREF="http://search.cpan.org/perldoc?Math::BigFloat">Math::BigFloat</A>,
+que permite usar una precisi&#243;n arbitaria, elegida por el usuario, para representar reales y operar con
+ellos, por supuesto con un coste en el tiempo de ejecuci&#243;n.
 
 <P>
-</LI>
-<LI>La suite <A NAME="tex2html91"
-  HREF="https://www.ncbi.nlm.nih.gov/books/NBK25501/">Entrez Programming Utilities</A>
-permite acceder de forma no interactiva a la informaci&#243;n del NCBI por medio de una interfaz Perl, como se muestra en el
-<A NAME="tex2html92"
-  HREF="http://www.eead.csic.es/compbio/material/bioperl/node55.html">Taller de (bio)perl</A>.
-</LI>
-</UL>
+En relaci&#243;n con esto hay otro m&#243;dulo, llamado 
+<A NAME="tex2html96"
+  HREF="http://search.cpan.org/dist/Math-BigInt/lib/Math/BigInt.pm">Math::BigInt</A>
+que permite extender la capacidad intr&#237;nseca del lenguaje y la arquitectura f&#237;sica subyacente para
+representar enteros.
+
+<P>
+Otra opci&#243;n es usar de manera nativa otros lenguajes para estas tareas, como se explica en el 
+<A NAME="tex2html97"
+  HREF="http://www.eead.csic.es/compbio/material/bioperl/node17.html">Taller de (bio)perl</A>.
+
+<P>
+Estas limitaciones han sido superadas desde el dise&#241;o en 
+<A NAME="tex2html98"
+  HREF="https://techbeacon.com/why-perl-6-game-thrones-programming-languages">Perl6</A>.
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1122"
+<A NAME="tex2html1121"
   HREF="node75.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1126"
-  HREF="node68.html">
+<A NAME="tex2html1125"
+  HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1128"
+<A NAME="tex2html1127"
   HREF="node77.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Combinaciones de arreglos y tablas</TITLE>
-<META NAME="description" CONTENT="Combinaciones de arreglos y tablas">
+<TITLE>Registros</TITLE>
+<META NAME="description" CONTENT="Registros">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,7 +20,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node54.html">
 <LINK REL="previous" HREF="node52.html">
-<LINK REL="up" HREF="node50.html">
+<LINK REL="up" HREF="node49.html">
 <LINK REL="next" HREF="node54.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,101 +40,67 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html873"
+<A NAME="tex2html874"
   HREF="node52.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html879"
-  HREF="node50.html">
+<A NAME="tex2html880"
+  HREF="node49.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html881"
+<A NAME="tex2html882"
   HREF="node54.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html882"
-  HREF="node54.html">Registros</A></b>  Arriba: <b><A NAME="tex2html880"
-  HREF="node50.html">Estructuras de datos m&#225;s complicadas</A></b>  Anterior: <b><A NAME="tex2html874"
-  HREF="node52.html">Tablas de tablas, Hashes of</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html883"
+  HREF="node54.html">Colas y pilas como arreglos</A></b>  Arriba: <b><A NAME="tex2html881"
+  HREF="node49.html">Estructuras de datos m&#225;s complicadas</A></b>  Anterior: <b><A NAME="tex2html875"
+  HREF="node52.html">Combinaciones de arreglos y tablas</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00323000000000000000">
-Combinaciones de arreglos y tablas</A>
+<H2><A NAME="SECTION00324000000000000000"></A> <A NAME="registros"></A>
+<BR>
+Registros
 </H2>
 
 <P>
-La posibilidad de hacer tablas de arreglos y arreglos de tablas es muy &#250;til en ocasiones,
-puesto que nos permite combinar las funciones de Perl sobre arreglos, como 
-<code>push</code>, 
-con la facilidad de de uso de las tablas asociativas. La &#250;nica complicaci&#243;n es que
-al crear una estructura de datos como esta debemos tener en cuenta sus anidamientos
-para manipularla, utilizando funciones como 
-<code>keys</code> o 
-<code>values</code> 
-para las subtablas y 
-<code>sort</code> o 
-<code>foreach</code> para los subarreglos:
+Los registros son estructuras de datos que engloban componentes de diferente tipo y
+equivalen a los que en C ser&#237;an los objetos 
+<code>struct</code>. 
+Por supuesto puedes crear arreglos y tablas de registros:
 
 <P>
 <PRE>
-my @PDBcoordenadas = (
+my $proteina = {
+	NOMBRE =&gt; $nombre,
+	ANOTACION =&gt; $anot,
+	PM =&gt; $PM,
+	PI =&gt; $PI,
+	NOMBRES_HOMOLOGOS =&gt; [ @homologos ],
+	ALINEAMIENTOS_HOMOLOGOS =&gt; { %alineamientos }
+};
 
-	# una tabla para cada residuo de una proteína PDB
-	
-	{
-		'N'  =&gt; 'ATOM    888  N   MET P   0      13.559  11.810 -20.485',
-		'CA' =&gt; 'ATOM    889  CA  MET P   0      12.699  10.612 -20.293',       
-		'C'  =&gt; 'ATOM    890  C   MET P   0      12.893  10.012 -18.905',
-		'O'  =&gt; 'ATOM    891  O   MET P   0      11.938   9.870 -18.140'
-	},
-	...
-);
+# asi consultamos valores
+print $proteina-&gt;{'NOMBRE'};
 
-# podríamos recorrer @PDBcoordenadas recorrería así:
+# asi asignamos
+$proteina-&gt;{'NOMBRE'} = 'CRP_ECOLI';
 
-foreach $residuo (@PDBcoordenadas)
-{
-	# cada valor de $residuo es una referencia a una tabla asociativa
-	print $residue-&gt;{'CA'};
-} 
-
-
-my %codones = (
-	
-	# un arreglo para los codones de cada aminoácido	
-	
-	'F' =&gt; ['TTT','TTC'],
-	'L' =&gt; ['TTA','TTG','CTT','CTC','CTA','CTG'],
-	'S' =&gt; ['TCT','TCC','TCA','TCG','AGT','AGC'],
-	'Y' =&gt; ['TAT','TAC'],
-	...
-	
-	# $codones{'L'} sería una referencia a un arreglo
-);
-
-# que recorreríamos:
-foreach my $amino (keys(%codones)) # recorre llave a llave
-{
-	print "$amino ";
-	foreach my $codon ( @{ $codones{$amino} } )  # recorre los codones asociados a una llave
-	{
-		print "$codon,";
-	}
-	print "\n";
-}
+# asi la guardamos en un arreglo
+push(@proteinas,$proteina);
 </PRE>
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html873"
+<A NAME="tex2html874"
   HREF="node52.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html879"
-  HREF="node50.html">
+<A NAME="tex2html880"
+  HREF="node49.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html881"
+<A NAME="tex2html882"
   HREF="node54.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

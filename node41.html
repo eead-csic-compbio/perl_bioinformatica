@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Fundamentos de Perl5 (2)</TITLE>
-<META NAME="description" CONTENT="Fundamentos de Perl5 (2)">
+<TITLE>Subrutinas y paso de par&#225;metros</TITLE>
+<META NAME="description" CONTENT="Subrutinas y paso de par&#225;metros">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,9 +18,9 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="next" HREF="node78.html">
-<LINK REL="previous" HREF="node2.html">
-<LINK REL="up" HREF="bioinfoPerl.html">
+<LINK REL="next" HREF="node49.html">
+<LINK REL="previous" HREF="node40.html">
+<LINK REL="up" HREF="node40.html">
 <LINK REL="next" HREF="node42.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,37 +40,64 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html706"
+<A NAME="tex2html743"
   HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html712"
-  HREF="bioinfoPerl.html">
+<A NAME="tex2html749"
+  HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html714"
+<A NAME="tex2html751"
   HREF="node42.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html715"
-  HREF="node42.html">Subrutinas y paso de par&#225;metros</A></b>  Arriba: <b><A NAME="tex2html713"
-  HREF="bioinfoPerl.html">Perl en bioinform&#225;tica</A></b>  Anterior: <b><A NAME="tex2html707"
-  HREF="node40.html">Ejercicios con llamadas al sistema</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html752"
+  HREF="node42.html">Declaraci&#243;n de subrutinas y alcance</A></b>  Arriba: <b><A NAME="tex2html750"
+  HREF="node40.html">Fundamentos de Perl5 (2)</A></b>  Anterior: <b><A NAME="tex2html744"
+  HREF="node40.html">Fundamentos de Perl5 (2)</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00300000000000000000"></A> <A NAME="sem2"></A>
-<BR>
-Fundamentos de Perl5 (2)
+<H1><A NAME="SECTION00310000000000000000">
+Subrutinas y paso de par&#225;metros</A>
 </H1>
 
 <P>
-Se podr&#237;a decir que con lo visto hasta ahora podr&#237;as ya lanzaros a atacar problemas
-bioinform&#225;ticos con Perl. Sin embargo, todav&#237;a no sab&#233;is c&#243;mo escribir programas 
-de forma estructurada, con bloques de c&#243;digo separados en forma de subrutinas, ni c&#243;mo 
-aprovechar m&#243;dulos escritos por otra gente y disponibles en Internet. Tambi&#233;n es &#250;til 
-crear tus propias estructuras de datos, m&#225;s all&#225; de los arreglos y las tablas, para 
-representar de forma adecuada datos complejos. Por todas estas razones vamos a seguir
-profundizando un poco m&#225;s en Perl, para que saqu&#233;is el m&#225;ximo partido al lenguaje y 
-a los millones de l&#237;neas de c&#243;digo Perl que hay distribuidas por Internet.
+Una subrutina puede definirse como un programa dentro de un programa, un subprograma.
+Es un trozo de c&#243;digo que tiene vida propia, con sus propio algoritmo y sus propias
+variables, que puede estar declarado dentro de otro programa Perl, dentro de un m&#243;dulo o
+dentro del int&#233;rprete Perl, como 
+<code>print</code>, 
+por ejemplo. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:subrutinas"></A><A NAME="1401"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.1:</STRONG>
+
+Posibles ubicaciones para las declaraciones de subrutinas en Perl.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="390" HEIGHT="496" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="\includegraphics[width=0.8\textwidth]{subrutinas}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Para ejecutar una subrutina hay que invocarla por su nombre, y si fuera necesario sus 
+par&#225;metros. Por ejemplo ya hemos invocado 
+<code>printf("cadena %s\n",$cadena);</code> 
+antes, donde
+<code>printf</code> 
+es el nombre de la subrutina y lo que va entre par&#233;ntesis sus par&#225;metros.
+Si invocamos una funci&#243;n y el int&#233;rprete no encuentra su declaraci&#243;n, se interrumpir&#225; la
+ejecuci&#243;n en ese momento con un mensaje de error como este: 
+<BR><code>Undefined subroutine &amp;main::subrutina_sin_de called at programa.pl line 25.</code>
 
 <P>
 <BR><HR>
@@ -78,107 +105,36 @@ a los millones de l&#237;neas de c&#243;digo Perl que hay distribuidas por Inter
 <A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
 
 <UL CLASS="ChildLinks">
-<LI><A NAME="tex2html716"
-  HREF="node42.html">Subrutinas y paso de par&#225;metros</A>
+<LI><A NAME="tex2html753"
+  HREF="node42.html">Declaraci&#243;n de subrutinas y alcance de las variables</A>
 <UL>
-<LI><A NAME="tex2html717"
-  HREF="node43.html">Declaraci&#243;n de subrutinas y alcance de las variables</A>
-<UL>
-<LI><A NAME="tex2html718"
-  HREF="node44.html">Ejemplo de alcance de variables</A>
-</UL>
-<LI><A NAME="tex2html719"
-  HREF="node45.html">Subrutinas que devuelven valores</A>
-<LI><A NAME="tex2html720"
-  HREF="node46.html">Paso de par&#225;metros por valor y por referencia</A>
-<LI><A NAME="tex2html721"
-  HREF="node47.html">Funciones recursivas</A>
-<LI><A NAME="tex2html722"
-  HREF="node48.html">Ventajas de usar subrutinas</A>
-<LI><A NAME="tex2html723"
-  HREF="node49.html">Ejercicios con subrutinas</A>
+<LI><A NAME="tex2html754"
+  HREF="node43.html">Ejemplo de alcance de variables</A>
 </UL>
 <BR>
-<LI><A NAME="tex2html724"
-  HREF="node50.html">Estructuras de datos m&#225;s complicadas</A>
-<UL>
-<LI><A NAME="tex2html725"
-  HREF="node51.html">Arreglos de arreglos</A>
-<LI><A NAME="tex2html726"
-  HREF="node52.html">Tablas de tablas,  <i> Hashes of hashes  </i></A>
-<LI><A NAME="tex2html727"
-  HREF="node53.html">Combinaciones de arreglos y tablas</A>
-<LI><A NAME="tex2html728"
-  HREF="node54.html">Registros</A>
-<LI><A NAME="tex2html729"
-  HREF="node55.html">Colas y pilas como arreglos</A>
-<LI><A NAME="tex2html730"
-  HREF="node56.html">Grafos y &#225;rboles</A>
-<LI><A NAME="tex2html731"
-  HREF="node57.html">Ejercicio con estructuras de datos</A>
-</UL>
-<BR>
-<LI><A NAME="tex2html732"
-  HREF="node58.html">Objetos en Perl</A>
-<UL>
-<LI><A NAME="tex2html733"
-  HREF="node59.html">Atributos e identidad de un objeto (con programaci&#243;n estructurada)</A>
-<LI><A NAME="tex2html734"
-  HREF="node60.html">M&#233;todos de un objeto (con programaci&#243;n estructurada)</A>
-<LI><A NAME="tex2html735"
-  HREF="node61.html">Implementando una clase en Perl</A>
-</UL>
-<BR>
-<LI><A NAME="tex2html736"
-  HREF="node62.html">Paquetes y m&#243;dulos</A>
-<UL>
-<LI><A NAME="tex2html737"
-  HREF="node63.html">Paquetes y m&#243;dulos del int&#233;rprete Perl</A>
-<LI><A NAME="tex2html738"
-  HREF="node64.html">CPAN</A>
-<LI><A NAME="tex2html739"
-  HREF="node65.html">Creaci&#243;n de paquetes y m&#243;dulos</A>
-<LI><A NAME="tex2html740"
-  HREF="node66.html">Utilizaci&#243;n de paquetes y m&#243;dulos desde un programa</A>
-<LI><A NAME="tex2html741"
-  HREF="node67.html">Ejercicio de creaci&#243;n de paquetes</A>
-<LI><A NAME="tex2html742"
-  HREF="node68.html">Algunos paquetes y programas Perl &#250;tiles en aplicaciones bioinform&#225;ticas</A>
-<UL>
-<LI><A NAME="tex2html743"
-  HREF="node69.html">Getopt::Std</A>
-<LI><A NAME="tex2html744"
-  HREF="node70.html">LWP</A>
-<LI><A NAME="tex2html745"
-  HREF="node71.html">XML y JSON</A>
-<LI><A NAME="tex2html746"
-  HREF="node72.html">RemoteRestMap</A>
-<LI><A NAME="tex2html747"
-  HREF="node73.html">GD::Graph</A>
-<LI><A NAME="tex2html748"
-  HREF="node74.html">GraphViz</A>
-<LI><A NAME="tex2html749"
-  HREF="node75.html">SOAP y web servicios</A>
-<LI><A NAME="tex2html750"
-  HREF="node76.html">Otros m&#243;dulos y programas</A>
-</UL>
-</UL>
-<BR>
-<LI><A NAME="tex2html751"
-  HREF="node77.html">Limitaciones num&#233;ricas de Perl5</A>
+<LI><A NAME="tex2html755"
+  HREF="node44.html">Subrutinas que devuelven valores</A>
+<LI><A NAME="tex2html756"
+  HREF="node45.html">Paso de par&#225;metros por valor y por referencia</A>
+<LI><A NAME="tex2html757"
+  HREF="node46.html">Funciones recursivas</A>
+<LI><A NAME="tex2html758"
+  HREF="node47.html">Ventajas de usar subrutinas</A>
+<LI><A NAME="tex2html759"
+  HREF="node48.html">Ejercicios con subrutinas</A>
 </UL>
 <!--End of Table of Child-Links-->
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html706"
+<A NAME="tex2html743"
   HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html712"
-  HREF="bioinfoPerl.html">
+<A NAME="tex2html749"
+  HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html714"
+<A NAME="tex2html751"
   HREF="node42.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

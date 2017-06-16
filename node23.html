@@ -140,19 +140,19 @@ my @coinc = grep(/s/,@arreglo); # @coinc = ("dos","tres")
 <P>
  <i> sort  </i> <A NAME="523"></A>
 <BR>
-Ordena los elementos de un arreglo de menor a mayor alfab&#233;ticamente, devolviendo otro arreglo
+Ordena los elementos de un arreglo de menor a mayor alfanum&#233;ricamente, devolviendo otro arreglo
 ya ordenado. Se puede cambiar el criterio de ordenaci&#243;n.
 <PRE>
 my @arreglo = (3,7,1.1,11.8);
 my @ordenado = sort(@arreglo);          # @ordenado contiene 1.1, 11.8, 3, 7
-@ordenado = sort {$a&lt;=&gt;$b} (@ordenado); # ahora contiene 1.1, 3, 7, 11.8, criterio numérico ascendente
-@ordenado = sort {$b&lt;=&gt;$a} (@ordenado); # ahora contiene 11.8, 7, 3, 1.1, criterio numérico descendente
+@ordenado = sort {$a&lt;=&gt;$b} (@ordenado); # ahora contiene 1.1, 3, 7, 11.8, criterio numerico ascendente
+@ordenado = sort {$b&lt;=&gt;$a} (@ordenado); # ahora contiene 11.8, 7, 3, 1.1, criterio numerico descendente
 </PRE>
 
 <P>
  <i> map  </i> <A NAME="529"></A>
 <BR>
-Aplica una funci&#243;n o subrutina (ver <A HREF="node41.html#sem2">3</A>) sobre los elementos de un vector y devuelve otro vector con los resultados.
+Aplica una funci&#243;n o subrutina (ver <A HREF="node40.html#sem2">3</A>) sobre los elementos de un vector y devuelve otro vector con los resultados.
 
 <P>
 <PRE>

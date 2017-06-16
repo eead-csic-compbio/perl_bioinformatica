@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Operaciones b&#225;sicas con bases de datos relacionales</TITLE>
-<META NAME="description" CONTENT="Operaciones b&#225;sicas con bases de datos relacionales">
+<TITLE>Conexi&#243;n a una base de datos a trav&#233;s de la red</TITLE>
+<META NAME="description" CONTENT="Conexi&#243;n a una base de datos a trav&#233;s de la red">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,7 +20,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node81.html">
 <LINK REL="previous" HREF="node79.html">
-<LINK REL="up" HREF="node79.html">
+<LINK REL="up" HREF="node78.html">
 <LINK REL="next" HREF="node81.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,66 +40,143 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1172"
+<A NAME="tex2html1173"
   HREF="node79.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1178"
-  HREF="node79.html">
+<A NAME="tex2html1179"
+  HREF="node78.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1180"
+<A NAME="tex2html1181"
   HREF="node81.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1181"
-  HREF="node81.html">Conexi&#243;n a una base de</A></b>  Arriba: <b><A NAME="tex2html1179"
-  HREF="node79.html">DBI</A></b>  Anterior: <b><A NAME="tex2html1173"
-  HREF="node79.html">DBI</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1182"
+  HREF="node81.html">Manipulaci&#243;n de una base de</A></b>  Arriba: <b><A NAME="tex2html1180"
+  HREF="node78.html">DBI</A></b>  Anterior: <b><A NAME="tex2html1174"
+  HREF="node79.html">Operaciones b&#225;sicas con bases de</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00411000000000000000">
-Operaciones b&#225;sicas con bases de datos relacionales</A>
+<H2><A NAME="SECTION00412000000000000000">
+Conexi&#243;n a una base de datos a trav&#233;s de la red</A>
 </H2>
 
 <P>
-
-<DIV ALIGN="CENTER"><A NAME="fig:BDoperaciones"></A><A NAME="2587"></A>
-<TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 4.2:</STRONG>
-
-Operaciones b&#225;sicas con bases de datos y funciones SQL relacionadas.
-</CAPTION>
-<TR><TD><IMG
- WIDTH="547" HEIGHT="435" BORDER="0"
- SRC="img8.png"
- ALT="\begin{figure}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{BDoperaciones}
-\end{center}
-\end{figure}"></TD></TR>
-</TABLE>
-</DIV>
+El primer paso para consultar una base de datos por medio de DBI ser&#225; conectarse a su
+servidor desde nuestro programa Perl, normalmente a trav&#233;s de la red. Para hacerlo debemos crear
+una instancia de la clase DBI y usar su m&#233;todo 
+<code>connect</code> . 
 
 <P>
-<A NAME="2449"></A>
-<A NAME="2450"></A>
-<A NAME="2451"></A>
-<A NAME="2452"></A>
-<A NAME="2453"></A>
-<A NAME="2454"></A>
+La informaci&#243;n necesaria para conectarse es:
+
+<UL>
+<LI>nombre y ruta de la fuente de datos <A NAME="2438"></A>, que es una cadena compuesta que 
+comienza con 'dbi:' y contiene varios campos separados por ':'. La sintaxis en particular var&#237;a de 
+unas plataformas, pero siempre se detalla el tipo de base de datos (por ejemplo Oracle), el nombre 
+de la base y el servidor donde est&#225; alojada. Un ejemplo ser&#237;a: 
+<code>dbi:mysql:test:servidor.ccg.unam.mx</code>
+</LI>
+<LI>el nombre de usuario
+</LI>
+<LI>la contrase&#241;a o clave del usuario
+</LI>
+</UL>
+
+<P>
+Si vas a conectarte a un servidor de base de datos Oracle necesitar&#225;s el controlador DBD::Oracle,
+de la misma manera que necesitar&#225;s DBD::mysql para conectarte a una m&#225;quina que corra mysql.
+Puedes descargar de <A NAME="tex2html105"
+  HREF="http://www.cpan.org">CPAN</A>
+los controladores que necesites,
+pero antes comprueba qu&#233; controladores hay disponibles en tu sistema con:
+<BR><code>$ perl -e 'use DBI; print DBI-&gt;available_drivers();'</code>
+
+<P>
+Aqu&#237; muestro un ejemplo de c&#243;digo de conexion a la base de datos 
+<code>test</code> 
+del servidor MySQL 
+<code>servidor.ccg.unam.mx</code> : 
+<PRE>
+#!/usr/bin/perl -w
+# Ejemplo escrito por Bruno Contreras Moreira
+
+use strict;
+use DBI;
+
+my $conexion = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave");
+if(!$conexion)
+{
+	print "No me puedo conectar a mysql:test:servidor.ccg.unam.mx\n$DBI::errstr\n";
+	exit(-2);
+}
+
+$conexion-&gt;disconnect() || warn "Fallo al desconectarme de mysql:test:servidor.ccg.unam.mx\n$DBI::errstr\n";
+</PRE>
+
+<P>
+En principio puedes mantener varias conexiones a la misma base de datos, y cada una de ellas 
+se comportar&#225; de forma independiente:
+<PRE>
+#!/usr/bin/perl -w
+# Ejemplo escrito por Bruno Contreras Moreira
+
+use strict;
+use DBI;
+
+my $conexion1 = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave");
+if(!$conexion1)
+{
+	print "Falla conexion1 a mysql:test:servidor.ccg.unam.mx\n$DBI::errstr\n";
+	exit(-2);
+}
+
+my $conexion2 = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave");
+if(!$conexion2)
+{
+	print "Falla conexion2 a mysql:test:servidor.ccg.unam.mx\n$DBI::errstr\n";
+	exit(-3);
+}
+
+$conexion1-&gt;disconnect() || warn "Falla desconexion1 de mysql:test:servidor.ccg.unam.mx\n$DBI::errstr\n";
+$conexion2-&gt;disconnect() || warn "Falla desconexion2 de mysql:test:servidor.ccg.unam.mx\n$DBI::errstr\n";
+</PRE>
+
+<P>
+A veces es dif&#237;cil conectarse a servidores muy cargados de trabajo, por lo que podemos
+probar a conectarnos varias veces, hasta que lo consigamos:
+
+<P>
+<PRE>
+#!/usr/bin/perl -w
+# Ejemplo escrito por Bruno Contreras Moreira
+
+use strict;
+use DBI;
+
+my $conexion;
+
+until( $conexion = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave") )
+{
+	warn "No consigo conectarme a a mysql:test:servidor.ccg.unam.mx\nLo intento de nuevo en 1 minuto\n";
+	sleep(60);
+}
+
+$conexion-&gt;disconnect() || warn "Fallo al desconectarme de mysql:test:servidor.ccg.unam.mx\n$DBI::errstr\n";
+</PRE>
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1172"
+<A NAME="tex2html1173"
   HREF="node79.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1178"
-  HREF="node79.html">
+<A NAME="tex2html1179"
+  HREF="node78.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1180"
+<A NAME="tex2html1181"
   HREF="node81.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

@@ -69,11 +69,13 @@ $ ls -la ruta/directorio
 -rw-r--r--  1 contrera users    715 jul 19 11:08 datos
 -rw-r--r--  1 contrera users    129 jul  7 16:49 .latex
 drwxr-xr-x  2 contrera users   1024 jul  7 13:38 png
+</PRE>
 
-
+<P>
+<PRE>
 opendir(DIR,"ruta/directorio") || die "lo siento, no puedo abrir ruta/directorio\n";
 
-my @entradas = grep {!/^\./} readdir(DIR);  # añade a @entradas archivos y subdirectorios que no empiecen por '.'
+my @entradas = grep {!/^\./} readdir(DIR);  # agrega a @entradas archivos y subdirectorios que no empiecen por '.'
                                             # @entradas contiene: archivo.txt, datos, png
 closedir(DIR);
 </PRE>

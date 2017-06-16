@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Implementando una clase en Perl</TITLE>
-<META NAME="description" CONTENT="Implementando una clase en Perl">
+<TITLE>Paquetes y m&#243;dulos</TITLE>
+<META NAME="description" CONTENT="Paquetes y m&#243;dulos">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,8 +18,9 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="previous" HREF="node60.html">
-<LINK REL="up" HREF="node58.html">
+<LINK REL="next" HREF="node76.html">
+<LINK REL="previous" HREF="node57.html">
+<LINK REL="up" HREF="node40.html">
 <LINK REL="next" HREF="node62.html">
 <!--google-->
 <script type="text/javascript">
@@ -39,209 +40,83 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html954"
+<A NAME="tex2html953"
   HREF="node60.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html958"
-  HREF="node58.html">
+<A NAME="tex2html959"
+  HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html960"
+<A NAME="tex2html961"
   HREF="node62.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html961"
-  HREF="node62.html">Paquetes y m&#243;dulos</A></b>  Arriba: <b><A NAME="tex2html959"
-  HREF="node58.html">Objetos en Perl</A></b>  Anterior: <b><A NAME="tex2html955"
-  HREF="node60.html">M&#233;todos de un objeto (con</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html962"
+  HREF="node62.html">Paquetes y m&#243;dulos del int&#233;rprete</A></b>  Arriba: <b><A NAME="tex2html960"
+  HREF="node40.html">Fundamentos de Perl5 (2)</A></b>  Anterior: <b><A NAME="tex2html954"
+  HREF="node60.html">Implementando una clase en Perl</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00333000000000000000"></A> <A NAME="clase"></A>
-<BR>
-Implementando una clase en Perl
-</H2>
+<H1><A NAME="SECTION00340000000000000000">
+Paquetes y m&#243;dulos</A>
+</H1>
 
 <P>
-Acabamos de implementar un objeto de la clase PDB usando registros y subrutinas, ahora lo
-haremos usando la sintaxis propia de la programaci&#243;n orientada a objetos. Para ello debemos
-crear un paquete 
-<code>.pm</code> 
-que contendr&#225; el c&#243;digo de la clase. Como ejemplo os muestro la 
-clase PDB, contenida en el archivo  <i> PDB.pm  </i>, donde ver&#233;is que usamos la funci&#243;n 
-<code>bless</code> 
-<A NAME="1730"></A> que permite distinguir al int&#233;rprete entre referencias y objetos:
+En la secci&#243;n <A HREF="node60.html#clase">3.3.3</A> creamos un paquete de Perl en un archivo 
+<code>.pm</code> . 
+En concreto est&#225;bamos creando una clase, pero los paquetes de Perl sirven en general para agrupar c&#243;digo,
+en forma de variables globales, estructuras de datos, subrutinas y programas. De esta forma,
+tal c&#243;mo dec&#237;amos en la secci&#243;n <A HREF="node47.html#ventajSub">3.1.5</A>, favorecemos la reutilizaci&#243;n y distribuci&#243;n 
+de nuestro c&#243;digo y facilitamos la correcci&#243;n de errores.
 
 <P>
-<PRE>
-package PDB;   # se incluye en otro programa con 'use PDB.pm;'
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
 
-use strict;
-
-sub PDB::constructor  # en inglés este método suele llamarse 'new'
-{
-	# autoreferencia a la clase y atributos como parámetros
-	my($clase,$nombre,$n_de_cadenas,$archivoPDB) = @_;
-
-	# implementación de atributos como una tabla asociativa
-	my $objeto = {
-		'nombre' =&gt; $nombre,              
-		'ncadenas' =&gt; $n_de_cadenas,
-		'archivo' =&gt; $archivoPDB,
-		'coordenadas' =&gt; [],
-	};
-	
-	# podría haber sido como un arreglo, más eficiente, pero menos obvio el contenido 
-	#$objeto-&gt;[0] = $nombre;
-	#$objeto-&gt;[1] = $n_de_cadenas;
-	#$objeto-&gt;[2] = $archivoPDB;
-	#$objeto-&gt;[3] = [];
-		
-	bless($objeto,$clase); # la función bless da carácter de objeto a la referencia $objeto
-
-	return $objeto;
-}
-
-sub PDB::pon_nombre_archivo
-{
-	my($objeto,$archivoPDB) = @_;
-	$objeto-&gt;{'archivo'} = $archivoPDB;
-}
-
-
-sub PDB::leer_archivoPDB   
-{
-	# autoreferencia al objeto y parámetros
-	my($objeto, $comprimido) = @_;
-	
-	# variables locales
-	my @coordenadas = ();
-	
-	if(!$objeto-&gt;{'archivo'}) 
-	{ 
-		print "'archivo' no está definida\n";
-		return 0; 
-	}
-	
-	if($comprimido == 1)
-	{
-		open(PDB,"zcat $objeto-&gt;{'archivo'} |") || warn "no puedo leer zcat $objeto-&gt;{'archivo'}\n";
-	}
-	else
-	{
-		open(PDB,"$objeto-&gt;{'archivo'}") || warn "no puedo leer $objeto-&gt;{'archivo'}\n";
-	}
-	
-	while(&lt;PDB&gt;)
-	{
-		if(/^ATOM/||/^TER/)
-		{
-		 	push(@coordenadas,$_);
-		}
-	}
-	close(PDB);
-	
-	$objeto-&gt;{'coordenadas'} = [ @coordenadas ];
-	
-	return scalar(@coordenadas); 
-}
-
-sub PDB::imprime_coordenadas
-{
-	my($objeto) = @_;
-	print @{ $objeto-&gt;{'coordenadas'} };
-}
-
-1;
-</PRE>
-
-<P>
-A continuaci&#243;n os muestro la clase derivada PDBdna, contenida en un archivo llamado
- <i> PDBdna.pm  </i>, que hereda de la clase PDB y s&#243;lo modifica el m&#233;todo 
-<code>leer_archivoPDB</code>:
-<PRE>
-package PDBdna;   # se incluye en otro programa con 'use PDBdna.pm;'
-
-use strict;
-
-# clase derivada de PDB, especializada en representar moléculas de ADN
-use PDB;
-use vars '@ISA';
-@ISA = 'PDB';
-
-# redefino aquí el método leer_archivoPDB, para tener en cuanta sólo los
-# átomos de ADN
-
-sub PDBdna::leer_archivoPDB   
-{
-	# autoreferencia al objeto y parámetros
-	my($objeto, $comprimido) = @_;
-	
-	# variables locales
-	my @coordenadas = ();
-	
-	if(!$objeto-&gt;{'archivo'}) 
-	{ 
-		print "'archivo' no está definida\n";
-		return 0; 
-	}
-	
-	if($comprimido == 1)
-	{
-		open(PDB,"zcat $objeto-&gt;{'archivo'} |") || warn "no puedo leer zcat $objeto-&gt;{'archivo'}\n";
-	}
-	else
-	{
-		open(PDB,"$objeto-&gt;{'archivo'}") || warn "no puedo leer $objeto-&gt;{'archivo'}\n";
-	}
-	
-	while(&lt;PDB&gt;)
-	{
-		# lee sólo átomos de ADN
-	   if((/^ATOM/ &amp;&amp; substr($_,18,1) eq " " &amp;&amp; substr($_,19,1) =~ /A|G|C|T/) || /^TER/)
-		{
-		 	push(@coordenadas,$_);
-		}
-	}
-	close(PDB);
-	
-	$objeto-&gt;{'coordenadas'} = [ @coordenadas ];
-	
-	return scalar(@coordenadas); 
-}
-
-
-1;
-</PRE>
-
-<P>
-Finalmente, os muestro un ejemplo que deber&#233;is probar donde se utilizan estas clases:
-<PRE>
-#!/usr/bin/perl -w 
-# Ejemplo escrito por Bruno Contreras Moreira
-
-use strict;
-
-use PDB;      # incluye PDB.pm
-use PDBdna;   # incluye PDBdna.pm, en el mismo directorio
-
-# sugiero que modifiquéis el código para probar también la clase PDBdna
-my $pdb1 = PDB-&gt;constructor('1lfu',3,'bioinfoPerl/problemas/1lfu.pdb');
-$pdb1-&gt;leer_archivoPDB(0);
-$pdb1-&gt;imprime_coordenadas();
-</PRE>
-
-<P>
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html963"
+  HREF="node62.html">Paquetes y m&#243;dulos del int&#233;rprete Perl</A>
+<LI><A NAME="tex2html964"
+  HREF="node63.html">CPAN</A>
+<LI><A NAME="tex2html965"
+  HREF="node64.html">Creaci&#243;n de paquetes y m&#243;dulos</A>
+<LI><A NAME="tex2html966"
+  HREF="node65.html">Utilizaci&#243;n de paquetes y m&#243;dulos desde un programa</A>
+<LI><A NAME="tex2html967"
+  HREF="node66.html">Ejercicio de creaci&#243;n de paquetes</A>
+<LI><A NAME="tex2html968"
+  HREF="node67.html">Algunos paquetes y programas Perl &#250;tiles en aplicaciones bioinform&#225;ticas</A>
+<UL>
+<LI><A NAME="tex2html969"
+  HREF="node68.html">Getopt::Std</A>
+<LI><A NAME="tex2html970"
+  HREF="node69.html">LWP</A>
+<LI><A NAME="tex2html971"
+  HREF="node70.html">XML y JSON</A>
+<LI><A NAME="tex2html972"
+  HREF="node71.html">RemoteRestMap</A>
+<LI><A NAME="tex2html973"
+  HREF="node72.html">GD::Graph</A>
+<LI><A NAME="tex2html974"
+  HREF="node73.html">GraphViz</A>
+<LI><A NAME="tex2html975"
+  HREF="node74.html">SOAP y web servicios</A>
+<LI><A NAME="tex2html976"
+  HREF="node75.html">Otros m&#243;dulos y programas</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html954"
+<A NAME="tex2html953"
   HREF="node60.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html958"
-  HREF="node58.html">
+<A NAME="tex2html959"
+  HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html960"
+<A NAME="tex2html961"
   HREF="node62.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

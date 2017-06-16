@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>GD::Graph</TITLE>
-<META NAME="description" CONTENT="GD::Graph">
+<TITLE>GraphViz</TITLE>
+<META NAME="description" CONTENT="GraphViz">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,7 +20,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node74.html">
 <LINK REL="previous" HREF="node72.html">
-<LINK REL="up" HREF="node68.html">
+<LINK REL="up" HREF="node67.html">
 <LINK REL="next" HREF="node74.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,90 +40,196 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1092"
+<A NAME="tex2html1093"
   HREF="node72.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1098"
-  HREF="node68.html">
+<A NAME="tex2html1099"
+  HREF="node67.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1100"
+<A NAME="tex2html1101"
   HREF="node74.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1101"
-  HREF="node74.html">GraphViz</A></b>  Arriba: <b><A NAME="tex2html1099"
-  HREF="node68.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1093"
-  HREF="node72.html">RemoteRestMap</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1102"
+  HREF="node74.html">SOAP y web servicios</A></b>  Arriba: <b><A NAME="tex2html1100"
+  HREF="node67.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1094"
+  HREF="node72.html">GD::Graph</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H3><A NAME="SECTION00346500000000000000"></A> <A NAME="GDGraph"></A>
+<H3><A NAME="SECTION00346600000000000000"></A> <A NAME="graphviz"></A>
 <BR>
-GD::Graph
+GraphViz
 </H3>
 
 <P>
-Este paquete permite hacer diagramas y gr&#225;ficas para representar datos num&#233;ricos de manera 
-sencilla. Puedes obtenerlo en CPAN y deber&#225;s instalar el paquete 
-<code>GD</code> 
-antes de instalar
-<code>GD::Graph</code>, 
-aunque este es un ejemplo de paquete que puede dar problemas al instalar, 
-porque requiere a su vez otros componentes. Pero dada su utilidad creo que vale la pena 
-el trago.
+<A NAME="tex2html74"
+  HREF="http://www.graphviz.org/">Graphviz</A>
+es una colecci&#243;n de software para representar grafos, muy flexible, pero requiere un cierto
+esfuerzo de aprendizaje. El paquete del CPAN <A NAME="tex2html75"
+  HREF="http://search.cpan.org/dist/GraphViz/">GraphViz</A>
+nos ofrece una interfaz sencilla al 
+software original, perdiendo algunas capacidades.
 
 <P>
-La documentaci&#243;n para explotar este paquete la encontr&#225;is en 
-<A NAME="tex2html70"
-  HREF="http://search.cpan.org/perldoc?GD::Graph">GD::Graph</A>, en CPAN.
+Aqu&#237; os muestro el c&#243;digo utilizado para generar este diagrama esquem&#225;tico de la interfaz 
+entre un factor de transcripci&#243;n y una mol&#233;cula de DNA:
 
 <P>
-Aqu&#237; ten&#233;is el c&#243;digo para hacer un diagrama X/Y de dos variables num&#233;ricas, que 
-se muestra en el archivo <A NAME="tex2html71"
-  HREF="./problemas/ejemplo.png">ejemplo.png</A>:
+
+<DIV ALIGN="CENTER">
+
+<P><A NAME="fig:interfaz_graphviz"></A></P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="748" HEIGHT="187" ALIGN="BOTTOM" BORDER="0"
+ SRC="./test_diagram_interface_graph.png"
+ ALT="Image test_diagram_interface_graph">
+
+</DIV>
+</DIV>
+
+<P>
 <PRE>
-#!/usr/bin/perl -w 
-# Ejemplo escrito por Bruno Contreras Moreira
-
+# graphviz example by Bruno Contreras Moreira
+use warnings;
 use strict;
-use GD::Graph::lines;
+use lib "IPC-Run-0.80/lib/";
+use lib "GraphViz-2.03/lib/";
+use GraphViz;
 
-my @datos = (
-[-3,-2,-1,0,1,2,3],            # variable X
-[.2,.4,1.9,2.4,1.2,.3,.3]      # variable Y
-);
+my %nt_colors = ('A'=&gt;'green','G'=&gt;'orange','C'=&gt;'blue','T'=&gt;'red');
 
-# crea un nueva instancia
-my $grafica = new GD::Graph::lines();
+my @interface_contacts = ( # define a set of protein-DNA atomic contacts
+'ARG  NH1  A0180 &lt;- 2.89 -&gt;  DG   N7 a0010',  
+'ARG  NH2  A0180 &lt;- 2.74 -&gt;  DG   N7 a0010',
+'GLU  OE2  A0181 &lt;- 3.30 -&gt;  DC   N4 b0021', 
+'ARG  NH2  A0185 &lt;- 2.76 -&gt;  DT   O4 b0020', 
+'ARG  NH1  B0180 &lt;- 3.27 -&gt;  DG   O6 b0010', 
+'ARG  NH2  B0180 &lt;- 2.74 -&gt;  DG   N7 b0010', 
+'GLU  OE2  B0181 &lt;- 2.91 -&gt;  DC   N4 a0021', 
+'ARG  NH2  B0185 &lt;- 2.62 -&gt;  DT   O4 a0020'  );
 
-# configura el diagrama
-$grafica-&gt;set( 
-	x_label           =&gt; 'sigma',
-	y_label           =&gt; 'frecuencia',
-	title             =&gt; 'Ejemplo de gráfica X/Y'
-) or die $grafica-&gt;error;
+my @DNA_duplex_pairs = ( # define a DNA duplex
+'DT a0009 == DA b0024','DG a0010 == DC b0023',
+'DT a0011 == DA b0022','DG a0012 == DC b0021',
+'DA a0013 == DT b0020','DC a0014 == DG b0019',
+'DA a0015 == DT b0018','DT a0016 == DA b0017',
+'DA a0017 == DT b0016','DT a0018 == DA b0015',
+'DG a0019 == DC b0014','DT a0020 == DA b0013',
+'DC a0021 == DG b0012','DA a0022 == DT b0011',
+'DC a0023 == DG b0010' );
 
-my $diagrama = $grafica-&gt;plot( \@datos );
+my $diagram_file = draw_interface_graph('test_diagram',\@interface_contacts,@DNA_duplex_pairs);
 
+print "# $diagram_file\n";
 
-open(GRAF_PNG,"&gt;ejemplo.png") || die "no puedo crear ejemplo.png\n";
-binmode GRAF_PNG;
-print GRAF_PNG $diagrama-&gt;png();
-close(GRAF_PNG);
+### codigo de la subrutina ###
+
+sub draw_interface_graph
+{
+	my ($name,$ref_atomic_contacts,@duplex_pairs) = @_;
+	
+	my $graph_filename = $name."_interface_graph.png";
+	
+	my ($n_of_nts,$pair,$b,$contact,$nt,$aatom,$aalabel,$rank) = (0);
+	my (@strand1,@strand2,@nodes1,@nodes2,%previous_contact,$base);
+	
+	my $interface = GraphViz-&gt;new(name=&gt;'interface',overlap=&gt;'compress');
+	
+	## -1) separate strands
+	foreach $pair (@duplex_pairs)
+	{
+		if($pair =~ m/D(\w{1}) (\S+) == D(\w{1}) (\S+)/)
+		{
+			push(@strand1,$1.' '.$2);
+			push(@strand2,$3.' '.$4);
+			$n_of_nts++;
+		}
+	}	
+	
+	## 0) define top and bottom layers, 1 &amp; 4 (2 &amp; 3 are dna strands)
+	$interface-&gt;add_node('1',rank=&gt;'1',style=&gt;'invis');
+	$interface-&gt;add_node('4',rank=&gt;'4',style=&gt;'invis');
+	
+	## 1) define nucleotides in layers 2 and 3, filling indirectly readout residues and adding missing bases
+	for($nt=0;$nt&lt;$n_of_nts;$nt++)# 1.1) strand1
+	{
+		($b,$base) = split(/ /,$strand1[$nt]);
+		$nodes1[$nt] = $base;
+		$interface-&gt;add_node($base,shape=&gt;'hexagon',rank =&gt; '2',label=&gt;$b,color=&gt;$nt_colors{$b},style=&gt;'bold');
+	}
+	
+	for($nt=0;$nt&lt;$n_of_nts;$nt++)# 1.2) strand2
+	{
+		($b,$base) = split(/ /,$strand2[$nt]);
+		$nodes2[$nt] = $base;
+		$interface-&gt;add_node($base,shape=&gt;'hexagon',rank =&gt; '3',label=&gt;$b,color=&gt;$nt_colors{$b},style=&gt;'bold');
+	}
+	
+	## 2) invisibly wire the layers
+	for($nt=0;$nt&lt;$n_of_nts;$nt++)# 2.1) layer 1-&gt;2
+	{ 
+		$interface-&gt;add_edge('1' =&gt; $nodes1[$nt],weight=&gt;0,style=&gt;'invis'); # weight necesario para que respete layers
+	}
+	for($nt=0;$nt&lt;$n_of_nts;$nt++){ $interface-&gt;add_edge($nodes2[$nt] =&gt; '4',weight=&gt;0,style=&gt;'invis'); }# 2.2) layer 3-&gt;4
+
+	## 3) add phosphodiester bonds
+	for($nt=1;$nt&lt;$n_of_nts;$nt++)# 3.1) strand1
+	{ 
+		$interface-&gt;add_edge($nodes1[$nt-1] =&gt; $nodes1[$nt],constraint=&gt;'false');  
+		# constraint necesario para que respete 5'-&gt;3'
+	}	
+	
+	my $reverse_n_of_nts = $n_of_nts; # 3.2) strand2
+	for($nt=$n_of_nts-1;$nt&gt;=1;$nt--)
+	{ 
+		$interface-&gt;add_edge($nodes2[$nt] =&gt; $nodes2[$nt-1],constraint=&gt;'false'); 	
+		$reverse_n_of_nts--;
+	}
+
+	## 4) add double helix Hbonds
+	for($nt=0;$nt&lt;$n_of_nts;$nt++){ $interface-&gt;add_edge($nodes1[$nt]=&gt;$nodes2[$nt],style=&gt;'dotted',dir=&gt;'none'); }
+	
+	## 5) define protein interface atoms and draw contacts: LYS   NZ  A0192 &lt;- 3.05 -&gt;  DG   O6 C0016
+	foreach $contact (@{$ref_atomic_contacts})
+	{
+		my @data = split(/\s+/,$contact);
+		$aatom = $data[2].$data[0].".".$data[1];
+		$aatom =~ s/([A-Z])0+(.+)/$1$2/;
+		$aalabel = $aatom ."=".$data[7]; 
+		$base = $data[8]; 
+		
+		if(grep(/$base/,@nodes1)){ $rank = 1 }
+		elsif(grep(/$base/,@nodes2)){ $rank = 4 }
+		else{ die "# draw_interface_graph : cannot match base $base\n"; }
+			
+		$interface-&gt;add_node($aatom.$aalabel.$contact,rank=&gt;$rank,shape=&gt;'plaintext',weight=&gt;0,label=&gt;$aalabel,fontsize=&gt;10);
+		$interface-&gt;add_edge($aatom.$aalabel.$contact=&gt;$base,style=&gt;'solid',constraint=&gt;'false'); 
+		
+		if($previous_contact{$rank}){ $interface-&gt;add_edge($previous_contact{$rank}=&gt;$aatom.$aalabel.$contact,weight=&gt;0,style=&gt;'invis',constraint=&gt;'false');}
+		$previous_contact{$rank} = $aatom.$aalabel.$contact;
+	}	
+	
+	## 6) plot graph in both PNG and vectorial PS
+	$interface-&gt;as_png($graph_filename);
+	
+	return ($graph_filename);
+}
 </PRE>
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1092"
+<A NAME="tex2html1093"
   HREF="node72.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1098"
-  HREF="node68.html">
+<A NAME="tex2html1099"
+  HREF="node67.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1100"
+<A NAME="tex2html1101"
   HREF="node74.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

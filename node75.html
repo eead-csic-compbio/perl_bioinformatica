@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>SOAP y web servicios</TITLE>
-<META NAME="description" CONTENT="SOAP y web servicios">
+<TITLE>Otros m&#243;dulos y programas</TITLE>
+<META NAME="description" CONTENT="Otros m&#243;dulos y programas">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,9 +18,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="next" HREF="node76.html">
 <LINK REL="previous" HREF="node74.html">
-<LINK REL="up" HREF="node68.html">
+<LINK REL="up" HREF="node67.html">
 <LINK REL="next" HREF="node76.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,82 +39,100 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1112"
+<A NAME="tex2html1113"
   HREF="node74.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1118"
-  HREF="node68.html">
+<A NAME="tex2html1117"
+  HREF="node67.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1120"
+<A NAME="tex2html1119"
   HREF="node76.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1121"
-  HREF="node76.html">Otros m&#243;dulos y programas</A></b>  Arriba: <b><A NAME="tex2html1119"
-  HREF="node68.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1113"
-  HREF="node74.html">GraphViz</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1120"
+  HREF="node76.html">Limitaciones num&#233;ricas de Perl5</A></b>  Arriba: <b><A NAME="tex2html1118"
+  HREF="node67.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1114"
+  HREF="node74.html">SOAP y web servicios</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H3><A NAME="SECTION00346700000000000000"></A> <A NAME="SOAP"></A>
-<BR>
-SOAP y web servicios
+<H3><A NAME="SECTION00346800000000000000">
+Otros m&#243;dulos y programas</A>
 </H3>
 
 <P>
-<A NAME="tex2html74"
-  HREF="http://es.wikipedia.org/wiki/SOAP">SOAP</A>
-es un protocolo para servir y requerir aplicaciones desde la Web en el contexto
-de los <A NAME="tex2html75"
-  HREF="http://es.wikipedia.org/wiki/Servicios_Web">servicios web</A>, que permiten el acceso no interactivo a servidores.
+Aqu&#237; enumero algunos m&#243;dulos y programas escritos en Perl que me han resultado muy &#250;tiles en ocasiones:
 
 <P>
-Para acceder desde un programa a servicios de este tipo debemos conocer su interfaz.Si es as&#237;, escribir un programa que la interrogue es sencillo, con
-la ayuda de tutoriales como <A NAME="tex2html76"
-  HREF="http://www.ibm.com/developerworks/webservices/library/ws-bioinfo.html">&#233;ste</A>.
+
+<UL>
+<LI><A NAME="tex2html81"
+  HREF="http://perldoc.perl.org/FindBin.html">FindBin</A>, m&#243;dulo core para obtener en tiempo real la ruta completa de un  <i> script  </i>.
 
 <P>
-Aqu&#237; os muestro un ejemplo de c&#243;digo para acceder a los servicios web de 
-<A NAME="tex2html77"
-  HREF="http://floresta.eead.csic.es/3dfootprint/">3D-footprint</A>, que nos permiten explorar las interfaces prote&#237;na-DNA 
-del Protein Data Bank, tomado de <A NAME="tex2html78"
-  HREF="http://floresta.eead.csic.es/3dfootprint/tutorial.html#ws">aqu&#237;</A>:
+</LI>
+<LI><A NAME="tex2html82"
+  HREF="http://search.cpan.org/perldoc?Parallel%3A%3AForkManager">Parallel::ForkManager</A>, para distribuir trabajos en entornos multicore, 
+como por ejemplo en el  <i> script  </i> <A NAME="tex2html83"
+  HREF="https://github.com/eead-csic-compbio/get_homologues/blob/master/_split_blast.pl">_split_blast.pl</A>,
+que forma parte de la suite <A NAME="tex2html84"
+  HREF="https://github.com/eead-csic-compbio/get_homologues">GET_HOMOLOGUES</A>, escrita mayormente en Perl5.
 
 <P>
-<PRE>
-#!/usr/bin/perl -w
-# web services client for 3D-footprint
-use strict;
-use SOAP::Lite;
+</LI>
+<LI><A NAME="tex2html85"
+  HREF="http://bioinfoperl.blogspot.com.es/2014/12/perl-module-kseqklib-parse-fastq-fasta-files.html">kseq::klib</A>
+para leer
+de manera eficiente ficheros FASTQ.
 
-my $URI   = 'http://floresta.eead.csic.es/footprint';
-my $WSURL = 'http://floresta.eead.csic.es/3dpwm/scripts/server/ws.cgi';
+<P>
+</LI>
+<LI><A NAME="tex2html86"
+  HREF="http://search.cpan.org/perldoc?Statistics%3A%3AR">Statistics-R</A>
+para interaccionar con el entorno R,
+muy poderoso en estad&#237;stica e inteligencia artificial.
 
-my $soap = SOAP::Lite
--&gt; uri($URI)
--&gt; proxy($WSURL);
+<P>
+</LI>
+<LI><A NAME="tex2html87"
+  HREF="https://metacpan.org/pod/Spreadsheet::ParseXLSX">Spreadsheet::ParseXLSX</A>
+para leer datos de hojas Excel XLSX, como en 
+<A NAME="tex2html88"
+  HREF="http://bioinfoperl.blogspot.com.es/2016/10/tsv-de-hojas-xlsx.html">este ejemplo</A>
+<P>
+</LI>
+<LI>El programa <A NAME="tex2html89"
+  HREF="http://sourceforge.net/projects/bio-mview/files/bio-mview/mview-1.49/">mview</A>
+sirve para representar en forma de alineamiento m&#250;ltiple la salida de BLAST o de cualquier otro programa que genera formatos FASTA. 
+Por ejemplo, este archivo de salida de  <i> blastpgp  </i> <A NAME="tex2html90"
+  HREF="./problemas/1lfu_nr.blast">1lfu_nr.blast</A>
+podemos convertirlo a <A NAME="tex2html91"
+  HREF="./problemas/1lfu_nr.html">1lfu_nr.html</A>. 
+Hay un ejemplo detallado en el <A NAME="tex2html92"
+  HREF="http://www.eead.csic.es/compbio/material/bioperl/node44.html">Taller de (bio)perl</A>.
 
-# uncomment as needed:
-#my $result = $soap-&gt;text_query('homeodomain'); # 1 param: 1(string) one-word term
-#my $result = $soap-&gt;protein_query("IYNLSRRFAQRGFSPREFRLTMTRGDIGNYLGLTVETISRLLGRFQKSGMLAVKGKYITIENNDALAQLAGHTRNVA"); # 1 param: 1(string) sequence
-my $result = $soap-&gt;motif_query('tntga','local',1); # 3 params: 1(string) motif in IUPAC|CONSENSUS|TRANSFAC format, 2(string) local|global, 3(float) evalue cutoff
-
-unless($result-&gt;fault){ print $result-&gt;result(); } 
-else{ print 'error: ' . join(', ',$result-&gt;faultcode,$result-&gt;faultstring); }
-</PRE>
+<P>
+</LI>
+<LI>La suite <A NAME="tex2html93"
+  HREF="https://www.ncbi.nlm.nih.gov/books/NBK25501/">Entrez Programming Utilities</A>
+permite acceder de forma no interactiva a la informaci&#243;n del NCBI por medio de una interfaz Perl, como se muestra en el
+<A NAME="tex2html94"
+  HREF="http://www.eead.csic.es/compbio/material/bioperl/node55.html">Taller de (bio)perl</A>.
+</LI>
+</UL>
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1112"
+<A NAME="tex2html1113"
   HREF="node74.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1118"
-  HREF="node68.html">
+<A NAME="tex2html1117"
+  HREF="node67.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1120"
+<A NAME="tex2html1119"
   HREF="node76.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

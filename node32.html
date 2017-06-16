@@ -77,7 +77,7 @@ open(MIFICH,"fichero.txt");   # abrimos un fichero existente para lectura
 open(MIFICH,"&gt;fichero.txt");  # creamos un nuevo fichero y le asignamos 
                               # el descriptor MIFICH
 
-open(MIFICH,"&gt;&gt;fichero.txt"); # abrimos un fichero existente para añadir
+open(MIFICH,"&gt;&gt;fichero.txt"); # abrimos un fichero existente para agregar 
                               # contenido al final, conservando el contenido 
                               # original, y le asignamos el descriptor MIFICH
 
@@ -95,12 +95,12 @@ Para leer un archivo normalmente se usa un bucle
 <PRE>
 open(MIFICH,"fichero.txt")|| die "lo siento, no puedo encontrar fichero.txt\n";   
 
-while(&lt;MIFICH&gt;)               # significa: para cada línea ejecuta el bloque de código 
+while(&lt;MIFICH&gt;)               # significa: para cada linea ejecuta el bloque de codigo 
 {                             # entre los corchetes
 
-	print $_;                  # la variable especial $_ contiene la línea actual
+	print $_;                  # la variable especial $_ contiene la linea actual
 
-	# ahora podríamos usar expresiones regulares para procesar esta línea de texto
+	# ahora podriamos usar expresiones regulares para procesar esta linea de texto
 }                          
     
 close(MIFICH);
@@ -111,7 +111,7 @@ Para escribir en un fichero que acabamos de abrir:
 <PRE>
 open(MIFICH,"&gt;fichero.txt")|| die "lo siento, no puedo crear fichero.txt\n";   
 
-print MIFICH "Una línea dentro del archivo\n";
+print MIFICH "Una linea dentro del archivo\n";
     
 close(MIFICH);
 </PRE>
@@ -130,8 +130,8 @@ que pueden ser muy &#250;tiles (<A NAME="tex2html32"
   HREF="http://www.rexswain.com/perl5.html#fileoperations">gu&#237;a de referencia de Perl</A>):
 <PRE>
 -r -w -x  # comprueba si hay permiso para leer, escribir o ejecutar un archivo 
--e -z     # comprueba si el archivo existe / tiene tamaño nulo
--s        # compruebe si el archivo tiene tamaño no nulo y devuelve el tamaño
+-e -z     # comprueba si el archivo existe / tiene 0 bytes 
+-s        # compruebe si el archivo tiene tamagno no nulo y devuelve el tamagno
 -f -d     # comprueba si el archivo es un fichero / es un directorio
 
 Ejemplo de uso:

@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Ejercicios con subrutinas</TITLE>
-<META NAME="description" CONTENT="Ejercicios con subrutinas">
+<TITLE>Estructuras de datos m&#225;s complicadas</TITLE>
+<META NAME="description" CONTENT="Estructuras de datos m&#225;s complicadas">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,8 +18,9 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="previous" HREF="node48.html">
-<LINK REL="up" HREF="node42.html">
+<LINK REL="next" HREF="node57.html">
+<LINK REL="previous" HREF="node41.html">
+<LINK REL="up" HREF="node40.html">
 <LINK REL="next" HREF="node50.html">
 <!--google-->
 <script type="text/javascript">
@@ -39,78 +40,67 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html828"
+<A NAME="tex2html827"
   HREF="node48.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html832"
-  HREF="node42.html">
+<A NAME="tex2html833"
+  HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html834"
+<A NAME="tex2html835"
   HREF="node50.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html835"
-  HREF="node50.html">Estructuras de datos m&#225;s complicadas</A></b>  Arriba: <b><A NAME="tex2html833"
-  HREF="node42.html">Subrutinas y paso de par&#225;metros</A></b>  Anterior: <b><A NAME="tex2html829"
-  HREF="node48.html">Ventajas de usar subrutinas</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html836"
+  HREF="node50.html">Arreglos de arreglos</A></b>  Arriba: <b><A NAME="tex2html834"
+  HREF="node40.html">Fundamentos de Perl5 (2)</A></b>  Anterior: <b><A NAME="tex2html828"
+  HREF="node48.html">Ejercicios con subrutinas</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00316000000000000000">
-Ejercicios con subrutinas</A>
-</H2>
+<H1><A NAME="SECTION00320000000000000000">
+Estructuras de datos m&#225;s complicadas</A>
+</H1>
 
 <P>
-Para aplicar lo que hemos aprendido de subrutinas os pedir&#237;a que modifiqu&#233;is la 
-soluci&#243;n del problema <A HREF="node40.html#problSO">2.10.1</A> ahora separando todas las tareas indivisibles
-en subrutinas. Pod&#233;is adem&#225;s comparar la velocidad de ejecuci&#243;n de ambos programas,
-el viejo y el modificado, usando el programa time en el terminal UNIX*.
+En esta secci&#243;n veremos c&#243;mo crear y manipular estructuras de datos m&#225;s complejas que
+las que hemos visto hasta ahora, basadas sobre todo en el uso de arreglos, tablas asociativas
+y referencias. Como gu&#237;a alternativa de referencia recomiendo 
+<A NAME="tex2html53"
+  HREF="http://perldoc.perl.org/perldsc.html">este contenido</A>. 
 
 <P>
-Otra manera de valorar el rendimiento de un programa que use subrutinas es ejecutarlo de esta
-manera: <code>perl -d:DProf programa.pl [argumentos que necesite]</code> . Tras su ejecución se habrá
-generado un archivo llamado <code>tmon.out</code> que pasaremos como argumento a otro programa:
-<code>dprofpp tmon.out</code> , generando una salida como esta, donde se ve qué coste empírico
-tiene cada subrutina (del m&#243;dulo dnalib) durante la ejecución del programa. Por ejemplo,
-la subrutina  <i> get_sq_dist  </i> fue invocada 124763 veces consumiendo un 64.9 por cieto del tiempo total:
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
 
-<P>
-<PRE>
-Exporter::export has -1 unstacked calls in outer
-Exporter::Heavy::heavy_export has 1 unstacked calls in outer
-Total Elapsed Time = 34.29820 Seconds
-  User+System Time = 16.72820 Seconds
-Exclusive Times
-%Time ExclSec CumulS #Calls sec/call Csec/c  Name
- 64.9   10.85 10.858 124763   0.0000 0.0000  dnalib::get_sq_dist
- 23.0   3.852  7.964      3   1.2841 2.6548  dnalib::get_template_contacts
- 14.4   2.410  7.221    588   0.0041 0.0123  dnalib::check_base_contact
- 6.31   1.055  2.990      3   0.3517 0.9968  dnalib::calc_DNA_complementarity
- 3.03   0.507 11.056      3   0.1690 3.6853  dnalib::predict_sites_complex
- 0.72   0.121  0.121  28932   0.0000 0.0000  dnalib::tobase4
- 0.50   0.084  0.084  30720   0.0000 0.0000  dnalib::num2compbase
- 0.42   0.070  0.070      1   0.0700 0.0700  dnalib::extract_BLAST_TF_alignments
- 0.41   0.069  0.069    581   0.0001 0.0001  dnalib::calc_Pvalue
- 0.41   0.069  0.069    598   0.0001 0.0001  dnalib::calc_family_preferences
- 0.24   0.040  0.050      5   0.0080 0.0100  main::BEGIN
- 0.23   0.039  8.113      1   0.0391 8.1126  dnalib::build_CM_complexes
- 0.20   0.034  0.034  30720   0.0000 0.0000  dnalib::num2base
- 0.18   0.030  0.030      3   0.0100 0.0100  dnalib::get_protein_coordinates
- 0.17   0.029  0.029    581   0.0001 0.0001  dnalib::calc_def_cost
-</PRE>
-
-<P>
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html837"
+  HREF="node50.html">Arreglos de arreglos</A>
+<LI><A NAME="tex2html838"
+  HREF="node51.html">Tablas de tablas,  <i> Hashes of hashes  </i></A>
+<LI><A NAME="tex2html839"
+  HREF="node52.html">Combinaciones de arreglos y tablas</A>
+<LI><A NAME="tex2html840"
+  HREF="node53.html">Registros</A>
+<LI><A NAME="tex2html841"
+  HREF="node54.html">Colas y pilas como arreglos</A>
+<LI><A NAME="tex2html842"
+  HREF="node55.html">Grafos y &#225;rboles</A>
+<LI><A NAME="tex2html843"
+  HREF="node56.html">Ejercicio con estructuras de datos</A>
+</UL>
+<!--End of Table of Child-Links-->
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html828"
+<A NAME="tex2html827"
   HREF="node48.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html832"
-  HREF="node42.html">
+<A NAME="tex2html833"
+  HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html834"
+<A NAME="tex2html835"
   HREF="node50.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

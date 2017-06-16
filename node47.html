@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Funciones recursivas</TITLE>
-<META NAME="description" CONTENT="Funciones recursivas">
+<TITLE>Ventajas de usar subrutinas</TITLE>
+<META NAME="description" CONTENT="Ventajas de usar subrutinas">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,7 +20,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node48.html">
 <LINK REL="previous" HREF="node46.html">
-<LINK REL="up" HREF="node42.html">
+<LINK REL="up" HREF="node41.html">
 <LINK REL="next" HREF="node48.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,76 +40,56 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html808"
+<A NAME="tex2html809"
   HREF="node46.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html814"
-  HREF="node42.html">
+<A NAME="tex2html815"
+  HREF="node41.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html816"
+<A NAME="tex2html817"
   HREF="node48.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html817"
-  HREF="node48.html">Ventajas de usar subrutinas</A></b>  Arriba: <b><A NAME="tex2html815"
-  HREF="node42.html">Subrutinas y paso de par&#225;metros</A></b>  Anterior: <b><A NAME="tex2html809"
-  HREF="node46.html">Paso de par&#225;metros por valor</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html818"
+  HREF="node48.html">Ejercicios con subrutinas</A></b>  Arriba: <b><A NAME="tex2html816"
+  HREF="node41.html">Subrutinas y paso de par&#225;metros</A></b>  Anterior: <b><A NAME="tex2html810"
+  HREF="node46.html">Funciones recursivas</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00314000000000000000">
-Funciones recursivas</A>
+<H2><A NAME="SECTION00315000000000000000"></A> <A NAME="ventajSub"></A>
+<BR>
+Ventajas de usar subrutinas
 </H2>
 
 <P>
-Como en otros lenguajes, en Perl se pueden programar funciones recursivas, que se llaman 
-a si mismas hasta que el problema que intentan resolver tiene un soluci&#243;n obvia. La recursi&#243;n
-es un mecanismo de descomposici&#243;n de problemas que puede hacer m&#225;s sencillo llegar a una
-soluci&#243;n, pero a cambio, normalmente, su coste computacional es relativamente grande, ya 
-que implica muchas llamadas a funciones seguidas. 
 
-<P>
-De ejemplo os muestro la funci&#243;n factorial en forma recursiva:
-
-<P>
-<PRE>
-sub factorial
-{
-	# toma parámetro
-	my $fact = $_[0];
-	
-	if($fact &lt; 0) # error, la función factorial no está definida para negativos
-	{ 
-		return 0; 
-	}
-	elsif($fact == 0) # caso trivial
-	{
-		return 1;
-	}
-	else # descompón el problema un paso más
-	{
-		return $fact * factorial($fact -1); 
-	}
-}
-</PRE>
-
-<P>
-Puedes encontrar otros ejemplos de funciones recursivas en el 
-<A NAME="tex2html53"
-  HREF="http://www.eead.csic.es/compbio/material/bioperl/node9.html">taller de (bio)perl</A>.
+<UL>
+<LI>Evitan la repetici&#243;n de c&#243;digo, puesto que una subrutina puede ser invocada varias veces
+desde el mismo programa. 
+</LI>
+<LI>Favorecen la reutilizaci&#243;n de c&#243;digo. <A NAME="2014"></A>
+</LI>
+<LI>Facilitan la lectura y comprensi&#243;n de c&#243;digo fuente al ocultar los detalles menos importantes, 
+siempre y cuando los nombres de las subrutinas sean informativos de su funci&#243;n. 
+</LI>
+<LI>Ayudan a corregir errores, puesto que un error en una subrutina s&#243;lo se corrige una vez
+aunque esa subrutina sea llamada en diferentes puntos del programa principal. 
+</LI>
+</UL>
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html808"
+<A NAME="tex2html809"
   HREF="node46.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html814"
-  HREF="node42.html">
+<A NAME="tex2html815"
+  HREF="node41.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html816"
+<A NAME="tex2html817"
   HREF="node48.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

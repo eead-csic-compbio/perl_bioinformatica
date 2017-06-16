@@ -63,13 +63,13 @@ Asignaciones a tablas asociativas y consultas</A>
 
 <P>
 <PRE>
-my %tabla = ();                             # declaración de un tabla vacía
-%tabla = ('A'=&gt;'Alanina', 'C'=&gt;'Cisteína'); # asigna dos parejas llave=&gt;valor a tabla 
-%tabla = ('A','Alanina','C','Cisteína');    # lo mismo, asigna dos parejas llave=&gt;valor a tabla 
+my %tabla = ();                             # declaracion de un tabla vacia
+%tabla = ('A'=&gt;'Alanina', 'C'=&gt;'Cisteina'); # asigna dos parejas llave=&gt;valor a tabla 
+%tabla = ('A','Alanina','C','Cisteina');    # lo mismo, asigna dos parejas llave=&gt;valor a tabla 
 $tabla{'A'};                                # valor de la pareja cuya llave es 'A', en este caso 'Alanina'
 $tabla{'L'} = 'Leucina';                    # asigna una nueva pareja a la tabla, con llave 'L' y valor 'Leucina'
 
-$escalar = \%tabla;                         # referencia, dirección de %tabla
+$escalar = \%tabla;                         # referencia, direccion de %tabla
 $escalar-&gt;{'L'};                            # valor de la pareja cuya llave es 'L'
 %{$escalar};                                # lo mismo que %tabla
 </PRE>

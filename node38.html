@@ -86,7 +86,7 @@ abrir estos archivos.
 Sin embargo, a veces es realmente importante, como en el formato PDB, que cada elemento de datos
 ocupe un grupo de columnas espec&#237;fico de una l&#237;nea de archivo. En este caso es recomendable
 el uso de la funci&#243;n 
-<code>printf</code> <A NAME="863"></A>. 
+<code>printf</code> <A NAME="865"></A>. 
 
 <P>
 <code>printf</code> 
@@ -103,26 +103,26 @@ escalares separados por comas en la parte izquierda de la llamada a
 <code>printf</code>. 
 Adem&#225;s, cada referencia debe especificar el formato de salida deseado:
 <PRE>
-%c        # el carácter correspondiente a un código ASCII
+%c        # el caracter correspondiente a un codigo ASCII
 %s        # una cadena de caracteres (string)
-%d        # un número entero
-%f        # un número real con coma fija
+%d        # un entero
+%f        # un real con coma fija
 %g        # un real con decimales
-%e        # un real en notación científica exponencial, como 1.204e-23
+%e        # un real en notacion cientifica mantisa y exponente, como 1.204e-23
 %x        # un hexadecimal
 
 Modificadores:
 -      # justifica a la izquierda
 +      # obliga a imprimir el signo
-.      # fuerza un mínimo número de columnas para un campo
+.      # fuerza un min de columnas para un campo
 0      # usa ceros para justificar a la derecha
  
 Ejemplos:
  
 printf("%1.2f",$real);           # un real de que ocupe al menos 1 columna 
-                                 # y tenga un máximo de 2 decimales
+                                 # y tenga max 2 decimales
 
-printf("%.10s",$cadena);         # cadena de no más de 10 columnas
+printf("%.10s",$cadena);         # cadena de no mas de 10 columnas
 </PRE>
 
 <P>
@@ -133,17 +133,17 @@ que entenderemos mejor con un ejemplo:
 <P>
 <PRE>
 #!/usr/bin/perl -w 
-# Ejemplo escrito por Bruno Contreras en Julio de 2005
+# Ejemplo escrito por Bruno Contreras
 
 use strict; 
 
 my ($nombre,$especie,$peso);
 
 ## defino un formato y le pongo nombre
-# &lt; justifica a la izquierda, &gt; a la derecha , #. definen los campos de números
-# | se usaría para centrar contenido
+# &lt; justifica a la izquierda, &gt; a la derecha , #. definen los campos de numeros
+# | se usaria para centrar contenido
 format MIFORMATO =
-Proteína=@&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  Organismo=@&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;  Peso molecular=@###.#KDa
+Proteina=@&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  Organismo=@&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;  Peso molecular=@###.#KDa
            $nombre,             $especie,                   $peso
 .			   
 
@@ -158,7 +158,7 @@ $peso    = "124.456";
 
 write (MIFORMATO);
 ## imprime en el archivo de salida
-## 'Proteína=1lfu       Organismo=   M.musculus  Peso molecular= 124.5KDa'
+## 'Proteina=1lfu       Organismo=   M.musculus  Peso molecular= 124.5KDa'
 
 
 ## cierro el archivo de salida

@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Manipulaci&#243;n de una base de datos con SQL</TITLE>
-<META NAME="description" CONTENT="Manipulaci&#243;n de una base de datos con SQL">
+<TITLE>Sentencias SELECT</TITLE>
+<META NAME="description" CONTENT="Sentencias SELECT">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,9 +18,9 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="next" HREF="node85.html">
+<LINK REL="next" HREF="node83.html">
 <LINK REL="previous" HREF="node81.html">
-<LINK REL="up" HREF="node79.html">
+<LINK REL="up" HREF="node81.html">
 <LINK REL="next" HREF="node83.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,61 +40,159 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1192"
+<A NAME="tex2html1195"
   HREF="node81.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1198"
-  HREF="node79.html">
+<A NAME="tex2html1201"
+  HREF="node81.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1200"
+<A NAME="tex2html1203"
   HREF="node83.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1201"
-  HREF="node83.html">Sentencias SELECT</A></b>  Arriba: <b><A NAME="tex2html1199"
-  HREF="node79.html">DBI</A></b>  Anterior: <b><A NAME="tex2html1193"
-  HREF="node81.html">Conexi&#243;n a una base de</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1204"
+  HREF="node83.html">Otras sentencias</A></b>  Arriba: <b><A NAME="tex2html1202"
+  HREF="node81.html">Manipulaci&#243;n de una base de</A></b>  Anterior: <b><A NAME="tex2html1196"
+  HREF="node81.html">Manipulaci&#243;n de una base de</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00413000000000000000">
-Manipulaci&#243;n de una base de datos con SQL</A>
-</H2>
+<H3><A NAME="SECTION00413100000000000000">
+Sentencias SELECT</A>
+</H3>
 
 <P>
-Una vez que hemos establecido una conexi&#243;n con una base de datos podemos utilizar el objeto DBI 
-creado para consultarla y manipularla por medio de comandos SQL, siempre y cuando tengamos
-los permisos necesarios. 
+Usaremos el m&#233;todo 
+<code>DBI::prepare()</code> 
+para crear un objeto manipulador
+( <i> statement handler  </i>) <A NAME="2469"></A> y luego el m&#233;todo 
+<code>execute()</code> 
+de este nuevo objeto para efectivamente manipular la base de datos.
 
 <P>
-Os recomiendo que mir&#233;is el libro 
-<A NAME="tex2html104"
-  HREF="http://proquest.safaribooksonline.com/1565926994">Programming the Perl DBI</A>
-para ver un repertorio m&#225;s amplio de formas de interacci&#243;n con bases de datos.
+<PRE>
+#!/usr/bin/perl -w
+# Ejemplo escrito por Bruno Contreras Moreira
+
+use strict;
+use DBI;
+
+## por Dios, trata de conectarlo, Carlos
+my $conexion = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave",{
+      PrintError =&gt; 0,   ### avisa si hay errores mediante warn
+      RaiseError =&gt; 1    ### avisa y termina si hay errores mediante die
+  }
+);
+
+## ahora manipula la base de datos mediante consultas SQL
+my $tabla = "blast";
+my $consulta="SELECT hit FROM $tabla WHERE evalue &lt; 1e-03";
+my $manipulador = $conexion-&gt;prepare($consulta);  # normalmente, solo devuelve un objeto 
+                                                  # manipulador si la consulta es valida																  
+
+$manipulador-&gt;execute();
+while (my @datos=$manipulador-&gt;fetchrow_array)    # puedes usar fetchrow_hash con columnas como claves
+{
+	# haz algo con estos datos, como imprimirlos
+	foreach my $dato (@datos)
+	{
+		print "$dato,";
+	}
+}
+$manipulador-&gt;finish();
+
+$conexion-&gt;disconnect();
+</PRE>
 
 <P>
-<BR><HR>
-<!--Table of Child-Links-->
-<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+Otra manera &#250;til de capturar la salida de una consulta ser&#237;a:
+<PRE>
+use strict;
+use DBI;
 
-<UL CLASS="ChildLinks">
-<LI><A NAME="tex2html1202"
-  HREF="node83.html">Sentencias SELECT</A>
-<LI><A NAME="tex2html1203"
-  HREF="node84.html">Otras sentencias</A>
-</UL>
-<!--End of Table of Child-Links-->
+my $conexion = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave",{PrintError,0,RaiseError,1});
+
+my $consulta="SELECT * FROM blast WHERE evalue &lt; 1e-03";
+my $manipulador = $conexion-&gt;prepare($consulta);  															  
+
+$manipulador-&gt;execute();
+my $ref_arreglo = $manipulador-&gt;fetchall_arrayref();  # referencia a un arreglo que contiene
+                                                      # los resultados
+
+$conexion-&gt;disconnect();
+</PRE>
+
+<P>
+Otra manera alternativa de mostrar los resultados de una consulta SQL SELECT podr&#237;a ser:
+<PRE>
+use strict;
+use DBI;
+
+my $conexion = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave",{PrintError,0,RaiseError,1});
+
+## ahora manipula la base de datos mediante consultas SQL
+my $tabla = "blast";
+my $consulta="SELECT hit FROM $tabla WHERE evalue &lt; 1e-03";
+my $manipulador = $conexion-&gt;prepare($consulta);  															  
+
+$manipulador-&gt;execute();
+# imprime todos los resultados obtenidos de la consulta
+$manipulador-&gt;dump_results();
+
+# guarda los resultados en un archivo en formato de 80 columnas
+$manipulador-&gt;execute();
+open(CONSULTA,"&gt;resultados.txt") || die "no puedo crear resultados.txt\n";
+$manipulador-&gt;dump_results(80, "\n", ':', \*CONSULTA);
+
+$conexion-&gt;disconnect();
+</PRE>
+
+<P>
+Finalmente os muestro una forma de hacer tus programas con DBI m&#225;s comprensibles, usando el
+método <code>bind_columns</code>:
+<PRE>
+use strict;
+use DBI;
+
+my $conexion = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave",{PrintError,0,RaiseError,1});
+
+## ahora manipula la base de datos mediante consultas SQL
+my ($hit,$evalue); # columnas de $tabla
+my $tabla = "blast";
+my $consulta="SELECT hit,evalue FROM $tabla WHERE evalue &lt; 1e-03";
+my $manipulador = $conexion-&gt;prepare($consulta);  															  
+
+$manipulador-&gt;execute();
+
+# asocia columnas de salida con sus nombres
+$manipulador-&gt;bind_col( 1, \$hit );
+$manipulador-&gt;bind_col( 2, \$evalue );
+
+# procesa la salida
+while ($manipulador-&gt;fetch()) 
+{
+	print "$hit  $evalue\n";
+}
+
+$conexion-&gt;disconnect();
+</PRE>
+
+<P>
+OJO: Para manipular variables de tama&#241;o ilimitado en tablas (tipos LONG y LOB) hay que hacer consultas
+SELECT modificadas.
+
+<P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1192"
+<A NAME="tex2html1195"
   HREF="node81.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1198"
-  HREF="node79.html">
+<A NAME="tex2html1201"
+  HREF="node81.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1200"
+<A NAME="tex2html1203"
   HREF="node83.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

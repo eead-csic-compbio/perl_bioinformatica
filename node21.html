@@ -68,17 +68,17 @@ enzimas de restricci&#243;n que quer&#225;is:
 <P>
 <PRE> 
 #!/usr/bin/perl -w 
-# Ejercicio escrito por Bruno Contreras en Julio de 2005
+# Ejercicio escrito por Bruno Contreras
 
 use strict; 
 
-my @enz_sitios = ('GGATCC','CC(A|T)GG'); # también sirve 'CC[AT]GG' o 'CC[A|T]GG'
+my @enz_sitios = ('GGATCC','CC(A|T)GG'); # expresion regular: 'CC[AT]GG' 
 my %enz_nombres = ('GGATCC','BamHI','CC(A|T)GG','EcoRI');
 my $DNA = "ATCGCGACCAGGTTAGCGCGCGATTATTATATATCGATATCGCGGCGATATATCTCGAGAGTATATGGATCCTGGATAGCTAGATCATAGA";
 
-# 1) obtengo la secuencia de la hebra de DNA complementaria, no olvidando invertirla con la función reverse
+# 1) obtengo la secuencia de la hebra de DNA complementaria, no olvidando invertirla con la funcion reverse
 
-# 2) recorro el vector de enzimas de restricción mediante un bucle foreach, buscando sitios
+# 2) recorro el vector de enzimas de restriccion mediante un bucle foreach, buscando sitios
 # para cada enzima, mostrando y contando los sitios encontrados
 # PISTA: para mostrar los sitios encontrados usar la variable especial $1 
 

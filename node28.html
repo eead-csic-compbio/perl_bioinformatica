@@ -75,7 +75,7 @@ una de las matrices m&#225;s conocidas es BLOSUM62.
 
 <P>
 <BR><P></P>
-<DIV ALIGN="CENTER"><A NAME="943"></A>
+<DIV ALIGN="CENTER"><A NAME="918"></A>
 <TABLE>
 <CAPTION><STRONG>Tabla 2.1:</STRONG>
 
@@ -83,10 +83,8 @@ BLOSUM62, muestra estimaciones del valor evolutivo del cambio de un amino&#225;c
 prote&#237;na. Por ejemplo, una mutaci&#243;n de alanina (A) a asp&#225;rtico (D) est&#225; penalizada con un -2.</CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
-<TT><SMALL CLASS="SCRIPTSIZE">
-</SMALL></TT><TABLE CELLPADDING=3 ALIGN="CENTER">
-<TR><TD ALIGN="RIGHT"><TT><SMALL CLASS="SCRIPTSIZE">
-</SMALL></TT></TD>
+<TT></TT><TABLE CELLPADDING=3 ALIGN="CENTER">
+<TR><TD ALIGN="RIGHT"><TT></TT></TD>
 <TD ALIGN="RIGHT"><TT><SMALL CLASS="SCRIPTSIZE">A</SMALL></TT></TD>
 <TD ALIGN="RIGHT"><TT><SMALL CLASS="SCRIPTSIZE">R</SMALL></TT></TD>
 <TD ALIGN="RIGHT"><TT><SMALL CLASS="SCRIPTSIZE">N</SMALL></TT></TD>
@@ -777,9 +775,9 @@ de sus propiedades bioqu&#237;micas.
 <P>
 <PRE> 
 #!/usr/bin/perl -w 
-# Ejercicio escrito por Bruno Contreras en Julio de 2005
+# Ejercicio escrito por Bruno Contreras
 
-# Programa que calcula una matriz de sustitución de aminoácidos basándose únicamente en el parecido de 
+# Programa que calcula una matriz de sustitucion de aminoacidos en base al parecido de 
 # sus codones de tRNA
 
 use strict; 
@@ -816,7 +814,7 @@ my $MAXPUNTUACION = 0; # máximo valor de la matriz de sustitución
 my ($aa1,$aa2,$cod1,$cod2,@codones1,@codones2);
 my ($dist,$distmedia);
 
-print "#  Matriz de sustitución de aminoácidos basada en el código genético\n";
+print "#  Matriz de sustitucion de aminoacidos basada en el codigo genetico\n";
 print "   A  R  N  D  C  Q  E  G  H  I  L  K  M  F  P  S  T  W  Y  V  X\n";
 	
 foreach $aa1 (@aa)
@@ -836,7 +834,7 @@ foreach $aa1 (@aa)
 			{
 				foreach $cod2 (@codones2)
 				{
-					# cuenta el número de cambios que hay que hacer para pasar de un codón a otro (máximo 3)
+					# cuenta los cambios que hay que hacer para pasar de un codon a otro (max 3)
 					$dist = 0;
 					if(substr($cod1,0,1) ne substr($cod2,0,1)){ $dist++; }
 					if(substr($cod1,1,1) ne substr($cod2,1,1)){ $dist++; }

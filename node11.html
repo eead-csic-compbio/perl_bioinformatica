@@ -64,26 +64,26 @@ Asignaciones y consultas a arreglos o vectores
 
 <P>
 <PRE>
-my @arreglo = ();                # declaración de un arreglo vacío
-my (@arreglo,$escalar) = ((),0); # declaración de un arreglo vacío y un escalar con valor 0
+my @arreglo = ();                # declaracion de un arreglo vacio
+my (@arreglo,$escalar) = ((),0); # declaracion de un arreglo vacio y un escalar con valor 0
 @arreglo = (1,2,3);              # arreglo de enteros
 @arreglo = (1,2,'tres');         # arreglo de enteros y cadenas
 @arreglo = (1..25);              # arreglo con los 25 primeros naturales
-$arreglo[12];                    # elemento número 13 de @arreglo
-$arreglo[12] = 'escalar';        # asigna un escalar al elemento número 13 de @arreglo
+$arreglo[12];                    # elemento numero 13 de @arreglo
+$arreglo[12] = 'escalar';        # asigna un escalar al elemento 13 de @arreglo
 
 @arreglo =((1,2),(3,4)); # arreglo de una dimension con 4 elementos
 @arreglo =[(1,2),(3,4)]; # arreglo con dos dimensiones 2x2
 $arreglo[0][1];          # elemento con coordenadas 0,1 de la matriz bidimensional @arreglo
 
 @arreglo = @copia;    # copia de arreglos
-$escalar = \@arreglo; # referencia, dirección de @arreglo
-$escalar-&gt;[12];       # elemento número 13 de @arreglo
-$$escalar[12];        # lo mismo, elemento número 13 de @arreglo
+$escalar = \@arreglo; # referencia, direccion de @arreglo
+$escalar-&gt;[12];       # elemento numero 13 de @arreglo
+$$escalar[12];        # lo mismo, elemento numero 13 de @arreglo
 @{$escalar};          # es lo mismo que @arreglo
-$arreglo[$#arreglo];  # úlimo elemento de @arreglo
+$arreglo[$#arreglo];  # ultimo elemento de @arreglo
 @arreglo[3,4,5];      # subarreglo con 3 elementos
-scalar(@arreglo);     # en contexto escalar, el número de elementos del arreglo
+scalar(@arreglo);     # en contexto escalar, el numero de elementos del arreglo
 </PRE>
 
 <P>

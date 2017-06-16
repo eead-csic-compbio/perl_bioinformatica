@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Subrutinas que devuelven valores</TITLE>
-<META NAME="description" CONTENT="Subrutinas que devuelven valores">
+<TITLE>Paso de par&#225;metros por valor y por referencia</TITLE>
+<META NAME="description" CONTENT="Paso de par&#225;metros por valor y por referencia">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -19,8 +19,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
 <LINK REL="next" HREF="node46.html">
-<LINK REL="previous" HREF="node43.html">
-<LINK REL="up" HREF="node42.html">
+<LINK REL="previous" HREF="node44.html">
+<LINK REL="up" HREF="node41.html">
 <LINK REL="next" HREF="node46.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,131 +40,167 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html788"
+<A NAME="tex2html789"
   HREF="node44.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html794"
-  HREF="node42.html">
+<A NAME="tex2html795"
+  HREF="node41.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html796"
+<A NAME="tex2html797"
   HREF="node46.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html797"
-  HREF="node46.html">Paso de par&#225;metros por valor</A></b>  Arriba: <b><A NAME="tex2html795"
-  HREF="node42.html">Subrutinas y paso de par&#225;metros</A></b>  Anterior: <b><A NAME="tex2html789"
-  HREF="node44.html">Ejemplo de alcance de variables</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html798"
+  HREF="node46.html">Funciones recursivas</A></b>  Arriba: <b><A NAME="tex2html796"
+  HREF="node41.html">Subrutinas y paso de par&#225;metros</A></b>  Anterior: <b><A NAME="tex2html790"
+  HREF="node44.html">Subrutinas que devuelven valores</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00312000000000000000">
-Subrutinas que devuelven valores</A>
+<H2><A NAME="SECTION00313000000000000000"></A> <A NAME="pasoref"></A>
+<BR>
+Paso de par&#225;metros por valor y por referencia
 </H2>
 
 <P>
-Ya que sabemos c&#243;mo declarar e invocar subrutinas, ahora veremos c&#243;mo podemos escribir subrutinas 
-que devuelvan valores. Una  vez m&#225;s, creo que un ejemplo deja todo m&#225;s claro:
+En los ejemplos vistos hasta ahora, cuando invocamos una subrutina y le pasamos par&#225;metros
+en realidad le estamos pasando una lista de datos, que se llama 
+<code>@_</code> . 
+Cuando pasamos arreglos o tablas como par&#225;metros en realidad los estamos vertiendo
+elemento por elemento en 
+<code>@_</code> , 
+lo cual parece un poco est&#250;pido a veces, con el 
+trabajo que nos dio previamente llenarlos. De hecho, si queremos pasar 
+por ejemplo dos arreglos a la vez, ser&#225; imposible que la subrutina que los reciba
+sepa donde termina uno y empieza el otro, porque lo que est&#225; recibiendo es 
+<code>@_</code> . 
+
+<P>
+Por esta raz&#243;n, cuando pasamos varios par&#225;metros y uno de ellos es un arreglo, debemos
+poner al arreglo en &#250;ltima posici&#243;n, para poder identificarlos despu&#233;s en la subrutina.
+Lo mismo se aplica a los valores que devuelve una subrutina con 
+<code>return</code>.
 
 <P>
 <PRE>
-#!/usr/bin/perl -w 
-# Ejemplo escrito por Bruno Contreras en Julio de 2005
+## forma correcta de pasar varios parametros y recibir mas de un resultado 
 
-use strict; 
+my ($result1,@result2) = subrutina($arg1,$arg2,@arg3);
 
-## variables del programa principal
-my $queryseq = "MARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYKKNIGKFQEEANIYAAKTAVTA";
-my $subjectseq = "MARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKKNIGKFQEEANIYAAKTAVTA";
-
-## llamada a printf que a su vez llama a dos subrutinas que devuelven valores
-printf("Alineamiento %2.2f :\n%s\n%s\n%s\n", 
-	calculaIdentidad($queryseq,$subjectseq),  # llamada a una subrutina
-	decoraAlineamiento($queryseq,$subjectseq));  # llamada a otra subrutina
-
-## no siempre imprimiremos los valores devueltos por una subrutina, a veces simplemente los
-## guardaremos:
-
-my ($dev1,$dev2,$dev3) = decoraAlineamiento($queryseq,$subjectseq);
-
-
-######## declaraciones de subrutinas ######################################
-
-sub calculaIdentidad     
+sub subrutina
 {
-	# parámetros
-	my ($sec1,$sec2) = @_;
-	
-	# variables locales
-	my ($id,$pos,$long) = (0,0,length($sec1));
-	
-	for($pos=0;$pos&lt;$long;$pos++)
-	{
-		if(substr($sec1,$pos,1) eq substr($sec2,$pos,1))
-		{
-			$id++;
-		}
-	}
-	
-	return sprintf("%2.2f",$id/$long);  # devuelve un número real
+	my($sarg1,$sarg2,@sarg3) = @_; 
+
+	my ($sresult1,@sresult2);
+
+	return ($result1,@result2);
 }
 
-###########################################################################
+## en cambio, esto no funciona
 
-sub decoraAlineamiento
+my (@result2,$result1) = subrutina($arg1,@arg3,$arg3);  # $result1 queda sin asignar
+
+sub subrutina
 {
-	# parámetros
-	my ($sec1,$sec2) = @_;
-	
-	# variables locales
-	my ($decoracion,$pos,$long) = ("",0,length($sec1));
-	
-	for($pos=0;$pos&lt;$long;$pos++)
-	{
-		if(substr($sec1,$pos,1) eq substr($sec2,$pos,1))
-		{
-			$decoracion .= '|';
-		}
-		else
-		{
-			$decoracion .= ' ';
-		}
-	}
-	
-	return ($sec1,$decoracion,$sec2); # devuelve tres cadenas de caracteres
+	my($sarg1,@sarg3,$sarg3) = @_;  # $sarg3 queda sin asignar
+
+	my ($sresult1,@sresult2);
+
+	return (@result2,$result1);
 }
 </PRE>
 
 <P>
-Es com&#250;n llamar  <i> funciones  </i> <A NAME="2038"></A> a las subrutinas que devuelven valores 
-y  <i> procedimientos  </i> <A NAME="1497"></A> a las que no. Si una subrutina contiene
-la funci&#243;n 
-<code>return</code>, 
-<A NAME="1499"></A> entonces ser&#225; una funci&#243;n. 
+La forma m&#225;s econ&#243;mica de pasar par&#225;metros a subrutinas es pasarlos como referencias (ver secci&#243;n 
+<A HREF="node9.html#variab_tipos">2.3</A>). De esta manera no pasamos los datos en s&#237;, si no la direcci&#243;n que ocupan en 
+memoria. As&#237; no es necesario copiar todos los datos a 
+<code>@_</code>  
+y la subrutina que reciba las 
+referencias puede acceder a los datos en su organizaci&#243;n original, ya sean escalares, arreglos 
+o tablas asociativas. 
 
 <P>
-A diferencia de otros lenguajes, en Perl una funci&#243;n puede devolver m&#225;s de un valor, como hab&#233;is 
-comprobado con 
-<code>decoraAlineamiento</code>.
+Otra aplicaci&#243;n de las referencias par&#225;metro es que permiten modificar de forma permanente, no local, 
+los datos pasados como argumento. Finalmente, el paso por referencias permite pasar como par&#225;metro
+otras subrutinas, lo cual puede ser &#250;til en ocasiones. 
 
 <P>
-A diferencia de otros lenguajes, en Perl los procedimientos pueden invocarse de manera diferente
-a las funciones, usando 
-<code>&amp;procedimiento;</code> 
-en vez de 
-<code>procedimiento();</code>.
+Veamos un ejemplo:
+
+<P>
+<PRE>
+#!/usr/bin/perl -w 
+# Ejemplo escrito por Bruno Contreras
+
+use strict; 
+
+## variables del programa principal 
+my ($escalar , @arreglo1 , @arreglo2);
+
+## asignacion de valores
+$escalar = 0;
+@arreglo1 = (1,2,3);
+@arreglo2 = (4,5,6);
+
+## llamada a subrutina y conversion de la referencia recibida a un arreglo
+my @resultado = @{ lee_arreglos( $escalar , \@arreglo1 , \@arreglo2 )  }; 
+
+print "resultado: $resultado[0] , $resultado[1] , $resultado[2]\n";
+
+
+############### subrutinas ##################
+
+sub lee_arreglos
+{
+	my ($sarg1,$rarreglo1,$rarreglo2) = @_;
+
+	# variables locales
+	my @res = ( $sarg1, $rarreglo1-&gt;[0], $rarreglo2-&gt;[0] );
+	
+	return \@res;  # devuelve una referencia a un arreglo como resultado
+}
+</PRE>
+
+<P>
+Otro ejemplo es esta funci&#243;n muy &#250;til para reordenar o barajar vectores  <i> in situ  </i>:
+<PRE>
+#!/usr/bin/perl -w 
+
+use strict; 
+
+my @vector = (1,2,3,4,5,6);
+
+fisher_yates(\@vector);
+
+foreach my $valor (@vector){ print "$valor\n" }
+
+sub fisher_yates 
+{
+	# http://www.perlmonks.org/?node_id=199901
+
+	my ($ref_baraja) = @_;  
+	my ($cartai,$cartaj) = (scalar(@$ref_baraja),0); 
+	
+	while(--$cartai) 
+	{ 
+		$cartaj = int(rand($cartai+1)); 
+		@$ref_baraja[$cartai,$cartaj] = @$ref_baraja[$cartaj,$cartai]; 
+	}
+}
+</PRE>
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html788"
+<A NAME="tex2html789"
   HREF="node44.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html794"
-  HREF="node42.html">
+<A NAME="tex2html795"
+  HREF="node41.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html796"
+<A NAME="tex2html797"
   HREF="node46.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Ejemplo de alcance de variables</TITLE>
-<META NAME="description" CONTENT="Ejemplo de alcance de variables">
+<TITLE>Subrutinas que devuelven valores</TITLE>
+<META NAME="description" CONTENT="Subrutinas que devuelven valores">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,8 +18,9 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="previous" HREF="node43.html">
-<LINK REL="up" HREF="node43.html">
+<LINK REL="next" HREF="node45.html">
+<LINK REL="previous" HREF="node42.html">
+<LINK REL="up" HREF="node41.html">
 <LINK REL="next" HREF="node45.html">
 <!--google-->
 <script type="text/javascript">
@@ -39,84 +40,130 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html780"
+<A NAME="tex2html779"
   HREF="node43.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html784"
-  HREF="node43.html">
+<A NAME="tex2html785"
+  HREF="node41.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html786"
+<A NAME="tex2html787"
   HREF="node45.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html787"
-  HREF="node45.html">Subrutinas que devuelven valores</A></b>  Arriba: <b><A NAME="tex2html785"
-  HREF="node43.html">Declaraci&#243;n de subrutinas y alcance</A></b>  Anterior: <b><A NAME="tex2html781"
-  HREF="node43.html">Declaraci&#243;n de subrutinas y alcance</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html788"
+  HREF="node45.html">Paso de par&#225;metros por valor</A></b>  Arriba: <b><A NAME="tex2html786"
+  HREF="node41.html">Subrutinas y paso de par&#225;metros</A></b>  Anterior: <b><A NAME="tex2html780"
+  HREF="node43.html">Ejemplo de alcance de variables</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H3><A NAME="SECTION00311100000000000000">
-Ejemplo de alcance de variables</A>
-</H3>
+<H2><A NAME="SECTION00312000000000000000">
+Subrutinas que devuelven valores</A>
+</H2>
 
 <P>
-A parte de 
-<code>@_</code> , 
-las subrutinas pueden acceder a otras variables globales. Para probar
-esto os pido que ejecut&#233;is este programita, observ&#233;is la salida y luego lo modifiqu&#233;is para 
-demostrar que la subrutina puede hacer exactamente los mismos c&#225;lculos recibiendo como
-par&#225;metros los datos necesarios. ¿No os parece que se hace m&#225;s f&#225;cil comprender el 
-funcionamiento de 
-<code>printBLAST</code> 
-en la versi&#243;n modificada, ya que no hay que buscar en el 
-c&#243;digo de donde vienen las variables utilizadas?
+Ya que sabemos c&#243;mo declarar e invocar subrutinas, ahora veremos c&#243;mo podemos escribir subrutinas 
+que devuelvan valores. Una  vez m&#225;s, creo que un ejemplo deja todo m&#225;s claro:
 
 <P>
 <PRE>
 #!/usr/bin/perl -w 
-# Ejemplo escrito por Bruno Contreras en Julio de 2005
+# Ejemplo escrito por Bruno Contreras 
 
 use strict; 
 
-my ($evalue,$identities,$queryseq,$subjectseq);
+## variables del programa principal
+my $queryseq = "MARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYKKNIGKFQEEANIYAAKTAVTA";
+my $subjectseq = "MARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKKNIGKFQEEANIYAAKTAVTA";
 
-# 100 líneas de código
-$evalue = 4e-34;
-$identities = 87;
-$queryseq = "MARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYKKNIGKFQEEANIYAAKTAVTA";
-$subjectseq = "MARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKKNIGKFQEEANIYAAKTAVTA";
+## llamada a printf que a su vez llama a dos subrutinas que devuelven valores
+printf("Alineamiento %2.2f :\n%s\n%s\n%s\n", 
+	calculaIdentidad($queryseq,$subjectseq),  # llamada a una subrutina
+	decoraAlineamiento($queryseq,$subjectseq));  # llamada a otra subrutina
 
-# programa principal
-my @blastdata = ($evalue,$identities,$queryseq,$subjectseq);
+## no siempre imprimiremos los valores devueltos por una subrutina, a veces simplemente los
+## guardaremos:
 
-# 100 líneas de código
+my ($dev1,$dev2,$dev3) = decoraAlineamiento($queryseq,$subjectseq);
 
-printBLAST();
-
-# 500 líneas de código
 
 ######## declaraciones de subrutinas ######################################
 
-sub printBLAST     
+sub calculaIdentidad     
 {
-	print "evalue $blastdata[0]\n";
-	print "alignment:\n$blastdata[2]\n$blastdata[3]\n";                      
+	# parametros
+	my ($sec1,$sec2) = @_;
+	
+	# variables locales
+	my ($id,$pos,$long) = (0,0,length($sec1));
+	
+	for($pos=0;$pos&lt;$long;$pos++)
+	{
+		if(substr($sec1,$pos,1) eq substr($sec2,$pos,1))
+		{
+			$id++;
+		}
+	}
+	
+	return sprintf("%2.2f",$id/$long);  # devuelve un real
+}
+
+###########################################################################
+
+sub decoraAlineamiento
+{
+	my ($sec1,$sec2) = @_;
+	
+	# variables locales
+	my ($decoracion,$pos,$long) = ("",0,length($sec1));
+	
+	for($pos=0;$pos&lt;$long;$pos++)
+	{
+		if(substr($sec1,$pos,1) eq substr($sec2,$pos,1))
+		{
+			$decoracion .= '|';
+		}
+		else
+		{
+			$decoracion .= ' ';
+		}
+	}
+	
+	return ($sec1,$decoracion,$sec2); # devuelve tres cadenas de caracteres
 }
 </PRE>
 
 <P>
+Es com&#250;n llamar  <i> funciones  </i> <A NAME="2012"></A> a las subrutinas que devuelven valores 
+y  <i> procedimientos  </i> <A NAME="1466"></A> a las que no. Si una subrutina contiene
+la funci&#243;n 
+<code>return</code>, 
+<A NAME="1468"></A> entonces ser&#225; una funci&#243;n. 
+
+<P>
+A diferencia de otros lenguajes, en Perl una funci&#243;n puede devolver m&#225;s de un valor, como hab&#233;is 
+comprobado con 
+<code>decoraAlineamiento</code>.
+
+<P>
+A diferencia de otros lenguajes, en Perl los procedimientos pueden invocarse de manera diferente
+a las funciones, usando 
+<code>&amp;procedimiento;</code> 
+en vez de 
+<code>procedimiento();</code>.
+
+<P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html780"
+<A NAME="tex2html779"
   HREF="node43.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html784"
-  HREF="node43.html">
+<A NAME="tex2html785"
+  HREF="node41.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html786"
+<A NAME="tex2html787"
   HREF="node45.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

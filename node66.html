@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Utilizaci&#243;n de paquetes y m&#243;dulos desde un programa</TITLE>
-<META NAME="description" CONTENT="Utilizaci&#243;n de paquetes y m&#243;dulos desde un programa">
+<TITLE>Ejercicio de creaci&#243;n de paquetes</TITLE>
+<META NAME="description" CONTENT="Ejercicio de creaci&#243;n de paquetes">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,7 +20,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node67.html">
 <LINK REL="previous" HREF="node65.html">
-<LINK REL="up" HREF="node62.html">
+<LINK REL="up" HREF="node61.html">
 <LINK REL="next" HREF="node67.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,66 +40,78 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1016"
+<A NAME="tex2html1017"
   HREF="node65.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1022"
-  HREF="node62.html">
+<A NAME="tex2html1023"
+  HREF="node61.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1024"
+<A NAME="tex2html1025"
   HREF="node67.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1025"
-  HREF="node67.html">Ejercicio de creaci&#243;n de paquetes</A></b>  Arriba: <b><A NAME="tex2html1023"
-  HREF="node62.html">Paquetes y m&#243;dulos</A></b>  Anterior: <b><A NAME="tex2html1017"
-  HREF="node65.html">Creaci&#243;n de paquetes y m&#243;dulos</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1026"
+  HREF="node67.html">Algunos paquetes y programas Perl</A></b>  Arriba: <b><A NAME="tex2html1024"
+  HREF="node61.html">Paquetes y m&#243;dulos</A></b>  Anterior: <b><A NAME="tex2html1018"
+  HREF="node65.html">Utilizaci&#243;n de paquetes y m&#243;dulos</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00344000000000000000">
-Utilizaci&#243;n de paquetes y m&#243;dulos desde un programa</A>
+<H2><A NAME="SECTION00345000000000000000">
+Ejercicio de creaci&#243;n de paquetes</A>
 </H2>
 
 <P>
-Como ya vimos, un paquete se incluye en un programa por medio de 
-<code>use paquete;</code> .
-Cuando el int&#233;rprete Perl llega a esa l&#237;nea, normalmente en el encabezado de un programa,
-busca un archivo que se llame 
-<code>paquete.pm</code> 
-en una serie de directorios, que incluyen el directorio actual, almacenados en el arreglo especial 
-<code>@INC</code>. 
-
-<P>
-Podemos comprobar el contenido de 
-<code>@INC</code> 
-simplemente imprimi&#233;ndolo con 
-<code>print @INC;</code> . 
-
-<P>
-Si queremos utilizar un m&#243;dulo o paquete que no se encuentra en 
-<code>@INC</code>, 
-deberemos a&#241;adir estas 
-l&#237;neas antes de llamar a 
-<code>use</code>:
+Para que vay&#225;is practicando con estas cosas os voy a pedir que escrib&#225;is el paquete 
+<code>contactos.pm</code>. 
+Se trata de un paquete relacionado con el c&#225;lculo de mapas de
+contactos de prote&#237;nas. Un mapa de contactos para una prote&#237;na con N amino&#225;cidos
+es una matriz binaria NxN donde en cada celda (coordenadas i,j) habr&#225; un '+' si los 
+amino&#225;cidos i y j est&#225;n a menos de 7&#197; uno del otro y un ' ' en caso contrario:
 <PRE>
-use lib "/home/usuario/modulos/"
-use strict;
-use mimodulo;
+001                       ++++                  +     
+002                       +++++                 +
+003                          +++++              +
+...
 </PRE>
+
+<P>
+Vuestro paquete deber&#225; contener al menos 4 subrutinas que:
+
+<UL>
+<LI>lean un archivo PDB (leePDB)
+</LI>
+<LI>se queden s&#243;lo con la primera cadena de prote&#237;na (toma1Cadena)
+</LI>
+<LI>calcula la matriz de contactos (calcMatriz)
+</LI>
+<LI>imprima en salida est&#225;ndar la matriz (imprimeMatriz) 
+</LI>
+</UL>
+
+<P>
+Si quer&#233;is usar el programa 
+<code>h2xs</code> 
+os recomiendo esta
+<A NAME="tex2html64"
+  HREF="http://mathforum.org/~ken/perl_modules.html">gu&#237;a</A>. 
+
+<P>
+Una vez que teng&#225;is el m&#243;dulo listo y documentado, escribid un programa que lo invoque y utilice
+que sirva de ejemplo. 
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1016"
+<A NAME="tex2html1017"
   HREF="node65.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1022"
-  HREF="node62.html">
+<A NAME="tex2html1023"
+  HREF="node61.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1024"
+<A NAME="tex2html1025"
   HREF="node67.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

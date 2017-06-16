@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Algunas aplicaciones en Bioinform&#225;tica</TITLE>
-<META NAME="description" CONTENT="Algunas aplicaciones en Bioinform&#225;tica">
+<TITLE>Material de apoyo en Internet</TITLE>
+<META NAME="description" CONTENT="Material de apoyo en Internet">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,8 +18,9 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="previous" HREF="node90.html">
-<LINK REL="up" HREF="node89.html">
+<LINK REL="next" HREF="node92.html">
+<LINK REL="previous" HREF="node88.html">
+<LINK REL="up" HREF="bioinfoPerl.html">
 <LINK REL="next" HREF="node92.html">
 <!--google-->
 <script type="text/javascript">
@@ -39,131 +40,136 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1279"
+<A NAME="tex2html1278"
   HREF="node90.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1283"
-  HREF="node89.html">
+<A NAME="tex2html1284"
+  HREF="bioinfoPerl.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1285"
+<A NAME="tex2html1286"
   HREF="node92.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1286"
-  HREF="node92.html">Material de apoyo en Internet</A></b>  Arriba: <b><A NAME="tex2html1284"
-  HREF="node89.html">Perl desde el terminal: one</A></b>  Anterior: <b><A NAME="tex2html1280"
-  HREF="node90.html">Ejemplos generales</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1287"
+  HREF="node92.html">Sobre este documento...</A></b>  Arriba: <b><A NAME="tex2html1285"
+  HREF="bioinfoPerl.html">Perl en bioinform&#225;tica</A></b>  Anterior: <b><A NAME="tex2html1279"
+  HREF="node90.html">Algunas aplicaciones en Bioinform&#225;tica</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00620000000000000000"></A> <A NAME="2862"></A>
+<H1><A NAME="SECTION00700000000000000000"></A> <A NAME="apoyo"></A>
 <BR>
-Algunas aplicaciones en Bioinform&#225;tica
+Material de apoyo en Internet
 </H1>
 
 <P>
-Los ejemplos previos pueden ser de utilidad en diferentes aplicaciones; los siguientes se orientan ya a tareas habituales en la Bioinform&#225;tica,
-y algunas se inspiran en c&#225;digo del repositorio <A NAME="tex2html135"
-  HREF="http://sysbio.harvard.edu/csb/resources/computational/scriptome">Scriptome</A>:
+En espa&#241;ol:
 
-<P>
-
-<OL>
-<LI>cuenta las secuencias de un archivo FASTA (equivalente a <code>grep -c "^&gt;" archivo.fasta | wc -l </code>:
-
-<P>
-<code>perl -lne 'if(/^&gt;/){ $total++ } END{ print "secuencias=$total"}'</code>
-
-<P>
+<UL>
+<LI><A NAME="tex2html143"
+  HREF="http://bioinfoperl.blogspot.com.es">#!/perl/bioinfo</A>
 </LI>
-<LI>lee un archivo FASTA y formatea las secuencias en una sola l&#237;nea (ademas las ordena alfab&#233;ticamente por sus descripciones):
-
-<P>
-<code>perl -lne 'if(/^(&gt;.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}'</code>
-
-<P>
+<LI><A NAME="tex2html144"
+  HREF="http://geneura.ugr.es/~jmerelo/tutoriales/perl-apresurados/t1.html">Perl para apresurados</A>
 </LI>
-<LI>elimina secuencias id&#233;nticas en un archivo FASTA:
-
-<P>
-<code>perl -lne 'if(/^(&gt;.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (keys(%fa)){ print "$s\n$fa{$s}\n" if(!$uniq{$fa{$s}}); $uniq{$fa{$s}}=1 }}'</code>
-
-<P>
+<LI><A NAME="tex2html145"
+  HREF="http://perlenespanol.com">http://perlenespanol.com</A>
 </LI>
-<LI>elimina secuencias de cierta longitud de un archivo FASTA:
+</UL>
 
 <P>
-<code>perl -lne 'if(/^(&gt;.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (keys(%fa)){ print "$s\n$fa{$s}\n" if(length($fa{$s})&gt;100) }}'</code>
+En ingl&#233;s:
 
-<P>
+<UL>
+<LI><A NAME="tex2html146"
+  HREF="http://www.rexswain.com/perl5.html">Rex Swain's Perl 5 Reference Guide</A>
+(la mejor para consultas puntuales)
 </LI>
-<LI>descarga un archivo GenBank, con ayuda de BioPerl (ver secci&#243;n <A HREF="node86.html#bioperl">4.2</A> y ejemplo en el 
-<A NAME="tex2html136"
-  HREF="http://www.eead.csic.es/compbio/material/bioperl/node14.html">taller de (bio)perl</A>):
-
-<P>
-<code>$ perl -MBio::Perl -e '$gb=get_sequence("genbank","CP000524"); write_sequence("&gt;CP000524.gb","genbank",$gb)'</code>
-
-<P>
+<LI><A NAME="tex2html147"
+  HREF="http://www3.interscience.wiley.com/cgi-bin/bookhome/109855598">Perl Programming for Biologists</A>
 </LI>
-<LI>descarga una secuencia de UniProt en formato FASTA por servicios web (recurre a m&#243;dulo <A NAME="tex2html137"
-  HREF="http://search.cpan.org/dist/SOAP-Lite">SOAP::Lite</A>):
-
-<P>
-<code>$ perl -MSOAP::Lite -e '$soap=SOAP::Lite-&gt;service("http://www.ebi.ac.uk/Tools/webservices/wsdl/WSDbfetch.wsdl");print $soap-&gt;fetchData("uniprot:Q06546","fasta","raw")'</code>
-
-<P>
+<LI><A NAME="tex2html148"
+  HREF="http://proquest.safaribooksonline.com/0596000804">Beginning Perl for Bioinformatics</A>
 </LI>
-<LI>convierte un archivo de formato GenBank a FASTA (de nuevo usa BioPerl):
-
-<P>
-<code>$ perl -MBio::SeqIO -e '$in=Bio::SeqIO-&gt;newFh(-file=&gt;$ARGV[0],-format=&gt;"genbank"); $out=Bio::SeqIO-&gt;newFh(-format=&gt;"fasta"); while(&lt;$in&gt;){ print $out $_ }'</code>
-
-<P>
+<LI><A NAME="tex2html149"
+  HREF="http://proquest.safaribooksonline.com/0596003072">Mastering Perl for Bioinformatics</A>
 </LI>
-<LI>calcula el <A NAME="tex2html138"
-  HREF="http://bioinfoperl.blogspot.com.es/2016/08/one-liner-n50-ensamblaje.html">N50</A>
-de un ensamblaje de secuencias:
-
-<P>
-<PRE>
-$ perl -lne 'if(/^&gt;(\S+)/){$h=$1} else {$l=length($_);$TL+=$l;$L{$h}+=$l} \
-   END{ foreach $s (sort {$L{$b}&lt;=&gt;$L{$a}} keys(%L)){ $t+=$L{$s}; \
-   if($t&gt;$TL/2){ print "N50=$L{$s}";exit }}}' ensamblaje.fasta
-</PRE>
-
-<P>
+<LI><A NAME="tex2html150"
+  HREF="http://www.perl.com/">perl.com</A>
 </LI>
-<LI>crea un histograma (archivo llamado 'hist.pdf') con ayuda de 
-<A NAME="tex2html139"
-  HREF="http://bioinfoperl.blogspot.com.es/2016/03/r-one-liners.html">R</A>:
-
-<P>
-<code>$ perl -lane '$F[3]=~s/,/./; print $F[3]' all.blast | Rscript -e 'data=scan(file="stdin"); hist(data)'</code> 
-
-<P>
+<LI><A NAME="tex2html151"
+  HREF="http://learn.perl.org/library/beginning_perl/">Beginning Perl</A>
 </LI>
-<LI>convierte las calidades de un fichero 
-<A NAME="tex2html140"
-  HREF="https://en.wikipedia.org/wiki/FASTQ_format">FASTQ</A>
-a codificaci&#243;n Sanger/Illumina 1.8+:
-
-<P>
-<code>$ perl -lne 'tr/\x40-\xff\x00-\x3f/\x21-\xe0\x21/ if($.%4==0); print' reads.fq &gt; reads.sanger.fq</code>
-
-<P>
+<LI><A NAME="tex2html152"
+  HREF="http://proquest.safaribooksonline.com/0596000278">Programming Perl (el libro de los creadores)</A>
 </LI>
-</OL>
+<LI><A NAME="tex2html153"
+  HREF="http://proquest.safaribooksonline.com/0596003137">Perl Cookbook</A>
+</LI>
+<LI><A NAME="tex2html154"
+  HREF="http://www.perlmonks.org">El foro de perlmonks</A>
+</LI>
+<LI><A NAME="tex2html155"
+  HREF="http://blogs.perl.org">blogs.perl.org</A>
+</LI>
+<LI><A NAME="tex2html156"
+  HREF="https://www.reddit.com/r/perl/">Reddit</A>
+</LI>
+<LI><A NAME="tex2html157"
+  HREF="http://perlweekly.com">Resumen semanal de perl</A>
+</LI>
+</UL>
+
+<P>
+Bioperl
+
+<UL>
+<LI><A NAME="tex2html158"
+  HREF="http://www.bioperl.org">Bioperl</A>
+</LI>
+</UL>
+
+<P>
+Interfaz DBI
+
+<UL>
+<LI><A NAME="tex2html159"
+  HREF="http://www.perl.com/pub/a/1999/10/DBI.html">A Short Guide to DBI</A>
+</LI>
+<LI><A NAME="tex2html160"
+  HREF="http://proquest.safaribooksonline.com/1565926994">Programming the Perl DBI</A>
+</LI>
+</UL>
+
+<P>
+One-liners:
+
+<UL>
+<LI><A NAME="tex2html161"
+  HREF="https://www.ibm.com/developerworks/library/l-p102/index.html">Cultured Perl: One-liners 102</A>
+</LI>
+<LI><A NAME="tex2html162"
+  HREF="http://www.catonmat.net/blog/perl-one-liners-explained-part-one/">Famous Perl One-Liners</A>
+</LI>
+<LI><A NAME="tex2html163"
+  HREF="http://www.perlmonks.org/?node_id=502261">Scriptome and Perl One-Liners</A>
+</LI>
+</UL>
+
+<P>
+
+<P>
+
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1279"
+<A NAME="tex2html1278"
   HREF="node90.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1283"
-  HREF="node89.html">
+<A NAME="tex2html1284"
+  HREF="bioinfoPerl.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1285"
+<A NAME="tex2html1286"
   HREF="node92.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

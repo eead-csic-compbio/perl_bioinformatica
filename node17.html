@@ -62,13 +62,13 @@ Ejemplo de estructuras de control</A>
 
 <P>
 Ahora que hemos visto variables, operadores y estructuras de control, un ejemplo m&#225;s complicado.
-¿Qu&#233; contiene 
+Qu&#233; contiene 
 <code>$tabla_amino_1_a_3</code> al final?
 
 <P>
 <PRE> 
 #!/usr/bin/perl -w 
-# Ejemplo escrito por Bruno Contreras en Julio de 2005
+# Ejemplo escrito por Bruno Contreras
 
 use strict; 
 
@@ -78,7 +78,7 @@ my %amino1a3 = ('A','ALA','C','CYS','D','ASP','E','GLU','F','PHE','G','GLY','H',
 					'I','ILE','K','LYS','L','LEU','M','MET','N','ASN' ,'P','PRO','Q','GLN',
 					'R','ARG','S','SER','T','THR','V','VAL','W','TRP','Y','TYR'); 
 
-my $tabla_amino_1_a_3 = "";  # declara cadena vacía
+my $tabla_amino_1_a_3 = "";  # declara cadena vacia
 
 my ($aa);  # variable para recorrer un bucle
 
@@ -90,7 +90,7 @@ foreach $aa (@amino)
 	}
 	elsif($aa eq 'X')
 	{
-		$tabla_amino_1_a_3 .= "$aa equivale a cualquier aminoácido\n";
+		$tabla_amino_1_a_3 .= "$aa equivale a cualquier aminoacido\n";
 	}
 	else
 	{
@@ -98,7 +98,7 @@ foreach $aa (@amino)
 	}	
 }
 
-#print("Tabla de nomenclatura de aminoácidos\n$tabla_amino_1_a_3");
+#print("Tabla de nomenclatura de aminoacidos\n$tabla_amino_1_a_3");
 </PRE>
 
 <P>

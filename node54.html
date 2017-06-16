@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Registros</TITLE>
-<META NAME="description" CONTENT="Registros">
+<TITLE>Colas y pilas como arreglos</TITLE>
+<META NAME="description" CONTENT="Colas y pilas como arreglos">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,7 +20,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node55.html">
 <LINK REL="previous" HREF="node53.html">
-<LINK REL="up" HREF="node50.html">
+<LINK REL="up" HREF="node49.html">
 <LINK REL="next" HREF="node55.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,67 +40,80 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html883"
+<A NAME="tex2html884"
   HREF="node53.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html889"
-  HREF="node50.html">
+<A NAME="tex2html890"
+  HREF="node49.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html891"
+<A NAME="tex2html892"
   HREF="node55.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html892"
-  HREF="node55.html">Colas y pilas como arreglos</A></b>  Arriba: <b><A NAME="tex2html890"
-  HREF="node50.html">Estructuras de datos m&#225;s complicadas</A></b>  Anterior: <b><A NAME="tex2html884"
-  HREF="node53.html">Combinaciones de arreglos y tablas</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html893"
+  HREF="node55.html">Grafos y &#225;rboles</A></b>  Arriba: <b><A NAME="tex2html891"
+  HREF="node49.html">Estructuras de datos m&#225;s complicadas</A></b>  Anterior: <b><A NAME="tex2html885"
+  HREF="node53.html">Registros</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00324000000000000000"></A> <A NAME="registros"></A>
-<BR>
-Registros
+<H2><A NAME="SECTION00325000000000000000">
+Colas y pilas como arreglos</A>
 </H2>
 
 <P>
-Los registros son estructuras de datos que engloban componentes de diferente tipo y
-equivalen a los que en C ser&#237;an los objetos 
-<code>struct</code>. 
-Por supuesto puedes crear arreglos y tablas de registros:
+Las colas ( <i> queue  </i>, FIFO,  <i> First In First Out  </i>) <A NAME="1577"></A> <A NAME="1578"></A> y las 
+pilas ( <i> stack  </i>, LIFO,  <i> Last In First Out  </i>) <A NAME="1581"></A> <A NAME="1582"></A> son dos 
+ejemplos cl&#225;sicos de estructuras de datos en los libros 
+de texto. Por supuesto se pueden implementar en Perl por medio de registros que se apuntan
+unos a otros, pero lo m&#225;s sencillo es usar para arreglos y algunas de las funciones vistas
+en la secci&#243;n <A HREF="node23.html#funcArreglos">2.7.1</A>.
 
 <P>
-<PRE>
-my $proteina = {
-	NOMBRE =&gt; $nombre,
-	ANOTACION =&gt; $anot,
-	PM =&gt; $PM,
-	PI =&gt; $PI,
-	NOMBRES_HOMOLOGOS =&gt; [ @homologos ],
-	ALINEAMIENTOS_HOMOLOGOS =&gt; { %alineamientos }
-};
+Si usamos la combinaci&#243;n 
+<code>shift</code> y 
+<code>unshift</code>, o 
+<code>push</code> y 
+<code>pop</code>, 
+tenemos una pila.
 
-# así consultamos algún valor
-print $proteina-&gt;{'NOMBRE'};
+<P>
+Si usamos 
+<code>shift</code> y 
+<code>push</code> 
+tenemos una cola.
 
-# así asignamos
-$proteina-&gt;{'NOMBRE'} = 'CRP_ECOLI';
+<P>
 
-# así la guardamos en un arreglo
-push(@proteinas,$proteina);
-</PRE>
+<DIV ALIGN="CENTER"><A NAME="fig:colaypila"></A><A NAME="1592"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.2:</STRONG>
+
+Colas y pilas, contenedores FIFO y LIFO.
+</CAPTION>
+<TR><TD><IMG
+ WIDTH="547" HEIGHT="357" BORDER="0"
+ SRC="img4.png"
+ ALT="\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{colaypila}
+\end{center}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html883"
+<A NAME="tex2html884"
   HREF="node53.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html889"
-  HREF="node50.html">
+<A NAME="tex2html890"
+  HREF="node49.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html891"
+<A NAME="tex2html892"
   HREF="node55.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Subrutinas y paso de par&#225;metros</TITLE>
-<META NAME="description" CONTENT="Subrutinas y paso de par&#225;metros">
+<TITLE>Declaraci&#243;n de subrutinas y alcance de las variables</TITLE>
+<META NAME="description" CONTENT="Declaraci&#243;n de subrutinas y alcance de las variables">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,7 +18,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="next" HREF="node50.html">
+<LINK REL="next" HREF="node44.html">
 <LINK REL="previous" HREF="node41.html">
 <LINK REL="up" HREF="node41.html">
 <LINK REL="next" HREF="node43.html">
@@ -40,65 +40,114 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html752"
+<A NAME="tex2html760"
   HREF="node41.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html758"
+<A NAME="tex2html766"
   HREF="node41.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html760"
+<A NAME="tex2html768"
   HREF="node43.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html761"
-  HREF="node43.html">Declaraci&#243;n de subrutinas y alcance</A></b>  Arriba: <b><A NAME="tex2html759"
-  HREF="node41.html">Fundamentos de Perl5 (2)</A></b>  Anterior: <b><A NAME="tex2html753"
-  HREF="node41.html">Fundamentos de Perl5 (2)</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html769"
+  HREF="node43.html">Ejemplo de alcance de variables</A></b>  Arriba: <b><A NAME="tex2html767"
+  HREF="node41.html">Subrutinas y paso de par&#225;metros</A></b>  Anterior: <b><A NAME="tex2html761"
+  HREF="node41.html">Subrutinas y paso de par&#225;metros</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00310000000000000000">
-Subrutinas y paso de par&#225;metros</A>
-</H1>
+<H2><A NAME="SECTION00311000000000000000">
+Declaraci&#243;n de subrutinas y alcance de las variables</A>
+</H2>
 
 <P>
-Una subrutina puede definirse como un programa dentro de un programa, un subprograma.
-Es un trozo de c&#243;digo que tiene vida propia, con sus propio algoritmo y sus propias
-variables, que puede estar declarado dentro de otro programa Perl, dentro de un m&#243;dulo o
-dentro del int&#233;rprete Perl, como 
-<code>print</code>, 
-por ejemplo. 
+Declarar una subrutina en Perl es muy sencillo, es un bloque de c&#243;digo precedido de 
+la palabra reservada  <i> sub  </i> y un nombre, que, como las variables, debe empezar por 
+un car&#225;cter alfanum&#233;rico o un '_'. 
 
 <P>
-
-<DIV ALIGN="CENTER"><A NAME="fig:subrutinas"></A><A NAME="1432"></A>
-<TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.1:</STRONG>
-
-Posibles ubicaciones para las declaraciones de subrutinas en Perl.
-</CAPTION>
-<TR><TD>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="390" HEIGHT="496" ALIGN="BOTTOM" BORDER="0"
- SRC="img3.png"
- ALT="\includegraphics[width=0.8\textwidth]{subrutinas}">
-
-</DIV></TD></TR>
-</TABLE>
-</DIV>
+Puedes declarar subrutinas en cualquier posici&#243;n de
+un programa en Perl, pero por cuesti&#243;n de estilo es costumbre declararlas todas juntas
+por ejemplo al final del programa principal.
 
 <P>
-Para ejecutar una subrutina hay que invocarla por su nombre, y si fuera necesario sus 
-par&#225;metros. Por ejemplo ya hemos invocado 
-<code>printf("cadena %s\n",$cadena);</code> 
-antes, donde
-<code>printf</code> 
-es el nombre de la subrutina y lo que va entre par&#233;ntesis sus par&#225;metros.
-Si invocamos una funci&#243;n y el int&#233;rprete no encuentra su declaraci&#243;n, se interrumpir&#225; la
-ejecuci&#243;n en ese momento con un mensaje de error como este: 
-<BR>
-<code>Undefined subroutine &amp;main::subrutina_sin_de called at programa.pl line 25.</code>
+<PRE>
+#!/usr/bin/perl -w 
+# Ejemplo escrito por Bruno Contreras
+
+use strict; 
+
+mi_subrutina();     # invocacion de la subrutina: el interprete busca 
+                    # ahora la declaracion de mi_subrutina y la encuentra 
+                    # mas adelante en el mismo archivo; en ese momento
+                    # interrumpe la ejecucion del programa principal y
+                    # ejecuta el codigo de la subrutina. El programa
+                    # principal se reanuda al terminar mi_subrutina 
+
+######## declaraciones de subrutinas ######################################
+
+sub mi_subrutina     
+{
+	# codigo propio de la subrutina
+	print "mi primera subrutina\n";
+}
+</PRE>
+
+<P>
+Si la ejecuci&#243;n de la subrutina requiere el paso de datos externos a la subrutina, normalmente
+esos datos se pasan como par&#225;metros en el momento de la invocaci&#243;n:
+
+<P>
+<PRE>
+#!/usr/bin/perl -w 
+# Ejemplo escrito por Bruno Contreras
+
+use strict; 
+
+my ($arg1,$arg2) = (1,2);
+my @arg3 = (3,4,5);
+
+mi_subrutina($arg1,$arg2,@arg3);  # paso de tres parámetros
+
+######## declaraciones de subrutinas ######################################
+
+sub mi_subrutina     
+{
+	my($sarg1,$sarg2,@sarg3) = @_;   # asi recibe la subrutina los parametros pasados, 
+	                                 # copiandolos del arreglo global @_ a variables locales
+	
+	print "subrutina con parametros\n";
+}
+</PRE>
+
+<P>
+El paso de par&#225;metros a una subrutina
+depende de la variable especial 
+<code>@_</code>, 
+que ya mencionamos en <A HREF="node13.html#varEspecial">2.3.4</A>, que es un ejemplo
+de variable global <A NAME="1429"></A>, a la que se puede acceder desde cualquier 
+lugar de un programa.
+
+<P>
+A diferencia de 
+<code>@_</code>, 
+las variables que se declaran dentro de una subrutina, como 
+<code>my($sarg1,$sarg2,@sarg3)</code> , 
+son por defecto variables locales, <A NAME="1430"></A>
+que dejan de existir cuando se termina la ejecuci&#243;n de la subrutina y que no pueden ser accedidas 
+si no es desde la misma subrutina.
+
+<P>
+Aunque en teor&#237;a una subrutina puede acceder a variables globales, declaradas fuera 
+de ella, es conveniente limitar el accesos a aquellas variables que se pasen como par&#225;metros, 
+para facilitar la comprensi&#243;n del c&#243;digo que escrib&#225;is y la correcci&#243;n de posibles errores.
+
+<P>
+Es posible declarar firmas ( <i> signatures  </i>) de subrutinas, especificando los par&#225;metros que recibe al declararla, pero es una 
+caracter&#237;stica experimental. Puedes leer sobre esto en 
+<A NAME="tex2html51"
+  HREF="https://perldoc.perl.org/perlsub.html">https://perldoc.perl.org/perlsub.html</A>.
 
 <P>
 <BR><HR>
@@ -106,36 +155,21 @@ ejecuci&#243;n en ese momento con un mensaje de error como este:
 <A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
 
 <UL CLASS="ChildLinks">
-<LI><A NAME="tex2html762"
-  HREF="node43.html">Declaraci&#243;n de subrutinas y alcance de las variables</A>
-<UL>
-<LI><A NAME="tex2html763"
-  HREF="node44.html">Ejemplo de alcance de variables</A>
-</UL>
-<BR>
-<LI><A NAME="tex2html764"
-  HREF="node45.html">Subrutinas que devuelven valores</A>
-<LI><A NAME="tex2html765"
-  HREF="node46.html">Paso de par&#225;metros por valor y por referencia</A>
-<LI><A NAME="tex2html766"
-  HREF="node47.html">Funciones recursivas</A>
-<LI><A NAME="tex2html767"
-  HREF="node48.html">Ventajas de usar subrutinas</A>
-<LI><A NAME="tex2html768"
-  HREF="node49.html">Ejercicios con subrutinas</A>
+<LI><A NAME="tex2html770"
+  HREF="node43.html">Ejemplo de alcance de variables</A>
 </UL>
 <!--End of Table of Child-Links-->
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html752"
+<A NAME="tex2html760"
   HREF="node41.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html758"
+<A NAME="tex2html766"
   HREF="node41.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html760"
+<A NAME="tex2html768"
   HREF="node43.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

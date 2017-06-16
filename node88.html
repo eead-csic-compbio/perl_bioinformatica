@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Perl5 desde Perl6</TITLE>
-<META NAME="description" CONTENT="Perl5 desde Perl6">
+<TITLE>Perl desde el terminal: one liners </TITLE>
+<META NAME="description" CONTENT="Perl desde el terminal: one liners ">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,8 +18,9 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="previous" HREF="node87.html">
-<LINK REL="up" HREF="node87.html">
+<LINK REL="next" HREF="node91.html">
+<LINK REL="previous" HREF="node86.html">
+<LINK REL="up" HREF="bioinfoPerl.html">
 <LINK REL="next" HREF="node89.html">
 <!--google-->
 <script type="text/javascript">
@@ -39,57 +40,150 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1249"
+<A NAME="tex2html1248"
   HREF="node87.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1253"
-  HREF="node87.html">
+<A NAME="tex2html1254"
+  HREF="bioinfoPerl.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1255"
+<A NAME="tex2html1256"
   HREF="node89.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1256"
-  HREF="node89.html">Perl desde el terminal: one</A></b>  Arriba: <b><A NAME="tex2html1254"
-  HREF="node87.html">Introducci&#243;n a Perl6</A></b>  Anterior: <b><A NAME="tex2html1250"
-  HREF="node87.html">Introducci&#243;n a Perl6</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1257"
+  HREF="node89.html">Ejemplos generales</A></b>  Arriba: <b><A NAME="tex2html1255"
+  HREF="bioinfoPerl.html">Perl en bioinform&#225;tica</A></b>  Anterior: <b><A NAME="tex2html1249"
+  HREF="node87.html">Perl5 desde Perl6</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00510000000000000000">
-Perl5 desde Perl6</A>
-</H1> 
+<H1><A NAME="SECTION00600000000000000000"></A> <A NAME="oneliners"></A> <A NAME="2726"></A>
+<BR>
+Perl desde el terminal:  <i> one liners  </i>
+</H1>
 
 <P>
-Con el m&#243;dulo <A NAME="tex2html124"
-  HREF="https://github.com/niner/Inline-Perl5">Inline::Perl5</A>
-es posible usar cualquier recurso
-de Perl5 en Perl6, como se muestra en el siguiente ejemplo con el m&#243;dulo DBI:
+Este material no estar&#237;a completo sin ejemplos del uso de Perl desde el terminal, que sin
+duda sirven de muestra del poder de este lenguaje tambi&#233;n como herramienta cotidiana. Para ello
+debemos conocer algunos argumentos del int&#233;rprete Perl especiales para su uso en el terminal. 
 
 <P>
+Como vimos de pasada en la secci&#243;n <A HREF="node4.html#terminal">2.1.1</A>, uno de los argumentos posibles es <code>-w</code>,
+para mostrar todos los avisos del int&#233;rprete, y otro es <code>-e</code>, que compila y ejecuta lo que 
+escribamos entre <B>'comillas sencillas'</B> en el terminal como un programa, en vez de abrir un fichero con c&#243;digo.
+
+<P>
+En este contexto podemos adem&#225;s aplicar otros argumentos:
+
+<UL>
+<LI><code>-n</code>  para leer l&#237;nea a l&#237;nea el contenido de todos los archivos pasados como argumentos, con un bucle <code>while(&lt;&gt;){ ... }</code>
+</LI>
+<LI><code>-p</code>  modificaci&#243;n de <code>-n</code> que adem&#225;s imprime cada l&#237;nea le&#237;da a <code>stdout</code>
+</LI>
+<LI><code>-l</code>  por defecto a&#241;ade un salto <code>\n</code> a cada l&#237;nea le&#237;da con <code>-n</code> o <code>-p</code>
+</LI>
+</UL>
+
+<P>
+Por defecto, Perl separa los datos de entrada, normalmente un archivo o una tuber&#237;a
+(<A NAME="tex2html127"
+  HREF="http://en.wikipedia.org/wiki/Pipeline_(Unix)"> <i> pipe  </i></A>), en l&#237;neas. Si queremos cambiar
+ese comportamiento necesitamos indicarlo por medio del argumento <code>-0</code> (es un cero). Por ejemplo, para separar texto en p&#225;rrafos
+podemos usar <code>-00</code>. Si necesitamos diseccionar el contenido de cada l&#237;nea, por ejemplo en forma de columnas, 
+recurrimos a estos dos argumentos:
+
+<UL>
+<LI><code>-a</code>  para aplicar la funci&#243;n <code>split</code> a las l&#237;nea le&#237;das (descrita en el apartado <A HREF="node24.html#stringfunc">2.7.2</A>)
+</LI>
+<LI><code>-F'separador'</code>  para indicar la expresi&#243;n regular para <code>split</code>, el separador de columnas, que quedan guardadas en el vector <code>@F</code>
+</LI>
+</UL>
+
+<P>
+Podemos invocar funciones de cualquier m&#243;dulo instalado en el sistema mediante estos argumentos:
+
+<UL>
+<LI><code>-I</code> para indicar rutas a m&#243;dulos, como en <code>-I/home/usuario/lib/</code>
+</LI>
+<LI><code>-M</code> importa un m&#243;dulo, como en <code>-Mstrict</code>
+</LI>
+</UL>
+
+<P>
+Quisiera mencionar tambi&#233;n el argumento <code>-i</code>, que permite cambiar el contenido de un fichero  <i> in situ  </i>, que es conveniente
+usar con mucha prudencia para no destruir accidentalmente archivos. Para ello es recomendable mantener siempre copias de los archivos originales, 
+por medio de la sintaxis <code>-i.bk</code>, que en este caso guarda copias con la extensi&#243;n <code>.bk</code> de todos los ficheros procesados.
+
+<P>
+Ya que hemos visto que las expresiones  <i> one liners  </i> se ejecutan l&#237;nea a l&#237;nea, puede ser muy &#250;til 
+emplear bloques <code>END{}</code>, puesto que lo all&#237; contenido se ejecuta &#250;nicamente al terminar de procesar todas las lineas. En la siguiente secci&#243;n
+hay algunos ejemplos que lo explican. 
+
+<P>
+OJO: En la Red es frecuente encontrar expresiones que contienen algo que parece un operador, <code>}{</code>, que no es otra cosa
+que una manera casi ilegible de separar el c&#243;digo de cada l&#237;nea y el que se debe ejecutar al final, como en END. 
+Ejemplo: <code>$ perl -lpe'}{$_=$.' /etc/passwd</code> (tomado de <A NAME="tex2html128"
+  HREF="http://www.perlmonks.org/?node_id=232332">perlmonks</A>).
+
+<P>
+Finalmente, es muy posible que tus expresiones Perl en el terminal salgan ganando si utilizas las 
+<A NAME="tex2html129"
+  HREF="http://www.rexswain.com/perl5.html#specialvariables">variables especiales de Perl</A>.
+
+<P>
+Como ejemplo del ahorro de escritura que permiten estos argumentos muestro ahora el mismo algoritmo, 
+
+<UL>
+<LI>en formato  <i> one liner  </i>, usando la ya conocida opci&#243;n <code>-w</code> para mostrar avisos del int&#233;rprete (<A HREF="node4.html#terminal">2.1.1</A>):
 <PRE>
-use v6;
-use Inline::Perl5;
-use DBI:from&lt;Perl5&gt;;
-
-my $dbh = DBI.connect('dbi:Pg:database=test');
-my $products = $dbh.selectall_arrayref(
-  'select * from products', {Slice =&gt; {}}
-  );
+perl -wnl -e 'print;'
 </PRE>
 
 <P>
+</LI>
+<LI>y en forma de programa Perl convencional: 
+<PRE>
+#!/usr/bin/perl -w
+
+# comprueba si hay argumentos o pipes entrantes
+@ARGV or @ARGV = '-';
+
+foreach my $fichero (@ARGV) 
+{
+	open(FICH,$fichero) || warn "$0: no puedo abrir $fichero\n";
+	while(&lt;FICH&gt;)
+	{
+		print;
+	}
+	close(FICH);
+}
+</PRE>
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1258"
+  HREF="node89.html">Ejemplos generales</A>
+<LI><A NAME="tex2html1259"
+  HREF="node90.html">Algunas aplicaciones en Bioinform&#225;tica</A>
+</UL>
+<!--End of Table of Child-Links-->
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1249"
+<A NAME="tex2html1248"
   HREF="node87.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1253"
-  HREF="node87.html">
+<A NAME="tex2html1254"
+  HREF="bioinfoPerl.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1255"
+<A NAME="tex2html1256"
   HREF="node89.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

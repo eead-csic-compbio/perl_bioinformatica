@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Ejercicio con estructuras de datos</TITLE>
-<META NAME="description" CONTENT="Ejercicio con estructuras de datos">
+<TITLE>Objetos en Perl</TITLE>
+<META NAME="description" CONTENT="Objetos en Perl">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,8 +18,9 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="previous" HREF="node56.html">
-<LINK REL="up" HREF="node50.html">
+<LINK REL="next" HREF="node61.html">
+<LINK REL="previous" HREF="node49.html">
+<LINK REL="up" HREF="node40.html">
 <LINK REL="next" HREF="node58.html">
 <!--google-->
 <script type="text/javascript">
@@ -39,49 +40,115 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html913"
+<A NAME="tex2html912"
   HREF="node56.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html917"
-  HREF="node50.html">
+<A NAME="tex2html918"
+  HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html919"
+<A NAME="tex2html920"
   HREF="node58.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html920"
-  HREF="node58.html">Objetos en Perl</A></b>  Arriba: <b><A NAME="tex2html918"
-  HREF="node50.html">Estructuras de datos m&#225;s complicadas</A></b>  Anterior: <b><A NAME="tex2html914"
-  HREF="node56.html">Grafos y &#225;rboles</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html921"
+  HREF="node58.html">Atributos e identidad de un</A></b>  Arriba: <b><A NAME="tex2html919"
+  HREF="node40.html">Fundamentos de Perl5 (2)</A></b>  Anterior: <b><A NAME="tex2html913"
+  HREF="node56.html">Ejercicio con estructuras de datos</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00327000000000000000">
-Ejercicio con estructuras de datos</A>
-</H2>
+<H1><A NAME="SECTION00330000000000000000">
+Objetos en Perl</A>
+</H1>
 
 <P>
-Como ejercicio de esta secci&#243;n os sugiero que escrib&#225;is un programa que tome un grupo 
-de prote&#237;nas o de &#225;cidos nucleicos de la misma familia, en formato FASTA, y calcule 
-mediante el programa 
-<code>bl2seq</code>, 
-del paquete BLAST, una matriz de similaridad de 
-todas las secuencias contra todas. Finalmente, bas&#225;ndoos en la matriz, el programa
-deber&#225; crear un &#225;rbol que represente las distancias de todas las secuencias a una 
-elegida por el usuario.
+Las estructuras de datos que hemos visto en la secci&#243;n anterior permiten manejar c&#243;modamente
+relaciones abstractas entre datos, como por ejemplo un grafo. Los objetos
+<A NAME="2021"></A> llevan un poco m&#225;s ella esa abstracci&#243;n, pues 
+son agregados de variables (atributos) <A NAME="1641"></A> con identidad propia que adem&#225;s 
+incluyen las subrutinas (m&#233;todos) <A NAME="2022"></A> que permiten manipularlos. 
 
 <P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:clase"></A><A NAME="2023"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.4:</STRONG>
+
+Clase gen&#233;rica con sus atributos y sus m&#233;todos.
+</CAPTION>
+<TR><TD><IMG
+ WIDTH="416" HEIGHT="295" BORDER="0"
+ SRC="img6.png"
+ ALT="\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{clase}
+\end{center}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Un objeto es una instancia de la clase <A NAME="1654"></A> <A NAME="1655"></A> a la que  
+pertenece, como por ejemplo un Mercedes con placas 1234HJ pertenecer&#237;a a la clase de los 
+autom&#243;viles de lujo, o la prote&#237;na  <i> 1lfu  </i> pertenece a la clase PDB. 
+
+<P>
+Los atributos de un objeto normalmente s&#243;lo pueden ser manipulados por medio de los m&#233;todos 
+de su clase.
+
+<P>
+Una clase puede heredar componentes de otras clases, por lo que son adecuadas para 
+representar conceptos y objetos de forma jer&#225;rquica. Por ejemplo, la clase PDB ser&#225; seguramente
+una clase derivada de la clase prote&#237;na y &#233;sta a su vez de la clase macromol&#233;cula, de donde
+heredar&#225;n el atributo 'secuencia'.
+
+<P>
+Os recomiendo que mir&#233;is en 
+<A NAME="tex2html58"
+  HREF="http://www.google.com/search?hl=en&amp;hs=nb9:es-ES:official&amp;q=programacion+%2B+orientada+%2B+objetos&amp;spell=1">Google</A>
+si no os resultan familiares estos conceptos, en el libro 
+<A NAME="tex2html59"
+  HREF="http://www.unix.org.ua/orelly/perl/advprog/index.htm">Advanced Perl Programming</A>,
+pero recordad que la programaci&#243;n orientada a objetos es un estilo de programaci&#243;n,
+que tiene sus ventajas e incovenientes, que conviene conocer al menos para poder comprender
+programas escritos por otras personas, o para aprovechar m&#243;dulos de CPAN orientados a objetos,
+como por ejemplo <A NAME="tex2html60"
+  HREF="http://bioperl.org">BioPerl</A>.
+
+<P>
+Dado que las clases y objetos no son la manera m&#225;s natural de usar Perl5, 
+se han propuesto extensiones para facilitar esta manera de programar, como 
+<A NAME="tex2html61"
+  HREF="http://search.cpan.org/perldoc?Moose">Moose</A>. 
+En cambio, Perl6 es un lenguaje 
+<A NAME="tex2html62"
+  HREF="https://docs.perl6.org/language/objects">naturalmente orientado a objetos</A>.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html922"
+  HREF="node58.html">Atributos e identidad de un objeto (con programaci&#243;n estructurada)</A>
+<LI><A NAME="tex2html923"
+  HREF="node59.html">M&#233;todos de un objeto (con programaci&#243;n estructurada)</A>
+<LI><A NAME="tex2html924"
+  HREF="node60.html">Implementando una clase en Perl</A>
+</UL>
+<!--End of Table of Child-Links-->
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html913"
+<A NAME="tex2html912"
   HREF="node56.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html917"
-  HREF="node50.html">
+<A NAME="tex2html918"
+  HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html919"
+<A NAME="tex2html920"
   HREF="node58.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

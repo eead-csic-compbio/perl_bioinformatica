@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Arreglos de arreglos</TITLE>
-<META NAME="description" CONTENT="Arreglos de arreglos">
+<TITLE>Tablas de tablas, Hashes of hashes </TITLE>
+<META NAME="description" CONTENT="Tablas de tablas, Hashes of hashes ">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,7 +20,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node52.html">
 <LINK REL="previous" HREF="node50.html">
-<LINK REL="up" HREF="node50.html">
+<LINK REL="up" HREF="node49.html">
 <LINK REL="next" HREF="node52.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,72 +40,84 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html853"
+<A NAME="tex2html854"
   HREF="node50.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html859"
-  HREF="node50.html">
+<A NAME="tex2html860"
+  HREF="node49.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html861"
+<A NAME="tex2html862"
   HREF="node52.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html862"
-  HREF="node52.html">Tablas de tablas, Hashes of</A></b>  Arriba: <b><A NAME="tex2html860"
-  HREF="node50.html">Estructuras de datos m&#225;s complicadas</A></b>  Anterior: <b><A NAME="tex2html854"
-  HREF="node50.html">Estructuras de datos m&#225;s complicadas</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html863"
+  HREF="node52.html">Combinaciones de arreglos y tablas</A></b>  Arriba: <b><A NAME="tex2html861"
+  HREF="node49.html">Estructuras de datos m&#225;s complicadas</A></b>  Anterior: <b><A NAME="tex2html855"
+  HREF="node50.html">Arreglos de arreglos</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00321000000000000000">
-Arreglos de arreglos</A>
+<H2><A NAME="SECTION00322000000000000000">
+Tablas de tablas,  <i> Hashes of hashes  </i></A>
 </H2>
 
 <P>
-En Perl es muy f&#225;cil anidar arreglos dentro de arreglos, por lo que podemos crear matrices
-N-dimensionales, como ya mencionamos en la secci&#243;n <A HREF="node9.html#variab_tipos">2.3</A>. Hay varias maneras 
-de crearlas y consultarlas, que os mostrar&#233; con ejemplos:
+Las tablas de tablas son tambi&#233;n sencillas de manejar, de forma muy parecida a los arreglos
+de arreglos.
+
+<P>
 <PRE>
-my @matriz2_3 = ( [1,2,"tres"],  ## declaración con asignación explícita
-                  [4,5,"seis"]);
+my %blosum62 = (                ## declaracion con asignacion explicita
+	'A' =&gt; 
+	{
+		'A' =&gt; -4,
+		'R' =&gt; -1,
+		...
+		'X' =&gt; -1
+	}
+	
+	...
+	
+	'X' =&gt; 
+	{
+		'A' =&gt; --,
+		'R' =&gt; -1,
+		...
+		'X' =&gt; -1
+	}
+);
 
-my @matriz;
 
-for($i=0;$i&lt;5;$i++)              ## asignación elemento a elemento desde bucles
+my %tabla;
+
+for($i=0;$i&lt;5;$i++)             ## elemento a elemento desde bucles
 {
 	for($j=0;$j&lt;10;$j++)
 	{
-		$matriz[$i][$j] = $i * $j;
+		$tabla{$i}{$j} = $i * $j;
 	}
 }
 
 
-for $i ( 1 .. 10 )               ## asignación de filas enteras
+for $i ( 1 .. 10 )              ## asignacion de subtablas enteras
 {
-	# ambas expresiones son válidas
-	push( @matriz , [ @dimension ];
-	$matriz[$i] = [ @dimension ]; 
-	# $matriz[$i] contiene una referencia a un arreglo
-}
-
-while(&lt;ARCHIVO&gt;)                 ## leyendo un archivo línea por línea
-{
-	push( @matriz , split(/\s+/,$_);
+	$tabla[$i] = { %subtabla }; 
+	# tabla[$i] contiene una referencia a una tabla
 }
 </PRE>
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html853"
+<A NAME="tex2html854"
   HREF="node50.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html859"
-  HREF="node50.html">
+<A NAME="tex2html860"
+  HREF="node49.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html861"
+<A NAME="tex2html862"
   HREF="node52.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

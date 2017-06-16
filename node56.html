@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Grafos y &#225;rboles</TITLE>
-<META NAME="description" CONTENT="Grafos y &#225;rboles">
+<TITLE>Ejercicio con estructuras de datos</TITLE>
+<META NAME="description" CONTENT="Ejercicio con estructuras de datos">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,9 +18,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="next" HREF="node57.html">
 <LINK REL="previous" HREF="node55.html">
-<LINK REL="up" HREF="node50.html">
+<LINK REL="up" HREF="node49.html">
 <LINK REL="next" HREF="node57.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,182 +39,49 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html903"
+<A NAME="tex2html904"
   HREF="node55.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html909"
-  HREF="node50.html">
+<A NAME="tex2html908"
+  HREF="node49.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html911"
+<A NAME="tex2html910"
   HREF="node57.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html912"
-  HREF="node57.html">Ejercicio con estructuras de datos</A></b>  Arriba: <b><A NAME="tex2html910"
-  HREF="node50.html">Estructuras de datos m&#225;s complicadas</A></b>  Anterior: <b><A NAME="tex2html904"
-  HREF="node55.html">Colas y pilas como arreglos</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html911"
+  HREF="node57.html">Objetos en Perl</A></b>  Arriba: <b><A NAME="tex2html909"
+  HREF="node49.html">Estructuras de datos m&#225;s complicadas</A></b>  Anterior: <b><A NAME="tex2html905"
+  HREF="node55.html">Grafos y &#225;rboles</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00326000000000000000">
-Grafos y &#225;rboles</A>
+<H2><A NAME="SECTION00327000000000000000">
+Ejercicio con estructuras de datos</A>
 </H2>
 
 <P>
-Podemos utilizar los registros que acabamos de ver para representar &#225;rboles y, de modo m&#225;s
-general, grafos. Cada nodo ser&#225; un registro que apuntar&#225; a sus vecinos seg&#250;n la topolog&#237;a
-del grafo correspondiente.
-
-<P>
-
-<DIV ALIGN="CENTER"><A NAME="fig:arbolBin"></A><A NAME="2044"></A>
-<TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.3:</STRONG>
-
-Ejemplo de &#225;rbol binario.
-</CAPTION>
-<TR><TD><IMG
- WIDTH="547" HEIGHT="361" BORDER="0"
- SRC="img5.png"
- ALT="\begin{figure}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{arbolBin}
-\end{center}
-\end{figure}"></TD></TR>
-</TABLE>
-</DIV>
-
-<P>
-Os muestro un ejemplo muy sencillo para un nodo de un &#225;rbol binario, donde cada nodo
-tiene a lo sumo dos hijos, el derecho y el izquierdo: 
-
-<P>
-<PRE>
-my $nodoBin = {
-	VALOR =&gt; $valor,
-	IZQ =&gt; $rizq,        # referencia al nodo hijo izquierdo
-	DER =&gt; $rder         # referencia al nodo hijo derecho
-};
-</PRE>
-
-<P>
-Si un nodo puede conectarse a un n&#250;mero indeterminado de nodos, entonces es mejor
-incluir las referencias a esos nodos en un arreglo.
-
-<P>
-Os muestro aqu&#237; un sencillo programa para manipular <A NAME="2045"></A> 
-&#225;rboles binarios de b&#250;squeda,
-tomado de <A NAME="tex2html57"
-  HREF="http://www.unix.org.ua/orelly/perl/cookbook/ch11_16.htm">aqu&#237;</A>.
-¿Pod&#233;is entender el c&#243;digo?¿Qu&#233; tiene de especial la subrutina 
-<code>search</code>?
-
-<P>
-<PRE>
-#!/usr/bin/perl -w
-# bintree - binary tree demo program
-use strict;
-my($root, $n);
-
-# first generate 20 random inserts
-while ($n++ &lt; 20) { insert($root, int(rand(1000)))}
-
-# now dump out the tree all three ways
-print "Pre order:  ";  pre_order($root);  print "\n";
-print "In order:   ";  in_order($root);   print "\n";
-print "Post order: ";  post_order($root); print "\n";
-
-# prompt until EOF
-for (print "Search? "; &lt;&gt;; print "Search? ") { 
-    chomp;
-    my $found = search($root, $_);
-    if ($found) { print "Found $_ at $found, $found-&gt;{VALUE}\n" }
-    else        { print "No $_ in tree\n" }
-}
-
-exit;
-
-#########################################
-
-# insert given value into proper point of
-# provided tree.  If no tree provided, 
-# use implicit pass by reference aspect of @_
-# to fill one in for our caller.
-sub insert {
-    my($tree, $value) = @_;
-    unless ($tree) {
-        $tree = {};                         # allocate new node
-        $tree-&gt;{VALUE}  = $value;
-        $tree-&gt;{LEFT}   = undef;
-        $tree-&gt;{RIGHT}  = undef;
-        $_[0] = $tree;              # $_[0] is reference param!
-        return;
-    }
-    if    ($tree-&gt;{VALUE} &gt; $value) { insert($tree-&gt;{LEFT},  $value) }
-    elsif ($tree-&gt;{VALUE} &lt; $value) { insert($tree-&gt;{RIGHT}, $value) }
-    else                            { warn "dup insert of $value\n"  }
-                                    # XXX: no dups
-}
-
-# recurse on left child, 
-# then show current value, 
-# then recurse on right child.
-sub in_order {
-    my($tree) = @_;
-    return unless $tree;
-    in_order($tree-&gt;{LEFT});
-    print $tree-&gt;{VALUE}, " ";
-    in_order($tree-&gt;{RIGHT});
-}
-
-# show current value, 
-# then recurse on left child, 
-# then recurse on right child.
-sub pre_order {
-    my($tree) = @_;
-    return unless $tree;
-    print $tree-&gt;{VALUE}, " ";
-    pre_order($tree-&gt;{LEFT});
-    pre_order($tree-&gt;{RIGHT});
-}
-
-# recurse on left child, 
-# then recurse on right child,
-# then show current value. 
-sub post_order {
-    my($tree) = @_;
-    return unless $tree;
-    post_order($tree-&gt;{LEFT});
-    post_order($tree-&gt;{RIGHT});
-    print $tree-&gt;{VALUE}, " ";
-}
-
-# find out whether provided value is in the tree.
-# if so, return the node at which the value was found.
-# cut down search time by only looking in the correct
-# branch, based on current value.
-sub search {
-    my($tree, $value) = @_;
-    return unless $tree;
-    if ($tree-&gt;{VALUE} == $value) {
-        return $tree;
-    }
-    search($tree-&gt;{ ($value &lt; $tree-&gt;{VALUE}) ? "LEFT" : "RIGHT"}, $value)
-}
-</PRE>
+Como ejercicio de esta secci&#243;n os sugiero que escrib&#225;is un programa que tome un grupo 
+de prote&#237;nas o de &#225;cidos nucleicos de la misma familia, en formato FASTA, y calcule 
+mediante el programa 
+<code>bl2seq</code>, 
+del paquete BLAST, una matriz de similaridad de 
+todas las secuencias contra todas. Finalmente, bas&#225;ndoos en la matriz, el programa
+deber&#225; crear un &#225;rbol que represente las distancias de todas las secuencias a una 
+elegida por el usuario.
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html903"
+<A NAME="tex2html904"
   HREF="node55.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html909"
-  HREF="node50.html">
+<A NAME="tex2html908"
+  HREF="node49.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html911"
+<A NAME="tex2html910"
   HREF="node57.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

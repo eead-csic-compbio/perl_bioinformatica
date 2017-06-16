@@ -64,7 +64,7 @@ Procesando resultados de BLAST
 <P>
 Con el archivo FASTA generado en el ejercicio anterior <A NAME="tex2html39"
   HREF="problemas/1lfu.fas">1lfu.fas</A>
-hacemos dos b&#250;squedas BLAST con los siguientes comandos (necesitas tener instalado BLASTlocalmente y bajarte la biblioteca de secuencias nr):
+hacemos dos b&#250;squedas BLAST con los siguientes comandos (necesitas tener instalado BLASTlocalmente y bajarte la biblioteca de secuencias nr):
 <PRE>
 blastall -p blastp -i 1lfu.fas -d nr -o 1lfu.blast -v 20 -b 20           # -o es el archivo de resultados
 blastpgp -i 1lfu.fas -j 2 -Q 1lfu.pssm -d nr -o 1lfu.blast -v 20 -b 20   # -o y -Q son archivos de resultados
@@ -100,16 +100,14 @@ alineamientos reportados.
 <P>
 <PRE>
 #!/usr/bin/perl -w 
-# Ejemplo escrito por Bruno Contreras Moreira
+# Ejemplo escrito por Bruno Contreras
 
 # Programa extraeBLAST.pl que lee un archivo generado por BLAST pasado como argumento 
-# y extrae la información relevante de cada alineamiento reportado
+# y extrae la informacion relevante de cada alineamiento reportado
 # Ejemplo de como usar variables bandera (flags) para leer textos complejos
 
 # Ojo: se puede hacer con Bioperl:
-# http://www.bioperl.org/wiki/Bptutorial.pl#Parsing_BLAST_and_FASTA_reports_with_Search_and_SearchIO
-
-# Ojo2: si ejecutas blast con -m 8 es trivial leer la salida de BLAST, si no te importa perder el alineamiento
+# Ojo2: si ejecutas blast con -outfmt 6 es trivial leer la salida de BLAST, si no te importa perder el alineamiento
 
 use strict; 
 
@@ -120,8 +118,8 @@ my ($archivoBLAST,@hits);
 # otras variables manejadas, donde Q significa 'query' y S ' subject',
 # las dos secuencias de un alineamiento en BLAST
 my ($aux0,$aux1,$aux2,$aux3);  # variables auxiliares
-my ($Q,$S);                    # variables booleanas que indican si se está leyendo Q o S
-my ($firstQ,$lastQ,$seqQ);     # primer resíduo, último resíduo y secuencia de 'query'
+my ($Q,$S);                    # variables booleanas que indican si se esta leyendo Q o S
+my ($firstQ,$lastQ,$seqQ);     # primer residuo, ultimo residuo y secuencia de 'query'
 my ($firstS,$lastS,$seqS);
 my ($longQ,$name,$id,$ev);     # longitud de 'query', nombre se secuencia, % de identidad y e-value
 
@@ -133,11 +131,11 @@ if(scalar(@ARGV) &lt; 1)
 }
 else 
 {	
-	$archivoBLAST = $ARGV[0];	# lee el nombre del argumento y asígnalo a  
+	$archivoBLAST = $ARGV[0];	# lee el nombre del argumento
 }
 
 
-## abre $archivoBLAST en modo lectura y recórrelo línea a línea ####################
+## abre $archivoBLAST en modo lectura y recorrelo linea a linea
 
 $Q = $S = 0;
 open(BLAST,$archivoBLAST) || die "# no puedo abrir $archivoBLAST\n";
@@ -167,7 +165,7 @@ while(&lt;BLAST&gt;)
 	{ 
 		if($Q)
 		{
-			# crea un arreglo con los datos de este alineamiento y guárdalo en @hits
+			# crea un arreglo con los datos de este alineamiento y guardalo en @hits
 			# @hits es por tanto un arreglo de arreglos
 			push(@hits, [($firstQ,$lastQ,$firstS,$lastS,$name,$id,$ev,$seqQ,$seqS)] );
 		}
@@ -198,7 +196,7 @@ while(&lt;BLAST&gt;)
 		$id = (split)[3]; 
 		$id =~ s/(\(|\)|\%|,)//g;	
 	}
-	elsif(/^Sequences/)	# reinicia todo para la siguiente ronda de resultados (sólo blastpgp)
+	elsif(/^Sequences/)	# reinicia todo para la siguiente ronda de resultados (solo blastpgp)
 	{
 		undef @hits;
 		$S = $Q = 0;
@@ -215,13 +213,13 @@ close(BLAST);
 
 ## ahora como ejemplo muestra el primer alineamiento guardado #################################
 
-# cada alineamiento se guardó así: [($firstQ,$lastQ,$firstS,$lastS,$name,$id,$ev,$seqQ,$seqS)]
-# el primer alineamiento será $hits[0], que a su vez es un arreglo, por eso necesitamos otra
+# cada alineamiento se guarda asi: [($firstQ,$lastQ,$firstS,$lastS,$name,$id,$ev,$seqQ,$seqS)]
+# el primer alineamiento es $hits[0], que a su vez es un arreglo, por eso necesitamos otra
 # coordenada para llegar a cada elemento
 
 if($hits[0])
 {
-	print "Posible homólogo:\n$hits[0][4]\n";          
+	print "Posible homologo:\n$hits[0][4]\n";          
 	print "Fragmento de $hits[0][0] a $hits[0][1], e-value $hits[0][6] y \%ID $hits[0][5]\n";    
 	print "Alineamiento\n$hits[0][7]\n$hits[0][8]\n";
 }

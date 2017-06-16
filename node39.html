@@ -51,7 +51,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   HREF="node40.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html696"
-  HREF="node40.html">Ejercicios con llamadas al sistema</A></b>  Arriba: <b><A NAME="tex2html694"
+  HREF="node40.html">Fundamentos de Perl5 (2)</A></b>  Arriba: <b><A NAME="tex2html694"
   HREF="node2.html">Fundamentos de Perl5 (1)</A></b>  Anterior: <b><A NAME="tex2html690"
   HREF="node38.html">Formateo de datos</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
@@ -65,15 +65,15 @@ Para pedir al sistema operativo que ejecute otros programas desde un programa en
 podemos hacerlo de varias maneras. Al hacerlo estamos en realidad llamando al sistema
 operativo y esperando su respuesta: 
 <PRE>
-## insertando el comando y sus parámetros entre dos `acentos graves`
+## insertando el comando y sus parametros entre dos `acentos graves`
 
 my $resultado = `ls -l *.fas`;  # muestra todos los archivos FASTA del directorio actual
 
 $resultado = `df -k`;           # muestra el espacio libre en los sistemas de ficheros de tu sistema
 
-$resultado = `cat archivo.pdb | grep ATOM`;  # imprime las líneas 'ATOM' de un PDB
+$resultado = `cat archivo.pdb | grep ATOM`;  # imprime lineas 'ATOM' de un PDB
 
-## usando la función system()
+## usando la funcion system()
 
 $resultado = system("cat archivo.pdb | grep ATOM");
 
@@ -95,23 +95,23 @@ Yo destacar&#237;a:
 
 <P>
 <PRE>
-chdir $otroDir;   # cambia de directorio durante la ejecución de un programa
+chdir $otroDir;   # cambia de directorio durante la ejecucion de un programa
 kill $IDproceso;  # termina otros procesos que hayas creado anteriormente
-sleep $segundos;  # para temporalmente la ejecución del programa que la invoca
+sleep $segundos;  # para temporalmente la ejecucion del programa que la invoca
 </PRE> 
 
 <P>
 Hay otra manera muy &#250;til de ejecutar otros programas desde Perl y directamente procesar
-su salida, usando las tuber&#237;as '|' ( <i> pipes  </i>) de UNIX*. <A NAME="952"></A>
+su salida, usando las tuber&#237;as '|' ( <i> pipes  </i>) de UNIX*. <A NAME="927"></A>
 De esta manera, la salida generada 
 por el proceso ejecutado es vista desde Perl como un archivo. Veamos ejemplos:
 
 <P>
 <PRE>
-open(BLAST,"blastpgp -i secuencia.fas |") || die "no puedo ejecutar blastpgp -i secuencia.fas\n";
+open(BLAST,"psiblast -in secuencia.fas |") || die "no puedo ejecutar psiblast\n";
 while(&lt;BLAST&gt;)
 {
-	# aquí lees la salida de BLAST directamente, sin guardarla en un archivo
+	# lee la salida de BLAST directamente, sin guardarla en un archivo
 }
 close(BLAST);
 
@@ -119,22 +119,13 @@ close(BLAST);
 open(ZCAT,"zcat gran_archivo.gz |") || die "no puedo descomprimir gran_archivo.gz\n";
 while(&lt;ZCAT&gt;)
 {
-	# aquí voy leyendo el contenido de gran_archivo, pero el archivo sigue comprimido en el sistema 
+	# voy leyendo el contenido de gran_archivo, pero el archivo sigue comprimido en el sistema 
 	
 }
 close(ZCAT);
 </PRE> 
 
 <P>
-<BR><HR>
-<!--Table of Child-Links-->
-<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
-
-<UL CLASS="ChildLinks">
-<LI><A NAME="tex2html697"
-  HREF="node40.html">Ejercicios con llamadas al sistema operativo</A>
-</UL>
-<!--End of Table of Child-Links-->
 
 <DIV CLASS="navigation"><hr> 
 <A NAME="tex2html689"

@@ -73,7 +73,7 @@ para ver todo el repertorio de s&#237;mbolos y que se pueden usar para construir
 
 <P>
 Un patr&#243;n est&#225; delimitado por dos barras inclinadas, 
-<code>/patrón/</code> y los caracteres
+<code>/patron/</code> y los caracteres
 que insert&#233;is en &#233;l pueden tener un significado literal u otro especial cuando vaya precedido 
 del modificador 
 <code>\</code>. Por ejemplo, 
@@ -85,31 +85,31 @@ s&#243;lo coincidir&#225; con los caracteres de nueva l&#237;nea.
 <P>
 Los s&#237;mbolos m&#225;s habituales en expresiones regulares podr&#237;an ser:
 <PRE> 
-/./     # cualquier carácter excepto \n, comodín (wildcard)
+/./     # cualquier caracter excepto \n, comodin (wildcard)
 /\s/    # es un espacio en blanco (space)
 /\t/    # es un tabulador
-/\w/    # es un carácter alfanumérico (word), incluyendo '_'
-/\W/    # no es un carácter alfanumérico (word)
-/\d/    # es un dígito
-/\D/    # no es un dígito 
+/\w/    # es un caracter alfanumerico (word), incluyendo '_'
+/\W/    # no es un caracter alfanumerico (word)
+/\d/    # es un digito
+/\D/    # no es un digito 
 
 /\A/     # es el principio de una cadena
 /\Z/     # es el final de una cadena
-/^/      # es el principio de una línea de archivo
-/$/      # es el final de una línea de archivo
+/^/      # es el principio de una linea de archivo
+/$/      # es el final de una linea de archivo
 
-/\//     # es el carácter / 
-/[...]/  # es una clase de carácteres que hay que buscar
-/[A|B|C]/# para definir un patrón formado por varias alternativas: coincide con 'A', con 'B' o con 'C'
+/\//     # es el caracter / 
+/[...]/  # es una clase de caracteres que hay que buscar
+/[ABC]/# para definir un patron formado por varias alternativas: coincide con 'A', con 'B' o con 'C'
 </PRE>
 
 <P>
 Los cuantificadores son:
 <PRE> 
-+ una ó más veces
-? cero ó una vez
-* cero ó más veces
-{n,m} mínimo y máximo de veces
++ una o mas veces
+? cero o una vez
+* cero o mas veces
+{n,m} minimo y maximo de veces
 </PRE>
 
 <P>
@@ -118,25 +118,25 @@ memorizar en variables locales los patrones encontrados:
 <PRE> 
 /(\d\s\w)/   
 
-/(11+)/       # guarda la primera aparición de al menos dos unos seguidos
-/(11+)\s+\1/  # guarda la primera aparición de al menos dos unos seguidos y mira a ver si 
+/(11+)/       # guarda la primera aparicion de al menos dos unos seguidos
+/(11+)\s+\1/  # guarda la primera aparicion de al menos dos unos seguidos y mira a ver si 
               # hay otra igual separada por al menos un espacio en blanco 
 				  
-              # \1 corresponde al primer (patrón), \2 al segundo y así sucesivamente
+              # \1 corresponde al primer (patron), \2 al segundo y asi sucesivamente
               # sus apariciones se almacenan en las variables especiales $1, $2, ...
-              # $1, $2, ... son asignadas desde cada patrón agrupado con paréntesis
+              # $1, $2, ... son asignadas desde cada patron agrupado con parentesis
 </PRE>
 
 <P>
 Veamos unos ejemplos:
 <PRE>
-if($cadena =~ /\s+/) { # ejecuta este código si hay uno ó más espacios en blanco en $cadena }
+if($cadena =~ /\s+/) { # ejecuta este codigo si hay uno o mas espacios en blanco en $cadena }
 
-if($cadena =~ /\s{2,}/) { # ejecuta este código si hay al menos dos espacios en blanco en $cadena }
+if($cadena =~ /\s{2,}/) { # ejecuta este codigo si hay al menos dos espacios en blanco en $cadena }
 
-if($cadena =~ /[\d|\s]/) { # ejecuta este código si encuentra un dígito o un espacio en blanco en $cadena }
+if($cadena =~ /[\d\s]/) { # ejecuta este codigo si encuentra un digito o un espacio en blanco en $cadena }
 
-if($cadena =~ /[A-Za-z]/) { # ejecuta este código si encuentra cualquier letra, mayúscula o minúscula, en $cadena }
+if($cadena =~ /[A-Za-z]/) { # ejecuta este codigo si encuentra cualquier letra, mayuscula o minuscula, en $cadena }
 
 Otra posible forma de uso:
 
@@ -158,10 +158,10 @@ que est&#225;n asociadas a las expresiones regulares y son muy &#250;tiles. Amba
 <code>=~</code>.
 
 <P>
-La primera es la sustituci&#243;n (s), cuya sintaxis simplificada es: <A NAME="935"></A>
+La primera es la sustituci&#243;n (s), cuya sintaxis simplificada es: <A NAME="910"></A>
 
 <P>
-<code> $cadena =~ s/patrón/sustitución/[g|i]</code>
+<code> $cadena =~ s/patron/sustituto/[g|i]</code>
 
 <P>
 donde <code>g</code> 
@@ -172,16 +172,16 @@ Veamos un ejemplo:
 <PRE> 
 my $cadena = "Letras y espacios \n";
 									
-$cadena =~ s/\s//;  # patrón es /\s/ y sustitución es // , ahora $cadena contiene "Letrasy espacios \n";
+$cadena =~ s/\s//;  # patron es /\s/ y el sustituto es // , ahora $cadena contiene "Letrasy espacios \n";
 
 $cadena =~ s/\s//g; # ahora $cadena contiene "Letrasyespacios\n";
 </PRE>
 
 <P>
-La otra funci&#243;n es la traducci&#243;n (tr) y su sintaxis es muy similar: <A NAME="936"></A>
+La otra funci&#243;n es la traducci&#243;n (tr) y su sintaxis es muy similar: <A NAME="911"></A>
 
 <P>
-<code> $cadena =~ tr/lista_caracteres/lista_caracteres_sustitución/</code>
+<code> $cadena =~ tr/lista_caracteres/lista_caracteres_sustitucion/</code>
 
 <P>
 que reemplaza cada aparici&#243;n de un car&#225;cter de la lista de caracteres de la izquierda por el car&#225;cter que 

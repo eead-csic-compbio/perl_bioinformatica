@@ -102,10 +102,10 @@ Vamos a ver qu&#233; son estas cosas en el programa  <i> sintaxis.pl  </i>:
 <P>
 <PRE> 
 #!/usr/bin/perl -w 
-# Programa sintaxis.pl, escrito por Bruno Contreras en Julio de 2005
+# Programa sintaxis.pl, escrito por Bruno Contreras
 # elementos de la sintaxis de Perl
 
-# llamada al módulo strict
+# llamada al modulo strict
 use strict; 
 
 # declaramos la variable $fecha
@@ -115,20 +115,20 @@ my $fecha;
 $fecha = `date`; 
 
 # estructura de control if-else para ejecutar partes del programa de forma condicional
-# la condición es que dentro del contenido de $fecha encontremos la subcadena
-# "mar" seguida de uno ó más espacios \s+ y un dígito \d 
-# esto es una expresión regular, fácilmente identificable por / /
+# la condicion es que dentro del contenido de $fecha encontremos la subcadena
+# "mar" seguida de uno o mas espacios \s+ y un digito \d 
+# esto es una expresion regular, facilmente identificable por / /
 
 if($fecha =~ /mar\s+\d/)
 {
-	# llamada a la función print con una cadena de caracteres como parámetro 
-	# normalmente las funciones reciben parámetros separados por comas entre paréntesis
-	print("Estamos en Marzo, el mes de mi cumpleaños\n");
+	# llamada a la funcion print con una cadena de caracteres como parametro 
+	# normalmente las funciones reciben parametros separados por comas entre parentesis
+	print("Estamos en Marzo, el mes de mi anivesario\n");
 }
 else
 {	
-	# pero perl no siempre requiere los paréntesis en las llamadas a funciones
-	print "Todavía queda para mi cumpleaños\n";
+	# pero perl no siempre requiere los parentesis en las llamadas a funciones
+	print "Todavia queda\n";
 }
 </PRE>
 

@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Ejemplos generales</TITLE>
-<META NAME="description" CONTENT="Ejemplos generales">
+<TITLE>Algunas aplicaciones en Bioinform&#225;tica</TITLE>
+<META NAME="description" CONTENT="Algunas aplicaciones en Bioinform&#225;tica">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,9 +18,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="next" HREF="node91.html">
 <LINK REL="previous" HREF="node89.html">
-<LINK REL="up" HREF="node89.html">
+<LINK REL="up" HREF="node88.html">
 <LINK REL="next" HREF="node91.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,197 +39,131 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1269"
+<A NAME="tex2html1270"
   HREF="node89.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1275"
-  HREF="node89.html">
+<A NAME="tex2html1274"
+  HREF="node88.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1277"
+<A NAME="tex2html1276"
   HREF="node91.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1278"
-  HREF="node91.html">Algunas aplicaciones en Bioinform&#225;tica</A></b>  Arriba: <b><A NAME="tex2html1276"
-  HREF="node89.html">Perl desde el terminal: one</A></b>  Anterior: <b><A NAME="tex2html1270"
-  HREF="node89.html">Perl desde el terminal: one</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1277"
+  HREF="node91.html">Material de apoyo en Internet</A></b>  Arriba: <b><A NAME="tex2html1275"
+  HREF="node88.html">Perl desde el terminal: one</A></b>  Anterior: <b><A NAME="tex2html1271"
+  HREF="node89.html">Ejemplos generales</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00610000000000000000"></A> <A NAME="2815"></A>
+<H1><A NAME="SECTION00620000000000000000"></A> <A NAME="2839"></A>
 <BR>
-Ejemplos generales
+Algunas aplicaciones en Bioinform&#225;tica
 </H1>
 
 <P>
-Se muestran ahora unos cuantos ejemplos de  <i> one liners  </i>, en ocasiones combinados con programas del 
-<A NAME="tex2html128"
-  HREF="http://en.wikipedia.org/wiki/Unix_shell"> <i> shell  </i></A>, para ilustrar su uso.
-Hay muchos m&#225;s en la <A NAME="tex2html129"
-  HREF="http://www.google.es/search?q=perl+one+liners">Red</A>.
+Los ejemplos previos pueden ser de utilidad en diferentes aplicaciones; los siguientes se orientan ya a tareas habituales en la Bioinform&#225;tica,
+y algunas se inspiran en c&#225;digo del repositorio <A NAME="tex2html137"
+  HREF="http://sysbio.harvard.edu/csb/resources/computational/scriptome">Scriptome</A>:
 
 <P>
 
 <OL>
-<LI>convierte archivos de codificaci&#243;n DOS a UNIX (otra posibilidad es el 'peligroso' argumento <code>-i</code>, de esta manera: <code>perl -i -pe 's/\r//g' DOS.txt</code>):
+<LI>cuenta las secuencias de un archivo FASTA (equivalente a <code>grep -c "^&gt;" archivo.fasta | wc -l </code>:
 
 <P>
-<code>$ perl -pe 's/\r//g' DOS.txt &gt; UNIX.txt</code>
-
-<P>
-</LI>
-<LI>convierte todo el texto a may&#250;sculas:
-
-<P>
-<code>$ perl -nle 'print uc'</code>
+<code>perl -lne 'if(/^&gt;/){ $total++ } END{ print "secuencias=$total"}'</code>
 
 <P>
 </LI>
-<LI>corta las dos primeras columnas de texto (para las dos &#250;ltimas es <code>@F[-2,-1]</code>) desde una tuber&#237;a (usa
-<A NAME="tex2html130"
-  HREF="http://en.wikipedia.org/wiki/Echo_(command)">echo</A>):
+<LI>lee un archivo FASTA y formatea las secuencias en una sola l&#237;nea (ademas las ordena alfab&#233;ticamente por sus descripciones):
 
 <P>
-<code>$ echo a b c | perl -lane 'print "@F[0..1]"'</code>
-
-<P>
-</LI>
-<LI>renombra archivos sin sobreescribir los que pudieran pre-existir (combinado con <A NAME="tex2html131"
-  HREF="http://en.wikipedia.org/wiki/Find">find</A>):
-
-<P>
-<code>$ find . | perl -ne'chomp; next unless -e; $original = $_; s/\.dos/\.unix/; next if -e; rename($original,$_)'</code>
+<code>perl -lne 'if(/^(&gt;.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}'</code>
 
 <P>
 </LI>
-<LI>sustituye  <i> in situ  </i> el nombre de una variable en varios archivos de texto, en este caso scripts de Perl, creando copias de seguridad:
+<LI>elimina secuencias id&#233;nticas en un archivo FASTA:
 
 <P>
-<code>$ perl -i.bak -pe 's/\$var1/\$var2/g' *.pl</code>
-
-<P>
-</LI>
-<LI>imprime las l&#237;neas de un archivo que cumplan cualquier expresi&#243;n regular (parecido a <A NAME="tex2html132"
-  HREF="http://en.wikipedia.org/wiki/Grep">grep</A>):
-
-<P>
-<code>$ perl -lne '/expresion regular/ and print' </code>
+<code>perl -lne 'if(/^(&gt;.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (keys(%fa)){ print "$s\n$fa{$s}\n" if(!$uniq{$fa{$s}}); $uniq{$fa{$s}}=1 }}'</code>
 
 <P>
 </LI>
-<LI>numera en el terminal las l&#237;neas de un archivo:
+<LI>elimina secuencias de cierta longitud de un archivo FASTA:
 
 <P>
-<code>$ perl -pe '$_ = "$. $_"'</code>
-
-<P>
-</LI>
-<LI>imprime las primeras veinte l&#237;neas de un archivo:
-
-<P>
-<code>$ perl -ne 'print "$. $_" if 1 .. 20'</code> 
+<code>perl -lne 'if(/^(&gt;.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (keys(%fa)){ print "$s\n$fa{$s}\n" if(length($fa{$s})&gt;100) }}'</code>
 
 <P>
 </LI>
-<LI>imprime el contenido de uno o m&#225;s ficheros de atr&#225;s hacia adelante (ojo, guarda primero el contenido de cada fichero en memoria):
+<LI>descarga un archivo GenBank, con ayuda de BioPerl (ver secci&#243;n <A HREF="node85.html#bioperl">4.2</A> y ejemplo en el 
+<A NAME="tex2html138"
+  HREF="http://www.eead.csic.es/compbio/material/bioperl/node14.html">taller de (bio)perl</A>):
 
 <P>
-<code>$ perl -e 'print reverse(&lt;&gt;)'</code>
-
-<P>
-</LI>
-<LI>cuenta palabras en uno o m&#225;s ficheros de texto:
-
-<P>
-<code>$ perl -lane '$total += scalar(@F); END { print $total }'</code>
+<code>$ perl -MBio::Perl -e '$gb=get_sequence("genbank","CP000524"); write_sequence("&gt;CP000524.gb","genbank",$gb)'</code>
 
 <P>
 </LI>
-<LI>para sumar las apariciones totales de cada palabra:
+<LI>descarga una secuencia de UniProt en formato FASTA por servicios web (recurre a m&#243;dulo <A NAME="tex2html139"
+  HREF="http://search.cpan.org/dist/SOAP-Lite">SOAP::Lite</A>):
 
 <P>
-<code>$ perl -lne 'while(/(\w+)/g){ $total{$1}++ }; END{ print "$_ $total{$_}" for sort{$total{$b}&lt;=&gt;$total{$a}}(keys(%total))}'</code>
-
-<P>
-</LI>
-<LI>para imprimir las l&#237;neas de un archivo contenidas entre dos expresiones regulares, por ejemplo los comentarios 
-<A NAME="tex2html133"
-  HREF="http://en.wikipedia.org/wiki/Plain_Old_Documentation">POD</A>:
-
-<P>
-<code>$ perl -nle 'print if     /^=/ .. /^=cut/'</code>
+<code>$ perl -MSOAP::Lite -e '$soap=SOAP::Lite-&gt;service("http://www.ebi.ac.uk/Tools/webservices/wsdl/WSDbfetch.wsdl");print $soap-&gt;fetchData("uniprot:Q06546","fasta","raw")'</code>
 
 <P>
 </LI>
-<LI>genera n&#250;meros aleatorios de 8 cifras, en este caso aplicando la funcion <code>map</code> sobre los valores de un vector (ver secciones <A HREF="node23.html#funcArreglos">2.7.1</A> y <A HREF="node26.html#aritfunc">2.7.4</A>):
+<LI>convierte un archivo de formato GenBank a FASTA (de nuevo usa BioPerl):
 
 <P>
-<code>$ perl -le 'print map { (0..9)[rand(10)] } 1..8'</code>
-
-<P>
-</LI>
-<LI>calcula el valor absoluto de los n&#250;meros de cada fila de un archivo tabular:
-
-<P>
-<code>$ perl -alne 'print "@{[map { abs } @F]}"'</code>
+<code>$ perl -MBio::SeqIO -e '$in=Bio::SeqIO-&gt;newFh(-file=&gt;$ARGV[0],-format=&gt;"genbank"); $out=Bio::SeqIO-&gt;newFh(-format=&gt;"fasta"); while(&lt;$in&gt;){ print $out $_ }'</code>
 
 <P>
 </LI>
-<LI>selecciona el n&#250;mero m&#225;s alto de cada fila de un archivo tabular:
+<LI>calcula el <A NAME="tex2html140"
+  HREF="http://bioinfoperl.blogspot.com.es/2016/08/one-liner-n50-ensamblaje.html">N50</A>
+de un ensamblaje de secuencias:
 
 <P>
-<code>$ perl -lane '@F=sort{$b&lt;=&gt;$a}(@F); print $F[0]'</code>
-
-<P>
-</LI>
-<LI>imprime las l&#237;neas de un archivo que cumplan cierta condici&#243;n, en este caso sobre el n&#250;mero de columnas:
-
-<P>
-<code>$ perl -lane 'scalar(@F) &gt; 3 and print' </code> 
-
-<P>
-</LI>
-<LI>calcula la transpuesta de una matriz de datos en un archivo de texto como &#233;ste, separado con espacios o tabuladores:
 <PRE>
-var1	1	2	3	4	5	6
-var2	7	8	9	10	11	12
-...
+$ perl -lne 'if(/^&gt;(\S+)/){$h=$1} else {$l=length($_);$TL+=$l;$L{$h}+=$l} \
+   END{ foreach $s (sort {$L{$b}&lt;=&gt;$L{$a}} keys(%L)){ $t+=$L{$s}; \
+   if($t&gt;$TL/2){ print "N50=$L{$s}";exit }}}' ensamblaje.fasta
 </PRE>
 
 <P>
-<code>$ perl -ane '$f++; for $c (1 .. @F){ $data[$f][$c]=$F[$c-1] }; $maxc=@F if(@F&gt;$maxc); END{ for $c (1 .. $maxc){ for $ff (1 .. $f){ print "$data[$ff][$c]\t" } print "\n"} }'</code>
+</LI>
+<LI>crea un histograma (archivo llamado 'hist.pdf') con ayuda de 
+<A NAME="tex2html141"
+  HREF="http://bioinfoperl.blogspot.com.es/2016/03/r-one-liners.html">R</A>:
+
+<P>
+<code>$ perl -lane '$F[3]=~s/,/./; print $F[3]' all.blast | Rscript -e 'data=scan(file="stdin"); hist(data)'</code> 
 
 <P>
 </LI>
-<LI>enumera las permutaciones de un vector, recurriendo al m&#243;dulo <A NAME="tex2html134"
-  HREF="http://search.cpan.org/dist/Algorithm-Permute">Algorithm::Permute</A>:
+<LI>convierte las calidades de un fichero 
+<A NAME="tex2html142"
+  HREF="https://en.wikipedia.org/wiki/FASTQ_format">FASTQ</A>
+a codificaci&#243;n Sanger/Illumina 1.8+:
 
 <P>
-<code>$ perl -MAlgorithm::Permute -le '$l = [1,2,3,4,5]; $p = Algorithm::Permute-&gt;new($l); print @r while @r = $p-&gt;next'</code>
-
-<P>
-</LI>
-<LI>dibuja una doble h&#233;lice de ADN infinita (original de www.tbi.univie.ac.at/wash):
-
-<P>
-<code>perl -e 'map {print " "x$_-&gt;[0],$xx=(keys(%x))[int(rand 4)],"-"x$_-&gt;[1],$x{$xx},"\n"} (@_=([5,0],[4,2],[3,3],[2,4],[1,4],[0,3],[0,2],[1,0]),reverse @_) while (%x=(a,t,t,a,g,c,c,g))'</code>
+<code>$ perl -lne 'tr/\x40-\xff\x00-\x3f/\x21-\xe0\x21/ if($.%4==0); print' reads.fq &gt; reads.sanger.fq</code>
 
 <P>
 </LI>
 </OL>
-
-<P>
-
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1269"
+<A NAME="tex2html1270"
   HREF="node89.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1275"
-  HREF="node89.html">
+<A NAME="tex2html1274"
+  HREF="node88.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1277"
+<A NAME="tex2html1276"
   HREF="node91.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

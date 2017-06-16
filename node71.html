@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>XML y JSON</TITLE>
-<META NAME="description" CONTENT="XML y JSON">
+<TITLE>RemoteRestMap</TITLE>
+<META NAME="description" CONTENT="RemoteRestMap">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,7 +20,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node72.html">
 <LINK REL="previous" HREF="node70.html">
-<LINK REL="up" HREF="node68.html">
+<LINK REL="up" HREF="node67.html">
 <LINK REL="next" HREF="node72.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,84 +40,72 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1072"
+<A NAME="tex2html1073"
   HREF="node70.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1078"
-  HREF="node68.html">
+<A NAME="tex2html1079"
+  HREF="node67.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1080"
+<A NAME="tex2html1081"
   HREF="node72.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1081"
-  HREF="node72.html">RemoteRestMap</A></b>  Arriba: <b><A NAME="tex2html1079"
-  HREF="node68.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1073"
-  HREF="node70.html">LWP</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1082"
+  HREF="node72.html">GD::Graph</A></b>  Arriba: <b><A NAME="tex2html1080"
+  HREF="node67.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1074"
+  HREF="node70.html">XML y JSON</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H3><A NAME="SECTION00346300000000000000">
-XML y JSON</A>
+<H3><A NAME="SECTION00346400000000000000">
+RemoteRestMap</A>
 </H3>
 
 <P>
-El XML es un lenguaje descriptivo que sirve para crear documentos estructurados y representar 
-con ellos datos abstractos. Se est&#225; usando cada vez m&#225;s como formato para distribuir documentos
-e informaci&#243;n en bioinform&#225;tica, ya que se pueden manipular desde muchas plataformas y lenguajes
-de programaci&#243;n. Esto ser&#237;a un ejemplo de documento XML:
+M&#243;dulo para buscar sitios de restricci&#243;n como cliente del servidor
+<A NAME="tex2html71"
+  HREF="http://www.restrictionmapper.org/remote.htm">RestrictionMapper</A>, muy sencillo de usar.
 <PRE>
-&lt;?xml version='1.0' standalone='yes' ?&gt;
-&lt;documento&gt;
-&lt;encabezado&gt;
-	&lt;titulo&gt;Módulos sobre XML en Perl&lt;/titulo&gt;
-	&lt;autor&gt;CPAN&lt;/autor&gt;
-&lt;/encabezado&gt;
-&lt;texto&gt;
-XML::API
-Perl extension for creating XML documents
-XML-API-0.06 - 20 Jul 2005 - Mark Lawrence
+#!/usr/bin/perl -w
+# program that gets the E.coli restriction maps of a series of E.coli sequences in fasta format
+# based on test.pl from http://www.restrictionmapper.org/remote.htm
 
-XML::ASCX12
-ASCX12 EDI to XML Module
-XML-ASCX12-0.03 - 28 Sep 2004 - Brian Kaney
 
-XML::ASX
-An ASX file - methods for everything from &lt;ASX&gt; to &lt;/ASX&gt;
-XML-ASX-0.01 - 26 Jun 2002 - Allen Day
+use lib "/home/compu2/Perl/remoterestmap/";
+use strict;
+use RemoteRestMap;
 
-XML::ApacheFOP
-Access Apache FOP from Perl to create PDF files using XSL-FO.
-XML-ApacheFOP-0.01 - 01 Jun 2005 - Ken Prows 
-...
-&lt;/texto&gt;
-&lt;/documento&gt;
+my %settings = (
+	isoschizomers =&gt; "yes",
+	enzymelist    =&gt; ['EciI','M.Eco67Dam','EcoHAI','EcoNI','Eco29kI','EcoprrI']
+	);
+	
+# instantiation of map object
+my $map_obj = new RemoteRestMap("http://www.restrictionmapper.org/cgi-local/sitefind3.pl", "atgc"); 
+
+$map_obj-&gt;sequence("ATCGATCGATACGCGATACTAGCGCGATCATCGCGCGCTATATACTCAGCTCGCTCTAGATATCTA");
+	
+my $map = $map_obj-&gt;get_map(\%settings);
+my @sites;
+
+while (my $cuts = $map-&gt;get_next_enz()) 
+{ 
+	push( @sites , split(/\,/,$cuts-&gt;{CUTLIST}-&gt;[0]) );	
+}
 </PRE>
-
-<P>
-En CPAN hay muchos paquetes para manipular documentos XML.
-Uno de los sencillos es <A NAME="tex2html66"
-  HREF="http://search.cpan.org/perldoc?XML%3A%3ASimple">XML::Simple</A>.
-
-<P>
-Otro formato alternatico para intercambiar datos entre aplicaciones es 
-<A NAME="tex2html67"
-  HREF="https://es.wikipedia.org/wiki/JSON">JSON</A>, que se puede manejar y convertir a estructuras de datos
-con ayuda de m&#243;dulos como <A NAME="tex2html68"
-  HREF="http://search.cpan.org/perldoc?JSON">JSON</A>.
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1072"
+<A NAME="tex2html1073"
   HREF="node70.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1078"
-  HREF="node68.html">
+<A NAME="tex2html1079"
+  HREF="node67.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1080"
+<A NAME="tex2html1081"
   HREF="node72.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

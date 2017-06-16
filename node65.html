@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Creaci&#243;n de paquetes y m&#243;dulos</TITLE>
-<META NAME="description" CONTENT="Creaci&#243;n de paquetes y m&#243;dulos">
+<TITLE>Utilizaci&#243;n de paquetes y m&#243;dulos desde un programa</TITLE>
+<META NAME="description" CONTENT="Utilizaci&#243;n de paquetes y m&#243;dulos desde un programa">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,7 +20,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node66.html">
 <LINK REL="previous" HREF="node64.html">
-<LINK REL="up" HREF="node62.html">
+<LINK REL="up" HREF="node61.html">
 <LINK REL="next" HREF="node66.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,136 +40,66 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1006"
+<A NAME="tex2html1007"
   HREF="node64.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1012"
-  HREF="node62.html">
+<A NAME="tex2html1013"
+  HREF="node61.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1014"
+<A NAME="tex2html1015"
   HREF="node66.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1015"
-  HREF="node66.html">Utilizaci&#243;n de paquetes y m&#243;dulos</A></b>  Arriba: <b><A NAME="tex2html1013"
-  HREF="node62.html">Paquetes y m&#243;dulos</A></b>  Anterior: <b><A NAME="tex2html1007"
-  HREF="node64.html">CPAN</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1016"
+  HREF="node66.html">Ejercicio de creaci&#243;n de paquetes</A></b>  Arriba: <b><A NAME="tex2html1014"
+  HREF="node61.html">Paquetes y m&#243;dulos</A></b>  Anterior: <b><A NAME="tex2html1008"
+  HREF="node64.html">Creaci&#243;n de paquetes y m&#243;dulos</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00343000000000000000">
-Creaci&#243;n de paquetes y m&#243;dulos</A>
+<H2><A NAME="SECTION00344000000000000000">
+Utilizaci&#243;n de paquetes y m&#243;dulos desde un programa</A>
 </H2>
 
 <P>
-Podemos crear un m&#243;dulo con subrutinas o estructuras de datos que nos hayan sido especialmente 
-&#250;tiles y que sigamos usando de forma repetida. En teor&#237;a basta con que cre&#233;is un archivo
+Como ya vimos, un paquete se incluye en un programa por medio de 
+<code>use paquete;</code> .
+Cuando el int&#233;rprete Perl llega a esa l&#237;nea, normalmente en el encabezado de un programa,
+busca un archivo que se llame 
 <code>paquete.pm</code> 
-que contenga las siguientes l&#237;neas:
-<PRE>
-package paquete;
-
-# todo lo que venga aquí es el contenido del módulo
-
-1;
-</PRE>
+en una serie de directorios, que incluyen el directorio actual, almacenados en el arreglo especial 
+<code>@INC</code>. 
 
 <P>
-Ahora os muestro un ejemplo de paquete gen&#233;rico que contiene dos subrutinas:
-<PRE>
-package operaciones_tipicas;
-
-use Exporter;
-
-our @ISA    = qw(Exporter);
-our @EXPORT = qw( subrutina2 $variable_exportable ); 
-
-our $variable_exportable;
-
-sub subrutina1_interna #no se exporta, no se puede invocar desde fuera
-{
-	my ($parametros) = @_;
-	# código de subrutina
-	my $resultados;
-	#...
-	
-	return ($resultados)  
-}
-
-sub subrutina2
-{
-	# código de subrutina 
-	# llama a subrutina1
-	my $datos = subrutina1_interna(time());
-	
-	#otras operaciones...
-	$variable_exportable = $datos;
-}
-
-1;  # convención para terminar un paquete
-</PRE>
+Podemos comprobar el contenido de 
+<code>@INC</code> 
+simplemente imprimi&#233;ndolo con 
+<code>print @INC;</code> . 
 
 <P>
-Para utilizar este m&#243;dulo desde otro programa podr&#237;amos:
+Si queremos utilizar un m&#243;dulo o paquete que no se encuentra en 
+<code>@INC</code>, 
+deberemos a&#241;adir estas 
+l&#237;neas antes de llamar a 
+<code>use</code>:
 <PRE>
-#!/usr/bin/perl -w 
-# Ejemplo escrito por Bruno Contreras Moreira
-
+use lib "/home/usuario/modulos/"
 use strict;
-use operaciones_tipicas;  
-
-subrutina2();                # acceso a una subrutina del módulo  
-print $variable_exportable;  # acceso a una variable del módulo
+use mimodulo;
 </PRE>
-
-<P>
-Al instalar el int&#233;rprete Perl viene incluido el programa 
-<code>h2xs</code> 
-que nos ayuda a crear paquetes siguiendo una plantilla gen&#233;rica. Para crear el paquete  <i> ejemplo  </i> har&#237;amos:
-<BR>
-<code>$ h2xs -Xn ejemplo</code> 
-<A NAME="1805"></A>.
-
-<P>
-Que a mi me devuelve:
-<BR>
-<PRE>
-Defaulting to backwards compatibility with perl 5.8.5
-If you intend this module to be compatible with earlier perl versions, please
-specify a minimum perl version with the -b option.
-
-Writing ejemplo/lib/ejemplo.pm
-Writing ejemplo/Makefile.PL
-Writing ejemplo/README
-Writing ejemplo/t/ejemplo.t
-Writing ejemplo/Changes
-Writing ejemplo/MANIFEST
-</PRE>
-
-<P>
-El programa crea un subdirectorio con el nombre del paquete y coloca ah&#237; una plantilla 
-ya iniciada de 
-<code>ejemplo.pm</code> 
-donde deberemos ir a&#241;adiendo el c&#243;digo que deseemos. 
-Adem&#225;s, el programa genera documentaci&#243;n que acompa&#241;a al paquete e instrucciones 
-para compilarlo y finalmente instalarlo en tu sistema. 
-
-<P>
-Si quer&#233;is contribuir con alg&#250;n m&#243;dulo a CPAN deber&#225;n ir en el formato generado por 
-<code>h2xs</code>.
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1006"
+<A NAME="tex2html1007"
   HREF="node64.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1012"
-  HREF="node62.html">
+<A NAME="tex2html1013"
+  HREF="node61.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1014"
+<A NAME="tex2html1015"
   HREF="node66.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

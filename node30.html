@@ -65,7 +65,7 @@ Una funci&#243;n de Perl que os puede ser de utilidad es
 <code>rand</code>, 
 el generador de n&#250;meros
 aleatorios. Los n&#250;meros aleatorios se han usado en biolog&#237;a para modelar eventos de mutaci&#243;n
-<A NAME="945"></A> y de recombinaci&#243;n gen&#233;tica <A NAME="946"></A>. Pero se han llevado m&#225;s 
+<A NAME="920"></A> y de recombinaci&#243;n gen&#233;tica <A NAME="921"></A>. Pero se han llevado m&#225;s 
 all&#225; en computaci&#243;n y son la base de varios tipos de algoritmos como los algoritmos gen&#233;ticos 
 y de Monte Carlo.
 
@@ -77,18 +77,18 @@ con un contenido en GC que se aproxima a uno definido.
 <P>
 <PRE>
 #!/usr/bin/perl -w 
-# Ejercicio escrito por Bruno Contreras en Julio de 2005
+# Ejercicio escrito por Bruno Contreras
 
-# Programa que recombina una serie de moléculas de ADN que codifican para genes homólogos,
+# Programa que recombina una serie de moleculas de ADN que codifican para genes homologos,
 # y obtiene un gen recombinante que optimiza su contenido en %GC
 
 # REQUISITOS:
-# los genes deben estar alineados y si tienen diferente longitud deberán incorporar inserciones
+# los genes deben estar alineados y si tienen diferente longitud deberan incorporar inserciones
 # mira http://www.cbs.dtu.dk/services/RevTrans/
 
 use strict; 
 
-@genes = (     # en este ejemplo hay 3 genes homólogos del regulador CRP
+@genes = (     # en este ejemplo hay 3 genes homologos de CRP
 #CRP_HAEIN
 'ATGTCAAATGAATTAACCGAAATTGATGAAGTTGTAACCTCCTCTCAAGAAGAAGCAACT  
 CAACGAGATCCCGTTTTAGATTGGTTTCTTACTCACTGCCATTTGCATAAATATCCTGCA
@@ -147,7 +147,7 @@ TACGGTACAAGA'
 # 4) elige al azar dos secuencias para recombinar
 
 # 5) para recombinar usa rand con la longitud del alineamiento
-# restringiendo los puntos de sobrecruzamiento a los que sean múltiplos
+# restringiendo los puntos de sobrecruzamiento a los que sean multiplos
 # de tres
 </PRE>
 

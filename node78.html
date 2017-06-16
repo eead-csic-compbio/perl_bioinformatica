@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>DBI y BioPerl</TITLE>
-<META NAME="description" CONTENT="DBI y BioPerl">
+<TITLE>DBI</TITLE>
+<META NAME="description" CONTENT="DBI">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,9 +18,9 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="next" HREF="node87.html">
-<LINK REL="previous" HREF="node41.html">
-<LINK REL="up" HREF="bioinfoPerl.html">
+<LINK REL="next" HREF="node85.html">
+<LINK REL="previous" HREF="node77.html">
+<LINK REL="up" HREF="node77.html">
 <LINK REL="next" HREF="node79.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,32 +40,78 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1138"
+<A NAME="tex2html1147"
   HREF="node77.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1144"
-  HREF="bioinfoPerl.html">
+<A NAME="tex2html1153"
+  HREF="node77.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1146"
+<A NAME="tex2html1155"
   HREF="node79.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1147"
-  HREF="node79.html">DBI</A></b>  Arriba: <b><A NAME="tex2html1145"
-  HREF="bioinfoPerl.html">Perl en bioinform&#225;tica</A></b>  Anterior: <b><A NAME="tex2html1139"
-  HREF="node77.html">Limitaciones num&#233;ricas de Perl5</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1156"
+  HREF="node79.html">Operaciones b&#225;sicas con bases de</A></b>  Arriba: <b><A NAME="tex2html1154"
+  HREF="node77.html">DBI y BioPerl</A></b>  Anterior: <b><A NAME="tex2html1148"
+  HREF="node77.html">DBI y BioPerl</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00400000000000000000"></A> <A NAME="sem3"></A>
-<BR>
-DBI y BioPerl
+<H1><A NAME="SECTION00410000000000000000">
+DBI</A>
 </H1>
 
 <P>
-Este cap&#237;tulo describe con cierto detalle el m&#243;dulo DBI, que es la interfaz de Perl a las bases de datos, 
-adem&#225;s de presentar BioPerl, una colecci&#243;n de m&#243;dulos hechos para facilitarnos la vida en multitud de aplicaciones 
-bioinform&#225;ticas habituales y no tener que reinventar la rueda.
+DBI es un conjunto de m&#243;dulos Perl que puedes descargar de <A NAME="tex2html100"
+  HREF="http://search.cpan.org/perldoc?DBI">CPAN</A>,
+aunque probablemente los tienes ya en tu sistema. DBI significa  <i> Database Independent Interface  </i>,
+que en espa&#241;ol es una interfaz para bases de datos independiente de la plataforma,
+similar a la interfaz JDBC del lenguaje java, por ejemplo.
+
+<P>
+Hay diferentes conceptos e implementaciones de bases de datos que se pueden manejar desde Perl, como por ejemplo
+<A NAME="tex2html101"
+  HREF="http://es.wikipedia.org/wiki/Berkeley_DB">BerkeleyDB</A>
+(ver ejemplo en <A NAME="tex2html102"
+  HREF="http://www.eead.csic.es/compbio/material/bioperl/node31.html">taller de (bio)perl</A>), 
+y DBI nos permite interaccionar con muchas de ellas, ya sean propietarias o de c&#243;digo abierto como 
+<A NAME="tex2html103"
+  HREF="http://www.mysql.com/">MySQL</A>. 
+Uno de las razones del &#233;xito de DBI es que es sencillo escribir los controladores de un tipo
+de base de datos dado para que DBI pueda interaccionar con ella.
+
+<P>
+Las aplicaciones de DBI incluyen sobre todo las bases de datos relacionales, construidas
+a base de tablas <A NAME="2398"></A> y manejadas normalmente por medio de 
+un lenguaje est&#225;ndar llamado SQL, del ingl&#233;s  <i> Structured Query Language  </i>. <A NAME="2402"></A>
+
+<P>
+DBI es un conjunto de m&#243;dulos escritos en forma de clases.
+
+<P>
+En la secci&#243;n <A HREF="node91.html#apoyo">10</A> se citan una serie de documentos donde pod&#233;is complementar el
+aprendizaje y los usos de DBI que veamos aqu&#237;.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:DBIflux"></A><A NAME="2562"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 4.1:</STRONG>
+
+Uso de DBI desde Perl y flujo de informaci&#243;n desde un programa a una base de datos.
+DBI incluye controladores para plataformas como Oracle, Informix, mSQL, MySQL, Ingres, 
+Sybase, DB2, Empress, SearchServer y PostgreSQL.
+</CAPTION>
+<TR><TD><IMG
+ WIDTH="547" HEIGHT="496" BORDER="0"
+ SRC="img7.png"
+ ALT="\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{DBIflux}
+\end{center}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
 
 <P>
 <BR><HR>
@@ -73,40 +119,34 @@ bioinform&#225;ticas habituales y no tener que reinventar la rueda.
 <A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
 
 <UL CLASS="ChildLinks">
-<LI><A NAME="tex2html1148"
-  HREF="node79.html">DBI</A>
+<LI><A NAME="tex2html1157"
+  HREF="node79.html">Operaciones b&#225;sicas con bases de datos relacionales</A>
+<LI><A NAME="tex2html1158"
+  HREF="node80.html">Conexi&#243;n a una base de datos a trav&#233;s de la red</A>
+<LI><A NAME="tex2html1159"
+  HREF="node81.html">Manipulaci&#243;n de una base de datos con SQL</A>
 <UL>
-<LI><A NAME="tex2html1149"
-  HREF="node80.html">Operaciones b&#225;sicas con bases de datos relacionales</A>
-<LI><A NAME="tex2html1150"
-  HREF="node81.html">Conexi&#243;n a una base de datos a trav&#233;s de la red</A>
-<LI><A NAME="tex2html1151"
-  HREF="node82.html">Manipulaci&#243;n de una base de datos con SQL</A>
-<UL>
-<LI><A NAME="tex2html1152"
-  HREF="node83.html">Sentencias SELECT</A>
-<LI><A NAME="tex2html1153"
-  HREF="node84.html">Otras sentencias</A>
-</UL>
-<LI><A NAME="tex2html1154"
-  HREF="node85.html">Ejercicios con DBI</A>
+<LI><A NAME="tex2html1160"
+  HREF="node82.html">Sentencias SELECT</A>
+<LI><A NAME="tex2html1161"
+  HREF="node83.html">Otras sentencias</A>
 </UL>
 <BR>
-<LI><A NAME="tex2html1155"
-  HREF="node86.html">BioPerl</A>
+<LI><A NAME="tex2html1162"
+  HREF="node84.html">Ejercicios con DBI</A>
 </UL>
 <!--End of Table of Child-Links-->
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1138"
+<A NAME="tex2html1147"
   HREF="node77.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1144"
-  HREF="bioinfoPerl.html">
+<A NAME="tex2html1153"
+  HREF="node77.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1146"
+<A NAME="tex2html1155"
   HREF="node79.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

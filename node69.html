@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Getopt::Std</TITLE>
-<META NAME="description" CONTENT="Getopt::Std">
+<TITLE>LWP</TITLE>
+<META NAME="description" CONTENT="LWP">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,7 +20,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node70.html">
 <LINK REL="previous" HREF="node68.html">
-<LINK REL="up" HREF="node68.html">
+<LINK REL="up" HREF="node67.html">
 <LINK REL="next" HREF="node70.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,88 +40,59 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1052"
+<A NAME="tex2html1053"
   HREF="node68.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1058"
-  HREF="node68.html">
+<A NAME="tex2html1059"
+  HREF="node67.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1060"
+<A NAME="tex2html1061"
   HREF="node70.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1061"
-  HREF="node70.html">LWP</A></b>  Arriba: <b><A NAME="tex2html1059"
-  HREF="node68.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1053"
-  HREF="node68.html">Algunos paquetes y programas Perl</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1062"
+  HREF="node70.html">XML y JSON</A></b>  Arriba: <b><A NAME="tex2html1060"
+  HREF="node67.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1054"
+  HREF="node68.html">Getopt::Std</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H3><A NAME="SECTION00346100000000000000">
-Getopt::Std</A>
+<H3><A NAME="SECTION00346200000000000000">
+LWP</A>
 </H3>
 
 <P>
-Este m&#243;dulo facilita la creaci&#243;n de una interfaz para tu programa en la l&#237;nea de comando, definiendo
-las diferentes opciones disponibles por medio de una letra y manejando su tratamiento. Lo mostrar&#233; mejor con un ejemplo:
+Esta colecci&#243;n de paquetes de CPAN nos permite desarrollar clientes web en Perl, os recomiendo que 
+investigu&#233;is la documentaci&#243;n en <A NAME="tex2html66"
+  HREF="http://search.cpan.org/perldoc?LWP">LWP</A>
+para ver todas sus posibilidades. 
+
+<P>
+Aqu&#237; os mostrar&#233; el uso del paquete <A NAME="tex2html67"
+  HREF="http://search.cpan.org/perldoc?LWP::Simple">LWP::Simple</A>
+para descargarnos una p&#225;gina web, lo cual puede sernos de utilidad alguna vez:
 <PRE>
 #!/usr/bin/perl -w
-# program: example.pl
-# author: Bruno Contreras Moreira
+# descarga un sitio web de forma no interactiva
 
 use strict;
-use Getopt::Std;
+use LWP::Simple;
 
-my %opts;
-getopts('hsi:l:', \%opts);
-
-if(($opts{'h'})||(scalar(keys(%opts))==0)) 
-{ 
-	print "usage: progname.pl [options]\n";
-	print "-h \t this message\n";
-	print "-i \t input transcription file\n";
-	print "-s \t skip preprocessing (optional)\n";
-	print "-l \t oligo length (default 1, optional)\n\n";
-	exit; 
-}
-
-if(!defined($opts{'i'})) 	{ die "# need an input file\n"; }
-if(!defined($opts{'l'}) || ($opts{'l'} &lt; 1) ) 	
-{ 
-	$opts{'l'} = 1; 
-}
-if(!defined($opts{'s'})) 	
-{ 
-	$opts{'s'} = 0; 
-}
-
-printf("# example.pl -i %s -s %s -l %d\n",$opts{'i'},$opts{'s'},$opts{'l'});
-</PRE>
-
-<P>
-Si invocamos el programa
-<BR>
-<code>$ perl example.pl</code> 
-<BR>
-nos muestra las opciones posibles. 
-
-<P>
-Hay otra versi&#243;n que admite nombres de los par&#225;metros largos, <A NAME="tex2html63"
-  HREF="http://perldoc.perl.org/Getopt/Long.html">Getopt::Long</A>
-.
+my $contenido = get("http://www.perl.com");
+</PRE> 
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1052"
+<A NAME="tex2html1053"
   HREF="node68.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1058"
-  HREF="node68.html">
+<A NAME="tex2html1059"
+  HREF="node67.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1060"
+<A NAME="tex2html1061"
   HREF="node70.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>LWP</TITLE>
-<META NAME="description" CONTENT="LWP">
+<TITLE>XML y JSON</TITLE>
+<META NAME="description" CONTENT="XML y JSON">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -20,7 +20,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="next" HREF="node71.html">
 <LINK REL="previous" HREF="node69.html">
-<LINK REL="up" HREF="node68.html">
+<LINK REL="up" HREF="node67.html">
 <LINK REL="next" HREF="node71.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,59 +40,84 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1062"
+<A NAME="tex2html1063"
   HREF="node69.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1068"
-  HREF="node68.html">
+<A NAME="tex2html1069"
+  HREF="node67.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1070"
+<A NAME="tex2html1071"
   HREF="node71.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1071"
-  HREF="node71.html">XML y JSON</A></b>  Arriba: <b><A NAME="tex2html1069"
-  HREF="node68.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1063"
-  HREF="node69.html">Getopt::Std</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1072"
+  HREF="node71.html">RemoteRestMap</A></b>  Arriba: <b><A NAME="tex2html1070"
+  HREF="node67.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1064"
+  HREF="node69.html">LWP</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H3><A NAME="SECTION00346200000000000000">
-LWP</A>
+<H3><A NAME="SECTION00346300000000000000">
+XML y JSON</A>
 </H3>
 
 <P>
-Esta colecci&#243;n de paquetes de CPAN nos permite desarrollar clientes web en Perl, os recomiendo que 
-investigu&#233;is la documentaci&#243;n en <A NAME="tex2html64"
-  HREF="http://search.cpan.org/perldoc?LWP">LWP</A>
-para ver todas sus posibilidades. 
+El XML es un lenguaje descriptivo que sirve para crear documentos estructurados y representar 
+con ellos datos abstractos. Se est&#225; usando cada vez m&#225;s como formato para distribuir documentos
+e informaci&#243;n en bioinform&#225;tica, ya que se pueden manipular desde muchas plataformas y lenguajes
+de programaci&#243;n. Esto ser&#237;a un ejemplo de documento XML:
+<PRE>
+&lt;?xml version='1.0' standalone='yes' ?&gt;
+&lt;documento&gt;
+&lt;encabezado&gt;
+	&lt;titulo&gt;Módulos sobre XML en Perl&lt;/titulo&gt;
+	&lt;autor&gt;CPAN&lt;/autor&gt;
+&lt;/encabezado&gt;
+&lt;texto&gt;
+XML::API
+Perl extension for creating XML documents
+XML-API-0.06 - 20 Jul 2005 - Mark Lawrence
+
+XML::ASCX12
+ASCX12 EDI to XML Module
+XML-ASCX12-0.03 - 28 Sep 2004 - Brian Kaney
+
+XML::ASX
+An ASX file - methods for everything from &lt;ASX&gt; to &lt;/ASX&gt;
+XML-ASX-0.01 - 26 Jun 2002 - Allen Day
+
+XML::ApacheFOP
+Access Apache FOP from Perl to create PDF files using XSL-FO.
+XML-ApacheFOP-0.01 - 01 Jun 2005 - Ken Prows 
+...
+&lt;/texto&gt;
+&lt;/documento&gt;
+</PRE>
 
 <P>
-Aqu&#237; os mostrar&#233; el uso del paquete <A NAME="tex2html65"
-  HREF="http://search.cpan.org/perldoc?LWP::Simple">LWP::Simple</A>
-para descargarnos una p&#225;gina web, lo cual puede sernos de utilidad alguna vez:
-<PRE>
-#!/usr/bin/perl -w
-# cómo descargarse una página web de forma no interactiva
+En CPAN hay muchos paquetes para manipular documentos XML.
+Uno de los sencillos es <A NAME="tex2html68"
+  HREF="http://search.cpan.org/perldoc?XML%3A%3ASimple">XML::Simple</A>.
 
-use strict;
-use LWP::Simple;
-
-my $contenido = get("http://www.perl.com");
-</PRE> 
+<P>
+Otro formato alternatico para intercambiar datos entre aplicaciones es 
+<A NAME="tex2html69"
+  HREF="https://es.wikipedia.org/wiki/JSON">JSON</A>, que se puede manejar y convertir a estructuras de datos
+con ayuda de m&#243;dulos como <A NAME="tex2html70"
+  HREF="http://search.cpan.org/perldoc?JSON">JSON</A>.
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1062"
+<A NAME="tex2html1063"
   HREF="node69.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1068"
-  HREF="node68.html">
+<A NAME="tex2html1069"
+  HREF="node67.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1070"
+<A NAME="tex2html1071"
   HREF="node71.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>

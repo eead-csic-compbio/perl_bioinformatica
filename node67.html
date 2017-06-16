@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Ejercicio de creaci&#243;n de paquetes</TITLE>
-<META NAME="description" CONTENT="Ejercicio de creaci&#243;n de paquetes">
+<TITLE>Algunos paquetes y programas Perl &#250;tiles en aplicaciones bioinform&#225;ticas</TITLE>
+<META NAME="description" CONTENT="Algunos paquetes y programas Perl &#250;tiles en aplicaciones bioinform&#225;ticas">
 <META NAME="keywords" CONTENT="bioinfoPerl">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -18,9 +18,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
 
-<LINK REL="next" HREF="node68.html">
 <LINK REL="previous" HREF="node66.html">
-<LINK REL="up" HREF="node62.html">
+<LINK REL="up" HREF="node61.html">
 <LINK REL="next" HREF="node68.html">
 <!--google-->
 <script type="text/javascript">
@@ -40,78 +39,67 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html1026"
+<A NAME="tex2html1027"
   HREF="node66.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1032"
-  HREF="node62.html">
+<A NAME="tex2html1031"
+  HREF="node61.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1034"
+<A NAME="tex2html1033"
   HREF="node68.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1035"
-  HREF="node68.html">Algunos paquetes y programas Perl</A></b>  Arriba: <b><A NAME="tex2html1033"
-  HREF="node62.html">Paquetes y m&#243;dulos</A></b>  Anterior: <b><A NAME="tex2html1027"
-  HREF="node66.html">Utilizaci&#243;n de paquetes y m&#243;dulos</A></b></fieldset></div></DIV>
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1034"
+  HREF="node68.html">Getopt::Std</A></b>  Arriba: <b><A NAME="tex2html1032"
+  HREF="node61.html">Paquetes y m&#243;dulos</A></b>  Anterior: <b><A NAME="tex2html1028"
+  HREF="node66.html">Ejercicio de creaci&#243;n de paquetes</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00345000000000000000">
-Ejercicio de creaci&#243;n de paquetes</A>
+<H2><A NAME="SECTION00346000000000000000">
+Algunos paquetes y programas Perl &#250;tiles en aplicaciones bioinform&#225;ticas</A>
 </H2>
 
 <P>
-Para que vay&#225;is practicando con estas cosas os voy a pedir que escrib&#225;is el paquete 
-<code>contactos.pm</code>. 
-Se trata de un paquete relacionado con el c&#225;lculo de mapas de
-contactos de prote&#237;nas. Un mapa de contactos para una prote&#237;na con N amino&#225;cidos
-es una matriz binaria NxN donde en cada celda (coordenadas i,j) habr&#225; un '+' si los 
-amino&#225;cidos i y j est&#225;n a menos de 7&#197; uno del otro y un ' ' en caso contrario:
-<PRE>
-001                       ++++                  +     
-002                       +++++                 +
-003                          +++++              +
-...
-</PRE>
+En esta secci&#243;n veremos ejemplos de algunos paquetes y m&#243;dulos que me parecen muy &#250;tiles
+para distintas aplicaciones en bioinform&#225;tica. Algunos vienen incorporados con el int&#233;rprete,
+otros son de CPAN y otros los obtuve directamente de las p&#225;ginas web de los autores.
 
 <P>
-Vuestro paquete deber&#225; contener al menos 4 subrutinas que:
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
 
-<UL>
-<LI>lean un archivo PDB (leePDB)
-</LI>
-<LI>se queden s&#243;lo con la primera cadena de prote&#237;na (toma1Cadena)
-</LI>
-<LI>calcula la matriz de contactos (calcMatriz)
-</LI>
-<LI>imprima en salida est&#225;ndar la matriz (imprimeMatriz) 
-</LI>
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1035"
+  HREF="node68.html">Getopt::Std</A>
+<LI><A NAME="tex2html1036"
+  HREF="node69.html">LWP</A>
+<LI><A NAME="tex2html1037"
+  HREF="node70.html">XML y JSON</A>
+<LI><A NAME="tex2html1038"
+  HREF="node71.html">RemoteRestMap</A>
+<LI><A NAME="tex2html1039"
+  HREF="node72.html">GD::Graph</A>
+<LI><A NAME="tex2html1040"
+  HREF="node73.html">GraphViz</A>
+<LI><A NAME="tex2html1041"
+  HREF="node74.html">SOAP y web servicios</A>
+<LI><A NAME="tex2html1042"
+  HREF="node75.html">Otros m&#243;dulos y programas</A>
 </UL>
-
-<P>
-Si quer&#233;is usar el programa 
-<code>h2xs</code> 
-os recomiendo esta
-<A NAME="tex2html62"
-  HREF="http://mathforum.org/~ken/perl_modules.html">gu&#237;a</A>. 
-
-<P>
-Una vez que teng&#225;is el m&#243;dulo listo y documentado, escribid un programa que lo invoque y utilice
-que sirva de ejemplo. 
-
-<P>
+<!--End of Table of Child-Links-->
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html1026"
+<A NAME="tex2html1027"
   HREF="node66.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html1032"
-  HREF="node62.html">
+<A NAME="tex2html1031"
+  HREF="node61.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html1034"
+<A NAME="tex2html1033"
   HREF="node68.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>
