@@ -1,0 +1,422 @@
+BLASTP 2.2.11 [Jun-05-2005]
+
+
+Reference: Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaffer, 
+Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), 
+"Gapped BLAST and PSI-BLAST: a new generation of protein database search
+programs",  Nucleic Acids Res. 25:3389-3402.
+
+Query= 1LFU M.musculus DNA-binding protein
+         (82 letters)
+
+Database: nr27062005 
+           2,540,612 sequences; 863,360,394 total letters
+
+Searching..................................................done
+
+                                                                 Score    E
+Sequences producing significant alignments:                      (bits) Value
+
+gi|28373541|pdb|1LFU|P Chain P, Nmr Solution Stucture Of The Ext...   145   4e-34
+gi|34365779|ref|NP_899198.1| pre B-cell leukemia transcription f...   141   6e-33
+gi|30582249|gb|AAP35351.1| pre-B-cell leukemia transcription fac...   141   6e-33
+gi|12805535|gb|AAH02244.1| Pbx1 protein [Mus musculus]                141   6e-33
+gi|46048897|ref|NP_990077.1| PBX1A protein [Gallus gallus] >gnl|...   141   6e-33
+gi|30584839|gb|AAP36672.1| Homo sapiens pre-B-cell leukemia tran...   141   6e-33
+gi|57111599|ref|XP_545786.1| PREDICTED: similar to Pre-B-cell le...   141   6e-33
+gi|61868690|ref|XP_612645.1| PREDICTED: similar to Pre-B-cell le...   141   6e-33
+gi|55588664|ref|XP_513961.1| PREDICTED: hypothetical protein XP_...   141   6e-33
+gi|61845502|ref|XP_586515.1| PREDICTED: similar to Pbx1 protein,...   141   6e-33
+gi|107390|pir||B33061 homeotic protein prl - human >gnl|BL_ORD_I...   141   6e-33
+gi|8096557|dbj|BAA96136.1| PBX1B [Gallus gallus]                      141   6e-33
+gi|339895|gb|AAA36764.1| E2A/PRL fusion protein                       141   6e-33
+gi|4558070|pdb|1B72|B Chain B, Pbx1, Homeobox Protein Hox-B1DNA ...   141   6e-33
+gi|18149007|dbj|BAB83538.1| pre-B-cell leukemia transcription fa...   138   4e-32
+gi|20302859|gb|AAM18914.1| pre-B-cell leukemia transcription fac...   137   1e-31
+gi|57162414|emb|CAI40243.1| pre-B-cell leukemia transcription fa...   136   2e-31
+gi|62644969|ref|XP_231158.3| PREDICTED: similar to PBX3a [Rattus...   136   2e-31
+gi|57162416|emb|CAI40245.1| pre-B-cell leukemia transcription fa...   136   2e-31
+gi|57162415|emb|CAI40244.1| pre-B-cell leukemia transcription fa...   136   2e-31
+
+>gi|28373541|pdb|1LFU|P Chain P, Nmr Solution Stucture Of The
+          Extended Pbx Homeodomain Bound To Dna
+          Length = 82
+
+ Score =  145 bits (365), Expect = 4e-34
+ Identities = 72/82 (87%), Positives = 72/82 (87%)
+
+Query: 1  MARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRY 60
+          MARRKRRNFNKQATEILNEYFYSHLSNPYPS          SGITVSQVSNWFGNKRIRY
+Sbjct: 1  MARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRY 60
+
+Query: 61 KKNIGKFQEEANIYAAKTAVTA 82
+          KKNIGKFQEEANIYAAKTAVTA
+Sbjct: 61 KKNIGKFQEEANIYAAKTAVTA 82
+
+
+>gi|34365779|ref|NP_899198.1| pre B-cell leukemia transcription
+           factor 1 isoform a [Mus musculus]
+ PREDICTED: similar to Pre-B-cell leukemia transcription factor-1
+           (Homeobox protein PBX1) [Rattus norvegicus]
+ pre-B-cell leukemia transcription factor 1 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 1 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 1 [Homo sapiens]
+ Pre B-cell leukemia transcription factor 1, isoform a [Mus
+           musculus]
+ Pre-B-cell leukemia transcription factor-1 (Homeobox protein PBX1)
+ Pre-B-cell leukemia transcription factor-1 (Homeobox protein PBX1)
+           (Homeobox protein PRL)
+ PBX1 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 1 [Homo sapiens]
+ PBX1a [Mus musculus]
+ PBX1a
+          Length = 430
+
+ Score =  141 bits (355), Expect = 6e-33
+ Identities = 70/81 (86%), Positives = 70/81 (86%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 293 KNIGKFQEEANIYAAKTAVTA 313
+
+
+>gi|30582249|gb|AAP35351.1| pre-B-cell leukemia transcription factor
+           1 [Homo sapiens]
+ pre B-cell leukemia transcription factor 1 isoform b [Mus musculus]
+ pre-B-cell leukemia transcription factor 1 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 1 [Homo sapiens]
+ PBX1b [Mus musculus]
+ homeobox protein
+          Length = 347
+
+ Score =  141 bits (355), Expect = 6e-33
+ Identities = 70/81 (86%), Positives = 70/81 (86%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 293 KNIGKFQEEANIYAAKTAVTA 313
+
+
+>gi|12805535|gb|AAH02244.1| Pbx1 protein [Mus musculus]
+          Length = 242
+
+ Score =  141 bits (355), Expect = 6e-33
+ Identities = 70/81 (86%), Positives = 70/81 (86%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 128 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 187
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 188 KNIGKFQEEANIYAAKTAVTA 208
+
+
+>gi|46048897|ref|NP_990077.1| PBX1A protein [Gallus gallus]
+ PBX1A [Gallus gallus]
+          Length = 430
+
+ Score =  141 bits (355), Expect = 6e-33
+ Identities = 70/81 (86%), Positives = 70/81 (86%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 293 KNIGKFQEEANIYAAKTAVTA 313
+
+
+>gi|30584839|gb|AAP36672.1| Homo sapiens pre-B-cell leukemia
+           transcription factor 1 [synthetic construct]
+          Length = 348
+
+ Score =  141 bits (355), Expect = 6e-33
+ Identities = 70/81 (86%), Positives = 70/81 (86%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 293 KNIGKFQEEANIYAAKTAVTA 313
+
+
+>gi|57111599|ref|XP_545786.1| PREDICTED: similar to Pre-B-cell
+           leukemia transcription factor-1 (Homeobox protein PBX1)
+           [Canis familiaris]
+          Length = 1618
+
+ Score =  141 bits (355), Expect = 6e-33
+ Identities = 70/81 (86%), Positives = 70/81 (86%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 903 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 962
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 963 KNIGKFQEEANIYAAKTAVTA 983
+
+
+>gi|61868690|ref|XP_612645.1| PREDICTED: similar to Pre-B-cell
+           leukemia transcription factor-1 (Homeobox protein PBX1)
+           [Bos taurus]
+          Length = 333
+
+ Score =  141 bits (355), Expect = 6e-33
+ Identities = 70/81 (86%), Positives = 70/81 (86%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 293 KNIGKFQEEANIYAAKTAVTA 313
+
+
+>gi|55588664|ref|XP_513961.1| PREDICTED: hypothetical protein
+           XP_513961 [Pan troglodytes]
+          Length = 351
+
+ Score =  141 bits (355), Expect = 6e-33
+ Identities = 70/81 (86%), Positives = 70/81 (86%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 128 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 187
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 188 KNIGKFQEEANIYAAKTAVTA 208
+
+
+>gi|61845502|ref|XP_586515.1| PREDICTED: similar to Pbx1 protein,
+           partial [Bos taurus]
+          Length = 185
+
+ Score =  141 bits (355), Expect = 6e-33
+ Identities = 70/81 (86%), Positives = 70/81 (86%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 85  ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 144
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 145 KNIGKFQEEANIYAAKTAVTA 165
+
+
+>gi|107390|pir||B33061 homeotic protein prl - human
+ homeobox-containing protein
+          Length = 342
+
+ Score =  141 bits (355), Expect = 6e-33
+ Identities = 70/81 (86%), Positives = 70/81 (86%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 145 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 204
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 205 KNIGKFQEEANIYAAKTAVTA 225
+
+
+>gi|8096557|dbj|BAA96136.1| PBX1B [Gallus gallus]
+          Length = 347
+
+ Score =  141 bits (355), Expect = 6e-33
+ Identities = 70/81 (86%), Positives = 70/81 (86%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 293 KNIGKFQEEANIYAAKTAVTA 313
+
+
+>gi|339895|gb|AAA36764.1| E2A/PRL fusion protein
+          Length = 550
+
+ Score =  141 bits (355), Expect = 6e-33
+ Identities = 70/81 (86%), Positives = 70/81 (86%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 353 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 412
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 413 KNIGKFQEEANIYAAKTAVTA 433
+
+
+>gi|4558070|pdb|1B72|B Chain B, Pbx1, Homeobox Protein Hox-B1DNA
+          TERNARY COMPLEX
+          Length = 87
+
+ Score =  141 bits (355), Expect = 6e-33
+ Identities = 70/81 (86%), Positives = 70/81 (86%)
+
+Query: 2  ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+          ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 1  ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 60
+
+Query: 62 KNIGKFQEEANIYAAKTAVTA 82
+          KNIGKFQEEANIYAAKTAVTA
+Sbjct: 61 KNIGKFQEEANIYAAKTAVTA 81
+
+
+>gi|18149007|dbj|BAB83538.1| pre-B-cell leukemia transcription
+           factor 1 [Macaca fascicularis]
+          Length = 325
+
+ Score =  138 bits (348), Expect = 4e-32
+ Identities = 69/81 (85%), Positives = 69/81 (85%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS           GITVSQVSNWFGNKRIRYK
+Sbjct: 128 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 187
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQE ANIYAAKTAVTA
+Sbjct: 188 KNIGKFQEGANIYAAKTAVTA 208
+
+
+>gi|20302859|gb|AAM18914.1| pre-B-cell leukemia transcription factor
+           1b [Xenopus laevis]
+          Length = 347
+
+ Score =  137 bits (344), Expect = 1e-31
+ Identities = 68/81 (83%), Positives = 68/81 (83%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPS            ITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCAITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAV A
+Sbjct: 293 KNIGKFQEEANIYAAKTAVNA 313
+
+
+>gi|57162414|emb|CAI40243.1| pre-B-cell leukemia transcription
+           factor 3 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 3 [Homo sapiens]
+ homeobox protein [Homo sapiens]
+ pre-B-cell leukemia transcription factor 3 [Homo sapiens]
+ Pre-B-cell leukemia transcription factor-3 (Homeobox protein PBX3)
+ Pre-B-cell leukemia transcription factor 3 [Homo sapiens]
+          Length = 434
+
+ Score =  136 bits (342), Expect = 2e-31
+ Identities = 67/81 (82%), Positives = 69/81 (85%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPS            ITVSQVSNWFGNKRIRYK
+Sbjct: 235 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 294
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEAN+YAAKTAVTA
+Sbjct: 295 KNIGKFQEEANLYAAKTAVTA 315
+
+
+>gi|62644969|ref|XP_231158.3| PREDICTED: similar to PBX3a [Rattus
+           norvegicus]
+          Length = 580
+
+ Score =  136 bits (342), Expect = 2e-31
+ Identities = 67/81 (82%), Positives = 69/81 (85%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPS            ITVSQVSNWFGNKRIRYK
+Sbjct: 381 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 440
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEAN+YAAKTAVTA
+Sbjct: 441 KNIGKFQEEANLYAAKTAVTA 461
+
+
+>gi|57162416|emb|CAI40245.1| pre-B-cell leukemia transcription
+           factor 3 [Homo sapiens]
+          Length = 253
+
+ Score =  136 bits (342), Expect = 2e-31
+ Identities = 67/81 (82%), Positives = 69/81 (85%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPS            ITVSQVSNWFGNKRIRYK
+Sbjct: 54  ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 113
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEAN+YAAKTAVTA
+Sbjct: 114 KNIGKFQEEANLYAAKTAVTA 134
+
+
+>gi|57162415|emb|CAI40244.1| pre-B-cell leukemia transcription
+           factor 3 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 3D [Homo sapiens]
+          Length = 170
+
+ Score =  136 bits (342), Expect = 2e-31
+ Identities = 67/81 (82%), Positives = 69/81 (85%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPS            ITVSQVSNWFGNKRIRYK
+Sbjct: 54  ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 113
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEAN+YAAKTAVTA
+Sbjct: 114 KNIGKFQEEANLYAAKTAVTA 134
+
+
+  Database: nr27062005
+    Posted date:  Jul 21, 2005  1:35 PM
+  Number of letters in database: 863,360,394
+  Number of sequences in database:  2,540,612
+  
+Lambda     K      H
+   0.316    0.128    0.367 
+
+Gapped
+Lambda     K      H
+   0.267   0.0410    0.140 
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Number of Hits to DB: 109,424,244
+Number of Sequences: 2540612
+Number of extensions: 2730725
+Number of successful extensions: 10125
+Number of sequences better than 10.0: 20
+Number of HSP's better than 10.0 without gapping: 939
+Number of HSP's successfully gapped in prelim test: 216
+Number of HSP's that attempted gapping in prelim test: 9138
+Number of HSP's gapped (non-prelim): 1175
+length of query: 82
+length of database: 863,360,394
+effective HSP length: 53
+effective length of query: 29
+effective length of database: 728,707,958
+effective search space: 21132530782
+effective search space used: 21132530782
+T: 11
+A: 40
+X1: 16 ( 7.3 bits)
+X2: 38 (14.6 bits)
+X3: 64 (24.7 bits)
+S1: 41 (21.7 bits)
+S2: 69 (31.2 bits)
