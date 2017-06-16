@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Tablas de tablas, Hashes of hashes </TITLE>
+<META NAME="description" CONTENT="Tablas de tablas, Hashes of hashes ">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node53.html">
+<LINK REL="previous" HREF="node51.html">
+<LINK REL="up" HREF="node50.html">
+<LINK REL="next" HREF="node53.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html863"
+  HREF="node51.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html869"
+  HREF="node50.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html871"
+  HREF="node53.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html872"
+  HREF="node53.html">Combinaciones de arreglos y tablas</A></b>  Arriba: <b><A NAME="tex2html870"
+  HREF="node50.html">Estructuras de datos m&#225;s complicadas</A></b>  Anterior: <b><A NAME="tex2html864"
+  HREF="node51.html">Arreglos de arreglos</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00322000000000000000">
+Tablas de tablas,  <i> Hashes of hashes  </i></A>
+</H2>
+
+<P>
+Las tablas de tablas son tambi&#233;n sencillas de manejar, de forma muy parecida a los arreglos
+de arreglos.
+
+<P>
+<PRE>
+my %blosum62 = (                ## declaración con asignación explícita
+	'A' =&gt; 
+	{
+		'A' =&gt; -4,
+		'R' =&gt; -1,
+		...
+		'X' =&gt; -1
+	}
+	
+	...
+	
+	'X' =&gt; 
+	{
+		'A' =&gt; --,
+		'R' =&gt; -1,
+		...
+		'X' =&gt; -1
+	}
+);
+
+
+my %tabla;
+
+for($i=0;$i&lt;5;$i++)             ## asignación elemento a elemento desde bucles
+{
+	for($j=0;$j&lt;10;$j++)
+	{
+		$tabla{$i}{$j} = $i * $j;
+	}
+}
+
+
+for $i ( 1 .. 10 )              ## asignación de subtablas enteras
+{
+	$tabla[$i] = { %subtabla }; 
+	# tabla[$i] contiene una referencia a una tabla
+}
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html863"
+  HREF="node51.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html869"
+  HREF="node50.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html871"
+  HREF="node53.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

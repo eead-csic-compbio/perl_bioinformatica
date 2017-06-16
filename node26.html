@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Funciones aritm&#233;ticas</TITLE>
+<META NAME="description" CONTENT="Funciones aritm&#233;ticas">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node27.html">
+<LINK REL="previous" HREF="node25.html">
+<LINK REL="up" HREF="node22.html">
+<LINK REL="next" HREF="node27.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html558"
+  HREF="node25.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html564"
+  HREF="node22.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html566"
+  HREF="node27.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html567"
+  HREF="node27.html">Ejercicios que requieren funciones de</A></b>  Arriba: <b><A NAME="tex2html565"
+  HREF="node22.html">Biblioteca de funciones de Perl</A></b>  Anterior: <b><A NAME="tex2html559"
+  HREF="node25.html">Funciones sobre tablas asociativas</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00274000000000000000"></A> <A NAME="aritfunc"></A>
+<BR>
+Funciones aritm&#233;ticas
+</H2>
+
+<P>
+Las funciones aritm&#233;ticas m&#225;s usuales son quiz&#225;s &#233;stas.
+
+<P>
+ <i> abs  </i> <A NAME="612"></A>
+<BR>
+Devuelve el valor absoluto del escalar num&#233;rico pasado como par&#225;metro.
+<BR>
+<code>my $valorabs = abs($escalar);</code>
+
+<P>
+ <i> exp  </i> <A NAME="616"></A>
+<BR>
+<code>exp($exponente)</code> devuelve la exponencial de 
+<code>$exponente</code>.
+
+<P>
+ <i> int  </i> <A NAME="618"></A>
+<BR>
+Devuelve la parte entera del n&#250;mero real pasado como par&#225;metro.
+<BR>
+<code>my $valorint = int(8.2);  # $valorint contiene 8</code>
+
+<P>
+ <i> log  </i> <A NAME="622"></A>
+<BR>
+Devuelve el logaritmo natural del escalar num&#233;rico. Recuerda que para calcular logaritmos en otra base basta con calcular  <i> log(x)/log(base)  </i>.
+<BR>
+<P>
+ <i> sqrt  </i> <A NAME="626"></A>
+<BR>
+Devuelve la r&#225;iz cuadrada del par&#225;metro escalar num&#233;rico.
+<code>my $raiz = sqrt(25);  # $raiz contiene 5</code>
+
+<P>
+ <i> rand  </i> <A NAME="631"></A>
+<BR>
+Esta funci&#243;n es un generador de n&#250;meros aleatorios que por defecto devuelve un valor
+real comprendido entre 0 y 1, aunque puede delimitarse el l&#237;mite superior pas&#225;ndolo como
+par&#225;metro. Funciona con un valor semilla que puedes definir llamando a la funci&#243;n 
+<code>srand</code>,
+por ejemplo para obtener resultados replicables en tus programas aleatorios. Con la misma 
+semilla, dos llamadas a 
+<code>rand</code> 
+devolver&#225;n el mismo valor aleatorio.
+<PRE>
+my $semilla = 12345;
+srand($semilla);
+my $azar = rand(14);  # 3.15459917914819   , entre 0 y 14
+my $azar = rand();    # 0.919183068533556  , entre 0 y 1
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html558"
+  HREF="node25.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html564"
+  HREF="node22.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html566"
+  HREF="node27.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

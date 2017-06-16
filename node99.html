@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Detecci&#243;n de genes</TITLE>
+<META NAME="description" CONTENT="Detecci&#243;n de genes">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="previous" HREF="node97.html">
+<LINK REL="up" HREF="node94.html">
+<LINK REL="next" HREF="node100.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1558"
+  HREF="node100.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> 
+<A NAME="tex2html1554"
+  HREF="node94.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1550"
+  HREF="node98.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A>  
+<A NAME="tex2html1556"
+  HREF="node100.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="./icons//index.png"></A> 
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1559"
+  HREF="node100.html">&#205;ndice de Materias</A>
+<B> Subir:</B> <A NAME="tex2html1555"
+  HREF="node94.html">Otras aplicaciones de Perl en bioinform&#225;tica</A>
+<B> Anterior:</B> <A NAME="tex2html1551"
+  HREF="node98.html">Ejercicio de extracci&#243;n de palabras clave</A>
+ &nbsp; <B>  <A NAME="tex2html1557"
+  HREF="node100.html">&#205;ndice de Materias</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00630000000000000000">
+Detecci&#243;n de genes</A>
+</H1>
+
+<P>
+La detecci&#243;n de genes es quiz&#225;s la tarea m&#225;s importante del procesamiento de los 
+datos generados por un proyecto de secuenciaci&#243;n. De hecho, las predicciones
+de genes, correctas o equivocadas, son la base para casi todo el trabajo experimental
+que se haga despu&#233;s de alcanzar una versi&#243;n medianamente estable del genoma.
+
+<P>
+La tarea de localizar genes es complicada y muy costosa, sobre todo por el tama&#241;o 
+de los datos implicados y por la dificultad de distinguir la se&#241;al del ruido acumulado en 
+los genomas. En  eucariotas se complica todav&#237;a m&#225;s por los enormes genomas que 
+tienen, por la cantidad de secuencias <SPAN  CLASS="textit">basura</SPAN> <A NAME="2874"></A> que 
+aparentemente no tienen una funci&#243;n biol&#243;gica y por la presencia de intrones. En
+otras palabras, es todo un mundo al que pod&#233;is iniciaros en 
+<A NAME="tex2html132"
+  HREF="http://www.genefinding.org">www.genefinding.org</A>. Por lo que 
+he visto, Perl no se utiliza demasiado en este campo por razones de eficiencia.
+Dado el coste computacional del problema, se prefieren lenguajes como C/C++.
+
+<P>
+Sin embargo, para efectos de este curso, 
+podemos hacer una aproximaci&#243;n un tanto basta al problema desde
+Perl, aprovechando sus fortalezas en el tratamiento de cadenas. El algoritmo
+que os propongo consiste en 4 pasos:
+
+<UL>
+<LI>buscar marcos abiertos de lectura (<SPAN  CLASS="textit">ORFS</SPAN>) en una secuencia de ADN
+</LI>
+<LI>traducir la secuencia de cada ORF
+</LI>
+<LI>buscar secuencias similares a cada ORF con BLAST
+</LI>
+<LI>devolver los orfs que tengan secuencias similares de confianza con longitudes similares
+</LI>
+</UL>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1558"
+  HREF="node100.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A> 
+<A NAME="tex2html1554"
+  HREF="node94.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1550"
+  HREF="node98.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A>  
+<A NAME="tex2html1556"
+  HREF="node100.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="./icons//index.png"></A> 
+<BR>
+<B> Siguiente:</B> <A NAME="tex2html1559"
+  HREF="node100.html">&#205;ndice de Materias</A>
+<B> Subir:</B> <A NAME="tex2html1555"
+  HREF="node94.html">Otras aplicaciones de Perl en bioinform&#225;tica</A>
+<B> Anterior:</B> <A NAME="tex2html1551"
+  HREF="node98.html">Ejercicio de extracci&#243;n de palabras clave</A>
+ &nbsp; <B>  <A NAME="tex2html1557"
+  HREF="node100.html">&#205;ndice de Materias</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>Bruno Contreras-Moreira<br>http://www.eead.csic.es/compbio/
+</ADDRESS>
+</BODY>
+</HTML>

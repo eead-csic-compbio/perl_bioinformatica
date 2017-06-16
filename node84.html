@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Otras sentencias</TITLE>
+<META NAME="description" CONTENT="Otras sentencias">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="previous" HREF="node83.html">
+<LINK REL="up" HREF="node82.html">
+<LINK REL="next" HREF="node85.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html1214"
+  HREF="node83.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1218"
+  HREF="node82.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1220"
+  HREF="node85.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1221"
+  HREF="node85.html">Ejercicios con DBI</A></b>  Arriba: <b><A NAME="tex2html1219"
+  HREF="node82.html">Manipulaci&#243;n de una base de</A></b>  Anterior: <b><A NAME="tex2html1215"
+  HREF="node83.html">Sentencias SELECT</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00413200000000000000">
+Otras sentencias</A>
+</H3>
+
+<P>
+Para otros comandos SQL, como INSERT, UPDATE, DROP o CREATE, podemos seguir usando la combinaci&#243;n 
+<code>prepare()</code> + 
+<code>execute()</code> , 
+podemos hacerlo tambi&#233;n en un s&#243;lo paso, con el m&#233;todo 
+<code>do()</code> . 
+Pod&#233;is usarlo para sentencias como:
+<PRE>
+DELETE FROM blast WHERE hit = 'ECOLI_CRP';
+
+UPDATE tabla SET var1 = var1+1 WHERE id = 247;
+
+INSERT INTO variables VALUES ('grafo', 0);
+</PRE>
+
+<P>
+Éste es un ejemplo de uso de 
+<code>do()</code> :
+<PRE>
+use strict;
+use DBI;
+
+my $conexion = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave",{PrintError,0,RaiseError,1});
+
+# filas contiene el número de filas afectadas por la sentencia,
+# en caso de error devuelve falso
+my $filas = $conexion-&gt;do("DELETE FROM blast");
+if(!$filas)
+{
+	print "no pude ejecutar la expresión SQL\n";
+}
+
+$conexion-&gt;disconnect();
+</PRE>
+
+<P>
+Para las bases de datos basadas en transacciones <A NAME="2517"></A> estas sentencias s&#243;lo
+tendr&#225;n efecto si tras cursarlas se ejecuta el comando COMMIT, que por defecto DBI ejecuta 
+autom&#225;ticamente por nosotros. Pero tambi&#233;n podemos hacerlo expl&#237;citamente:
+
+<P>
+<PRE>
+use strict;
+use DBI;
+
+my $conexion = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave",{PrintError,0,RaiseError,1,AutoCommit,0});
+
+# filas contiene el número de filas afectadas por la sentencia,
+# en caso de error devuelve falso
+my $filas = $conexion-&gt;do("INSERT INTO variables VALUES ('grafo', 0)");
+if(!$filas)
+{
+	print "no pude ejecutar la expresión SQL\n";
+}
+else
+{
+	# si quieres fijar estos cambios:
+	$conexion-&gt;commit(); 
+	
+	# si quisieras descartalos:
+	$conexion-&gt;rollback();
+}
+
+$dbh-&gt;rollback();
+
+$conexion-&gt;disconnect();
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html1214"
+  HREF="node83.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1218"
+  HREF="node82.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1220"
+  HREF="node85.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

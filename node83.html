@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Sentencias SELECT</TITLE>
+<META NAME="description" CONTENT="Sentencias SELECT">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node84.html">
+<LINK REL="previous" HREF="node82.html">
+<LINK REL="up" HREF="node82.html">
+<LINK REL="next" HREF="node84.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html1204"
+  HREF="node82.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1210"
+  HREF="node82.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1212"
+  HREF="node84.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1213"
+  HREF="node84.html">Otras sentencias</A></b>  Arriba: <b><A NAME="tex2html1211"
+  HREF="node82.html">Manipulaci&#243;n de una base de</A></b>  Anterior: <b><A NAME="tex2html1205"
+  HREF="node82.html">Manipulaci&#243;n de una base de</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00413100000000000000">
+Sentencias SELECT</A>
+</H3>
+
+<P>
+Usaremos el m&#233;todo 
+<code>DBI::prepare()</code> 
+para crear un objeto manipulador
+( <i> statement handler  </i>) <A NAME="2493"></A> y luego el m&#233;todo 
+<code>execute()</code> 
+de este nuevo objeto para efectivamente manipular la base de datos.
+
+<P>
+<PRE>
+#!/usr/bin/perl -w
+# Ejemplo escrito por Bruno Contreras Moreira
+
+use strict;
+use DBI;
+
+## por Dios, trata de conectarlo, Carlos
+my $conexion = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave",{
+      PrintError =&gt; 0,   ### avisa si hay errores mediante warn
+      RaiseError =&gt; 1    ### avisa y termina si hay errores mediante die
+  }
+);
+
+## ahora manipula la base de datos mediante consultas SQL
+my $tabla = "blast";
+my $consulta="SELECT hit FROM $tabla WHERE evalue &lt; 1e-03";
+my $manipulador = $conexion-&gt;prepare($consulta);  # normalmente, sólo devuelve un objeto 
+                                                  # manipulador si la consulta es válida																  
+
+$manipulador-&gt;execute();
+while (my @datos=$manipulador-&gt;fetchrow_array)    # puedes usar fetchrow_hash con columnas como claves
+{
+	# haz algo con estos datos, como imprimirlos
+	foreach my $dato (@datos)
+	{
+		print "$dato,";
+	}
+}
+$manipulador-&gt;finish();
+
+$conexion-&gt;disconnect();
+</PRE>
+
+<P>
+Otra manera &#250;til de capturar la salida de una consulta ser&#237;a:
+<PRE>
+use strict;
+use DBI;
+
+my $conexion = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave",{PrintError,0,RaiseError,1});
+
+my $consulta="SELECT * FROM blast WHERE evalue &lt; 1e-03";
+my $manipulador = $conexion-&gt;prepare($consulta);  															  
+
+$manipulador-&gt;execute();
+my $ref_arreglo = $manipulador-&gt;fetchall_arrayref();  # referencia a un arreglo que contiene
+                                                      # los resultados
+
+$conexion-&gt;disconnect();
+</PRE>
+
+<P>
+Otra manera alternativa de mostrar los resultados de una consulta SQL SELECT podr&#237;a ser:
+<PRE>
+use strict;
+use DBI;
+
+my $conexion = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave",{PrintError,0,RaiseError,1});
+
+## ahora manipula la base de datos mediante consultas SQL
+my $tabla = "blast";
+my $consulta="SELECT hit FROM $tabla WHERE evalue &lt; 1e-03";
+my $manipulador = $conexion-&gt;prepare($consulta);  															  
+
+$manipulador-&gt;execute();
+# imprime todos los resultados obtenidos de la consulta
+$manipulador-&gt;dump_results();
+
+# guarda los resultados en un archivo en formato de 80 columnas
+$manipulador-&gt;execute();
+open(CONSULTA,"&gt;resultados.txt") || die "no puedo crear resultados.txt\n";
+$manipulador-&gt;dump_results(80, "\n", ':', \*CONSULTA);
+
+$conexion-&gt;disconnect();
+</PRE>
+
+<P>
+Finalmente os muestro una forma de hacer tus programas con DBI m&#225;s comprensibles, usando el
+método <code>bind_columns</code>:
+<PRE>
+use strict;
+use DBI;
+
+my $conexion = DBI-&gt;connect("dbi:mysql:test:servidor.ccg.unam.mx","usuario","clave",{PrintError,0,RaiseError,1});
+
+## ahora manipula la base de datos mediante consultas SQL
+my ($hit,$evalue); # columnas de $tabla
+my $tabla = "blast";
+my $consulta="SELECT hit,evalue FROM $tabla WHERE evalue &lt; 1e-03";
+my $manipulador = $conexion-&gt;prepare($consulta);  															  
+
+$manipulador-&gt;execute();
+
+# asocia columnas de salida con sus nombres
+$manipulador-&gt;bind_col( 1, \$hit );
+$manipulador-&gt;bind_col( 2, \$evalue );
+
+# procesa la salida
+while ($manipulador-&gt;fetch()) 
+{
+	print "$hit  $evalue\n";
+}
+
+$conexion-&gt;disconnect();
+</PRE>
+
+<P>
+OJO: Para manipular variables de tama&#241;o ilimitado en tablas (tipos LONG y LOB) hay que hacer consultas
+SELECT modificadas.
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html1204"
+  HREF="node82.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1210"
+  HREF="node82.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1212"
+  HREF="node84.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

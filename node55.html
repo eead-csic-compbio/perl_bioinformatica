@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Colas y pilas como arreglos</TITLE>
+<META NAME="description" CONTENT="Colas y pilas como arreglos">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node56.html">
+<LINK REL="previous" HREF="node54.html">
+<LINK REL="up" HREF="node50.html">
+<LINK REL="next" HREF="node56.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html893"
+  HREF="node54.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html899"
+  HREF="node50.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html901"
+  HREF="node56.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html902"
+  HREF="node56.html">Grafos y &#225;rboles</A></b>  Arriba: <b><A NAME="tex2html900"
+  HREF="node50.html">Estructuras de datos m&#225;s complicadas</A></b>  Anterior: <b><A NAME="tex2html894"
+  HREF="node54.html">Registros</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00325000000000000000">
+Colas y pilas como arreglos</A>
+</H2>
+
+<P>
+Las colas ( <i> queue  </i>, FIFO,  <i> First In First Out  </i>) <A NAME="1608"></A> <A NAME="1609"></A> y las 
+pilas ( <i> stack  </i>, LIFO,  <i> Last In First Out  </i>) <A NAME="1612"></A> <A NAME="1613"></A> son dos 
+ejemplos cl&#225;sicos de estructuras de datos en los libros 
+de texto. Por supuesto se pueden implementar en Perl por medio de registros que se apuntan
+unos a otros, pero lo m&#225;s sencillo es usar para arreglos y algunas de las funciones vistas
+en la secci&#243;n <A HREF="node23.html#funcArreglos">2.7.1</A>.
+
+<P>
+Si usamos la combinaci&#243;n 
+<code>shift</code> y 
+<code>unshift</code>, o 
+<code>push</code> y 
+<code>pop</code>, 
+tenemos una pila.
+
+<P>
+Si usamos 
+<code>shift</code> y 
+<code>push</code> 
+tenemos una cola.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:colaypila"></A><A NAME="1623"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.2:</STRONG>
+
+Colas y pilas, contenedores FIFO y LIFO.
+</CAPTION>
+<TR><TD><IMG
+ WIDTH="547" HEIGHT="357" BORDER="0"
+ SRC="img4.png"
+ ALT="\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{colaypila}
+\end{center}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html893"
+  HREF="node54.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html899"
+  HREF="node50.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html901"
+  HREF="node56.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

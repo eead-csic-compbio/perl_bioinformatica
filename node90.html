@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Ejemplos generales</TITLE>
+<META NAME="description" CONTENT="Ejemplos generales">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node91.html">
+<LINK REL="previous" HREF="node89.html">
+<LINK REL="up" HREF="node89.html">
+<LINK REL="next" HREF="node91.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html1269"
+  HREF="node89.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1275"
+  HREF="node89.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1277"
+  HREF="node91.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1278"
+  HREF="node91.html">Algunas aplicaciones en Bioinform&#225;tica</A></b>  Arriba: <b><A NAME="tex2html1276"
+  HREF="node89.html">Perl desde el terminal: one</A></b>  Anterior: <b><A NAME="tex2html1270"
+  HREF="node89.html">Perl desde el terminal: one</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00610000000000000000"></A> <A NAME="2815"></A>
+<BR>
+Ejemplos generales
+</H1>
+
+<P>
+Se muestran ahora unos cuantos ejemplos de  <i> one liners  </i>, en ocasiones combinados con programas del 
+<A NAME="tex2html128"
+  HREF="http://en.wikipedia.org/wiki/Unix_shell"> <i> shell  </i></A>, para ilustrar su uso.
+Hay muchos m&#225;s en la <A NAME="tex2html129"
+  HREF="http://www.google.es/search?q=perl+one+liners">Red</A>.
+
+<P>
+
+<OL>
+<LI>convierte archivos de codificaci&#243;n DOS a UNIX (otra posibilidad es el 'peligroso' argumento <code>-i</code>, de esta manera: <code>perl -i -pe 's/\r//g' DOS.txt</code>):
+
+<P>
+<code>$ perl -pe 's/\r//g' DOS.txt &gt; UNIX.txt</code>
+
+<P>
+</LI>
+<LI>convierte todo el texto a may&#250;sculas:
+
+<P>
+<code>$ perl -nle 'print uc'</code>
+
+<P>
+</LI>
+<LI>corta las dos primeras columnas de texto (para las dos &#250;ltimas es <code>@F[-2,-1]</code>) desde una tuber&#237;a (usa
+<A NAME="tex2html130"
+  HREF="http://en.wikipedia.org/wiki/Echo_(command)">echo</A>):
+
+<P>
+<code>$ echo a b c | perl -lane 'print "@F[0..1]"'</code>
+
+<P>
+</LI>
+<LI>renombra archivos sin sobreescribir los que pudieran pre-existir (combinado con <A NAME="tex2html131"
+  HREF="http://en.wikipedia.org/wiki/Find">find</A>):
+
+<P>
+<code>$ find . | perl -ne'chomp; next unless -e; $original = $_; s/\.dos/\.unix/; next if -e; rename($original,$_)'</code>
+
+<P>
+</LI>
+<LI>sustituye  <i> in situ  </i> el nombre de una variable en varios archivos de texto, en este caso scripts de Perl, creando copias de seguridad:
+
+<P>
+<code>$ perl -i.bak -pe 's/\$var1/\$var2/g' *.pl</code>
+
+<P>
+</LI>
+<LI>imprime las l&#237;neas de un archivo que cumplan cualquier expresi&#243;n regular (parecido a <A NAME="tex2html132"
+  HREF="http://en.wikipedia.org/wiki/Grep">grep</A>):
+
+<P>
+<code>$ perl -lne '/expresion regular/ and print' </code>
+
+<P>
+</LI>
+<LI>numera en el terminal las l&#237;neas de un archivo:
+
+<P>
+<code>$ perl -pe '$_ = "$. $_"'</code>
+
+<P>
+</LI>
+<LI>imprime las primeras veinte l&#237;neas de un archivo:
+
+<P>
+<code>$ perl -ne 'print "$. $_" if 1 .. 20'</code> 
+
+<P>
+</LI>
+<LI>imprime el contenido de uno o m&#225;s ficheros de atr&#225;s hacia adelante (ojo, guarda primero el contenido de cada fichero en memoria):
+
+<P>
+<code>$ perl -e 'print reverse(&lt;&gt;)'</code>
+
+<P>
+</LI>
+<LI>cuenta palabras en uno o m&#225;s ficheros de texto:
+
+<P>
+<code>$ perl -lane '$total += scalar(@F); END { print $total }'</code>
+
+<P>
+</LI>
+<LI>para sumar las apariciones totales de cada palabra:
+
+<P>
+<code>$ perl -lne 'while(/(\w+)/g){ $total{$1}++ }; END{ print "$_ $total{$_}" for sort{$total{$b}&lt;=&gt;$total{$a}}(keys(%total))}'</code>
+
+<P>
+</LI>
+<LI>para imprimir las l&#237;neas de un archivo contenidas entre dos expresiones regulares, por ejemplo los comentarios 
+<A NAME="tex2html133"
+  HREF="http://en.wikipedia.org/wiki/Plain_Old_Documentation">POD</A>:
+
+<P>
+<code>$ perl -nle 'print if     /^=/ .. /^=cut/'</code>
+
+<P>
+</LI>
+<LI>genera n&#250;meros aleatorios de 8 cifras, en este caso aplicando la funcion <code>map</code> sobre los valores de un vector (ver secciones <A HREF="node23.html#funcArreglos">2.7.1</A> y <A HREF="node26.html#aritfunc">2.7.4</A>):
+
+<P>
+<code>$ perl -le 'print map { (0..9)[rand(10)] } 1..8'</code>
+
+<P>
+</LI>
+<LI>calcula el valor absoluto de los n&#250;meros de cada fila de un archivo tabular:
+
+<P>
+<code>$ perl -alne 'print "@{[map { abs } @F]}"'</code>
+
+<P>
+</LI>
+<LI>selecciona el n&#250;mero m&#225;s alto de cada fila de un archivo tabular:
+
+<P>
+<code>$ perl -lane '@F=sort{$b&lt;=&gt;$a}(@F); print $F[0]'</code>
+
+<P>
+</LI>
+<LI>imprime las l&#237;neas de un archivo que cumplan cierta condici&#243;n, en este caso sobre el n&#250;mero de columnas:
+
+<P>
+<code>$ perl -lane 'scalar(@F) &gt; 3 and print' </code> 
+
+<P>
+</LI>
+<LI>calcula la transpuesta de una matriz de datos en un archivo de texto como &#233;ste, separado con espacios o tabuladores:
+<PRE>
+var1	1	2	3	4	5	6
+var2	7	8	9	10	11	12
+...
+</PRE>
+
+<P>
+<code>$ perl -ane '$f++; for $c (1 .. @F){ $data[$f][$c]=$F[$c-1] }; $maxc=@F if(@F&gt;$maxc); END{ for $c (1 .. $maxc){ for $ff (1 .. $f){ print "$data[$ff][$c]\t" } print "\n"} }'</code>
+
+<P>
+</LI>
+<LI>enumera las permutaciones de un vector, recurriendo al m&#243;dulo <A NAME="tex2html134"
+  HREF="http://search.cpan.org/dist/Algorithm-Permute">Algorithm::Permute</A>:
+
+<P>
+<code>$ perl -MAlgorithm::Permute -le '$l = [1,2,3,4,5]; $p = Algorithm::Permute-&gt;new($l); print @r while @r = $p-&gt;next'</code>
+
+<P>
+</LI>
+<LI>dibuja una doble h&#233;lice de ADN infinita (original de www.tbi.univie.ac.at/wash):
+
+<P>
+<code>perl -e 'map {print " "x$_-&gt;[0],$xx=(keys(%x))[int(rand 4)],"-"x$_-&gt;[1],$x{$xx},"\n"} (@_=([5,0],[4,2],[3,3],[2,4],[1,4],[0,3],[0,2],[1,0]),reverse @_) while (%x=(a,t,t,a,g,c,c,g))'</code>
+
+<P>
+</LI>
+</OL>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html1269"
+  HREF="node89.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1275"
+  HREF="node89.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1277"
+  HREF="node91.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

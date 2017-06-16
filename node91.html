@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Algunas aplicaciones en Bioinform&#225;tica</TITLE>
+<META NAME="description" CONTENT="Algunas aplicaciones en Bioinform&#225;tica">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="previous" HREF="node90.html">
+<LINK REL="up" HREF="node89.html">
+<LINK REL="next" HREF="node92.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html1279"
+  HREF="node90.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1283"
+  HREF="node89.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1285"
+  HREF="node92.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1286"
+  HREF="node92.html">Material de apoyo en Internet</A></b>  Arriba: <b><A NAME="tex2html1284"
+  HREF="node89.html">Perl desde el terminal: one</A></b>  Anterior: <b><A NAME="tex2html1280"
+  HREF="node90.html">Ejemplos generales</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00620000000000000000"></A> <A NAME="2862"></A>
+<BR>
+Algunas aplicaciones en Bioinform&#225;tica
+</H1>
+
+<P>
+Los ejemplos previos pueden ser de utilidad en diferentes aplicaciones; los siguientes se orientan ya a tareas habituales en la Bioinform&#225;tica,
+y algunas se inspiran en c&#225;digo del repositorio <A NAME="tex2html135"
+  HREF="http://sysbio.harvard.edu/csb/resources/computational/scriptome">Scriptome</A>:
+
+<P>
+
+<OL>
+<LI>cuenta las secuencias de un archivo FASTA (equivalente a <code>grep -c "^&gt;" archivo.fasta | wc -l </code>:
+
+<P>
+<code>perl -lne 'if(/^&gt;/){ $total++ } END{ print "secuencias=$total"}'</code>
+
+<P>
+</LI>
+<LI>lee un archivo FASTA y formatea las secuencias en una sola l&#237;nea (ademas las ordena alfab&#233;ticamente por sus descripciones):
+
+<P>
+<code>perl -lne 'if(/^(&gt;.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}'</code>
+
+<P>
+</LI>
+<LI>elimina secuencias id&#233;nticas en un archivo FASTA:
+
+<P>
+<code>perl -lne 'if(/^(&gt;.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (keys(%fa)){ print "$s\n$fa{$s}\n" if(!$uniq{$fa{$s}}); $uniq{$fa{$s}}=1 }}'</code>
+
+<P>
+</LI>
+<LI>elimina secuencias de cierta longitud de un archivo FASTA:
+
+<P>
+<code>perl -lne 'if(/^(&gt;.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (keys(%fa)){ print "$s\n$fa{$s}\n" if(length($fa{$s})&gt;100) }}'</code>
+
+<P>
+</LI>
+<LI>descarga un archivo GenBank, con ayuda de BioPerl (ver secci&#243;n <A HREF="node86.html#bioperl">4.2</A> y ejemplo en el 
+<A NAME="tex2html136"
+  HREF="http://www.eead.csic.es/compbio/material/bioperl/node14.html">taller de (bio)perl</A>):
+
+<P>
+<code>$ perl -MBio::Perl -e '$gb=get_sequence("genbank","CP000524"); write_sequence("&gt;CP000524.gb","genbank",$gb)'</code>
+
+<P>
+</LI>
+<LI>descarga una secuencia de UniProt en formato FASTA por servicios web (recurre a m&#243;dulo <A NAME="tex2html137"
+  HREF="http://search.cpan.org/dist/SOAP-Lite">SOAP::Lite</A>):
+
+<P>
+<code>$ perl -MSOAP::Lite -e '$soap=SOAP::Lite-&gt;service("http://www.ebi.ac.uk/Tools/webservices/wsdl/WSDbfetch.wsdl");print $soap-&gt;fetchData("uniprot:Q06546","fasta","raw")'</code>
+
+<P>
+</LI>
+<LI>convierte un archivo de formato GenBank a FASTA (de nuevo usa BioPerl):
+
+<P>
+<code>$ perl -MBio::SeqIO -e '$in=Bio::SeqIO-&gt;newFh(-file=&gt;$ARGV[0],-format=&gt;"genbank"); $out=Bio::SeqIO-&gt;newFh(-format=&gt;"fasta"); while(&lt;$in&gt;){ print $out $_ }'</code>
+
+<P>
+</LI>
+<LI>calcula el <A NAME="tex2html138"
+  HREF="http://bioinfoperl.blogspot.com.es/2016/08/one-liner-n50-ensamblaje.html">N50</A>
+de un ensamblaje de secuencias:
+
+<P>
+<PRE>
+$ perl -lne 'if(/^&gt;(\S+)/){$h=$1} else {$l=length($_);$TL+=$l;$L{$h}+=$l} \
+   END{ foreach $s (sort {$L{$b}&lt;=&gt;$L{$a}} keys(%L)){ $t+=$L{$s}; \
+   if($t&gt;$TL/2){ print "N50=$L{$s}";exit }}}' ensamblaje.fasta
+</PRE>
+
+<P>
+</LI>
+<LI>crea un histograma (archivo llamado 'hist.pdf') con ayuda de 
+<A NAME="tex2html139"
+  HREF="http://bioinfoperl.blogspot.com.es/2016/03/r-one-liners.html">R</A>:
+
+<P>
+<code>$ perl -lane '$F[3]=~s/,/./; print $F[3]' all.blast | Rscript -e 'data=scan(file="stdin"); hist(data)'</code> 
+
+<P>
+</LI>
+<LI>convierte las calidades de un fichero 
+<A NAME="tex2html140"
+  HREF="https://en.wikipedia.org/wiki/FASTQ_format">FASTQ</A>
+a codificaci&#243;n Sanger/Illumina 1.8+:
+
+<P>
+<code>$ perl -lne 'tr/\x40-\xff\x00-\x3f/\x21-\xe0\x21/ if($.%4==0); print' reads.fq &gt; reads.sanger.fq</code>
+
+<P>
+</LI>
+</OL>
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html1279"
+  HREF="node90.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1283"
+  HREF="node89.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1285"
+  HREF="node92.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Un primer programa</TITLE>
+<META NAME="description" CONTENT="Un primer programa">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node7.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html349"
+  HREF="node5.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html355"
+  HREF="node3.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html357"
+  HREF="node7.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html358"
+  HREF="node7.html">C&#243;mo escribir tus programas</A></b>  Arriba: <b><A NAME="tex2html356"
+  HREF="node3.html">El lenguaje Perl5</A></b>  Anterior: <b><A NAME="tex2html350"
+  HREF="node5.html">Editores de texto y entornos</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00213000000000000000">
+Un primer programa</A>
+</H2>
+
+<P>
+El proceso de creaci&#243;n de un programa Perl comienza normalmente abriendo un archivo de texto en un editor
+y escribiendo alg&#250;n c&#243;digo. Por ejemplo, si creamos un archivo llamado  <i> programa1.pl  </i> y dentro
+escribimos:
+
+<P>
+<code>print "Hola, este es mi primer programa, por supuesto con errores</code>
+
+<P>
+Ahora podemos guardar el archivo e invocar al int&#233;rprete:
+
+<P>
+<code>$ perl programa1.pl</code>
+
+<P>
+La respuesta inmediata es:
+
+<P>
+<code>Can't find string terminator '"' anywhere before EOF at test.pl line 1.</code>
+
+<P>
+Que nos recuerda que se nos olvid&#243; cerrar la cadena de caracteres impresa con unas comillas.
+Si corregimos el c&#243;digo, terminando la cadena con una terminador de l&#237;nea y cerrando la frase 
+con un punto y coma, tenemos:
+
+<P>
+<code>print "Hola, este es mi primer programa sin errores\n";</code>
+
+<P>
+Y al ejecutarlo con el int&#233;rprete, activando los avisos, obtenemos:
+
+<P>
+<PRE>
+$ perl -w programa1.pl
+Hola, este es mi primer programa sin errores
+</PRE>
+
+<P>
+En sistemas UNIX* podemos adem&#225;s averiguar la ruta absoluta <A NAME="257"></A> ( <i> path  </i>) 
+<A NAME="259"></A> del int&#233;rprete con el comando  <i> which  </i>:
+
+<P>
+<code>$ which perl</code>
+
+<P>
+Que normalmente devuelve:
+
+<P>
+<code>/usr/bin/perl</code>
+
+<P>
+Si ahora modificamos  <i> programa1.pl  </i>:
+
+<P>
+<PRE>
+#!/usr/bin/perl -w      # ruta absoluta de perl, esto es un comentario 
+print "Hola, este es mi primer programa sin errores\n";
+</PRE>
+
+<P>
+Y damos al archivo privilegios de ejecuci&#243;n:
+
+<P>
+<code>$ chmod +x programa1.pl</code>
+
+<P>
+Podemos ahora ejecutar este programa directamente:
+
+<P>
+<code>$ ./programa1.pl</code>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html349"
+  HREF="node5.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html355"
+  HREF="node3.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html357"
+  HREF="node7.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

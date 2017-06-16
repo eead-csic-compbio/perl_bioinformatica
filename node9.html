@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Variables y tipos</TITLE>
+<META NAME="description" CONTENT="Variables y tipos">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node10.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html377"
+  HREF="node8.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html383"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html385"
+  HREF="node10.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html386"
+  HREF="node10.html">Asignaciones a variables escalares</A></b>  Arriba: <b><A NAME="tex2html384"
+  HREF="node2.html">Fundamentos de Perl5 (1)</A></b>  Anterior: <b><A NAME="tex2html378"
+  HREF="node8.html">Sintaxis b&#225;sica de Perl</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00230000000000000000"></A> <A NAME="variab_tipos"></A>
+<BR>
+Variables y tipos
+</H1>
+
+<P>
+Perl tiene b&#225;sicamente dos tipos de variables para contener datos: las que contienen un s&#243;lo valor 
+y las que pueden contener m&#225;s de uno. 
+
+<P>
+<code>$escalares</code> 
+( <i> scalars  </i>), <A NAME="309"></A> variables que contienen un s&#243;lo valor 
+o dato. Pueden ser cadenas 
+de caracteres, n&#250;meros enteros, n&#250;meros reales e incluso direcciones de memoria de otras variables.
+
+<P>
+<code>@arreglos o</code> o <code>@vectores</code> 
+(listas, vectores o  <i> arrays  </i>), <A NAME="314"></A> que contienen elementos, 
+que  no tienen por qu&#233; ser del mismo tipo, que a su vez pueden ser otros arreglos,
+pudiendo entonces representar matrices N-dimensionales (donde <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ N\geq1$"></SPAN>). Permiten accceder a cada valor 
+por medio de sub&#237;ndices o coordenadas en N. El primer valor de un arreglo tiene siempre sub&#237;ndice 0.
+
+<P>
+<code>%tablas_asociativas</code> 
+( <i> hashes  </i>), <A NAME="319"></A> que contienen parejas llave-valor. Estas tablas permiten 
+el acceso a los valores contenidos por medio de las llaves, que a su vez son escalares, por lo que 
+s&#243;lo pueden contener un valor para cada llave usada. Si se introducen dos parejas con la misma llave,
+en la pr&#225;ctica s&#243;lo la &#250;ltima en asignarse es almacenada.
+
+<P>
+Un caso algo especial son las  <i> referencias  </i>, <A NAME="325"></A> las direcciones en la memoria
+del computador que ocupan las variables, dadas en hexadecimal por comodidad.
+
+<P>
+A pesar de esta flexibilidad, el int&#233;rprete s&#237; lleva un control de contexto sobre las variables y 
+protestar&#225; si intentas aplicar, por ejemplo, una funci&#243;n de arreglos sobre un escalar.
+
+<P>
+En ocasiones el int&#233;rprete no puede decidir qu&#233; tipo de datos est&#225; manejando y es necesario que el 
+usuario diga expl&#237;citamente en qu&#233; contexto deben evaluarse, usando 
+<code>${},@{},%{}</code> 
+en torno a la variable en  cuesti&#243;n.
+
+<P>
+Por cierto, las variables que declar&#233;is en Perl deben comenzar por una letra o un subrayado, como en
+<code>$_variable</code>.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html387"
+  HREF="node10.html">Asignaciones a variables escalares</A>
+<LI><A NAME="tex2html388"
+  HREF="node11.html">Asignaciones y consultas a arreglos o vectores</A>
+<LI><A NAME="tex2html389"
+  HREF="node12.html">Asignaciones a tablas asociativas y consultas</A>
+<LI><A NAME="tex2html390"
+  HREF="node13.html">Variables especiales de Perl</A>
+<LI><A NAME="tex2html391"
+  HREF="node14.html">Ejercicio con variables</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html377"
+  HREF="node8.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html383"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html385"
+  HREF="node10.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

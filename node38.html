@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Formateo de datos</TITLE>
+<META NAME="description" CONTENT="Formateo de datos">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="previous" HREF="node37.html">
+<LINK REL="up" HREF="node37.html">
+<LINK REL="next" HREF="node39.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html681"
+  HREF="node37.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html685"
+  HREF="node37.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html687"
+  HREF="node39.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html688"
+  HREF="node39.html">Llamadas al sistema operativo</A></b>  Arriba: <b><A NAME="tex2html686"
+  HREF="node37.html">Entrada, salida y formateo de</A></b>  Anterior: <b><A NAME="tex2html682"
+  HREF="node37.html">Entrada, salida y formateo de</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00291000000000000000">
+Formateo de datos</A>
+</H2>
+
+<P>
+Ya hemos usado en diferentes ejemplos la funci&#243;n 
+<code>print</code>. 
+Esta funci&#243;n puede usarse para 
+dar formato a los datos que queremos imprimir en un programa. Una manera pr&#225;ctica muchas veces
+utilizada en bioinform&#225;tica es imprimir datos en un archivo por columnas, de forma que todas 
+las l&#237;neas tengan el mismo n&#250;mero de columnas. Como separadores de columnas pueden utilizarse
+car&#225;cteres como 
+<code>\t</code> (tabulador), espacios en blanco o comas:
+<PRE>
+print "$nombreGen \t $GC \t $longitud \t $especie\n";
+print "$nombreGen $GC $longitud $especie\n";
+print "$nombreGen,$GC,$longitud,$especie\n";
+</PRE>
+
+<P>
+Este tipo de formatos de salida son ideales para que otros programas en Perl, por medio de 
+la funci&#243;n 
+<code>split</code>, 
+puedan leerlos. De hecho son tambi&#233;n adecuados para que aplicaciones como Excel u OpenOffice puedan 
+abrir estos archivos.
+
+<P>
+Sin embargo, a veces es realmente importante, como en el formato PDB, que cada elemento de datos
+ocupe un grupo de columnas espec&#237;fico de una l&#237;nea de archivo. En este caso es recomendable
+el uso de la funci&#243;n 
+<code>printf</code> <A NAME="863"></A>. 
+
+<P>
+<code>printf</code> 
+es muy similar (no s&#233; si id&#233;ntica) a la misma funci&#243;n del lenguaje C y su uso es relativamente 
+sencillo. Su s&#237;ntaxis es:
+
+<P>
+<PRE>
+printf("cadena formateada %s %1.2f",$escalar1,$escalar2,...);
+</PRE>
+Dentro de la cadena de caracteres formateada se puede hacer referencia a escalares que queramos 
+formatear. Cada una de estas referencias comienza con el s&#237;mbolo % y deber&#225; haber tantas como
+escalares separados por comas en la parte izquierda de la llamada a 
+<code>printf</code>. 
+Adem&#225;s, cada referencia debe especificar el formato de salida deseado:
+<PRE>
+%c        # el carácter correspondiente a un código ASCII
+%s        # una cadena de caracteres (string)
+%d        # un número entero
+%f        # un número real con coma fija
+%g        # un real con decimales
+%e        # un real en notación científica exponencial, como 1.204e-23
+%x        # un hexadecimal
+
+Modificadores:
+-      # justifica a la izquierda
++      # obliga a imprimir el signo
+.      # fuerza un mínimo número de columnas para un campo
+0      # usa ceros para justificar a la derecha
+ 
+Ejemplos:
+ 
+printf("%1.2f",$real);           # un real de que ocupe al menos 1 columna 
+                                 # y tenga un máximo de 2 decimales
+
+printf("%.10s",$cadena);         # cadena de no más de 10 columnas
+</PRE>
+
+<P>
+Finalmente, Perl incluye la posibilidad de definir formatos de otra manera, usando las funciones 
+<code>format</code> y <code>write</code>, 
+que entenderemos mejor con un ejemplo:
+
+<P>
+<PRE>
+#!/usr/bin/perl -w 
+# Ejemplo escrito por Bruno Contreras en Julio de 2005
+
+use strict; 
+
+my ($nombre,$especie,$peso);
+
+## defino un formato y le pongo nombre
+# &lt; justifica a la izquierda, &gt; a la derecha , #. definen los campos de números
+# | se usaría para centrar contenido
+format MIFORMATO =
+Proteína=@&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  Organismo=@&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;  Peso molecular=@###.#KDa
+           $nombre,             $especie,                   $peso
+.			   
+
+## abro el archivo de salida con un descriptor cuyo nombre coincida 
+## con el formato de salida
+open(MIFORMATO,"&gt;salida.txt") || die "no puedo crear salida.txt\n";
+
+## aquí asigno valores a las variables del formato, normalmente será un bucle
+$nombre  = "1lfu";
+$especie = "M.musculus";
+$peso    = "124.456";
+
+write (MIFORMATO);
+## imprime en el archivo de salida
+## 'Proteína=1lfu       Organismo=   M.musculus  Peso molecular= 124.5KDa'
+
+
+## cierro el archivo de salida
+close(MIFORMATO);
+</PRE>
+
+<P>
+Yo apenas he usado la combinaci&#243;n 
+<code>format/write</code>, 
+as&#237; que os recomiendo, si os interesa usarlos, leer 
+<A NAME="tex2html48"
+  HREF="http://www.usenix.org/publications/perl/perl08.html">este</A>
+documento.
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html681"
+  HREF="node37.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html685"
+  HREF="node37.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html687"
+  HREF="node39.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

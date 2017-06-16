@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Funciones sobre cadenas</TITLE>
+<META NAME="description" CONTENT="Funciones sobre cadenas">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node25.html">
+<LINK REL="previous" HREF="node23.html">
+<LINK REL="up" HREF="node22.html">
+<LINK REL="next" HREF="node25.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html538"
+  HREF="node23.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html544"
+  HREF="node22.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html546"
+  HREF="node25.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html547"
+  HREF="node25.html">Funciones sobre tablas asociativas</A></b>  Arriba: <b><A NAME="tex2html545"
+  HREF="node22.html">Biblioteca de funciones de Perl</A></b>  Anterior: <b><A NAME="tex2html539"
+  HREF="node23.html">Funciones sobre arreglos</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00272000000000000000"></A> <A NAME="stringfunc"></A>
+<BR>
+Funciones sobre cadenas
+</H2>
+
+<P>
+Las cadenas de caracteres en Perl, como sab&#233;is, las manejamos como variables escalares y tienen
+tambi&#233;n unas cuantas funciones espec&#237;ficas asociadas.
+
+<P>
+ <i> substr  </i> <A NAME="540"></A>
+<BR>
+Devuelve una subcadena de la cadena pasada como par&#225;metro. Puede recibir dos o tres par&#225;metros.
+El primero es una cadena, el segundo el punto ( <i> offset  </i>, empezando en el 0) donde empieza 
+la nueva subcadena y el tercero, opcional, la longitud de la subcadena a partir del punto
+anterior.
+<PRE>
+my $cadena = "cadena";
+my $subcadena = substr($cadena,0,4); # $subcadena contiene "cade";
+$subcadena = substr($cadena,1,4); # $subcadena contiene "aden";
+$subcadena = substr($cadena,2); # $subcadena contiene "dena";
+</PRE>
+
+<P>
+ <i> index  </i> <A NAME="547"></A>
+<BR>
+Devuelve la posici&#243;n de una subcadena dentro de una cadena, el valor devuelto en caso contrario 
+es -1. Puede recibir un tercer par&#225;metro opcional que marca en qu&#233; posici&#243;n debe
+empezar la b&#250;squeda.
+<PRE>
+my $cadena = "cadena";
+my ($subc1,$subc2) = ('en','no');
+print index($cadena,$subc1); # imprime 3
+print index($cadena,$subc1,4); # imprime -1
+print index($cadena,$subc2); # imprime -1
+</PRE>
+
+<P>
+ <i> length  </i> <A NAME="556"></A>
+<BR>
+Devuelve la longitud de una cadena de caracteres.
+<BR>
+<code>print length("cadena"); # imprime 6</code>
+
+<P>
+ <i> chomp  </i> <A NAME="558"></A>
+<BR>
+Elimina el &#250;ltimo terminador de l&#237;nea (s&#237;mbolo de nueva l&#237;nea) 
+<code>\n</code> de una cadena 
+y devuelve 1 si de hecho lo elimin&#243;. Se puede aplicar tambi&#233;n a un arreglo de cadenas.
+<PRE>
+my $cadena = "cadena\n";
+my @cadenas=("cadena1\n","cadena2\n");
+print chomp($cadena);                     # imprime 1
+print chomp(@cadenas);                    # imprime 2
+</PRE>
+
+<P>
+ <i> lc, uc  </i> <A NAME="568"></A>
+<BR>
+Devuelven versiones en may&#250;sculas ( <i> upper case  </i>, uc) o min&#250;sculas ( <i> lower case  </i>, lc)
+de la cadena pasada como par&#225;metro.
+<PRE>
+my $cadena = "May y min";
+print lc($cadena);                        # imprime 'may y min'
+print uc($cadena);                        # imprime 'MAY Y MIN'
+</PRE>
+
+<P>
+ <i> split  </i> <A NAME="577"></A>
+<BR>
+Funci&#243;n que recibe un patr&#243;n regular y una cadena y trata de extraer las diferentes subcadenas
+que haya separadas por tal patr&#243;n, devolvi&#233;ndolas en un arreglo. Se puede pasar un tercer 
+par&#225;metro que indica el n&#250;mero m&#225;ximo de subcadenas deseadas.
+<PRE>
+my $cadena = "cadena de caracteres|otra cadena\n";
+
+my @subcadenas1 = split(/\s+/,$cadena);
+my @subcadenas2 = split(/\|/,$cadena); # separa por el carácter '|'
+
+print scalar(@subcadenas1);   # contiene 4 elementos
+print scalar(@subcadenas2);   # contiene 2 elementos
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html538"
+  HREF="node23.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html544"
+  HREF="node22.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html546"
+  HREF="node25.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

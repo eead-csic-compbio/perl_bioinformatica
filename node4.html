@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>El int&#233;rprete Perl (en el terminal)</TITLE>
+<META NAME="description" CONTENT="El int&#233;rprete Perl (en el terminal)">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node5.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html329"
+  HREF="node3.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html335"
+  HREF="node3.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html337"
+  HREF="node5.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html338"
+  HREF="node5.html">Editores de texto y entornos</A></b>  Arriba: <b><A NAME="tex2html336"
+  HREF="node3.html">El lenguaje Perl5</A></b>  Anterior: <b><A NAME="tex2html330"
+  HREF="node3.html">El lenguaje Perl5</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00211000000000000000"></A> <A NAME="terminal"></A>
+<BR>
+El int&#233;rprete Perl (en el terminal)
+</H2>
+
+<P>
+Todos los sistemas Linux que conozco incluyen Perl, por lo cual normalmente no es necesario instalarlo para empezar a usarlo. 
+Sin embargo, si quisieras probar una versi&#243;n diferente de Perl, una antigua o la m&#225;s reciente,
+es posible hacerlo con <A NAME="tex2html8"
+  HREF="https://perlbrew.pl">perlbrew</A>
+sin romper el sistema.
+
+<P>
+En otros casos, os sugiero que consult&#233;is las instrucciones dadas en 
+<A NAME="tex2html9"
+  HREF="https://www.perl.org/get.html">perl.com</A>
+para cada sistema operativo. 
+
+<P>
+En Windows en principio hay dos opciones: <A NAME="tex2html10"
+  HREF="http://strawberryperl.com">strawberryperl</A>
+y 
+<A NAME="tex2html11"
+  HREF="https://www.activestate.com/activeperl">activeperl</A>. Pero adem&#225;s, una manera de usar 
+Perl en este sistema es por medio de la aplicaci&#243;n <A NAME="tex2html12"
+  HREF="http://mobaxterm.mobatek.net">MobaXterm</A>,
+esencialmente un terminal Linux en Windows, que permite instalar Perl y una gran variedad de m&#243;dulos con el gestor MobApt. 
+
+<P>
+Al instalar Perl est&#225;s 
+instalando un programa int&#233;rprete, cuya misi&#243;n es convertir en tiempo real c&#243;digo 
+Perl en un ejecutable, pasando por una traducci&#243;n transitoria a c&#243;digo 
+<A NAME="tex2html13"
+  HREF="http://en.wikipedia.org/wiki/C_(programming_language)">C</A>, que tambi&#233;n es compilado en tiempo real.
+
+<P>
+La versi&#243;n madura de Perl es Perl5, est&#225; de hecho escrita en C y es de 
+<A NAME="tex2html14"
+  HREF="http://www.aragoninvestiga.org/La-filosofia-open-source-en-la-bioinformatica/">c&#243;digo abierto</A>
+( <i> open source  </i>). <A NAME="179"></A>
+Por ejemplo,  aqu&#237; pod&#233;is ver su <A NAME="tex2html15"
+  HREF="./codigoPerl/miniperlmain.c">funci&#243;n principal</A>.
+
+<P>
+Perl es un lenguaje interpretado, que deber ser compilado cada vez que se desea ejecutar un programa. Esto
+lo diferencia de lenguajes como C, que se compilan una sola vez y luego se pueden ejecutar N veces. Por esta
+raz&#243;n a lenguajes como Perl en ingl&#233;s se les llama  <i> scripting languages  </i> y a los programas escritos
+en Perl se les llama  <i> scripts  </i>. <A NAME="188"></A> <A NAME="189"></A>
+
+<P>
+Durante la conversi&#243;n o compilaci&#243;n, el int&#233;rprete va revisando la sintaxis del c&#243;digo que le ha pasado
+el usuario y va informando de los errores que vaya encontrando. Esos mensajes de error 
+son muy &#250;tiles para guiaros a lo largo del proceso de programaci&#243;n y prueba de vuestro c&#243;digo, 
+normalmente es imprescindible leerlos.
+
+<P>
+En este curso programaremos Perl desde un terminal <A NAME="197"></A> Linux (es similar en otros sistemas *UNIX* como BSD y MacOS X),
+desde donde podemos comprobar qu&#233; versi&#243;n de Perl tenemos. Para ellos escribimos en el terminal:
+
+<P>
+<code>$ perl -v</code>
+
+<P>
+Que a mi me devuelve:
+
+<P>
+<PRE>
+This is perl 5, version 22, subversion 1 (v5.22.1) built for x86_64-linux-gnu-thread-multi
+(with 58 registered patches, see perl -V for more detail)
+
+Copyright 1987-2015, Larry Wall
+
+Perl may be copied only under the terms of either the Artistic License or the
+GNU General Public License, which may be found in the Perl 5 source kit.
+
+Complete documentation for Perl, including FAQ lists, should be found on
+this system using "man perl" or "perldoc perl".  If you have access to the
+Internet, point your browser at http://www.perl.org/, the Perl Home Page.
+</PRE>
+
+<P>
+Adem&#225;s pod&#233;is recordar con qu&#233; opciones se puede invocar el int&#233;rprete si escrib&#237;s:
+
+<P>
+<code>$ perl -h</code>
+
+<P>
+Las opciones m&#225;s importantes podr&#237;an ser:
+
+<P>
+<PRE>
+Usage: perl [switches] [--] [programfile] [arguments]
+  ...
+  -d[:debugger]   run program under debugger
+  -e program      one line of program (several -e's allowed, omit programfile)
+  -v              print version, subversion (includes VERY IMPORTANT perl info)
+  -w              enable many useful warnings (RECOMMENDED)
+  -W              enable all warnings
+  ...
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html329"
+  HREF="node3.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html335"
+  HREF="node3.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html337"
+  HREF="node5.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

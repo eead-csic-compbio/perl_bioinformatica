@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Variables especiales de Perl</TITLE>
+<META NAME="description" CONTENT="Variables especiales de Perl">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node14.html">
+<LINK REL="previous" HREF="node12.html">
+<LINK REL="up" HREF="node9.html">
+<LINK REL="next" HREF="node14.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html422"
+  HREF="node12.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html428"
+  HREF="node9.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html430"
+  HREF="node14.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html431"
+  HREF="node14.html">Ejercicio con variables</A></b>  Arriba: <b><A NAME="tex2html429"
+  HREF="node9.html">Variables y tipos</A></b>  Anterior: <b><A NAME="tex2html423"
+  HREF="node12.html">Asignaciones a tablas asociativas y</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00234000000000000000"></A> <A NAME="varEspecial"></A>
+<BR>
+Variables especiales de Perl
+</H2>
+
+<P>
+En Perl hay un conjunto de variables globales, accesibles al programas en ejecuci&#243;n,
+que debemos conocer para aprovechar mejor las capacidades del lenguaje. El listado
+completo pod&#233;is verlo en la 
+<A NAME="tex2html24"
+  HREF="http://www.rexswain.com/perl5.html">gu&#237;a de referencia de Perl</A>
+o tecleanado en el terminal <code>$ perldoc perlvar</code>, pero con que conozc&#225;is &#233;stas podr&#233;is ir programando:
+
+<P>
+<code>@ARGV  # guarda los argumentos con que se ejecuta un programa perl</code>
+<BR>
+<P>
+Si invocamos en el terminal 
+<code>$ perl programa.pl -f archivo.txt</code>, 
+mientras dure la ejecuci&#243;n del programa 
+<code>@ARGV</code> 
+contendr&#225;:
+
+<P>
+<PRE> 
+$ARGV[0] contiene '-f'
+$ARGV[1] contiene 'archivo.txt'
+</PRE>
+
+<P>
+<PRE> 
+@_      # hace el papel de @ARGV al invocar una subrutina, función o procedimiento
+
+$_      # al leer un archivo desde un programa Perl, cada línea leída se guarda en $_
+</PRE>
+
+<P>
+Si dentro de un programa invocamos a la funci&#243;n 
+<code>print("Hola\n")</code>, 
+la funci&#243;n recoger&#225; el par&#225;metro 
+<code>"Hola\n"</code> 
+como el primer elemento de 
+<code>@_</code>, 
+es decir, 
+<code>$_[0]</code>.
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html422"
+  HREF="node12.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html428"
+  HREF="node9.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html430"
+  HREF="node14.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

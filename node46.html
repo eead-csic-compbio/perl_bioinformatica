@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Paso de par&#225;metros por valor y por referencia</TITLE>
+<META NAME="description" CONTENT="Paso de par&#225;metros por valor y por referencia">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node47.html">
+<LINK REL="previous" HREF="node45.html">
+<LINK REL="up" HREF="node42.html">
+<LINK REL="next" HREF="node47.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html798"
+  HREF="node45.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html804"
+  HREF="node42.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html806"
+  HREF="node47.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html807"
+  HREF="node47.html">Funciones recursivas</A></b>  Arriba: <b><A NAME="tex2html805"
+  HREF="node42.html">Subrutinas y paso de par&#225;metros</A></b>  Anterior: <b><A NAME="tex2html799"
+  HREF="node45.html">Subrutinas que devuelven valores</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00313000000000000000"></A> <A NAME="pasoref"></A>
+<BR>
+Paso de par&#225;metros por valor y por referencia
+</H2>
+
+<P>
+En los ejemplos vistos hasta ahora, cuando invocamos una subrutina y le pasamos par&#225;metros
+en realidad le estamos pasando una lista de datos, que se llama 
+<code>@_</code> . 
+Cuando pasamos arreglos o tablas como par&#225;metros en realidad los estamos vertiendo
+elemento por elemento en 
+<code>@_</code> , 
+lo cual parece un poco est&#250;pido a veces, con el 
+trabajo que nos dio previamente llenarlos. De hecho, si queremos pasar 
+por ejemplo dos arreglos a la vez, ser&#225; imposible que la subrutina que los reciba
+sepa donde termina uno y empieza el otro, porque lo que est&#225; recibiendo es 
+<code>@_</code> . 
+
+<P>
+Por esta raz&#243;n, cuando pasamos varios par&#225;metros y uno de ellos es un arreglo, debemos
+poner al arreglo en &#250;ltima posici&#243;n, para poder identificarlos despu&#233;s en la subrutina.
+Lo mismo se aplica a los valores que devuelve una subrutina con 
+<code>return</code>.
+
+<P>
+<PRE>
+## forma correcta de pasar más de un parámetro y recibir más de un resultado 
+
+my ($result1,@result2) = subrutina($arg1,$arg2,@arg3);
+
+sub subrutina
+{
+	my($sarg1,$sarg2,@sarg3) = @_; 
+
+	my ($sresult1,@sresult2);
+
+	return ($result1,@result2);
+}
+
+## en cambio, esto no funcionaría
+
+my (@result2,$result1) = subrutina($arg1,@arg3,$arg3);  # $result1 queda sin asignar
+
+sub subrutina
+{
+	my($sarg1,@sarg3,$sarg3) = @_;  # $sarg3 queda sin asignar
+
+	my ($sresult1,@sresult2);
+
+	return (@result2,$result1);
+}
+</PRE>
+
+<P>
+La forma m&#225;s econ&#243;mica de pasar par&#225;metros a subrutinas es pasarlos como referencias (ver secci&#243;n 
+<A HREF="node9.html#variab_tipos">2.3</A>). De esta manera no pasamos los datos en s&#237;, si no la direcci&#243;n que ocupan en 
+memoria. As&#237; no es necesario copiar todos los datos a 
+<code>@_</code>  
+y la subrutina que reciba las 
+referencias puede acceder a los datos en su organizaci&#243;n original, ya sean escalares, arreglos 
+o tablas asociativas. 
+
+<P>
+Otra aplicaci&#243;n de las referencias par&#225;metro es que permiten modificar de forma permanente, no local, 
+los datos pasados como argumento. Finalmente, el paso por referencias permite pasar como par&#225;metro
+otras subrutinas, lo cual puede ser &#250;til en ocasiones. 
+
+<P>
+Veamos un ejemplo:
+
+<P>
+<PRE>
+#!/usr/bin/perl -w 
+# Ejemplo escrito por Bruno Contreras en Julio de 2005
+
+use strict; 
+
+## variables del programa principal 
+my ($escalar , @arreglo1 , @arreglo2);
+
+## asignación de valores
+$escalar = 0;
+@arreglo1 = (1,2,3);
+@arreglo2 = (4,5,6);
+
+## llamada a subrutina y conversión de la referencia recibida a un arreglo
+my @resultado = @{ lee_arreglos( $escalar , \@arreglo1 , \@arreglo2 )  }; 
+
+print "resultado: $resultado[0] , $resultado[1] , $resultado[2]\n";
+
+
+############### subrutinas ##################
+
+sub lee_arreglos
+{
+	# parámetros pasados
+	my ($sarg1,$rarreglo1,$rarreglo2) = @_;
+
+	# variables locales
+	my @res = ( $sarg1, $rarreglo1-&gt;[0], $rarreglo2-&gt;[0] );
+	
+	return \@res;  # devuelve una referencia a un arreglo como resultado
+}
+</PRE>
+
+<P>
+Otro ejemplo es esta funci&#243;n muy &#250;til para reordenar o barajar vectores  <i> in situ  </i>:
+<PRE>
+#!/usr/bin/perl -w 
+
+use strict; 
+
+my @vector = (1,2,3,4,5,6);
+
+fisher_yates(\@vector);
+
+foreach my $valor (@vector){ print "$valor\n" }
+
+
+sub fisher_yates 
+{
+	# http://www.perlmonks.org/?node_id=199901
+
+	my ($ref_baraja) = @_;  
+	my ($cartai,$cartaj) = (scalar(@$ref_baraja),0); 
+	
+	while(--$cartai) 
+	{ 
+		$cartaj = int(rand($cartai+1)); 
+		@$ref_baraja[$cartai,$cartaj] = @$ref_baraja[$cartaj,$cartai]; 
+	}
+}
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html798"
+  HREF="node45.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html804"
+  HREF="node42.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html806"
+  HREF="node47.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

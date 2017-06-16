@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Operadores</TITLE>
+<META NAME="description" CONTENT="Operadores">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node16.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node16.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html440"
+  HREF="node14.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html446"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html448"
+  HREF="node16.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html449"
+  HREF="node16.html">Estructuras de control</A></b>  Arriba: <b><A NAME="tex2html447"
+  HREF="node2.html">Fundamentos de Perl5 (1)</A></b>  Anterior: <b><A NAME="tex2html441"
+  HREF="node14.html">Ejercicio con variables</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00240000000000000000">
+Operadores</A>
+</H1>
+
+<P>
+El repertorio completo de operadores de Perl es amplio y pod&#233;is consultarlo en la
+<A NAME="tex2html25"
+  HREF="http://www.rexswain.com/perl5.html#operators">gu&#237;a de referencia de Perl</A>.
+Yo os menciono los que m&#225;s he usado. Se sobreentiende que son operadores binarios, que relacionan
+dos variables, a menos que se indique lo contrario:
+
+<P>
+<PRE>
+=        # asignación
+**       # potencia
++ - * /  # suma, resta, multiplicación y división
+%        # resto de la división dividendo%divisor 
+|| &amp;&amp;    # OR y AND, disyunción y conjunción lógica
+.        # concatenación de dos cadenas
+-&gt;       # ya lo hemos usado para las referenciar elementos de arreglos y tablas
+\        # toma la dirección de una variable (unario)
+!        # negación lógica (unario)
+++ --    # autoincremento y autodecremento de escalares numéricos (unario)
+== !=    # igualdad y desigualdad entre números 
+eq ne    # igualdad y desigualdad entre cadenas (equal, not equal)
+cmp &lt;=&gt;  # para  comparar cadenas de caracteres y valores numéricos, por ejemplo con sort
+&lt; &gt;      # mayor o menor numérico
+&lt;= &gt;=    # mayor o igual, menor o igual numérico
+=~ !~    # operadores de búsqueda de patrones: comprueba que la variable izquierda contiene (no contiene)
+         # cierto patrón a la derecha del operador
+</PRE>
+
+<P>
+Perl permite combinar el operador asignaci&#243;n con los operadores 
+<code>+ , - , * , / , . </code>,
+de forma que por ejemplo
+
+<P>
+<code>$suma = $suma + $sumando es lo mismo que $suma += $sumando</code>.
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html440"
+  HREF="node14.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html446"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html448"
+  HREF="node16.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

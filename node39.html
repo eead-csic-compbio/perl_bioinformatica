@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Llamadas al sistema operativo</TITLE>
+<META NAME="description" CONTENT="Llamadas al sistema operativo">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="previous" HREF="node37.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node40.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html689"
+  HREF="node38.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html693"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html695"
+  HREF="node40.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html696"
+  HREF="node40.html">Ejercicios con llamadas al sistema</A></b>  Arriba: <b><A NAME="tex2html694"
+  HREF="node2.html">Fundamentos de Perl5 (1)</A></b>  Anterior: <b><A NAME="tex2html690"
+  HREF="node38.html">Formateo de datos</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION002100000000000000000">
+Llamadas al sistema operativo</A>
+</H1>
+
+<P>
+Para pedir al sistema operativo que ejecute otros programas desde un programa en Perl
+podemos hacerlo de varias maneras. Al hacerlo estamos en realidad llamando al sistema
+operativo y esperando su respuesta: 
+<PRE>
+## insertando el comando y sus parámetros entre dos `acentos graves`
+
+my $resultado = `ls -l *.fas`;  # muestra todos los archivos FASTA del directorio actual
+
+$resultado = `df -k`;           # muestra el espacio libre en los sistemas de ficheros de tu sistema
+
+$resultado = `cat archivo.pdb | grep ATOM`;  # imprime las líneas 'ATOM' de un PDB
+
+## usando la función system()
+
+$resultado = system("cat archivo.pdb | grep ATOM");
+
+$resultado = system("pwd");                          # devuelve el directorio actual
+
+$resultado system("zcat archivo.fas.gz");            # descomprime un archivo y muestra el contenido
+if($? != 0)
+{
+  die "# ERROR: zcat call failed\n";
+}
+</PRE> 
+
+<P>
+Perl incorpora todo un conjunto de funciones que nos permiten interaccionar con el sistema 
+operativo, que pod&#233;is ver &#237;ntegro en la 
+<A NAME="tex2html49"
+  HREF="http://www.rexswain.com/perl5.html#systeminteraction">gu&#237;a de referencia de Perl</A>.
+Yo destacar&#237;a:
+
+<P>
+<PRE>
+chdir $otroDir;   # cambia de directorio durante la ejecución de un programa
+kill $IDproceso;  # termina otros procesos que hayas creado anteriormente
+sleep $segundos;  # para temporalmente la ejecución del programa que la invoca
+</PRE> 
+
+<P>
+Hay otra manera muy &#250;til de ejecutar otros programas desde Perl y directamente procesar
+su salida, usando las tuber&#237;as '|' ( <i> pipes  </i>) de UNIX*. <A NAME="952"></A>
+De esta manera, la salida generada 
+por el proceso ejecutado es vista desde Perl como un archivo. Veamos ejemplos:
+
+<P>
+<PRE>
+open(BLAST,"blastpgp -i secuencia.fas |") || die "no puedo ejecutar blastpgp -i secuencia.fas\n";
+while(&lt;BLAST&gt;)
+{
+	# aquí lees la salida de BLAST directamente, sin guardarla en un archivo
+}
+close(BLAST);
+
+
+open(ZCAT,"zcat gran_archivo.gz |") || die "no puedo descomprimir gran_archivo.gz\n";
+while(&lt;ZCAT&gt;)
+{
+	# aquí voy leyendo el contenido de gran_archivo, pero el archivo sigue comprimido en el sistema 
+	
+}
+close(ZCAT);
+</PRE> 
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html697"
+  HREF="node40.html">Ejercicios con llamadas al sistema operativo</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html689"
+  HREF="node38.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html693"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html695"
+  HREF="node40.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

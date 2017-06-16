@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Algoritmos gen&#233;ticos: simulando mutaciones sobre cromosomas</TITLE>
+<META NAME="description" CONTENT="Algoritmos gen&#233;ticos: simulando mutaciones sobre cromosomas">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="previous" HREF="node29.html">
+<LINK REL="up" HREF="node27.html">
+<LINK REL="next" HREF="node31.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html599"
+  HREF="node29.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html603"
+  HREF="node27.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html605"
+  HREF="node31.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html606"
+  HREF="node31.html">Operaciones con archivos y directorios</A></b>  Arriba: <b><A NAME="tex2html604"
+  HREF="node27.html">Ejercicios que requieren funciones de</A></b>  Anterior: <b><A NAME="tex2html600"
+  HREF="node29.html">Evaluando alineamientos de secuencias</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00275300000000000000">
+Algoritmos gen&#233;ticos: simulando mutaciones sobre cromosomas</A>
+</H3>
+
+<P>
+Una funci&#243;n de Perl que os puede ser de utilidad es 
+<code>rand</code>, 
+el generador de n&#250;meros
+aleatorios. Los n&#250;meros aleatorios se han usado en biolog&#237;a para modelar eventos de mutaci&#243;n
+<A NAME="945"></A> y de recombinaci&#243;n gen&#233;tica <A NAME="946"></A>. Pero se han llevado m&#225;s 
+all&#225; en computaci&#243;n y son la base de varios tipos de algoritmos como los algoritmos gen&#233;ticos 
+y de Monte Carlo.
+
+<P>
+En este ejemplo que os propongo vamos a implementar un algoritmo gen&#233;tico muy sencillo que va 
+a recombinar una serie de secuencias de ADN para obtener una secuencia final recombinante 
+con un contenido en GC que se aproxima a uno definido.
+
+<P>
+<PRE>
+#!/usr/bin/perl -w 
+# Ejercicio escrito por Bruno Contreras en Julio de 2005
+
+# Programa que recombina una serie de moléculas de ADN que codifican para genes homólogos,
+# y obtiene un gen recombinante que optimiza su contenido en %GC
+
+# REQUISITOS:
+# los genes deben estar alineados y si tienen diferente longitud deberán incorporar inserciones
+# mira http://www.cbs.dtu.dk/services/RevTrans/
+
+use strict; 
+
+@genes = (     # en este ejemplo hay 3 genes homólogos del regulador CRP
+#CRP_HAEIN
+'ATGTCAAATGAATTAACCGAAATTGATGAAGTTGTAACCTCCTCTCAAGAAGAAGCAACT  
+CAACGAGATCCCGTTTTAGATTGGTTTCTTACTCACTGCCATTTGCATAAATATCCTGCA
+AAATCAACTTTAATTCATGCTGGGGAAGATGCGACCACGCTGTATTATGTAATTAAAGGT
+TCTGTAATGGTATCTTCAAAAGATGATGAAGGCAAAGAGATGATCCTCACTTACTTAGGT
+GCAGGACAATTTTTTGGCGAAGCGGGATTATTTGATGAAGGTTCAAAACGATCAGCTTGG
+GTAAAAACAAAAACAACATGTGAAATTGCTGAAATTTCCTATAAGAAATATCGCCAGTTG
+ATTCAGGCAAACCCTGAAATCTTAATGTTTCTCACTGCACAATTGGCAAGACGTTTGCAA
+AATACATCACGTCAAGTCACGAATTTGGCATTTTTAGACGTCGCAGGTCGCATCGCTCAA
+ACTTTAATGAACTTAGCTAAACAGCCTGAAGCAATGACGCATCCTGATGGTATGCAAATC
+AAAATTACACGCCAAGAAATAGGGCAAATGGTGGGTTGTTCACGAGAAACTGTGGGGCGC
+ATTATTAAGATGTTGGAGGATCAGAATCTTATCCACGCTCATGGAAAAACAATCGTTGTA
+TATGGCGCAAGA',
+
+#CRP_KLEAE
+'ATGGTGCTTGGCAAACCGCAAACA------------------------------------  
+------GACCCTACCCTTGAATGGTTCTTGTCTCATTGCCACATTCATAAGTACCCATCA
+AAGAGCACGCTGATCCACCAGGGTGAAAAAGCAGAAACGCTGTACTACATCGTTAAAGGC
+TCCGTGGCTGTACTCATCAAGGATGAAGAAGGTAAAGAGATGATCCTCTCCTACCTCAAC
+CAGGGCGATTTCATCGGTGAATTAGGCCTGTTTGAAGAGGGTCAGGAGCGTAGCGCCTGG
+GTACGGGCGAAAACCGCATGTGAAGTGGCCGAAATCTCTTATAAGAAATTCCGTCAGCTG
+ATCCAGGTGAACCCGGACATTCTGATGCGTCTCTCTTCGCAAATGGCTCGCCGTCTGCAG
+GTCACGTCTGAGAAAGTGGGCAACCTCGCCTTCCTCGACGTGACGGGCCGTATCGCCCAG
+ACGCTGCTGAACCTGGCGAAGCAACCGGATGCCATGACCCACCCGGACGGTATGCAAATT
+AAAATTACACGCCAGGAAATTGGTCAGATCGTCGGCTGCTCTCGTGAAACCGTTGGTCGT
+ATTTTGAAAATGCTGGAAGATCAGAACCTGATTTCCGCGCACGGTAAAACCATCGTCGTC
+TACGGCACCCGT',
+
+#CRP_PASMU
+'ATGCAAACTACACCATCGATA---------------------------------------
+------GATCCTACGTTAGAGTGGTTTCTATCTCACTGCCATATTCACAAATATCCTTCC
+AAAAGTACATTGATTCATGCAGGTGAAAAAGCCGAGACGCTGTATTATCTGATTAAAGGT
+TCCGTTGCTGTCTTAGTCAAAGATGAAGATGGCAAAGAAATGATTTTGACTTATTTAAGT
+CAAGGTGATTTTTTTGGTGAGGCTGGTCTTTTCGAAGAGGGACAATTACGTTCAGCTTGG
+ATTAAGGCAAAAAGCCCTTGTGAAATTGCTGAAATTTCTTATAAAAAATTTCGTCAATTA
+ATTCAGGTCAACCCAGATATTTTAATGCATTTATCAGCTCAGCTAGCACGTCGCTTACAA
+AATACGTCGAGACAAGTAAGTAATCTAGCCTTTTTAGATGTGACGGGGCGTATCGCACAA
+ACCTTATTAAATCTGGCTAAAATGCCAGAAGCCATGACCCATCCAGATGGGATGCAAATT
+AAAATCACGCGCCAAGAAATTGGGCAAATGGTGGGATGTTCGCGTGAAACGGTAGGACGA
+ATCCTCAAAATGTTAGAAGATCAGCATTTAATCTCTGCACATGGTAAAACCATTGTCGTT
+TACGGTACAAGA'
+);
+
+# 0) establecer el %GC deseado
+
+# 1) abrir un bucle while que recombine aleatoriamente estos genes,
+# conservando el marco de lectura y controle el GC de las secuencias
+# recombinantes que van saliendo
+
+# 2) calcula el GC con algo como
+# my $totalGC = $gen =~ tr/gc/gc/;
+# my $GC = $totalGC/length($gen);
+
+# 3) sal del bucle cuando GC lleve n generaciones sin cambiar
+
+# 4) elige al azar dos secuencias para recombinar
+
+# 5) para recombinar usa rand con la longitud del alineamiento
+# restringiendo los puntos de sobrecruzamiento a los que sean múltiplos
+# de tres
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html599"
+  HREF="node29.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html603"
+  HREF="node27.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html605"
+  HREF="node31.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

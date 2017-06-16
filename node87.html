@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Introducci&#243;n a Perl6</TITLE>
+<META NAME="description" CONTENT="Introducci&#243;n a Perl6">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node89.html">
+<LINK REL="previous" HREF="node78.html">
+<LINK REL="up" HREF="bioinfoPerl.html">
+<LINK REL="next" HREF="node88.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html1238"
+  HREF="node86.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1244"
+  HREF="bioinfoPerl.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1246"
+  HREF="node88.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1247"
+  HREF="node88.html">Perl5 desde Perl6</A></b>  Arriba: <b><A NAME="tex2html1245"
+  HREF="bioinfoPerl.html">Perl en bioinform&#225;tica</A></b>  Anterior: <b><A NAME="tex2html1239"
+  HREF="node86.html">BioPerl</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00500000000000000000"></A> <A NAME="perl6"></A>
+<BR>
+Introducci&#243;n a Perl6
+</H1>
+
+<P>
+Aunque este curso no cubre Perl6, s&#237; es necesario conocer lo m&#237;nimo para poder al menos
+ejecutar c&#243;digo escrito en la version 5.
+
+<P>
+Primero, como explicaba en el 
+<A NAME="tex2html116"
+  HREF="http://bioinfoperl.blogspot.com.es/2015/12/despedimos-el-2015-viene-perl-6.html">blog</A>, 
+veamos c&#243;mo instalar el int&#233;rprete de Perl6 llamado 
+<A NAME="tex2html117"
+  HREF="https://github.com/tadzik/rakudobrew">rakudo</A>
+en una carpeta oculta en <code>$HOME</code>.
+Primero clonamos el c&#243;digo fuente con <A NAME="tex2html118"
+  HREF="https://es.wikipedia.org/wiki/Git">git</A>, 
+lo que nos permitira mas tarde actualizarlo con <code>git pull</code>:
+
+<P>
+<PRE>
+git clone https://github.com/tadzik/rakudobrew ~/.rakudobrew
+echo 'export PATH=~/.rakudobrew/bin:$PATH' &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</PRE>
+
+<P>
+Ahora compilamos tanto el interprete (en forma de <A NAME="tex2html119"
+  HREF="https://www.moarvm.org">moar</A>, una m&#225;quina virtual) 
+como el gestor de paquetes <A NAME="tex2html120"
+  HREF="https://github.com/ugexe/zef">zef</A>:
+<PRE>
+rakudobrew build moar
+rakudobrew build zef
+</PRE>
+
+<P>
+Finalmente, instalamos el m&#243;dulo <A NAME="tex2html121"
+  HREF="https://github.com/niner/Inline-Perl5">Inline::Perl5</A>.
+De la misma manera podemos instalar cualquiera de la <A NAME="tex2html122"
+  HREF="https://modules.perl6.org">lista</A>:
+<PRE>
+zef install Inline::Perl5
+
+#zef --force install Inline::Perl5 # en caso de haber actualizado Perl5
+</PRE>
+
+<P>
+Hay un tutorial sencillo para aprender Perl6 si ya sab&#237;as Perl5: <A NAME="tex2html123"
+  HREF="https://docs.perl6.org/language/5to6-nutshell.html">5to6-nutshell</A>
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1248"
+  HREF="node88.html">Perl5 desde Perl6</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html1238"
+  HREF="node86.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1244"
+  HREF="bioinfoPerl.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1246"
+  HREF="node88.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

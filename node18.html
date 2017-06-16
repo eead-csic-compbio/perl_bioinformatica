@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Expresiones regulares</TITLE>
+<META NAME="description" CONTENT="Expresiones regulares">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node22.html">
+<LINK REL="previous" HREF="node16.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node19.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html469"
+  HREF="node17.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html475"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html477"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html478"
+  HREF="node19.html">Ejercicios con expresiones regulares</A></b>  Arriba: <b><A NAME="tex2html476"
+  HREF="node2.html">Fundamentos de Perl5 (1)</A></b>  Anterior: <b><A NAME="tex2html470"
+  HREF="node17.html">Ejemplo de estructuras de control</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00260000000000000000">
+Expresiones regulares</A>
+</H1>
+
+<P>
+Las expresiones regulares se usan para analizar el contenido de cadenas de caracteres por 
+medio de patrones. Son muy &#250;tiles y por ello deber&#233;is aprender a definir vuestros propios patrones.
+
+<P>
+Como en otras secciones, os remito a la 
+<A NAME="tex2html27"
+  HREF="http://www.rexswain.com/perl5.html#statements">gu&#237;a de referencia de Perl</A>
+para ver todo el repertorio de s&#237;mbolos y que se pueden usar para construir patrones. 
+
+<P>
+Un patr&#243;n est&#225; delimitado por dos barras inclinadas, 
+<code>/patrón/</code> y los caracteres
+que insert&#233;is en &#233;l pueden tener un significado literal u otro especial cuando vaya precedido 
+del modificador 
+<code>\</code>. Por ejemplo, 
+<code>/n/</code> 
+es un patr&#243;n que coincidir&#225; con cualquier aparici&#243;n de un car&#225;cter 
+<code>n</code> en una cadena. Sin embargo, <code>/\n/</code> 
+s&#243;lo coincidir&#225; con los caracteres de nueva l&#237;nea.
+
+<P>
+Los s&#237;mbolos m&#225;s habituales en expresiones regulares podr&#237;an ser:
+<PRE> 
+/./     # cualquier carácter excepto \n, comodín (wildcard)
+/\s/    # es un espacio en blanco (space)
+/\t/    # es un tabulador
+/\w/    # es un carácter alfanumérico (word), incluyendo '_'
+/\W/    # no es un carácter alfanumérico (word)
+/\d/    # es un dígito
+/\D/    # no es un dígito 
+
+/\A/     # es el principio de una cadena
+/\Z/     # es el final de una cadena
+/^/      # es el principio de una línea de archivo
+/$/      # es el final de una línea de archivo
+
+/\//     # es el carácter / 
+/[...]/  # es una clase de carácteres que hay que buscar
+/[A|B|C]/# para definir un patrón formado por varias alternativas: coincide con 'A', con 'B' o con 'C'
+</PRE>
+
+<P>
+Los cuantificadores son:
+<PRE> 
++ una ó más veces
+? cero ó una vez
+* cero ó más veces
+{n,m} mínimo y máximo de veces
+</PRE>
+
+<P>
+Los par&#233;ntesis se usan para agrupar varios s&#237;mbolos en un s&#243;lo patr&#243;n y 
+memorizar en variables locales los patrones encontrados:
+<PRE> 
+/(\d\s\w)/   
+
+/(11+)/       # guarda la primera aparición de al menos dos unos seguidos
+/(11+)\s+\1/  # guarda la primera aparición de al menos dos unos seguidos y mira a ver si 
+              # hay otra igual separada por al menos un espacio en blanco 
+				  
+              # \1 corresponde al primer (patrón), \2 al segundo y así sucesivamente
+              # sus apariciones se almacenan en las variables especiales $1, $2, ...
+              # $1, $2, ... son asignadas desde cada patrón agrupado con paréntesis
+</PRE>
+
+<P>
+Veamos unos ejemplos:
+<PRE>
+if($cadena =~ /\s+/) { # ejecuta este código si hay uno ó más espacios en blanco en $cadena }
+
+if($cadena =~ /\s{2,}/) { # ejecuta este código si hay al menos dos espacios en blanco en $cadena }
+
+if($cadena =~ /[\d|\s]/) { # ejecuta este código si encuentra un dígito o un espacio en blanco en $cadena }
+
+if($cadena =~ /[A-Za-z]/) { # ejecuta este código si encuentra cualquier letra, mayúscula o minúscula, en $cadena }
+
+Otra posible forma de uso:
+
+my $cadena = "34 KDa";
+$cadena =~ /^(\d\s+KDa)/;  
+print "$1\n";                # en caso de encontrar el (patrón) en $cadena, $1 contendrá su primera aparición
+</PRE>
+
+<P>
+El repertorio de aplicaciones de las expresiones regulares se ha merecido que hayan aparecido libros
+dedicados s&#243;lo a ellas, por lo que no pretendo aqu&#237; mostraros todo el potencial que tienen. Valga de 
+ejemplo que se han usado incluso para comprobar si un n&#250;mero es 
+<A NAME="tex2html28"
+  HREF="http://groups-beta.google.com/group/comp.lang.perl.misc/browse_thread/thread/24c1fd6047714f40/e8429a6517435589?q=abigail+%2B+prime&amp;rnum=1#e8429a6517435589">primo</A>
+mediante <code>(1 x $numero) !~ /^(11+)\1+$/</code> .
+Pero s&#237; vamos a ver un par de funciones de Perl, las primeras despu&#233;s de 
+<code>print</code> y <code>scalar</code>,
+que est&#225;n asociadas a las expresiones regulares y son muy &#250;tiles. Ambas usan el operador 
+<code>=~</code>.
+
+<P>
+La primera es la sustituci&#243;n (s), cuya sintaxis simplificada es: <A NAME="935"></A>
+
+<P>
+<code> $cadena =~ s/patrón/sustitución/[g|i]</code>
+
+<P>
+donde <code>g</code> 
+es un modificador opcional para que sustituya todas las apariciones del patr&#243;n, no s&#243;lo la primera,
+y <code>i</code> 
+es un modificador opcional para que letras iguales coincidan aunque est&#233;n may&#250;sculas o min&#250;sculas. 
+Veamos un ejemplo:
+<PRE> 
+my $cadena = "Letras y espacios \n";
+									
+$cadena =~ s/\s//;  # patrón es /\s/ y sustitución es // , ahora $cadena contiene "Letrasy espacios \n";
+
+$cadena =~ s/\s//g; # ahora $cadena contiene "Letrasyespacios\n";
+</PRE>
+
+<P>
+La otra funci&#243;n es la traducci&#243;n (tr) y su sintaxis es muy similar: <A NAME="936"></A>
+
+<P>
+<code> $cadena =~ tr/lista_caracteres/lista_caracteres_sustitución/</code>
+
+<P>
+que reemplaza cada aparici&#243;n de un car&#225;cter de la lista de caracteres de la izquierda por el car&#225;cter que 
+ocupa la misma posici&#243;n en la lista de la derecha. Veamos otro ejemplo:
+
+<P>
+<code>$DNAcomplementario =~ tr/ATGC/TACG/;</code>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html479"
+  HREF="node19.html">Ejercicios con expresiones regulares</A>
+<UL>
+<LI><A NAME="tex2html480"
+  HREF="node20.html">Qu&#233; hace este trozo de c&#243;digo?</A>
+<LI><A NAME="tex2html481"
+  HREF="node21.html">Ejercicio con enzimas de restricci&#243;n</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html469"
+  HREF="node17.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html475"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html477"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

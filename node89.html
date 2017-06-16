@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Perl desde el terminal: one liners </TITLE>
+<META NAME="description" CONTENT="Perl desde el terminal: one liners ">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node92.html">
+<LINK REL="previous" HREF="node87.html">
+<LINK REL="up" HREF="bioinfoPerl.html">
+<LINK REL="next" HREF="node90.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html1257"
+  HREF="node88.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1263"
+  HREF="bioinfoPerl.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1265"
+  HREF="node90.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1266"
+  HREF="node90.html">Ejemplos generales</A></b>  Arriba: <b><A NAME="tex2html1264"
+  HREF="bioinfoPerl.html">Perl en bioinform&#225;tica</A></b>  Anterior: <b><A NAME="tex2html1258"
+  HREF="node88.html">Perl5 desde Perl6</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00600000000000000000"></A> <A NAME="oneliners"></A> <A NAME="2749"></A>
+<BR>
+Perl desde el terminal:  <i> one liners  </i>
+</H1>
+
+<P>
+Este material no estar&#237;a completo sin ejemplos del uso de Perl desde el terminal, que sin
+duda sirven de muestra del poder de este lenguaje tambi&#233;n como herramienta cotidiana. Para ello
+debemos conocer algunos argumentos del int&#233;rprete Perl especiales para su uso en el terminal. 
+
+<P>
+Como vimos de pasada en la secci&#243;n <A HREF="node4.html#terminal">2.1.1</A>, uno de los argumentos posibles es <code>-w</code>,
+para mostrar todos los avisos del int&#233;rprete, y otro es <code>-e</code>, que compila y ejecuta lo que 
+escribamos entre <B>'comillas sencillas'</B> en el terminal como un programa, en vez de abrir un fichero con c&#243;digo.
+
+<P>
+En este contexto podemos adem&#225;s aplicar otros argumentos:
+
+<UL>
+<LI><code>-n</code>  para leer l&#237;nea a l&#237;nea el contenido de todos los archivos pasados como argumentos, con un bucle <code>while(&lt;&gt;){ ... }</code>
+</LI>
+<LI><code>-p</code>  modificaci&#243;n de <code>-n</code> que adem&#225;s imprime cada l&#237;nea le&#237;da a <code>stdout</code>
+</LI>
+<LI><code>-l</code>  por defecto a&#241;ade un salto <code>\n</code> a cada l&#237;nea le&#237;da con <code>-n</code> o <code>-p</code>
+</LI>
+</UL>
+
+<P>
+Por defecto, Perl separa los datos de entrada, normalmente un archivo o una tuber&#237;a
+(<A NAME="tex2html125"
+  HREF="http://en.wikipedia.org/wiki/Pipeline_(Unix)"> <i> pipe  </i></A>), en l&#237;neas. Si queremos cambiar
+ese comportamiento necesitamos indicarlo por medio del argumento <code>-0</code> (es un cero). Por ejemplo, para separar texto en p&#225;rrafos
+podemos usar <code>-00</code>. Si necesitamos diseccionar el contenido de cada l&#237;nea, por ejemplo en forma de columnas, 
+recurrimos a estos dos argumentos:
+
+<UL>
+<LI><code>-a</code>  para aplicar la funci&#243;n <code>split</code> a las l&#237;nea le&#237;das (descrita en el apartado <A HREF="node24.html#stringfunc">2.7.2</A>)
+</LI>
+<LI><code>-F'separador'</code>  para indicar la expresi&#243;n regular para <code>split</code>, el separador de columnas, que quedan guardadas en el vector <code>@F</code>
+</LI>
+</UL>
+
+<P>
+Podemos invocar funciones de cualquier m&#243;dulo instalado en el sistema mediante estos argumentos:
+
+<UL>
+<LI><code>-I</code> para indicar rutas a m&#243;dulos, como en <code>-I/home/usuario/lib/</code>
+</LI>
+<LI><code>-M</code> importa un m&#243;dulo, como en <code>-Mstrict</code>
+</LI>
+</UL>
+
+<P>
+Quisiera mencionar tambi&#233;n el argumento <code>-i</code>, que permite cambiar el contenido de un fichero  <i> in situ  </i>, que es conveniente
+usar con mucha prudencia para no destruir accidentalmente archivos. Para ello es recomendable mantener siempre copias de los archivos originales, 
+por medio de la sintaxis <code>-i.bk</code>, que en este caso guarda copias con la extensi&#243;n <code>.bk</code> de todos los ficheros procesados.
+
+<P>
+Ya que hemos visto que las expresiones  <i> one liners  </i> se ejecutan l&#237;nea a l&#237;nea, puede ser muy &#250;til 
+emplear bloques <code>END{}</code>, puesto que lo all&#237; contenido se ejecuta &#250;nicamente al terminar de procesar todas las lineas. En la siguiente secci&#243;n
+hay algunos ejemplos que lo explican. 
+
+<P>
+OJO: En la Red es frecuente encontrar expresiones que contienen algo que parece un operador, <code>}{</code>, que no es otra cosa
+que una manera casi ilegible de separar el c&#243;digo de cada l&#237;nea y el que se debe ejecutar al final, como en END. 
+Ejemplo: <code>$ perl -lpe'}{$_=$.' /etc/passwd</code> (tomado de <A NAME="tex2html126"
+  HREF="http://www.perlmonks.org/?node_id=232332">perlmonks</A>).
+
+<P>
+Finalmente, es muy posible que tus expresiones Perl en el terminal salgan ganando si utilizas las 
+<A NAME="tex2html127"
+  HREF="http://www.rexswain.com/perl5.html#specialvariables">variables especiales de Perl</A>.
+
+<P>
+Como ejemplo del ahorro de escritura que permiten estos argumentos muestro ahora el mismo algoritmo,
+
+<UL>
+<LI>en formato  <i> one liner  </i>, usando la ya conocida opci&#243;n <code>-w</code> para mostrar avisos del int&#233;rprete (<A HREF="node4.html#terminal">2.1.1</A>):
+<PRE>
+perl -wnl -e 'print;'
+</PRE>
+
+<P>
+</LI>
+<LI>y en forma de programa Perl convencional: 
+<PRE>
+#!/usr/bin/perl -w
+
+# comprueba si hay argumentos o pipes entrantes
+@ARGV or @ARGV = '-';
+
+foreach my $fichero (@ARGV) 
+{
+	open(FICH,$fichero) || warn "$0: no puedo abrir $fichero\n";
+	while(&lt;FICH&gt;)
+	{
+		print;
+	}
+	close(FICH);
+}
+</PRE>
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1267"
+  HREF="node90.html">Ejemplos generales</A>
+<LI><A NAME="tex2html1268"
+  HREF="node91.html">Algunas aplicaciones en Bioinform&#225;tica</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html1257"
+  HREF="node88.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1263"
+  HREF="bioinfoPerl.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1265"
+  HREF="node90.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Ejercicio con enzimas de restricci&#243;n</TITLE>
+<META NAME="description" CONTENT="Ejercicio con enzimas de restricci&#243;n">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="previous" HREF="node20.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node22.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html502"
+  HREF="node20.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html506"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html508"
+  HREF="node22.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html509"
+  HREF="node22.html">Biblioteca de funciones de Perl</A></b>  Arriba: <b><A NAME="tex2html507"
+  HREF="node19.html">Ejercicios con expresiones regulares</A></b>  Anterior: <b><A NAME="tex2html503"
+  HREF="node20.html">Qu&#233; hace este trozo de</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00261200000000000000"></A> <A NAME="problEnzRest"></A>
+<BR>
+Ejercicio con enzimas de restricci&#243;n
+</H3>
+Ahora os toca a vosotros, la tarea es escribir un programa que busque dentro de una secuencia 
+de ADN dianas de las enzimas de restricci&#243;n BamHI (diana GGATCC) y EcoRI (diana CC[A/T]GG).
+Os propongo un borrador de la soluci&#243;n, que en principio podr&#237;a extenderse a todas las 
+enzimas de restricci&#243;n que quer&#225;is:
+
+<P>
+<PRE> 
+#!/usr/bin/perl -w 
+# Ejercicio escrito por Bruno Contreras en Julio de 2005
+
+use strict; 
+
+my @enz_sitios = ('GGATCC','CC(A|T)GG'); # también sirve 'CC[AT]GG' o 'CC[A|T]GG'
+my %enz_nombres = ('GGATCC','BamHI','CC(A|T)GG','EcoRI');
+my $DNA = "ATCGCGACCAGGTTAGCGCGCGATTATTATATATCGATATCGCGGCGATATATCTCGAGAGTATATGGATCCTGGATAGCTAGATCATAGA";
+
+# 1) obtengo la secuencia de la hebra de DNA complementaria, no olvidando invertirla con la función reverse
+
+# 2) recorro el vector de enzimas de restricción mediante un bucle foreach, buscando sitios
+# para cada enzima, mostrando y contando los sitios encontrados
+# PISTA: para mostrar los sitios encontrados usar la variable especial $1 
+
+# 	2.1) primero en la hebra + del DNA
+# 	2.2) ahora en la hebra complementaria
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html502"
+  HREF="node20.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html506"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html508"
+  HREF="node22.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

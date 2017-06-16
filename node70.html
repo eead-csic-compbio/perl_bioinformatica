@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>LWP</TITLE>
+<META NAME="description" CONTENT="LWP">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node71.html">
+<LINK REL="previous" HREF="node69.html">
+<LINK REL="up" HREF="node68.html">
+<LINK REL="next" HREF="node71.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html1062"
+  HREF="node69.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1068"
+  HREF="node68.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1070"
+  HREF="node71.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1071"
+  HREF="node71.html">XML y JSON</A></b>  Arriba: <b><A NAME="tex2html1069"
+  HREF="node68.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1063"
+  HREF="node69.html">Getopt::Std</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00346200000000000000">
+LWP</A>
+</H3>
+
+<P>
+Esta colecci&#243;n de paquetes de CPAN nos permite desarrollar clientes web en Perl, os recomiendo que 
+investigu&#233;is la documentaci&#243;n en <A NAME="tex2html64"
+  HREF="http://search.cpan.org/perldoc?LWP">LWP</A>
+para ver todas sus posibilidades. 
+
+<P>
+Aqu&#237; os mostrar&#233; el uso del paquete <A NAME="tex2html65"
+  HREF="http://search.cpan.org/perldoc?LWP::Simple">LWP::Simple</A>
+para descargarnos una p&#225;gina web, lo cual puede sernos de utilidad alguna vez:
+<PRE>
+#!/usr/bin/perl -w
+# cómo descargarse una página web de forma no interactiva
+
+use strict;
+use LWP::Simple;
+
+my $contenido = get("http://www.perl.com");
+</PRE> 
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html1062"
+  HREF="node69.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1068"
+  HREF="node68.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1070"
+  HREF="node71.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

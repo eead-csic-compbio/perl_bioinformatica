@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Subrutinas que devuelven valores</TITLE>
+<META NAME="description" CONTENT="Subrutinas que devuelven valores">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node46.html">
+<LINK REL="previous" HREF="node43.html">
+<LINK REL="up" HREF="node42.html">
+<LINK REL="next" HREF="node46.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html788"
+  HREF="node44.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html794"
+  HREF="node42.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html796"
+  HREF="node46.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html797"
+  HREF="node46.html">Paso de par&#225;metros por valor</A></b>  Arriba: <b><A NAME="tex2html795"
+  HREF="node42.html">Subrutinas y paso de par&#225;metros</A></b>  Anterior: <b><A NAME="tex2html789"
+  HREF="node44.html">Ejemplo de alcance de variables</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00312000000000000000">
+Subrutinas que devuelven valores</A>
+</H2>
+
+<P>
+Ya que sabemos c&#243;mo declarar e invocar subrutinas, ahora veremos c&#243;mo podemos escribir subrutinas 
+que devuelvan valores. Una  vez m&#225;s, creo que un ejemplo deja todo m&#225;s claro:
+
+<P>
+<PRE>
+#!/usr/bin/perl -w 
+# Ejemplo escrito por Bruno Contreras en Julio de 2005
+
+use strict; 
+
+## variables del programa principal
+my $queryseq = "MARRKRRNFNKQATEILNEYFYSHLSNPYPSXXXXXXXXXXSGITVSQVSNWFGNKRIRYKKNIGKFQEEANIYAAKTAVTA";
+my $subjectseq = "MARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKKNIGKFQEEANIYAAKTAVTA";
+
+## llamada a printf que a su vez llama a dos subrutinas que devuelven valores
+printf("Alineamiento %2.2f :\n%s\n%s\n%s\n", 
+	calculaIdentidad($queryseq,$subjectseq),  # llamada a una subrutina
+	decoraAlineamiento($queryseq,$subjectseq));  # llamada a otra subrutina
+
+## no siempre imprimiremos los valores devueltos por una subrutina, a veces simplemente los
+## guardaremos:
+
+my ($dev1,$dev2,$dev3) = decoraAlineamiento($queryseq,$subjectseq);
+
+
+######## declaraciones de subrutinas ######################################
+
+sub calculaIdentidad     
+{
+	# parámetros
+	my ($sec1,$sec2) = @_;
+	
+	# variables locales
+	my ($id,$pos,$long) = (0,0,length($sec1));
+	
+	for($pos=0;$pos&lt;$long;$pos++)
+	{
+		if(substr($sec1,$pos,1) eq substr($sec2,$pos,1))
+		{
+			$id++;
+		}
+	}
+	
+	return sprintf("%2.2f",$id/$long);  # devuelve un número real
+}
+
+###########################################################################
+
+sub decoraAlineamiento
+{
+	# parámetros
+	my ($sec1,$sec2) = @_;
+	
+	# variables locales
+	my ($decoracion,$pos,$long) = ("",0,length($sec1));
+	
+	for($pos=0;$pos&lt;$long;$pos++)
+	{
+		if(substr($sec1,$pos,1) eq substr($sec2,$pos,1))
+		{
+			$decoracion .= '|';
+		}
+		else
+		{
+			$decoracion .= ' ';
+		}
+	}
+	
+	return ($sec1,$decoracion,$sec2); # devuelve tres cadenas de caracteres
+}
+</PRE>
+
+<P>
+Es com&#250;n llamar  <i> funciones  </i> <A NAME="2038"></A> a las subrutinas que devuelven valores 
+y  <i> procedimientos  </i> <A NAME="1497"></A> a las que no. Si una subrutina contiene
+la funci&#243;n 
+<code>return</code>, 
+<A NAME="1499"></A> entonces ser&#225; una funci&#243;n. 
+
+<P>
+A diferencia de otros lenguajes, en Perl una funci&#243;n puede devolver m&#225;s de un valor, como hab&#233;is 
+comprobado con 
+<code>decoraAlineamiento</code>.
+
+<P>
+A diferencia de otros lenguajes, en Perl los procedimientos pueden invocarse de manera diferente
+a las funciones, usando 
+<code>&amp;procedimiento;</code> 
+en vez de 
+<code>procedimiento();</code>.
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html788"
+  HREF="node44.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html794"
+  HREF="node42.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html796"
+  HREF="node46.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

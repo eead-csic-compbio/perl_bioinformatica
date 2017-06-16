@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Subrutinas y paso de par&#225;metros</TITLE>
+<META NAME="description" CONTENT="Subrutinas y paso de par&#225;metros">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node50.html">
+<LINK REL="previous" HREF="node41.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node43.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html752"
+  HREF="node41.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html758"
+  HREF="node41.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html760"
+  HREF="node43.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html761"
+  HREF="node43.html">Declaraci&#243;n de subrutinas y alcance</A></b>  Arriba: <b><A NAME="tex2html759"
+  HREF="node41.html">Fundamentos de Perl5 (2)</A></b>  Anterior: <b><A NAME="tex2html753"
+  HREF="node41.html">Fundamentos de Perl5 (2)</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00310000000000000000">
+Subrutinas y paso de par&#225;metros</A>
+</H1>
+
+<P>
+Una subrutina puede definirse como un programa dentro de un programa, un subprograma.
+Es un trozo de c&#243;digo que tiene vida propia, con sus propio algoritmo y sus propias
+variables, que puede estar declarado dentro de otro programa Perl, dentro de un m&#243;dulo o
+dentro del int&#233;rprete Perl, como 
+<code>print</code>, 
+por ejemplo. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:subrutinas"></A><A NAME="1432"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figura 3.1:</STRONG>
+
+Posibles ubicaciones para las declaraciones de subrutinas en Perl.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="390" HEIGHT="496" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="\includegraphics[width=0.8\textwidth]{subrutinas}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Para ejecutar una subrutina hay que invocarla por su nombre, y si fuera necesario sus 
+par&#225;metros. Por ejemplo ya hemos invocado 
+<code>printf("cadena %s\n",$cadena);</code> 
+antes, donde
+<code>printf</code> 
+es el nombre de la subrutina y lo que va entre par&#233;ntesis sus par&#225;metros.
+Si invocamos una funci&#243;n y el int&#233;rprete no encuentra su declaraci&#243;n, se interrumpir&#225; la
+ejecuci&#243;n en ese momento con un mensaje de error como este: 
+<BR>
+<code>Undefined subroutine &amp;main::subrutina_sin_de called at programa.pl line 25.</code>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html762"
+  HREF="node43.html">Declaraci&#243;n de subrutinas y alcance de las variables</A>
+<UL>
+<LI><A NAME="tex2html763"
+  HREF="node44.html">Ejemplo de alcance de variables</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html764"
+  HREF="node45.html">Subrutinas que devuelven valores</A>
+<LI><A NAME="tex2html765"
+  HREF="node46.html">Paso de par&#225;metros por valor y por referencia</A>
+<LI><A NAME="tex2html766"
+  HREF="node47.html">Funciones recursivas</A>
+<LI><A NAME="tex2html767"
+  HREF="node48.html">Ventajas de usar subrutinas</A>
+<LI><A NAME="tex2html768"
+  HREF="node49.html">Ejercicios con subrutinas</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html752"
+  HREF="node41.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html758"
+  HREF="node41.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html760"
+  HREF="node43.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

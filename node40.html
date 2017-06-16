@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Ejercicios con llamadas al sistema operativo</TITLE>
+<META NAME="description" CONTENT="Ejercicios con llamadas al sistema operativo">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="previous" HREF="node39.html">
+<LINK REL="up" HREF="node39.html">
+<LINK REL="next" HREF="node41.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html698"
+  HREF="node39.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html702"
+  HREF="node39.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html704"
+  HREF="node41.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html705"
+  HREF="node41.html">Fundamentos de Perl5 (2)</A></b>  Arriba: <b><A NAME="tex2html703"
+  HREF="node39.html">Llamadas al sistema operativo</A></b>  Anterior: <b><A NAME="tex2html699"
+  HREF="node39.html">Llamadas al sistema operativo</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION002101000000000000000"></A> <A NAME="problSO"></A>
+<BR>
+Ejercicios con llamadas al sistema operativo
+</H2>
+
+<P>
+Os propongo ahora un ejercicio basado en dos programas muy importantes de la bioinform&#225;tica,
+BLAST y CLUSTALW,que deber&#233;is tener instalados en vuestro sistema. Las tareas que os pido son:
+
+<UL>
+<LI>elegid una prote&#237;na problema, por ejemplo en SWISSPROT, o una con la que hay&#225;is trabajado 
+</LI>
+<LI>copiad una biblioteca de secuencias para BLAST del <A NAME="tex2html50"
+  HREF="ftp://ftp.ncbi.nlm.nih.gov/blast/db">NCBI</A>.
+</LI>
+<LI>formatead la biblioteca con el programa 
+<code>formatdb</code> de BLAST.
+</LI>
+<LI>escribid un programa, basado en el c&#243;digo <A HREF="node36.html#problBLAST">2.8.3</A>, que ejecute BLAST con vuestra prote&#237;na problema
+y tome los potenciales hom&#243;logos encontrados y construya con ellos un alineamiento m&#250;ltiple usando CLUSTALW.
+</LI>
+</UL>
+
+<P>
+Para terminar este cap&#237;tulo os muestro un programa que usa el programa externo 
+<code>curl</code> (hay otras posibilidades, como 
+<code>wget</code>) 
+<A NAME="913"></A> <A NAME="914"></A> para hacer m&#250;ltiples peticiones a un servidor web de forma autom&#225;tica. A veces hay que recurrir
+a este tipo de soluciones, por ejemplo si la versi&#243;n web es la &#250;nica accesible para un programa. Pero recordad que 
+antes de hacer este tipo de cosas es una buena idea escribir a la persona responsable de ese servidor web y 
+pedirle permiso. Es posible que os recomienden qu&#233; hora del d&#237;a es mejor para estos trabajos grandes, para no saturar 
+sus m&#225;quinas. 
+
+<P>
+<PRE> 
+#!/usr/bin/perl -w
+# written by Bruno Contreras, July 2005
+
+# program get_thermo_gibbs_energies.pl, that submits a series of dna sequences in FASTA format
+# to the webserver http://wings.buffalo.edu/gsa/dna/dk/WEBTHERMODYN and retrieves their Gibbs 
+# energy profile
+
+# This shows how scripts can be written to serialize web form submissions
+
+# For different webservers you need to read the source code of the the submission
+# page (rigth mouse button on any browser) to check out the variables involved
+
+# These are the variables for this example, that I got from my browser
+
+#&lt;form  enctype="multipart/form-data" method="POST" action="webthermodyn.cgi"&gt;
+#&lt;input type=text name=temperature value=37&gt; 
+#&lt;input type=text name=saltconc value=10&gt;
+#&lt;input type=text name=molecule value=""&gt;
+#&lt;select name="shape" value="Linear"&gt;
+#&lt;INPUT TYPE="radio" NAME="inputmode" VALUE="input"&gt; 
+#&lt;textarea name="sequence" value=""&gt;
+#&lt;INPUT TYPE="radio" NAME="allpart" VALUE="ALL"&gt; 
+#&lt;input type=text name=step value=50&gt;
+#&lt;input type=text value=100 name=windowsize&gt;
+#&lt;input type=text value=1 name=marknum&gt;
+#&lt;input type=submit value="SUBMIT QUERY"&gt;  
+
+
+
+use strict;
+
+######################################################################
+
+my $progname = "get_thermo_freeenergies.pl";
+my $thermodynCGI = "http://wings.buffalo.edu/gsa/dna/dk/WEBTHERMODYN/webthermodyn.cgi";
+my $waittime = 5; # wait 5 seconds between submissions 
+
+my $curl_options = "-F temperature=37 -F sign=positive -F saltconc=10 -F shape=Linear -F inputmode=input -F allpart=ALL -F step=25 -F windowsize=25 -F marknum=5 -F timelimit=90 ";
+	
+## parse DNA sequences file in fasta ################################
+
+my (@DNA,@NAME);
+my ($dnaseq,$dnaseqname,$n_of_seqs) = ("","",0);
+
+open(FASTADNA,$ARGV[0]) || die "#$progname : need a valid DNA fasta file to run properly, exit... \n";
+while(&lt;FASTADNA&gt;)
+{
+	next if(/^$/);
+	
+	if(/\&gt;/)
+	{
+		if($dnaseq)
+		{
+			push(@DNA,$dnaseq);
+			push(@NAME,$dnaseqname);
+			$dnaseq = ""; 
+			$dnaseqname = "";
+		}	
+		$dnaseqname = substr((split)[0],1);
+		$n_of_seqs++;
+	}
+	else { $dnaseq .= (split)[0];}
+}
+close(FASTADNA);
+
+print "#$progname : sequences read $n_of_seqs (from $ARGV[0])\n";
+
+## get free energy profiles for each sequence ########################
+
+my ($seq,$s);
+
+for($seq=0;$seq&lt;scalar(@DNA);$seq++)
+{
+	my $request = $curl_options . "-F sequence=$DNA[$seq] -F molecule=$NAME[$seq]";
+	
+	open(CURL,"curl $request $thermodynCGI |") || die "#$progname : cannot run curl $request $thermodynCGI ...exit\n";
+	while(&lt;CURL&gt;)
+	{
+		if(/DATADIR/)
+		{
+			my $results = (split(/\"\&gt;ASCII/,$_))[0];
+			$results = (split(/HREF=\"/,$results))[2];
+			
+			open(RES,"curl $results |" ) || die "#$progname : cannot read $results ...exit\n";
+			while(&lt;RES&gt;)
+			{
+				print;
+			}
+			close(RES);
+		}
+
+	}
+	close(CURL);
+	
+	sleep $waittime;   # wait this time before the next submission is delivered
+}
+</PRE> 
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html698"
+  HREF="node39.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html702"
+  HREF="node39.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html704"
+  HREF="node41.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

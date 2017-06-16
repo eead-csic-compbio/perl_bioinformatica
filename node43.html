@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Declaraci&#243;n de subrutinas y alcance de las variables</TITLE>
+<META NAME="description" CONTENT="Declaraci&#243;n de subrutinas y alcance de las variables">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node45.html">
+<LINK REL="previous" HREF="node42.html">
+<LINK REL="up" HREF="node42.html">
+<LINK REL="next" HREF="node44.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html769"
+  HREF="node42.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html775"
+  HREF="node42.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html777"
+  HREF="node44.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html778"
+  HREF="node44.html">Ejemplo de alcance de variables</A></b>  Arriba: <b><A NAME="tex2html776"
+  HREF="node42.html">Subrutinas y paso de par&#225;metros</A></b>  Anterior: <b><A NAME="tex2html770"
+  HREF="node42.html">Subrutinas y paso de par&#225;metros</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00311000000000000000">
+Declaraci&#243;n de subrutinas y alcance de las variables</A>
+</H2>
+
+<P>
+Declarar una subrutina en Perl es muy sencillo, es un bloque de c&#243;digo precedido de 
+la palabra reservada  <i> sub  </i> y un nombre, que, como las variables, debe empezar por 
+un car&#225;cter alfanum&#233;rico o un '_'. 
+
+<P>
+Puedes declarar subrutinas en cualquier posici&#243;n de
+un programa en Perl, pero por cuesti&#243;n de estilo es costumbre declararlas todas juntas
+por ejemplo al final del programa principal.
+
+<P>
+<PRE>
+#!/usr/bin/perl -w 
+# Ejemplo escrito por Bruno Contreras en Julio de 2005
+
+use strict; 
+
+mi_subrutina();     # invocación de la subrutina: el intérprete busca 
+                    # ahora la declaración de mi_subrutina y la encuentra 
+                    # más adelante en el mismo archivo; en ese momento
+                    # interrumpe la ejecución del programa principal y
+                    # ejecuta el código de la subrutina. El programa
+                    # principal se reanuda al terminar mi_subrutina 
+
+######## declaraciones de subrutinas ######################################
+
+sub mi_subrutina     
+{
+	# código propio de la subrutina
+	print "mi primera subrutina\n";
+}
+</PRE>
+
+<P>
+Si la ejecuci&#243;n de la subrutina requiere el paso de datos externos a la subrutina, normalmente
+esos datos se pasan como par&#225;metros en el momento de la invocaci&#243;n:
+
+<P>
+<PRE>
+#!/usr/bin/perl -w 
+# Ejemplo escrito por Bruno Contreras en Julio de 2005
+
+use strict; 
+
+my ($arg1,$arg2) = (1,2);
+my @arg3 = (3,4,5);
+
+mi_subrutina($arg1,$arg2,@arg3);  # paso de tres parámetros
+
+######## declaraciones de subrutinas ######################################
+
+sub mi_subrutina     
+{
+	my($sarg1,$sarg2,@sarg3) = @_;   # así recibe la subrutina los parámetros pasados, 
+	                                 # copiándolos del arreglo global @_ a variables locales
+	
+	print "subrutina con parámetros\n";
+}
+</PRE>
+
+<P>
+El paso de par&#225;metros a una subrutina
+depende de la variable especial 
+<code>@_</code>, 
+que ya mencionamos en <A HREF="node13.html#varEspecial">2.3.4</A>, que es un ejemplo
+de variable global <A NAME="1460"></A>, a la que se puede acceder desde cualquier 
+lugar de un programa.
+
+<P>
+A diferencia de 
+<code>@_</code>, 
+las variables que se declaran dentro de una subrutina, como 
+<code>my($sarg1,$sarg2,@sarg3)</code> , 
+son por defecto variables locales, <A NAME="1461"></A>
+que dejan de existir cuando se termina la ejecuci&#243;n de la subrutina y que no pueden ser accedidas 
+si no es desde la misma subrutina.
+
+<P>
+Aunque en teor&#237;a una subrutina puede acceder a variables globales, declaradas fuera 
+de ella, es conveniente limitar el accesos a aquellas variables que se pasen como par&#225;metros, 
+para facilitar la comprensi&#243;n del c&#243;digo que escrib&#225;is y la correcci&#243;n de posibles errores.
+
+<P>
+Es posible declarar firmas ( <i> signatures  </i>) de subrutinas, especificando los par&#225;metros que recibe al declararla, pero es una 
+caracter&#237;stica experimental. Puedes leer sobre esto en 
+<A NAME="tex2html52"
+  HREF="https://perldoc.perl.org/perlsub.html">https://perldoc.perl.org/perlsub.html</A>.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html779"
+  HREF="node44.html">Ejemplo de alcance de variables</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html769"
+  HREF="node42.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html775"
+  HREF="node42.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html777"
+  HREF="node44.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

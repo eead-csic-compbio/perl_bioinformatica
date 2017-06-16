@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Manejo de directorios</TITLE>
+<META NAME="description" CONTENT="Manejo de directorios">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node34.html">
+<LINK REL="previous" HREF="node32.html">
+<LINK REL="up" HREF="node31.html">
+<LINK REL="next" HREF="node34.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html632"
+  HREF="node32.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html638"
+  HREF="node31.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html640"
+  HREF="node34.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html641"
+  HREF="node34.html">Ejercicios que manejan archivos</A></b>  Arriba: <b><A NAME="tex2html639"
+  HREF="node31.html">Operaciones con archivos y directorios</A></b>  Anterior: <b><A NAME="tex2html633"
+  HREF="node32.html">Manejo de archivos</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00282000000000000000">
+Manejo de directorios</A>
+</H2>
+
+<P>
+Perl tambi&#233;n tiene funciones para manejar directorios, como se muestra en el siguiente ejemplo:
+<PRE>
+$ ls -la ruta/directorio
+-rw-r--r--  1 contrera users  52849 jul 20 19:15 archivo.txt
+-rw-r--r--  1 contrera users    715 jul 19 11:08 datos
+-rw-r--r--  1 contrera users    129 jul  7 16:49 .latex
+drwxr-xr-x  2 contrera users   1024 jul  7 13:38 png
+
+
+opendir(DIR,"ruta/directorio") || die "lo siento, no puedo abrir ruta/directorio\n";
+
+my @entradas = grep {!/^\./} readdir(DIR);  # añade a @entradas archivos y subdirectorios que no empiecen por '.'
+                                            # @entradas contiene: archivo.txt, datos, png
+closedir(DIR);
+</PRE>
+
+<P>
+Para crear un directorio se usa la funci&#243;n 
+<code>mkdir 'nombre_directorio_nuevo</code> .
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html632"
+  HREF="node32.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html638"
+  HREF="node31.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html640"
+  HREF="node34.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Ejercicio con variables</TITLE>
+<META NAME="description" CONTENT="Ejercicio con variables">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node9.html">
+<LINK REL="next" HREF="node15.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html432"
+  HREF="node13.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html436"
+  HREF="node9.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html438"
+  HREF="node15.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html439"
+  HREF="node15.html">Operadores</A></b>  Arriba: <b><A NAME="tex2html437"
+  HREF="node9.html">Variables y tipos</A></b>  Anterior: <b><A NAME="tex2html433"
+  HREF="node13.html">Variables especiales de Perl</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00235000000000000000">
+Ejercicio con variables</A>
+</H2>
+
+<P>
+Estudia el siguiente c&#243;digo en Perl y encuentra qu&#233; contendr&#225; 
+<code>$resultado</code> 
+al terminar. 
+
+<P>
+<PRE> 
+#!/usr/bin/perl -w 
+# Ejercicio escrito por Bruno Contreras en Julio de 2005
+
+use strict; 
+
+my ($dato1,@datos2,%datos3,$resultado);
+
+$datos2[0] = 'A';
+$datos2[1] = 'G';
+$datos2[2] = 'T';
+$datos2[3] = 'C';
+
+$dato1 = scalar(@datos2);
+
+$datos3{ $datos2[0] } = 'ATP';
+$datos3{ $datos2[1] } = 'GTP';
+$datos3{ $datos2[2] } = 'TTP'; 
+$datos3{ $datos2[3] } = 'CTP';
+
+$resultado = \%datos3;
+
+$resultado = $resultado-&gt;{ $datos2[$dato1-2] };
+
+print("resultado = $resultado\n");
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html432"
+  HREF="node13.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html436"
+  HREF="node9.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html438"
+  HREF="node15.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

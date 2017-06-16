@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Procesando resultados de BLAST</TITLE>
+<META NAME="description" CONTENT="Procesando resultados de BLAST">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="previous" HREF="node35.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node37.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html662"
+  HREF="node35.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html666"
+  HREF="node34.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html668"
+  HREF="node37.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html669"
+  HREF="node37.html">Entrada, salida y formateo de</A></b>  Arriba: <b><A NAME="tex2html667"
+  HREF="node34.html">Ejercicios que manejan archivos</A></b>  Anterior: <b><A NAME="tex2html663"
+  HREF="node35.html">Leyendo archivos Protein Data Bank</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00283200000000000000"></A> <A NAME="problBLAST"></A>
+<BR>
+Procesando resultados de BLAST
+</H3>
+
+<P>
+Con el archivo FASTA generado en el ejercicio anterior <A NAME="tex2html39"
+  HREF="problemas/1lfu.fas">1lfu.fas</A>
+hacemos dos b&#250;squedas BLAST con los siguientes comandos (necesitas tener instalado BLASTlocalmente y bajarte la biblioteca de secuencias nr):
+<PRE>
+blastall -p blastp -i 1lfu.fas -d nr -o 1lfu.blast -v 20 -b 20           # -o es el archivo de resultados
+blastpgp -i 1lfu.fas -j 2 -Q 1lfu.pssm -d nr -o 1lfu.blast -v 20 -b 20   # -o y -Q son archivos de resultados
+</PRE>
+
+<P>
+Los archivos de resultados generados son <A NAME="tex2html40"
+  HREF="problemas/1lfu.blast">1lfu.blast</A>
+y
+<A NAME="tex2html41"
+  HREF="problemas/1lfu.blastpgp">1lfu.blastpgp</A>, donde se encuentra la informaci&#243;n relativa a las
+secuencias potencialmente hom&#243;logas encontradas en la biblioteca nr ( <i> non redundant  </i>), que puedes obtener
+en el <A NAME="tex2html42"
+  HREF="ftp://ftp.ncbi.nlm.nih.gov/blast/db">NCBI</A>. 
+
+<P>
+El &#250;ltimo archivo de resultados generado es <A NAME="tex2html43"
+  HREF="problemas/1lfu.pssm">1lfu.pssm</A>, que 
+contiene informaci&#243;n tambi&#233;n muy valiosa, entre la que destacamos una matriz de sustituci&#243;n de amino&#225;cidos
+espec&#237;fica para la familia de prote&#237;nas  <i> 1lfu  </i> y el contenido en informaci&#243;n evolutiva de cada
+amino&#225;cido de la secuencia de entrada <A NAME="tex2html44"
+  HREF="problemas/1lfu.fas">1lfu.fas</A>.
+
+<P>
+En el siguiente ejemplo os muestro un trozo de c&#243;digo que extrae de la salida de BLAST (indistintamente
+<A NAME="tex2html45"
+  HREF="problemas/1lfu.blast">1lfu.blast</A>
+o
+<A NAME="tex2html46"
+  HREF="problemas/1lfu.blastpgp">1lfu.blastpgp</A>) la informaci&#243;n relevante de cada uno de los
+alineamientos reportados.
+
+<P>
+<PRE>
+#!/usr/bin/perl -w 
+# Ejemplo escrito por Bruno Contreras Moreira
+
+# Programa extraeBLAST.pl que lee un archivo generado por BLAST pasado como argumento 
+# y extrae la información relevante de cada alineamiento reportado
+# Ejemplo de como usar variables bandera (flags) para leer textos complejos
+
+# Ojo: se puede hacer con Bioperl:
+# http://www.bioperl.org/wiki/Bptutorial.pl#Parsing_BLAST_and_FASTA_reports_with_Search_and_SearchIO
+
+# Ojo2: si ejecutas blast con -m 8 es trivial leer la salida de BLAST, si no te importa perder el alineamiento
+
+use strict; 
+
+## variables ######################################################################
+
+my ($archivoBLAST,@hits);
+
+# otras variables manejadas, donde Q significa 'query' y S ' subject',
+# las dos secuencias de un alineamiento en BLAST
+my ($aux0,$aux1,$aux2,$aux3);  # variables auxiliares
+my ($Q,$S);                    # variables booleanas que indican si se está leyendo Q o S
+my ($firstQ,$lastQ,$seqQ);     # primer resíduo, último resíduo y secuencia de 'query'
+my ($firstS,$lastS,$seqS);
+my ($longQ,$name,$id,$ev);     # longitud de 'query', nombre se secuencia, % de identidad y e-value
+
+
+## revisa los argumentos pasados al invocar el programa ############################
+if(scalar(@ARGV) &lt; 1)
+{	
+	die "uso: extraeBLAST.pl &lt;archivoBLAST&gt;\n";	
+}
+else 
+{	
+	$archivoBLAST = $ARGV[0];	# lee el nombre del argumento y asígnalo a  
+}
+
+
+## abre $archivoBLAST en modo lectura y recórrelo línea a línea ####################
+
+$Q = $S = 0;
+open(BLAST,$archivoBLAST) || die "# no puedo abrir $archivoBLAST\n";
+while(&lt;BLAST&gt;)
+{
+	if(/Query:/)
+	{
+		($aux0, $aux1, $aux2, $aux3) = split;  # split separa $_ en 4 escalares separados por espacios en blanco
+		
+		if(!$Q){	$firstQ = $aux1;	}
+		
+		$lastQ = $aux3;
+		$seqQ .= $aux2;
+		$Q++;  # estamos leyendo 'query'        
+	}
+	elsif(/Sbjct:/)
+	{
+		($aux0, $aux1, $aux2, $aux3) = split;
+	
+		if(!$S){	$firstS = $aux1;	}
+
+		$lastS = $aux3;
+		$seqS .= $aux2;
+		$S++;  # estamos leyendo 'subject'
+	}  
+	elsif((/^&gt;/)||(/^  Database:/))	## procesa el alineamiento previo
+	{ 
+		if($Q)
+		{
+			# crea un arreglo con los datos de este alineamiento y guárdalo en @hits
+			# @hits es por tanto un arreglo de arreglos
+			push(@hits, [($firstQ,$lastQ,$firstS,$lastS,$name,$id,$ev,$seqQ,$seqS)] );
+		}
+	
+		# reiniciamos valores para el siguiente alineamiento
+		$Q = $S = 0;
+		$seqQ = $seqS = $name = $id = $ev = "";
+		
+		# nombre del siguiente alineamiento
+		$name = $_;
+		chomp($name);
+	}
+	elsif(/^ Score =/)	
+	{	
+		if($Q) ## secuencias que tienen varios alineamientos 
+		{		
+			push(@hits, [($firstQ,$lastQ,$firstS,$lastS,$name,$id,$ev,$seqQ,$seqS)] );
+					
+			$Q = $S = 0;
+			$seqQ = $seqS = $id = ""; 
+		}
+			
+		$ev = (split)[7];
+	}
+	elsif(/^ Identities/)
+	{	
+		# toma nota del % de identidad del alineamiento
+		$id = (split)[3]; 
+		$id =~ s/(\(|\)|\%|,)//g;	
+	}
+	elsif(/^Sequences/)	# reinicia todo para la siguiente ronda de resultados (sólo blastpgp)
+	{
+		undef @hits;
+		$S = $Q = 0;
+		$seqQ = $seqS = $name = $id = $ev = "";
+	}
+	elsif(/letters\)/)
+	{	
+		# toma nota de la longitud de la secuencia 'query'
+		$longQ = (split)[0];	
+		$longQ =~ s/\(//;	
+	}
+}
+close(BLAST);
+
+## ahora como ejemplo muestra el primer alineamiento guardado #################################
+
+# cada alineamiento se guardó así: [($firstQ,$lastQ,$firstS,$lastS,$name,$id,$ev,$seqQ,$seqS)]
+# el primer alineamiento será $hits[0], que a su vez es un arreglo, por eso necesitamos otra
+# coordenada para llegar a cada elemento
+
+if($hits[0])
+{
+	print "Posible homólogo:\n$hits[0][4]\n";          
+	print "Fragmento de $hits[0][0] a $hits[0][1], e-value $hits[0][6] y \%ID $hits[0][5]\n";    
+	print "Alineamiento\n$hits[0][7]\n$hits[0][8]\n";
+}
+</PRE>
+
+<P>
+Vuestra tarea es ahora escribir un programita que lea <A NAME="tex2html47"
+  HREF="problemas/1lfu.pssm">1lfu.pssm</A>
+y genere una lista de los amino&#225;cidos cuyo contenido en informaci&#243;n evolutiva sea elevado. Os sugiero
+que us&#233;is la funci&#243;n split para leer el archivo l&#237;nea a l&#237;nea.
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html662"
+  HREF="node35.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html666"
+  HREF="node34.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html668"
+  HREF="node37.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

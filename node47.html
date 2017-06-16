@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Funciones recursivas</TITLE>
+<META NAME="description" CONTENT="Funciones recursivas">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node48.html">
+<LINK REL="previous" HREF="node46.html">
+<LINK REL="up" HREF="node42.html">
+<LINK REL="next" HREF="node48.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html808"
+  HREF="node46.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html814"
+  HREF="node42.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html816"
+  HREF="node48.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html817"
+  HREF="node48.html">Ventajas de usar subrutinas</A></b>  Arriba: <b><A NAME="tex2html815"
+  HREF="node42.html">Subrutinas y paso de par&#225;metros</A></b>  Anterior: <b><A NAME="tex2html809"
+  HREF="node46.html">Paso de par&#225;metros por valor</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00314000000000000000">
+Funciones recursivas</A>
+</H2>
+
+<P>
+Como en otros lenguajes, en Perl se pueden programar funciones recursivas, que se llaman 
+a si mismas hasta que el problema que intentan resolver tiene un soluci&#243;n obvia. La recursi&#243;n
+es un mecanismo de descomposici&#243;n de problemas que puede hacer m&#225;s sencillo llegar a una
+soluci&#243;n, pero a cambio, normalmente, su coste computacional es relativamente grande, ya 
+que implica muchas llamadas a funciones seguidas. 
+
+<P>
+De ejemplo os muestro la funci&#243;n factorial en forma recursiva:
+
+<P>
+<PRE>
+sub factorial
+{
+	# toma parámetro
+	my $fact = $_[0];
+	
+	if($fact &lt; 0) # error, la función factorial no está definida para negativos
+	{ 
+		return 0; 
+	}
+	elsif($fact == 0) # caso trivial
+	{
+		return 1;
+	}
+	else # descompón el problema un paso más
+	{
+		return $fact * factorial($fact -1); 
+	}
+}
+</PRE>
+
+<P>
+Puedes encontrar otros ejemplos de funciones recursivas en el 
+<A NAME="tex2html53"
+  HREF="http://www.eead.csic.es/compbio/material/bioperl/node9.html">taller de (bio)perl</A>.
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html808"
+  HREF="node46.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html814"
+  HREF="node42.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html816"
+  HREF="node48.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

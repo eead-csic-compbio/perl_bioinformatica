@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Utilizaci&#243;n de paquetes y m&#243;dulos desde un programa</TITLE>
+<META NAME="description" CONTENT="Utilizaci&#243;n de paquetes y m&#243;dulos desde un programa">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node67.html">
+<LINK REL="previous" HREF="node65.html">
+<LINK REL="up" HREF="node62.html">
+<LINK REL="next" HREF="node67.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html1016"
+  HREF="node65.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1022"
+  HREF="node62.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1024"
+  HREF="node67.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1025"
+  HREF="node67.html">Ejercicio de creaci&#243;n de paquetes</A></b>  Arriba: <b><A NAME="tex2html1023"
+  HREF="node62.html">Paquetes y m&#243;dulos</A></b>  Anterior: <b><A NAME="tex2html1017"
+  HREF="node65.html">Creaci&#243;n de paquetes y m&#243;dulos</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00344000000000000000">
+Utilizaci&#243;n de paquetes y m&#243;dulos desde un programa</A>
+</H2>
+
+<P>
+Como ya vimos, un paquete se incluye en un programa por medio de 
+<code>use paquete;</code> .
+Cuando el int&#233;rprete Perl llega a esa l&#237;nea, normalmente en el encabezado de un programa,
+busca un archivo que se llame 
+<code>paquete.pm</code> 
+en una serie de directorios, que incluyen el directorio actual, almacenados en el arreglo especial 
+<code>@INC</code>. 
+
+<P>
+Podemos comprobar el contenido de 
+<code>@INC</code> 
+simplemente imprimi&#233;ndolo con 
+<code>print @INC;</code> . 
+
+<P>
+Si queremos utilizar un m&#243;dulo o paquete que no se encuentra en 
+<code>@INC</code>, 
+deberemos a&#241;adir estas 
+l&#237;neas antes de llamar a 
+<code>use</code>:
+<PRE>
+use lib "/home/usuario/modulos/"
+use strict;
+use mimodulo;
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html1016"
+  HREF="node65.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1022"
+  HREF="node62.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1024"
+  HREF="node67.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>GD::Graph</TITLE>
+<META NAME="description" CONTENT="GD::Graph">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node74.html">
+<LINK REL="previous" HREF="node72.html">
+<LINK REL="up" HREF="node68.html">
+<LINK REL="next" HREF="node74.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html1092"
+  HREF="node72.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1098"
+  HREF="node68.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1100"
+  HREF="node74.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1101"
+  HREF="node74.html">GraphViz</A></b>  Arriba: <b><A NAME="tex2html1099"
+  HREF="node68.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1093"
+  HREF="node72.html">RemoteRestMap</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00346500000000000000"></A> <A NAME="GDGraph"></A>
+<BR>
+GD::Graph
+</H3>
+
+<P>
+Este paquete permite hacer diagramas y gr&#225;ficas para representar datos num&#233;ricos de manera 
+sencilla. Puedes obtenerlo en CPAN y deber&#225;s instalar el paquete 
+<code>GD</code> 
+antes de instalar
+<code>GD::Graph</code>, 
+aunque este es un ejemplo de paquete que puede dar problemas al instalar, 
+porque requiere a su vez otros componentes. Pero dada su utilidad creo que vale la pena 
+el trago.
+
+<P>
+La documentaci&#243;n para explotar este paquete la encontr&#225;is en 
+<A NAME="tex2html70"
+  HREF="http://search.cpan.org/perldoc?GD::Graph">GD::Graph</A>, en CPAN.
+
+<P>
+Aqu&#237; ten&#233;is el c&#243;digo para hacer un diagrama X/Y de dos variables num&#233;ricas, que 
+se muestra en el archivo <A NAME="tex2html71"
+  HREF="./problemas/ejemplo.png">ejemplo.png</A>:
+<PRE>
+#!/usr/bin/perl -w 
+# Ejemplo escrito por Bruno Contreras Moreira
+
+use strict;
+use GD::Graph::lines;
+
+my @datos = (
+[-3,-2,-1,0,1,2,3],            # variable X
+[.2,.4,1.9,2.4,1.2,.3,.3]      # variable Y
+);
+
+# crea un nueva instancia
+my $grafica = new GD::Graph::lines();
+
+# configura el diagrama
+$grafica-&gt;set( 
+	x_label           =&gt; 'sigma',
+	y_label           =&gt; 'frecuencia',
+	title             =&gt; 'Ejemplo de gráfica X/Y'
+) or die $grafica-&gt;error;
+
+my $diagrama = $grafica-&gt;plot( \@datos );
+
+
+open(GRAF_PNG,"&gt;ejemplo.png") || die "no puedo crear ejemplo.png\n";
+binmode GRAF_PNG;
+print GRAF_PNG $diagrama-&gt;png();
+close(GRAF_PNG);
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html1092"
+  HREF="node72.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1098"
+  HREF="node68.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1100"
+  HREF="node74.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

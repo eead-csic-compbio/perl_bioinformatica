@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>El lenguaje Perl5</TITLE>
+<META NAME="description" CONTENT="El lenguaje Perl5">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node4.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html315"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html321"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html323"
+  HREF="node4.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html324"
+  HREF="node4.html">El int&#233;rprete Perl (en el</A></b>  Arriba: <b><A NAME="tex2html322"
+  HREF="node2.html">Fundamentos de Perl5 (1)</A></b>  Anterior: <b><A NAME="tex2html316"
+  HREF="node2.html">Fundamentos de Perl5 (1)</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00210000000000000000">
+El lenguaje Perl5</A>
+</H1>
+
+<P>
+Perl es un acr&#243;nimo en ingl&#233;s para  <i> Practical Extraction and Report Language  </i>, pero se ha convertido
+en un lenguaje con m&#250;ltiples aplicaciones y caracter&#237;sticas, como se resume en <A NAME="tex2html7"
+  HREF="http://www.perl.org/about.html">perl.org</A>:
+
+<P>
+
+<UL>
+<LI>Powerful, stable, mature, portable
+</LI>
+<LI>Mission critical
+</LI>
+<LI>High Quality Code
+</LI>
+<LI>Object-oriented, procedural and functional
+</LI>
+<LI>Easily extendible
+</LI>
+<LI>Text manipulation
+</LI>
+<LI>Unicode support
+</LI>
+<LI>Database integration
+</LI>
+<LI>C/C++ library interface
+</LI>
+<LI>Embeddable
+</LI>
+<LI>Open Source
+</LI>
+<LI>Ideal web programming language
+</LI>
+<LI>CPAN
+</LI>
+<LI>Encryption capable
+</LI>
+</UL>
+
+<P>
+Perl tambi&#233;n tiene defectos y no es para todo el mundo. A mi me parece que sus virtudes son:
+
+<UL>
+<LI>se aprende muy r&#225;pido
+</LI>
+<LI>es muy flexible y aplicable a casi cualquier cosa, permitiendo hacer cosas complicadas de forma sencilla
+</LI>
+<LI>en Internet puedes encontrar toda la documentaci&#243;n necesaria para solucionar tus dudas 
+</LI>
+</UL>
+
+<P>
+Por otro lado, si no se adoptan ciertas normas de estilo, se pueden escribir en Perl programas dif&#237;ciles de depurar, 
+con resultados impredecibles o imposibles de comprender. Pero estos problemas son normalmente responsabilidad del 
+programador. 
+
+<P>
+En cuanto a velocidad de ejecuci&#243;n, Perl tiene las desventajas de los lenguajes interpretados, y es por tanto
+m&#225;s lento que por ejemplo C. Pero en realidad la velocidad de ejecuci&#243;n no es tan importante en la mayor&#237;a
+de las aplicaciones en bioinform&#225;tica.
+
+<P>
+Espero que con este curso aprend&#225;is a usar Perl5 sin estos problemas.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html325"
+  HREF="node4.html">El int&#233;rprete Perl (en el terminal)</A>
+<LI><A NAME="tex2html326"
+  HREF="node5.html">Editores de texto y entornos de desarrollo integrados (IDEs)</A>
+<LI><A NAME="tex2html327"
+  HREF="node6.html">Un primer programa</A>
+<LI><A NAME="tex2html328"
+  HREF="node7.html">C&#243;mo escribir tus programas</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html315"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html321"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html323"
+  HREF="node4.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

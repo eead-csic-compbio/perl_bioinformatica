@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Asignaciones y consultas a arreglos o vectores</TITLE>
+<META NAME="description" CONTENT="Asignaciones y consultas a arreglos o vectores">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node9.html">
+<LINK REL="next" HREF="node12.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html402"
+  HREF="node10.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html408"
+  HREF="node9.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html410"
+  HREF="node12.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html411"
+  HREF="node12.html">Asignaciones a tablas asociativas y</A></b>  Arriba: <b><A NAME="tex2html409"
+  HREF="node9.html">Variables y tipos</A></b>  Anterior: <b><A NAME="tex2html403"
+  HREF="node10.html">Asignaciones a variables escalares</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00232000000000000000"></A> <A NAME="asigArreglos"></A>
+<BR>
+Asignaciones y consultas a arreglos o vectores
+</H2>
+
+<P>
+<PRE>
+my @arreglo = ();                # declaración de un arreglo vacío
+my (@arreglo,$escalar) = ((),0); # declaración de un arreglo vacío y un escalar con valor 0
+@arreglo = (1,2,3);              # arreglo de enteros
+@arreglo = (1,2,'tres');         # arreglo de enteros y cadenas
+@arreglo = (1..25);              # arreglo con los 25 primeros naturales
+$arreglo[12];                    # elemento número 13 de @arreglo
+$arreglo[12] = 'escalar';        # asigna un escalar al elemento número 13 de @arreglo
+
+@arreglo =((1,2),(3,4)); # arreglo de una dimension con 4 elementos
+@arreglo =[(1,2),(3,4)]; # arreglo con dos dimensiones 2x2
+$arreglo[0][1];          # elemento con coordenadas 0,1 de la matriz bidimensional @arreglo
+
+@arreglo = @copia;    # copia de arreglos
+$escalar = \@arreglo; # referencia, dirección de @arreglo
+$escalar-&gt;[12];       # elemento número 13 de @arreglo
+$$escalar[12];        # lo mismo, elemento número 13 de @arreglo
+@{$escalar};          # es lo mismo que @arreglo
+$arreglo[$#arreglo];  # úlimo elemento de @arreglo
+@arreglo[3,4,5];      # subarreglo con 3 elementos
+scalar(@arreglo);     # en contexto escalar, el número de elementos del arreglo
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html402"
+  HREF="node10.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html408"
+  HREF="node9.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html410"
+  HREF="node12.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

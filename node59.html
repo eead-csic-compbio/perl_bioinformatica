@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Atributos e identidad de un objeto (con programaci&#243;n estructurada)</TITLE>
+<META NAME="description" CONTENT="Atributos e identidad de un objeto (con programaci&#243;n estructurada)">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node60.html">
+<LINK REL="previous" HREF="node58.html">
+<LINK REL="up" HREF="node58.html">
+<LINK REL="next" HREF="node60.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html934"
+  HREF="node58.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html940"
+  HREF="node58.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html942"
+  HREF="node60.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html943"
+  HREF="node60.html">M&#233;todos de un objeto (con</A></b>  Arriba: <b><A NAME="tex2html941"
+  HREF="node58.html">Objetos en Perl</A></b>  Anterior: <b><A NAME="tex2html935"
+  HREF="node58.html">Objetos en Perl</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00331000000000000000">
+Atributos e identidad de un objeto (con programaci&#243;n estructurada)</A>
+</H2>
+
+<P>
+Una manera de implementar los atributos de un objeto en Perl ser&#237;a muy similar a los registros de
+la secci&#243;n <A HREF="node54.html#registros">3.2.4</A> y se podr&#237;an generar as&#237;:
+
+<P>
+<PRE>
+my $pdb1 = constructor_PDB('1lfu',3,'1lfu.pdb');
+
+sub constructor_PDB  # un método que genera nuevos objetos se llama constructor 
+{
+	# valores de los atributos como parámetros
+	my($nombre,$n_de_cadenas,$archivoPDB) = @_;
+
+	my $rPDB = {
+		'nombre' =&gt; $nombre,
+		'ncadenas' =&gt; $n_de_cadenas,
+		'archivo' =&gt; $archivoPDB,
+		'coordenadas' =&gt; ()
+	};
+	return $rPDB;   # devuelve una referencia al objeto
+}
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html934"
+  HREF="node58.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html940"
+  HREF="node58.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html942"
+  HREF="node60.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Manejo de archivos</TITLE>
+<META NAME="description" CONTENT="Manejo de archivos">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node33.html">
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node31.html">
+<LINK REL="next" HREF="node33.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html622"
+  HREF="node31.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html628"
+  HREF="node31.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html630"
+  HREF="node33.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html631"
+  HREF="node33.html">Manejo de directorios</A></b>  Arriba: <b><A NAME="tex2html629"
+  HREF="node31.html">Operaciones con archivos y directorios</A></b>  Anterior: <b><A NAME="tex2html623"
+  HREF="node31.html">Operaciones con archivos y directorios</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00281000000000000000">
+Manejo de archivos</A>
+</H2>
+En Perl los archivos se manejan como en C, asignando un descriptor de archivo ( <i> filehandle  </i>)
+<A NAME="714"></A>
+a cada archivo que se abre, que usaremos para manipular su contenido y finalmente cerrarlo. 
+
+<P>
+Si queremos manejar el fichero 
+<code>fichero.txt</code> 
+har&#237;amos:
+
+<P>
+<PRE>
+open(MIFICH,"fichero.txt");   # abrimos un fichero existente para lectura 
+                              # y le asignamos el descriptor MIFICH
+
+open(MIFICH,"&gt;fichero.txt");  # creamos un nuevo fichero y le asignamos 
+                              # el descriptor MIFICH
+
+open(MIFICH,"&gt;&gt;fichero.txt"); # abrimos un fichero existente para añadir
+                              # contenido al final, conservando el contenido 
+                              # original, y le asignamos el descriptor MIFICH
+
+close(MIFICH);                # así cerramos el archivo en cualquier caso 
+
+Una versión más segura hubiera sido:
+open(MIFICH,"fichero.txt") || die "lo siento, no puedo encontrar fichero.txt\n";
+</PRE>
+
+<P>
+Para leer un archivo normalmente se usa un bucle 
+<code>while</code>:
+
+<P>
+<PRE>
+open(MIFICH,"fichero.txt")|| die "lo siento, no puedo encontrar fichero.txt\n";   
+
+while(&lt;MIFICH&gt;)               # significa: para cada línea ejecuta el bloque de código 
+{                             # entre los corchetes
+
+	print $_;                  # la variable especial $_ contiene la línea actual
+
+	# ahora podríamos usar expresiones regulares para procesar esta línea de texto
+}                          
+    
+close(MIFICH);
+</PRE>
+
+<P>
+Para escribir en un fichero que acabamos de abrir:
+<PRE>
+open(MIFICH,"&gt;fichero.txt")|| die "lo siento, no puedo crear fichero.txt\n";   
+
+print MIFICH "Una línea dentro del archivo\n";
+    
+close(MIFICH);
+</PRE>
+
+<P>
+Cuando usamos la funci&#243;n 
+<code>print</code> 
+sin especificar un descriptor de archivo, como hemos hecho en varios
+ejemplos hasta ahora, en realidad estamos escribiendo al archivo de salida por defecto, llamado STDOUT<A NAME="723"></A>.
+De la misma manera podemos acceder al teclado, el archivo de entrada por defecto, por medio de &lt;STDIN&gt;.
+
+<P>
+Por otro lado, existen en Perl operadores especiales para operar sobre ficheros ( <i> filetest operators  </i>)
+<A NAME="725"></A>
+que pueden ser muy &#250;tiles (<A NAME="tex2html32"
+  HREF="http://www.rexswain.com/perl5.html#fileoperations">gu&#237;a de referencia de Perl</A>):
+<PRE>
+-r -w -x  # comprueba si hay permiso para leer, escribir o ejecutar un archivo 
+-e -z     # comprueba si el archivo existe / tiene tamaño nulo
+-s        # compruebe si el archivo tiene tamaño no nulo y devuelve el tamaño
+-f -d     # comprueba si el archivo es un fichero / es un directorio
+
+Ejemplo de uso:
+if(-r 'mifichero.txt')
+{
+	# abro y leo el archivo
+}
+</PRE>
+
+<P>
+Hay toda una bater&#237;a de funciones espec&#237;ficas que pod&#233;is consultar en la
+<A NAME="tex2html33"
+  HREF="http://www.rexswain.com/perl5.html#filetest">gu&#237;a de referencia de Perl</A>, pero
+creo que estas son las esenciales.
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html622"
+  HREF="node31.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html628"
+  HREF="node31.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html630"
+  HREF="node33.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

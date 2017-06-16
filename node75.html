@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>SOAP y web servicios</TITLE>
+<META NAME="description" CONTENT="SOAP y web servicios">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node76.html">
+<LINK REL="previous" HREF="node74.html">
+<LINK REL="up" HREF="node68.html">
+<LINK REL="next" HREF="node76.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html1112"
+  HREF="node74.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1118"
+  HREF="node68.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1120"
+  HREF="node76.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1121"
+  HREF="node76.html">Otros m&#243;dulos y programas</A></b>  Arriba: <b><A NAME="tex2html1119"
+  HREF="node68.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1113"
+  HREF="node74.html">GraphViz</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00346700000000000000"></A> <A NAME="SOAP"></A>
+<BR>
+SOAP y web servicios
+</H3>
+
+<P>
+<A NAME="tex2html74"
+  HREF="http://es.wikipedia.org/wiki/SOAP">SOAP</A>
+es un protocolo para servir y requerir aplicaciones desde la Web en el contexto
+de los <A NAME="tex2html75"
+  HREF="http://es.wikipedia.org/wiki/Servicios_Web">servicios web</A>, que permiten el acceso no interactivo a servidores.
+
+<P>
+Para acceder desde un programa a servicios de este tipo debemos conocer su interfaz.Si es as&#237;, escribir un programa que la interrogue es sencillo, con
+la ayuda de tutoriales como <A NAME="tex2html76"
+  HREF="http://www.ibm.com/developerworks/webservices/library/ws-bioinfo.html">&#233;ste</A>.
+
+<P>
+Aqu&#237; os muestro un ejemplo de c&#243;digo para acceder a los servicios web de 
+<A NAME="tex2html77"
+  HREF="http://floresta.eead.csic.es/3dfootprint/">3D-footprint</A>, que nos permiten explorar las interfaces prote&#237;na-DNA 
+del Protein Data Bank, tomado de <A NAME="tex2html78"
+  HREF="http://floresta.eead.csic.es/3dfootprint/tutorial.html#ws">aqu&#237;</A>:
+
+<P>
+<PRE>
+#!/usr/bin/perl -w
+# web services client for 3D-footprint
+use strict;
+use SOAP::Lite;
+
+my $URI   = 'http://floresta.eead.csic.es/footprint';
+my $WSURL = 'http://floresta.eead.csic.es/3dpwm/scripts/server/ws.cgi';
+
+my $soap = SOAP::Lite
+-&gt; uri($URI)
+-&gt; proxy($WSURL);
+
+# uncomment as needed:
+#my $result = $soap-&gt;text_query('homeodomain'); # 1 param: 1(string) one-word term
+#my $result = $soap-&gt;protein_query("IYNLSRRFAQRGFSPREFRLTMTRGDIGNYLGLTVETISRLLGRFQKSGMLAVKGKYITIENNDALAQLAGHTRNVA"); # 1 param: 1(string) sequence
+my $result = $soap-&gt;motif_query('tntga','local',1); # 3 params: 1(string) motif in IUPAC|CONSENSUS|TRANSFAC format, 2(string) local|global, 3(float) evalue cutoff
+
+unless($result-&gt;fault){ print $result-&gt;result(); } 
+else{ print 'error: ' . join(', ',$result-&gt;faultcode,$result-&gt;faultstring); }
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html1112"
+  HREF="node74.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1118"
+  HREF="node68.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1120"
+  HREF="node76.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

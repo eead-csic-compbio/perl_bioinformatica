@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Qu&#233; hace este trozo de c&#243;digo?</TITLE>
+<META NAME="description" CONTENT="Qu&#233; hace este trozo de c&#243;digo?">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node21.html">
+<LINK REL="previous" HREF="node19.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node21.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html492"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html498"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html500"
+  HREF="node21.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html501"
+  HREF="node21.html">Ejercicio con enzimas de restricci&#243;n</A></b>  Arriba: <b><A NAME="tex2html499"
+  HREF="node19.html">Ejercicios con expresiones regulares</A></b>  Anterior: <b><A NAME="tex2html493"
+  HREF="node19.html">Ejercicios con expresiones regulares</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00261100000000000000">
+Qu&#233; hace este trozo de c&#243;digo?</A>
+</H3>
+<PRE> 
+#!/usr/bin/perl -w 
+# Ejemplo escrito por Bruno Contreras en Julio de 2005
+
+use strict; 
+
+my $RNA = "CAUACUAAGAUCGCGAUAUUAUUAGCGAUAUACGACU";
+
+my $stop1 = 'UAA';
+my $stop2 = 'UGA';
+my $stop3 = 'UAG';
+
+my ($total1,$total2,$total3,$total) = (0,0,0,0);
+
+while( $RNA =~ /$stop1/g )
+{
+	$total1++;
+}
+
+while( $RNA =~ /$stop2/g )
+{
+	$total2++;
+}
+
+while( $RNA =~ /$stop3/g )
+{
+	$total3++;
+}
+
+while( $RNA =~ /($stop1|$stop2|$stop3)/g)
+{
+	$total++;
+}
+
+print "$total1|$total2|$total3|$total\n";
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html492"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html498"
+  HREF="node19.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html500"
+  HREF="node21.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Entrada, salida y formateo de datos</TITLE>
+<META NAME="description" CONTENT="Entrada, salida y formateo de datos">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node39.html">
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node38.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html670"
+  HREF="node36.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html676"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html678"
+  HREF="node38.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html679"
+  HREF="node38.html">Formateo de datos</A></b>  Arriba: <b><A NAME="tex2html677"
+  HREF="node2.html">Fundamentos de Perl5 (1)</A></b>  Anterior: <b><A NAME="tex2html671"
+  HREF="node36.html">Procesando resultados de BLAST</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00290000000000000000">
+Entrada, salida y formateo de datos</A>
+</H1>
+
+<P>
+Cuando queremos que un programa consulte al usuario normalmente necesitaremos leer su respuesta
+en el archivo est&#225;ndar de entrada, STDIN <A NAME="838"></A>. Lo haremos por ejemplo as&#237;:
+<PRE>
+print "Contenido en GC deseado: ";
+my $GCusuario = &lt;STDIN&gt;;             # cuando el usuario teclee algo y presione &lt;ENTER&gt; 
+                                     # el programa prosigue
+</PRE>
+
+<P>
+Ya hemos visto antes que la salida est&#225;ndar de datos en Perl es un descriptor de archivo que
+se llama STDOUT y es a donde escribe 
+<code>print</code> por defecto.
+
+<P>
+Por &#250;ltimo, hay una salida est&#225;ndar para los errores que se produzcan en tiempo de ejecuci&#243;n
+que se llama STDERR, <A NAME="846"></A> a donde podemos hacer que escriban nuestros programas:
+<BR>
+<code>print STDERR "Error en mi programa, división por cero\n"; # equivalente a 'warn'</code>
+<BR>
+<P>
+Normalmente STDERR se muestra en el terminal, al igual que STDOUT, pero solamente es redirijida a un archivo 
+de manera expl&#237;cita:
+<code>perl mi_programa.pl &amp;&gt; archivo.out</code>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsecciones</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html680"
+  HREF="node38.html">Formateo de datos</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html670"
+  HREF="node36.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html676"
+  HREF="node2.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html678"
+  HREF="node38.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

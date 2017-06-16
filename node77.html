@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Limitaciones num&#233;ricas de Perl5</TITLE>
+<META NAME="description" CONTENT="Limitaciones num&#233;ricas de Perl5">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="previous" HREF="node62.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node78.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html1130"
+  HREF="node76.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1134"
+  HREF="node41.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1136"
+  HREF="node78.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1137"
+  HREF="node78.html">DBI y BioPerl</A></b>  Arriba: <b><A NAME="tex2html1135"
+  HREF="node41.html">Fundamentos de Perl5 (2)</A></b>  Anterior: <b><A NAME="tex2html1131"
+  HREF="node76.html">Otros m&#243;dulos y programas</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00350000000000000000">
+Limitaciones num&#233;ricas de Perl5</A>
+</H1>
+
+<P>
+En los foros se suele comentar la potencia de Perl5 para manipular cadenas de caracteres, que de hecho
+es para lo que se dise&#241;&#243; el lenguaje. Podemos preguntarnos adem&#225;s qu&#233; capacidad tiene el lenguaje 
+para las operaciones aritm&#233;ticas con n&#250;meros reales, algo que normalmente no se ve en el c&#243;digo y
+queda escondido en los detalles de la compilaci&#243;n. Para entender la cuesti&#243;n veamos
+un ejemplo programado en C y en Perl:
+
+<P>
+<PRE>
+/* Ejemplo de Julio Freyre */
+#include &lt;stdio.h&gt;
+void main() 
+{
+   for(float x = 0; x &lt; 1; x += .1) 
+      printf("%f es menor que 1\n", x);
+}
+</PRE>
+
+<P>
+Ahora la versión en Perl:
+
+<P>
+<PRE>
+# este programa muestra el error que acumula perl al sumar reales
+for(my $x = 0; $x &lt; 1; $x += .1) 
+{
+   print("$x es menor que 1\n");
+}
+
+# el error es de 1e-16, este programa ya funciona como se espera en arquitecturas i586 y SPARC
+my $error = 1e-16;
+for(my $x = 0; $x+$error &lt; 1; $x += .1) 
+{
+   print("$x es menor que 1\n");
+}
+</PRE>
+
+<P>
+Si prob&#225;is estos programitas ver&#233;is la limitaci&#243;n de Perl al manejar n&#250;meros reales. ¿Qu&#233; se 
+puede hacer para resolver esto? La soluci&#243;n m&#225;s sencilla es utilizar un m&#243;dulo de CPAN que se 
+llama <A NAME="tex2html93"
+  HREF="http://search.cpan.org/perldoc?Math::BigFloat">Math::BigFloat</A>,
+que permite usar una precisi&#243;n arbitaria, elegida por el usuario, para representar reales y operar con
+ellos, por supuesto con un coste en el tiempo de ejecuci&#243;n.
+
+<P>
+En relaci&#243;n con esto hay otro m&#243;dulo, llamado 
+<A NAME="tex2html94"
+  HREF="http://search.cpan.org/dist/Math-BigInt/lib/Math/BigInt.pm">Math::BigInt</A>
+que permite extender la capacidad intr&#237;nseca del lenguaje y la arquitectura f&#237;sica subyacente para
+representar enteros.
+
+<P>
+Otra opci&#243;n es usar de manera nativa otros lenguajes para estas tareas, como se explica en el 
+<A NAME="tex2html95"
+  HREF="http://www.eead.csic.es/compbio/material/bioperl/node17.html">Taller de (bio)perl</A>.
+
+<P>
+Estas limitaciones han sido superadas desde el dise&#241;o en <A NAME="tex2html96"
+  HREF="https://techbeacon.com/why-perl-6-game-thrones-programming-languages">Perl6</A>.
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html1130"
+  HREF="node76.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1134"
+  HREF="node41.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1136"
+  HREF="node78.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Getopt::Std</TITLE>
+<META NAME="description" CONTENT="Getopt::Std">
+<META NAME="keywords" CONTENT="bioinfoPerl">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="bioinfoPerl.css">
+
+<LINK REL="next" HREF="node70.html">
+<LINK REL="previous" HREF="node68.html">
+<LINK REL="up" HREF="node68.html">
+<LINK REL="next" HREF="node70.html">
+<!--google-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22456400-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation">
+<A NAME="tex2html1052"
+  HREF="node68.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1058"
+  HREF="node68.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1060"
+  HREF="node70.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html1061"
+  HREF="node70.html">LWP</A></b>  Arriba: <b><A NAME="tex2html1059"
+  HREF="node68.html">Algunos paquetes y programas Perl</A></b>  Anterior: <b><A NAME="tex2html1053"
+  HREF="node68.html">Algunos paquetes y programas Perl</A></b></fieldset></div></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00346100000000000000">
+Getopt::Std</A>
+</H3>
+
+<P>
+Este m&#243;dulo facilita la creaci&#243;n de una interfaz para tu programa en la l&#237;nea de comando, definiendo
+las diferentes opciones disponibles por medio de una letra y manejando su tratamiento. Lo mostrar&#233; mejor con un ejemplo:
+<PRE>
+#!/usr/bin/perl -w
+# program: example.pl
+# author: Bruno Contreras Moreira
+
+use strict;
+use Getopt::Std;
+
+my %opts;
+getopts('hsi:l:', \%opts);
+
+if(($opts{'h'})||(scalar(keys(%opts))==0)) 
+{ 
+	print "usage: progname.pl [options]\n";
+	print "-h \t this message\n";
+	print "-i \t input transcription file\n";
+	print "-s \t skip preprocessing (optional)\n";
+	print "-l \t oligo length (default 1, optional)\n\n";
+	exit; 
+}
+
+if(!defined($opts{'i'})) 	{ die "# need an input file\n"; }
+if(!defined($opts{'l'}) || ($opts{'l'} &lt; 1) ) 	
+{ 
+	$opts{'l'} = 1; 
+}
+if(!defined($opts{'s'})) 	
+{ 
+	$opts{'s'} = 0; 
+}
+
+printf("# example.pl -i %s -s %s -l %d\n",$opts{'i'},$opts{'s'},$opts{'l'});
+</PRE>
+
+<P>
+Si invocamos el programa
+<BR>
+<code>$ perl example.pl</code> 
+<BR>
+nos muestra las opciones posibles. 
+
+<P>
+Hay otra versi&#243;n que admite nombres de los par&#225;metros largos, <A NAME="tex2html63"
+  HREF="http://perldoc.perl.org/Getopt/Long.html">Getopt::Long</A>
+.
+
+<P>
+
+<DIV CLASS="navigation"><hr> 
+<A NAME="tex2html1052"
+  HREF="node68.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="./icons//prev.png"></A> 
+<A NAME="tex2html1058"
+  HREF="node68.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="./icons//up.png"></A> 
+<A NAME="tex2html1060"
+  HREF="node70.html">
+<IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="./icons//next.png"></A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Bruno Contreras-Moreira<br><a href="http://www.eead.csic.es/compbio">http://www.eead.csic.es/compbio</a>
+</ADDRESS>
+</BODY>
+</HTML>
