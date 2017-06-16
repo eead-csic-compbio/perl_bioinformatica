@@ -1,0 +1,625 @@
+<!DOCTYPE art SYSTEM "article.dtd"><art>
+   <ui>gb-2000-1-2-research0004</ui>
+   <ji>GBJ</ji>
+   <fm>
+      <dochead>Research</dochead>
+      <bibl>
+         <title>
+            <p>Exclusion of <it>EDNRB</it> and <it>KIT</it> as the basis for white spotting in Border Collies</p>
+         </title>
+         <aug>
+            <au id="A1" ca="yes">
+               <snm>Metallinos</snm>
+               <fnm>Danika</fnm>
+               <insr iid="I1"/>
+               <email>dlmetallinos@ucdavis.edu</email>
+            </au>
+            <au id="A2" ca="yes">
+               <snm>Rine</snm>
+               <fnm>Jasper</fnm>
+               <insr iid="I2"/>
+               <email>dlmetallinos@ucdavis.edu</email>
+            </au>
+         </aug>
+         <insg>
+            <ins id="I1">
+               <p>Veterinary Medical Teaching Hospital, University of California, Davis, California 95616, USA</p>
+            </ins>
+            <ins id="I2">
+               <p>Department of Molecular and Cell Biology, University of California, Berkeley, California 94720, USA</p>
+            </ins>
+         </insg>
+         <source>Genome Biology</source>
+         <issn>1465-6906</issn>
+         <pubdate>2000</pubdate>
+         <volume>1</volume>
+         <issue>2</issue>
+         <fpage>research0004.1</fpage>
+         <lpage>research0004.4</lpage>
+         <url>http://genomebiology.com/2000/1/2/research/0004/</url>
+         <xrefbib>
+            <pubidlist>
+               <pubid idtype="doi">10.1186/gb-2000-1-2-research0004</pubid>
+               <pubid idtype="pmpid">11178229</pubid>
+            </pubidlist>
+         </xrefbib>
+      </bibl>
+      <history>
+         <rec>
+            <date>
+               <day>9</day>
+               <month>5</month>
+               <year>2000</year>
+            </date>
+         </rec>
+         <revrec>
+            <date>
+               <day>16</day>
+               <month>6</month>
+               <year>2000</year>
+            </date>
+         </revrec>
+         <acc>
+            <date>
+               <day>22</day>
+               <month>6</month>
+               <year>2000</year>
+            </date>
+         </acc>
+         <pub>
+            <date>
+               <day>28</day>
+               <month>7</month>
+               <year>2000</year>
+            </date>
+         </pub>
+      </history>
+      <cpyrt>
+         <year>2000</year>
+         <collab>GenomeBiology.com</collab>
+      </cpyrt>
+      <shortabs>
+         <p>White spotting patterns in mammals can be caused by mutations in the genes encoding the endothelin B receptor and c-KIT, which are necessary for proper migration, differentiation or survival of the melanoblasts. An intercross was generated from a female Newfoundland and a male Border Collie and the white spotting phenotypes of the intercross progeny were evaluated. Although <it>EDNRB</it> and <it>KIT</it> have been implicated in white spotting in horses, pigs, cows, mice and rats, polymorphisms were indentified that excluded both these genes as the cause of white spotting pattern in Border Collies.</p>
+      </shortabs>
+      <abs>
+         <sec>
+            <st>
+               <p>Abstract</p>
+            </st>
+            <sec>
+               <st>
+                  <p>Background</p>
+               </st>
+               <p>White spotting patterns in mammals can be caused by mutations in the genes for the endothelin B receptor and c-Kit, whose protein products are necessary for proper migration, differentiation or survival of the melanoblast population of cells. Although there are many different dog breeds that segregate white spotting patterns, no genes have been identified that are linked to these phenotypes.</p>
+            </sec>
+            <sec>
+               <st>
+                  <p>Results</p>
+               </st>
+               <p>An intercross was generated from a female Newfoundland and a male Border Collie and the white spotting phenotypes of the intercross progeny were evaluated by measuring percentage surface area of white in the puppies. The Border Collie markings segregated as a simple autosomal recessive (7/25 intercross progeny had the phenotype). Two candidate genes, for the endothelin B receptor (<it>EDNRB</it>) and c-Kit (<it>KIT</it>), were evaluated for segregation with the white spotting pattern. Polymorphisms between the Border Collie and Newfoundland were identified for <it>EDNRB</it> using Southern analysis after a portion of the canine gene had been cloned. Polymorphisms for <it>KIT</it> were identified using a microsatellite developed from a bacterial artificial chromosome containing the canine gene.</p>
+            </sec>
+            <sec>
+               <st>
+                  <p>Conclusions</p>
+               </st>
+               <p>Both <it>EDNRB</it> and <it>KIT</it> were excluded as a cause of the white spotting pattern in at least two of the intercross progeny. Although these genes have been implicated in white spotting in other mammals, including horses, pigs, cows, mice and rats, they do not appear to be responsible for the white spotting pattern found in the Border Collie breed of dog.</p>
+            </sec>
+         </sec>
+      </abs>
+   </fm>
+   <meta>
+      <classifications>
+         <classification type="BMC" subtype="man_spc_id" id="30010009">Genetics</classification>
+         <classification type="BMC" subtype="man_spc_id" id="30010005">Development</classification>
+         <classification type="BMC" subtype="man_spc_id" id="30010015">Model organisms</classification>
+         <classification type="BMC" subtype="man_spc_id" id="30010018">Physiology</classification>
+      </classifications>
+   </meta>
+   <bdy>
+      <sec>
+         <st>
+            <p>Background</p>
+         </st>
+         <p>The genetics of coat color has been studied for many years in a variety of mammals, and the inheritance patterns of many of the relevant genes have been determined. Both scientists and breeders have studied the range of color and pattern that can be found in mammals. Dogs are uniquely suited for the investigation of the inheritance of coat color and patterns as the more than 200 different dog breeds are defined in part by a specific set of colors and patterns. 'White spotting' in mice, rats, dogs and horses is characterized by irregular white patches of skin and hair that are devoid of pigment-producing melanocytes. White spotting in domestic dog breeds has been postulated to be controlled by one locus, called <it>s</it>, which has at least three alleles [<abbr bid="B1">1</abbr>]. The three alleles segregate in some breeds, while other breeds are homozygous and show a standard spotting pattern. Although the variation in coat colors and patterns in dogs is far greater than in other species, the genes responsible for coat color in dogs have yet to be identified at the molecular level, with the exception of that for the yellow coat color [<abbr bid="B2">2</abbr>].</p>
+         <p>Genes responsible for white spotting in mice and horses and for hypopigmentation defects in humans have been identified. One of these, <it>EDNRB</it>, encoding the endothelin B receptor, causes white spotting in the <it>Ednrb</it> mouse [<abbr bid="B3">3</abbr>]. Some alleles of <it>Ednrb</it> are associated with more severe defects, such as deafness and aganglionic megacolon. Mutations in the endothelin B receptor gene are also responsible for Hirshsprung disease in humans [<abbr bid="B4">4</abbr>]. This disease is characterized by intestinal aganglionosis, which is occasionally associated with hypopigmentation and/or deafness. A similar syndrome in horses, called lethal white foal syndrome, is due to a mutation in the horse endothelin B receptor gene [<abbr bid="B5">5</abbr>,<abbr bid="B6">6</abbr>,<abbr bid="B7">7</abbr>].</p>
+         <p>Mutations in a second gene, <it>cKIT</it>, which encodes a receptor tyrosine kinase, cause the piebald trait in humans [<abbr bid="B8">8</abbr>]. Piebaldism is characterized by white patches on skin and hair. In horses, a similar phenotype, called Tobiano, is caused by a mutation in either <it>KIT</it> or a closely linked gene [<abbr bid="B9">9</abbr>]. A duplication of <it>KIT</it> causes white spotting in pigs [<abbr bid="B10">10</abbr>]. <it>EDNRB</it> and <it>KIT</it> are therefore two likely candidates for white spotting in dogs.</p>
+      </sec>
+      <sec>
+         <st>
+            <p>Results and discussion</p>
+         </st>
+         <p>As a resource for building a dog genetic map and as a tool to study the genes responsible for behavioral and morphological differences in the dog, an intercross was created between a male Border Collie and a female Newfoundland. The Newfoundland parent had a small patch of white on the chest and was otherwise completely black (Figure <figr fid="F1">1a</figr>). The Border Collie used in this cross had markings characteristic for the breed - black with white markings on the face, chest, neck, tail tip, ventral abdomen, all four digits, and extending up the front legs to the carpals (Figure <figr fid="F1">1b</figr>). These markings have many similarities to the white spotting patterns of other mammals. The Border Collie's sire and dam had the same markings, consistent with homozygosity for the causative loci. This cross provides the opportunity for analyzing the inheritance of the white spotting pattern exhibited by the Border Collie. Six F1 animals were produced which had medium-sized white patches on their chests. These six dogs were intercrossed to produce 25 F2 progeny. In the F2 generation, 7/25 had markings like the Border Collie parent, consistent with the phenotype being caused by a recessive allele of a single locus.</p>
+         <p>To determine if <it>EDNRB</it> was responsible for the white spotting pattern of the Border Collie, a portion of canine cDNA was cloned. The amino-acid sequence of canine endothelin B receptor was highly homologous to that of other mammalian endothelin B receptors (Figure <figr fid="F2">2</figr>). The canine cDNA clone was used as a hybridization probe for DNA hybridization blot experiments. A <it>Pvu</it>II restriction fragment length polymorphism (RFLP) was identified between the Border Collie grandparent and the Newfoundland grandparent of the cross. Spotted F2 progeny carried at least one allele of this polymorphism that was different from those carried by the Border Collie parent, indicating that this locus was not linked to white spotting pattern in this cross (Figure <figr fid="F3">3</figr>).</p>
+         <p>To evaluate the segregation of the second candidate for white spotting, <it>KIT</it>, in this cross, a polymorphic simple-sequence repeat was developed from bacterial artificial chromosome (BAC) clones containing the <it>KIT</it> gene. Three of the four BACs containing the <it>KIT</it> gene also contained this simple-sequence repeat, as ascertained by PCR amplification of a product from the BACs using primers flanking the simple-sequence repeat. In addition, positive PCR amplification of a product using both <it>KIT</it> genomic primers and the simple-sequence repeat primers occurred in the same subset of radiation hybrid cell lines from a dog/hamster panel from Research Genetics, Inc. (Alabama, USA). This simple-sequence repeat marker was polymorphic in the intercross and segregated independent of the white spotting phenotype (Figure <figr fid="F4">4</figr>).</p>
+         <p>By analogy with mice and humans, mutations in both <it>EDNRB</it> and <it>KIT</it> were excellent candidates for white spotting in Border Collies; however, these data taken together excluded both genes from being responsible for the distinctive Border Collie coat color markings. Although it has been postulated that all white spotting in dogs is due to the same major locus, allelism tests between the spotting phenotypes in all the different dog breeds have not been performed. It is possible that either <it>EDNRB</it> or <it>KIT</it> could be responsible for white spotting in other breeds. Extreme white spotting, an additional allele of the <it>s</it> locus, segregates in the Boxer breed. The markers developed in this study were not polymorphic in available individuals of this breed, so we were unable to test for linkage to this presumptive allele of the <it>s</it> locus. As more genes are placed on the canine genetic map, it will be possible to test other candidates for white spotting derived from studies of coat color genetics in mice. White markings are often associated with deafness in dogs, cats, and even humans. They can also be associated with aganglionic megacolon in humans and horses. The link between white spotting and lack of innervation to the distal colon is the neural crest, from which melanocytes and enteric ganglia are both derived. The exclusion of <it>EDNRB</it> as a candidate gene for white spotting in Border Collies may explain why aganglionic megacolon is not associated with this trait in dogs. The gene responsible for white spotting in dogs may shed light on new genes involved in the differentiation and survival of the neural crest.</p>
+      </sec>
+      <sec>
+         <st>
+            <p>Materials and methods</p>
+         </st>
+         <p>A female Newfoundland dog was bred to a male Border Collie. All dogs were placed in people's homes as pets. Blood was drawn for DNA extraction and photographs were taken of the dogs. F1 progeny from this cross were intercrossed to produce 25 F2 progeny. Seven of those 25 F2 progeny had white markings similar to the Border Collie parent. To evaluate the white spotting, the percentage of white based on surface area was compared between parents, F1 and F2 progeny. Photographs of the dogs were taken and the weight of the white markings in the image was compared to the total weight of the dog image after cutting, on a percent basis.</p>
+         <p>A portion of the <it>EDNRB</it> cDNA was cloned as a 1,314 bp product using the tri-clone kit (Invitrogen Corp., California, USA) using primers designed from mouse and human sequences (E1(ATG)F 5'-CAG GTA GCA GCA TGC AGC-3' and E3 5'-GGA ACG GAA GTT GTC ATA TCC-3'). The clone was sequenced (GenBank AF276427) and the deduced amino-acid sequence was compared to that of the published mammalian sequences using the 'pretty' program (GCG Wisconsin Package; Genetics Computer Group, Wisconsin, USA). The 1,314 bp fragment was radioactively labeled and used as a hybridization probe against genomic DNA digested with <it>Pvu</it>II. Segregation of <it>EDNRB</it> was followed in the intercross progeny by this <it>Pvu</it>II RFLP (Figure <figr fid="F3">3</figr>).</p>
+         <p>To follow segregation of <it>KIT</it> in this pedigree, a simple-sequence repeat in close proximity to <it>KIT</it> was isolated. A portion of <it>KIT</it> was cloned by PCR using published primers [<abbr bid="B11">11</abbr>] and used to screen a canine BAC library (BAC-PAC Resources, BACPAC Resource Center at the Children's Hospital Oakland Research Institute, California, USA). A GAAA (18) repeat microsatellite marker was developed from one of the BACs (KIT forward 5'-GCA TGG AGC CTG CTT CTC-3', KIT reverse 5'-AGA GCA TCC TTG GTC TGT CC-3'). PCR amplification of the simple-sequence repeat from the intercross animals is shown in Figure <figr fid="F4">4</figr>. PCR amplification products of the <it>KIT</it> microsatellite were separated by electrophoresis on a 10% polyacrylamide gel and stained with ethidium bromide before photography.</p>
+         <fig id="F1">
+            <title>
+               <p>Figure 1</p>
+            </title>
+            <caption>
+               <p>A Newfoundland female <b>(a)</b> was bred to a Border Collie male <b>(b)</b> to produce animals for the intercross.</p>
+            </caption>
+            <text>
+               <p>A Newfoundland female <b>(a)</b> was bred to a Border Collie male <b>(b)</b> to produce animals for the intercross.</p>
+            </text>
+            <graphic file="gb-2000-1-2-research0004-1"/>
+         </fig>
+         <fig id="F2">
+            <title>
+               <p>Figure 2</p>
+            </title>
+            <caption>
+               <p>Amino-acid sequence alignment of mammalian endothelin B receptors using the 'pretty' function from the GCG Wisconsin package.</p>
+            </caption>
+            <text>
+               <p>Amino-acid sequence alignment of mammalian endothelin B receptors using the 'pretty' function from the GCG Wisconsin package. Accession numbers for sequences used for comparison: bovine EDNRB, S63513; human EDNRB, JQ1042; rat EDNRB, I57950; canine EDNRB, AF276427.</p>
+            </text>
+            <graphic file="gb-2000-1-2-research0004-2"/>
+         </fig>
+         <fig id="F3">
+            <title>
+               <p>Figure 3</p>
+            </title>
+            <caption>
+               <p>Segregation of <it>EDNRB</it> compared with the segregation of the white spotting phenotype.</p>
+            </caption>
+            <text>
+               <p>Segregation of <it>EDNRB</it> compared with the segregation of the white spotting phenotype. Genomic DNA digested with <it>Pvu</it>II was probed with a radioactively labeled fragment of <it>EDNRB</it> DNA which detected a <it>Pvu</it>II restriction fragment length polymorphism (RFLP) between the Border Collie and Newfoundland grandparents. BC, DNA from the Border Collie grandparent; N, DNA from the Newfoundland grandparent. F1, DNA from the first generation hybrids of the Newfoundland &#215; Border Collie cross; F2, DNA from the progeny of intercrosses between the F1 hybrids; s, white spotted; ns, not white spotted. The presumed genotypes for the <it>EDNRB</it> locus are shown below the lanes.</p>
+            </text>
+            <graphic file="gb-2000-1-2-research0004-3"/>
+         </fig>
+         <fig id="F4">
+            <title>
+               <p>Figure 4</p>
+            </title>
+            <caption>
+               <p>Segregation of <it>KIT</it> compared with segregation of the white spotting phenotype.</p>
+            </caption>
+            <text>
+               <p>Segregation of <it>KIT</it> compared with segregation of the white spotting phenotype. Segregation of <it>KIT</it> was followed by detection of a simple-sequence repeat polymorphic difference between the Newfoundland and Border Collie grandparents. BC, DNA from the Border Collie grandparent; N, DNA from the Newfoundland grandparent; F1, DNA from the first generation hybrids; F2, DNA from the second generation intercrosses. s, white spotted; ns, not white spotted. The presumed genotypes for the <it>KIT</it> locus are shown below the lanes.</p>
+            </text>
+            <graphic file="gb-2000-1-2-research0004-4"/>
+         </fig>
+      </sec>
+   </bdy>
+   <bm>
+      <ack>
+         <sec>
+            <st>
+               <p>Acknowledgements</p>
+            </st>
+            <p>We thank Mark Neff, Sara Okamura, Ashild Vik and Michael Bannasch for critical review of the manuscript. This work was supported by a gift from Martin and Enid Gleich and by the Richard and Rhoda E. Goldman Foundation.</p>
+         </sec>
+      </ack>
+      <refgrp>
+         <bibl id="B1">
+            <title>
+               <p>The Inheritance of Coat Color in Dogs.</p>
+            </title>
+            <aug>
+               <au>
+                  <snm>Little</snm>
+                  <fnm>CB</fnm>
+               </au>
+            </aug>
+            <source>New York: Howell Book House</source>
+            <pubdate>1957</pubdate>
+         </bibl>
+         <bibl id="B2">
+            <title>
+               <p>Melanocortin I receptor variation in the domestic dog.</p>
+            </title>
+            <aug>
+               <au>
+                  <snm>Newton</snm>
+                  <fnm>JM</fnm>
+               </au>
+               <au>
+                  <snm>Wilkie</snm>
+                  <fnm>AL</fnm>
+               </au>
+               <au>
+                  <snm>He</snm>
+                  <fnm>L</fnm>
+               </au>
+               <au>
+                  <snm>Jordan</snm>
+                  <fnm>SA</fnm>
+               </au>
+               <au>
+                  <snm>Metallinos</snm>
+                  <fnm>DL</fnm>
+               </au>
+               <au>
+                  <snm>Holmes</snm>
+                  <fnm>NG</fnm>
+               </au>
+               <au>
+                  <snm>Jackson</snm>
+                  <fnm>IJ</fnm>
+               </au>
+               <au>
+                  <snm>Barsh</snm>
+                  <fnm>GS</fnm>
+               </au>
+            </aug>
+            <source>Mamm Genome</source>
+            <pubdate>2000</pubdate>
+            <volume>11</volume>
+            <fpage>24</fpage>
+            <lpage>30</lpage>
+            <xrefbib>
+               <pubid idtype="pmpid" link="fulltext">10602988</pubid>
+            </xrefbib>
+         </bibl>
+         <bibl id="B3">
+            <title>
+               <p>Targeted and natural (piebald-lethal) mutations of endothelin-B receptor gene produce mega-colon associated with spotted coat color in mice.</p>
+            </title>
+            <aug>
+               <au>
+                  <snm>Hosoda</snm>
+                  <fnm>K</fnm>
+               </au>
+               <au>
+                  <snm>Hammer</snm>
+                  <fnm>RE</fnm>
+               </au>
+               <au>
+                  <snm>Richardson</snm>
+                  <fnm>JA</fnm>
+               </au>
+               <au>
+                  <snm>Baynash</snm>
+                  <fnm>AG</fnm>
+               </au>
+               <au>
+                  <snm>Cheung</snm>
+                  <fnm>JC</fnm>
+               </au>
+               <au>
+                  <snm>Giaid</snm>
+                  <fnm>A</fnm>
+               </au>
+               <au>
+                  <snm>Yanagisawa</snm>
+                  <fnm>M</fnm>
+               </au>
+            </aug>
+            <source>Cell</source>
+            <pubdate>1994</pubdate>
+            <volume>79</volume>
+            <fpage>1267</fpage>
+            <lpage>1276</lpage>
+            <xrefbib>
+               <pubid idtype="pmpid" link="fulltext">8001159</pubid>
+            </xrefbib>
+         </bibl>
+         <bibl id="B4">
+            <title>
+               <p>A missense mutation of the endothelin-B receptor gene in multigenic Hirschsprung's disease.</p>
+            </title>
+            <aug>
+               <au>
+                  <snm>Puffenberger</snm>
+                  <fnm>EG</fnm>
+               </au>
+               <au>
+                  <snm>Hosoda</snm>
+                  <fnm>K</fnm>
+               </au>
+               <au>
+                  <snm>Washington</snm>
+                  <fnm>SS</fnm>
+               </au>
+               <au>
+                  <snm>Nakao</snm>
+                  <fnm>K</fnm>
+               </au>
+               <au>
+                  <snm>deWitD</snm>
+                  <fnm/>
+               </au>
+               <au>
+                  <snm>Yanagisawa</snm>
+                  <fnm>M</fnm>
+               </au>
+               <au>
+                  <snm>Chakravart</snm>
+                  <fnm>A</fnm>
+               </au>
+            </aug>
+            <source>Cell</source>
+            <pubdate>1994</pubdate>
+            <volume>79</volume>
+            <fpage>1257</fpage>
+            <lpage>1266</lpage>
+            <xrefbib>
+               <pubid idtype="pmpid" link="fulltext">8001158</pubid>
+            </xrefbib>
+         </bibl>
+         <bibl id="B5">
+            <title>
+               <p>A missense mutation in the endothelin-B receptor gene is associated with lethal white foal syndrome: an equine version of Hirschsprung disease.</p>
+            </title>
+            <aug>
+               <au>
+                  <snm>Metallinos</snm>
+                  <fnm>DL</fnm>
+               </au>
+               <au>
+                  <snm>Bowling</snm>
+                  <fnm>AT</fnm>
+               </au>
+               <au>
+                  <snm>Rine</snm>
+                  <fnm>J</fnm>
+               </au>
+            </aug>
+            <source>Mamm Genome</source>
+            <pubdate>1998</pubdate>
+            <volume>9</volume>
+            <fpage>426</fpage>
+            <lpage>431</lpage>
+            <xrefbib>
+               <pubid idtype="pmpid" link="fulltext">9585428</pubid>
+            </xrefbib>
+         </bibl>
+         <bibl id="B6">
+            <title>
+               <p>Endothelin receptor B polymorphism associated with lethal white foal syndrome in horses.</p>
+            </title>
+            <aug>
+               <au>
+                  <snm>Santschi</snm>
+                  <fnm>EM</fnm>
+               </au>
+               <au>
+                  <snm>Purdy</snm>
+                  <fnm>AK</fnm>
+               </au>
+               <au>
+                  <snm>Valberg</snm>
+                  <fnm>SJ</fnm>
+               </au>
+               <au>
+                  <snm>Vrotsos</snm>
+                  <fnm>PD</fnm>
+               </au>
+               <au>
+                  <snm>Kaese</snm>
+                  <fnm>H</fnm>
+               </au>
+               <au>
+                  <snm>Mickelson</snm>
+                  <fnm>JR</fnm>
+               </au>
+            </aug>
+            <source>Mamm Genome</source>
+            <pubdate>1998</pubdate>
+            <volume>9</volume>
+            <fpage>306</fpage>
+            <lpage>309</lpage>
+            <xrefbib>
+               <pubid idtype="pmpid" link="fulltext">9530628</pubid>
+            </xrefbib>
+         </bibl>
+         <bibl id="B7">
+            <title>
+               <p>A dinucleotide mutation in the endothelin-B receptor gene is associated with lethal white foal syndrome (LWFS), a horse variant of Hirschsprung disease.</p>
+            </title>
+            <aug>
+               <au>
+                  <snm>Yang</snm>
+                  <fnm>GC</fnm>
+               </au>
+               <au>
+                  <snm>Croaker</snm>
+                  <fnm>D</fnm>
+               </au>
+               <au>
+                  <snm>Zhang</snm>
+                  <fnm>AL</fnm>
+               </au>
+               <au>
+                  <snm>Manglick</snm>
+                  <fnm>P</fnm>
+               </au>
+               <au>
+                  <snm>Cartmill</snm>
+                  <fnm>T</fnm>
+               </au>
+               <au>
+                  <snm>Cass</snm>
+                  <fnm>D</fnm>
+               </au>
+            </aug>
+            <source>Hum Mol Gen</source>
+            <pubdate>1998</pubdate>
+            <volume>7</volume>
+            <fpage>1047</fpage>
+            <lpage>1052</lpage>
+            <xrefbib>
+               <pubid idtype="pmpid" link="fulltext">9580670</pubid>
+            </xrefbib>
+         </bibl>
+         <bibl id="B8">
+            <title>
+               <p>Comparison of horse chromosome 3 with donkey and human chromosomes by cross-species painting and heterologous FISH mapping.</p>
+            </title>
+            <aug>
+               <au>
+                  <snm>Raudsepp</snm>
+                  <fnm>T</fnm>
+               </au>
+               <au>
+                  <snm>Kijas</snm>
+                  <fnm>J</fnm>
+               </au>
+               <au>
+                  <snm>Godard</snm>
+                  <fnm>S</fnm>
+               </au>
+               <au>
+                  <snm>Guerin</snm>
+                  <fnm>G</fnm>
+               </au>
+               <au>
+                  <snm>Andersson</snm>
+                  <fnm>L</fnm>
+               </au>
+               <au>
+                  <snm>Chowdhary</snm>
+                  <fnm>BP</fnm>
+               </au>
+            </aug>
+            <source>Mamm Genome</source>
+            <pubdate>1999</pubdate>
+            <volume>10</volume>
+            <fpage>277</fpage>
+            <lpage>282</lpage>
+            <xrefbib>
+               <pubid idtype="pmpid" link="fulltext">10051324</pubid>
+            </xrefbib>
+         </bibl>
+         <bibl id="B9">
+            <title>
+               <p>Novel mutations and deletions of the KIT (steel factor receptor) gene in human piebaldism. </p>
+            </title>
+            <aug>
+               <au>
+                  <snm>Ezoe</snm>
+                  <fnm>K</fnm>
+               </au>
+               <au>
+                  <snm>Holmes</snm>
+                  <fnm>SA</fnm>
+               </au>
+               <au>
+                  <snm>Ho</snm>
+                  <fnm>L</fnm>
+               </au>
+               <au>
+                  <snm>Bennett</snm>
+                  <fnm>CP</fnm>
+               </au>
+               <au>
+                  <snm>Bolognia</snm>
+                  <fnm>JL</fnm>
+               </au>
+               <au>
+                  <snm>Brueton</snm>
+                  <fnm>L</fnm>
+               </au>
+               <au>
+                  <snm>Burn</snm>
+                  <fnm>J</fnm>
+               </au>
+               <au>
+                  <snm>Falabella</snm>
+                  <fnm>R</fnm>
+               </au>
+               <au>
+                  <snm>Gatto</snm>
+                  <fnm>EM</fnm>
+               </au>
+               <au>
+                  <snm>Ishii</snm>
+                  <fnm>N</fnm>
+               </au>
+               <etal/>
+            </aug>
+            <source>Am J Hum Genet</source>
+            <pubdate>1995</pubdate>
+            <volume>56</volume>
+            <fpage>58</fpage>
+            <lpage>66</lpage>
+            <xrefbib>
+               <pubid idtype="pmpid">7529964</pubid>
+            </xrefbib>
+         </bibl>
+         <bibl id="B10">
+            <title>
+               <p>Pigs with the dominant white coat color phenotype carry a duplication of the <it>KIT</it> gene encoding the mast/stem cell growth factor receptor.</p>
+            </title>
+            <aug>
+               <au>
+                  <snm>Johansson Moller</snm>
+                  <fnm>M</fnm>
+               </au>
+               <au>
+                  <snm>Chaudhary</snm>
+                  <fnm>R</fnm>
+               </au>
+               <au>
+                  <snm>Hellm&#233;n</snm>
+                  <fnm>E</fnm>
+               </au>
+               <au>
+                  <snm>H&#246;yheim</snm>
+                  <fnm>B</fnm>
+               </au>
+               <au>
+                  <snm>Chowdhary</snm>
+                  <fnm>B</fnm>
+               </au>
+               <au>
+                  <snm>Andersson</snm>
+                  <fnm>L</fnm>
+               </au>
+            </aug>
+            <source>Mamm Genome</source>
+            <pubdate>1996</pubdate>
+            <volume>7</volume>
+            <fpage>822</fpage>
+            <lpage>830</lpage>
+            <xrefbib>
+               <pubid idtype="pmpid" link="fulltext">8875890</pubid>
+            </xrefbib>
+         </bibl>
+         <bibl id="B11">
+            <title>
+               <p>Expression of stem cell factor receptor (c-kit) by the malignant mast cells from spontaneous canine mast cell tumours.</p>
+            </title>
+            <aug>
+               <au>
+                  <snm>London</snm>
+                  <fnm>CA</fnm>
+               </au>
+               <au>
+                  <snm>Kisseberth</snm>
+                  <fnm>WC</fnm>
+               </au>
+               <au>
+                  <snm>Galli</snm>
+                  <fnm>SJ</fnm>
+               </au>
+               <au>
+                  <snm>Geissler</snm>
+                  <fnm>EN</fnm>
+               </au>
+               <au>
+                  <snm>Helfand</snm>
+                  <fnm>SC</fnm>
+               </au>
+            </aug>
+            <source>J Comp Pathol </source>
+            <pubdate>1996</pubdate>
+            <volume>115</volume>
+            <fpage>399</fpage>
+            <lpage>414</lpage>
+            <xrefbib>
+               <pubid idtype="pmpid">9004081</pubid>
+            </xrefbib>
+         </bibl>
+      </refgrp>
+   </bm>
+</art>

@@ -1,0 +1,4127 @@
+BLASTP 2.2.11 [Jun-05-2005]
+
+
+Reference: Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaffer, 
+Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), 
+"Gapped BLAST and PSI-BLAST: a new generation of protein database search
+programs",  Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics:
+Schaffer, Alejandro A., L. Aravaind, Thomas L. Madden,
+Sergei Shavirin, John L. Spouge, Yuri I. Wolf,  
+Eugene V. Koonin, and Stephen F. Altschul (2001), 
+"Improving the accuracy of PSI-BLAST protein database searches with 
+composition-based statistics and other refinements",  Nucleic Acids Res. 29:2994-3005.
+
+Query= 1LFU M.musculus DNA-binding protein
+         (82 letters)
+
+Database: nr27062005 
+           2,540,612 sequences; 863,360,394 total letters
+
+Searching..................................................done
+
+
+
+                                                                 Score    E
+Sequences producing significant alignments:                      (bits) Value
+
+gi|57111599|ref|XP_545786.1| PREDICTED: similar to Pre-B-cell le...   168   3e-41
+gi|57094790|ref|XP_538847.1| PREDICTED: similar to notch4 [Canis...   165   4e-40
+gi|339895|gb|AAA36764.1| E2A/PRL fusion protein                       164   6e-40
+gi|47220028|emb|CAG12176.1| unnamed protein product [Tetraodon n...   159   3e-38
+gi|46048897|ref|NP_990077.1| PBX1A protein [Gallus gallus] >gnl|...   155   2e-37
+gi|34365779|ref|NP_899198.1| pre B-cell leukemia transcription f...   155   3e-37
+gi|50795297|ref|XP_423764.1| PREDICTED: similar to pre-B-cell le...   153   1e-36
+gi|55588664|ref|XP_513961.1| PREDICTED: hypothetical protein XP_...   152   2e-36
+gi|30584839|gb|AAP36672.1| Homo sapiens pre-B-cell leukemia tran...   152   2e-36
+gi|30582249|gb|AAP35351.1| pre-B-cell leukemia transcription fac...   152   3e-36
+gi|8096557|dbj|BAA96136.1| PBX1B [Gallus gallus]                      151   4e-36
+gi|47507441|gb|AAH71048.1| MGC83856 protein [Xenopus laevis]          151   6e-36
+gi|107390|pir||B33061 homeotic protein prl - human >gnl|BL_ORD_I...   151   7e-36
+gi|61868690|ref|XP_612645.1| PREDICTED: similar to Pre-B-cell le...   151   7e-36
+gi|7160800|emb|CAB76458.1| Pbx4/Lazarus homeodomain protein [Dan...   150   7e-36
+gi|47228232|emb|CAG07627.1| unnamed protein product [Tetraodon n...   149   2e-35
+gi|56388825|gb|AAH87615.1| Pre B-cell leukemia transcription fac...   149   2e-35
+gi|8567384|ref|NP_059491.1| pre B-cell leukemia transcription fa...   149   2e-35
+gi|50657366|ref|NP_001002828.1| pre-B-cell leukemia transcriptio...   149   2e-35
+gi|20302859|gb|AAM18914.1| pre-B-cell leukemia transcription fac...   149   3e-35
+gi|55626238|ref|XP_518378.1| PREDICTED: similar to Pre-B-cell le...   148   4e-35
+gi|57209691|emb|CAI41814.1| pre-B-cell leukemia transcription fa...   147   7e-35
+gi|35313|emb|CAA42503.1| homeobox protein [Homo sapiens]              147   7e-35
+gi|18149007|dbj|BAB83538.1| pre-B-cell leukemia transcription fa...   147   7e-35
+gi|7160792|emb|CAB76454.1| Pbx1a homeodomain protein [Danio reri...   147   9e-35
+gi|32879989|gb|AAP88825.1| pre-B-cell leukemia transcription fac...   146   2e-34
+gi|47207112|emb|CAF95715.1| unnamed protein product [Tetraodon n...   146   2e-34
+gi|55962077|emb|CAI17540.1| pre-B-cell leukemia transcription fa...   145   3e-34
+gi|62644969|ref|XP_231158.3| PREDICTED: similar to PBX3a [Rattus...   144   5e-34
+gi|15149472|ref|NP_079521.1| pre-B-cell leukemia transcription f...   144   5e-34
+gi|61845502|ref|XP_586515.1| PREDICTED: similar to Pbx1 protein,...   144   5e-34
+gi|7160798|emb|CAB76457.1| pbxy homeodomain protein [Danio rerio...   144   6e-34
+gi|7160794|emb|CAB76455.1| Pbx1b homeodomain protein [Danio reri...   144   6e-34
+gi|57162414|emb|CAI40243.1| pre-B-cell leukemia transcription fa...   144   6e-34
+gi|53129737|emb|CAG31410.1| hypothetical protein [Gallus gallus]      144   6e-34
+gi|37046738|gb|AAH57879.1| Pre B-cell leukemia transcription fac...   144   7e-34
+gi|31228972|ref|XP_318146.1| ENSANGP00000020686 [Anopheles gambi...   144   9e-34
+gi|12697318|emb|CAC28212.1| PBX4 protein [Homo sapiens] >gnl|BL_...   144   1e-33
+gi|61855540|ref|XP_584966.1| PREDICTED: similar to pre-B-cell le...   143   1e-33
+gi|47207681|emb|CAF91499.1| unnamed protein product [Tetraodon n...   143   1e-33
+gi|12805535|gb|AAH02244.1| Pbx1 protein [Mus musculus]                143   1e-33
+gi|2432017|gb|AAB71195.1| PBX3b [Mus musculus]                        143   2e-33
+gi|57092097|ref|XP_537844.1| PREDICTED: similar to PBX3 protein ...   142   2e-33
+gi|38490438|emb|CAD57737.1| extradenticle 1 [Cupiennius salei]        141   5e-33
+gi|38490440|emb|CAD57738.1| extradenticle 2 [Cupiennius salei]        141   5e-33
+gi|24642379|ref|NP_727924.1| CG8933-PC, isoform C [Drosophila me...   141   7e-33
+gi|38490515|emb|CAD57734.1| extradenticle [Tribolium castaneum]       140   7e-33
+gi|45709954|gb|AAH67737.1| Unknown (protein for IMAGE:5298595) [...   140   7e-33
+gi|54640619|gb|EAL29404.1| GA21419-PA [Drosophila pseudoobscura]      140   1e-32
+gi|62662468|ref|XP_341419.2| PREDICTED: similar to Pre-B-cell le...   140   1e-32
+gi|66513785|ref|XP_392297.2| PREDICTED: similar to ENSANGP000000...   139   2e-32
+gi|7858|emb|CAA79313.1| Dpbx [Drosophila melanogaster]                139   2e-32
+gi|7160796|emb|CAB76456.1| Pbx3b homeodomain protein [Danio reri...   139   2e-32
+gi|50757101|ref|XP_415379.1| PREDICTED: similar to pre-B-cell le...   139   2e-32
+gi|55632323|ref|XP_520261.1| PREDICTED: similar to PBX3b [Pan tr...   139   2e-32
+gi|15824803|gb|AAL09477.1| pre-B-cell leukemia transcription fac...   136   1e-31
+gi|37999763|sp|Q99NE9|PBX4_MOUSE Pre-B-cell leukemia transcripti...   136   1e-31
+gi|57162416|emb|CAI40245.1| pre-B-cell leukemia transcription fa...   135   3e-31
+gi|56752547|gb|AAW24487.1| unknown [Schistosoma japonicum]            134   1e-30
+gi|56694842|gb|AAW23083.1| Pbx [Oikopleura dioica]                    133   1e-30
+gi|57162413|emb|CAI40242.1| pre-B-cell leukemia transcription fa...   132   3e-30
+gi|23273080|gb|AAH32875.1| Pbx4 protein [Mus musculus]                132   4e-30
+gi|47213085|emb|CAF92220.1| unnamed protein product [Tetraodon n...   131   5e-30
+gi|39593950|emb|CAE70060.1| Hypothetical protein CBG16494 [Caeno...   130   1e-29
+gi|44681645|gb|AAA81691.3| C.elegans homeobox protein 20 [Caenor...   129   3e-29
+gi|12697320|emb|CAC28213.1| Pbx4 protein [Mus musculus]               129   3e-29
+gi|57162415|emb|CAI40244.1| pre-B-cell leukemia transcription fa...   128   4e-29
+gi|28373541|pdb|1LFU|P Chain P, Nmr Solution Stucture Of The Ext...   127   1e-28
+gi|20302758|gb|AAM18882.1| unknown [Branchiostoma floridae]           127   1e-28
+gi|4558070|pdb|1B72|B Chain B, Pbx1, Homeobox Protein Hox-B1DNA ...   127   1e-28
+gi|57101702|ref|XP_541919.1| PREDICTED: similar to pre-B-cell le...   126   2e-28
+gi|16974777|gb|AAL32465.1| transcription factor Pbx3.2 [Danio re...   125   2e-28
+gi|48257122|gb|AAH16977.2| PBX3 protein [Homo sapiens]                125   2e-28
+gi|34810087|pdb|1PUF|B Chain B, Crystal Structure Of Hoxa9 And P...   116   2e-25
+gi|33115076|gb|AAP95005.1| homeobox PBX2 [Tupaia belangeri] >gnl...    99   3e-20
+gi|4929896|pdb|1B8I|B Chain B, Structure Of The Homeotic UbxEXDD...    98   6e-20
+gi|39583206|emb|CAE61424.1| Hypothetical protein CBG05292 [Caeno...    96   3e-19
+gi|10120891|pdb|1DU6|A Chain A, Solution Structure Of The Trunca...    95   5e-19
+gi|61845091|ref|XP_597995.1| PREDICTED: similar to pre-B-cell le...    94   2e-18
+gi|3876016|emb|CAA92154.1| Hypothetical protein F17A2.5 [Caenorh...    91   8e-18
+gi|61813769|ref|XP_616126.1| PREDICTED: similar to Pre-B-cell le...    90   2e-17
+gi|50788332|ref|XP_423525.1| PREDICTED: similar to Pbx1 protein,...    85   4e-16
+gi|61828103|ref|XP_607077.1| PREDICTED: similar to Pre-B-cell le...    83   2e-15
+gi|62630053|gb|AAX88831.1| Hypothetical protein F22A3.5 [Caenorh...    78   8e-14
+gi|39586707|emb|CAE65749.1| Hypothetical protein CBG10835 [Caeno...    76   2e-13
+gi|40745696|gb|EAA64852.1| hypothetical protein AN2020.2 [Asperg...    70   1e-11
+gi|46852187|gb|AAT02761.1| AhpA [Emericella nidulans]                  70   2e-11
+gi|4106792|gb|AAD02948.1| Meis3 homeoprotein [Xenopus laevis]          69   3e-11
+gi|57863279|ref|NP_001009813.1| Meis1, myeloid ecotropic viral i...    68   7e-11
+gi|59803105|sp|Q99687|MEIS3_HUMAN Homeobox protein Meis3 (Meis1-...    68   7e-11
+gi|62088490|dbj|BAD92692.1| Homeobox protein Meis3 variant [Homo...    68   7e-11
+gi|54673771|gb|AAH84920.1| Meis3 protein [Xenopus laevis]              68   7e-11
+gi|51477057|emb|CAH18472.1| hypothetical protein [Homo sapiens] ...    68   7e-11
+gi|49523087|gb|AAH75589.1| Meis1, myeloid ecotropic viral integr...    68   7e-11
+gi|27881708|gb|AAH44024.1| MGC52546 protein [Xenopus laevis]           68   7e-11
+gi|6678936|ref|NP_032653.1| myeloid ecotropic viral integration ...    68   8e-11
+gi|57037761|ref|XP_541536.1| PREDICTED: similar to Homeobox prot...    68   9e-11
+gi|62638964|ref|XP_341797.2| PREDICTED: similar to Meis3 [Rattus...    68   9e-11
+gi|11877245|emb|CAC19011.1| meis2.1 protein [Danio rerio] >gnl|B...    67   1e-10
+gi|38490426|emb|CAD57729.1| homothorax 2 [Cupiennius salei]            67   1e-10
+gi|13277729|gb|AAH03762.1| Mrg2 protein [Mus musculus]                 67   1e-10
+gi|14861175|gb|AAK73546.1| homeobox transcription factor Meis3 [...    67   2e-10
+gi|47207850|emb|CAF87244.1| unnamed protein product [Tetraodon n...    67   2e-10
+gi|2564942|gb|AAC47759.1| homothorax [Drosophila melanogaster]         67   2e-10
+gi|23170916|gb|AAF54533.2| CG17117-PB, isoform B [Drosophila mel...    67   2e-10
+gi|61679324|gb|AAX52943.1| CG17117-PE, isoform E [Drosophila mel...    67   2e-10
+gi|23170917|gb|AAN13474.1| CG17117-PC, isoform C [Drosophila mel...    67   2e-10
+gi|23170918|gb|AAN13475.1| CG17117-PA, isoform A [Drosophila mel...    67   2e-10
+gi|38490517|emb|CAD57735.1| homothorax [Tribolium castaneum]           67   2e-10
+gi|38174542|gb|AAH60891.1| Myeloid ecotropic viral integration 1...    66   2e-10
+gi|1679674|gb|AAB19195.1| Meis1-related protein 2 [Homo sapiens]       66   3e-10
+gi|38490442|emb|CAD57739.1| homothorax 1 [Cupiennius salei]            66   3e-10
+gi|66849449|gb|EAL89777.1| homeobox transcription factor, putati...    66   3e-10
+gi|33604041|gb|AAH56317.1| Myeloid ecotropic viral integration s...    65   4e-10
+gi|20147189|gb|AAM09846.1| MEIS1-related protein 2 [Homo sapiens]      65   5e-10
+gi|6671101|gb|AAF23096.1| meis2 [Danio rerio] >gnl|BL_ORD_ID|833...    65   5e-10
+gi|18182385|gb|AAL65144.1| UNC-62 splice variant 1b-7a [Caenorha...    65   6e-10
+gi|1679676|gb|AAB19196.1| XMeis1-1 protein [Xenopus laevis] >gnl...    65   7e-10
+gi|18182381|gb|AAL65142.1| UNC-62 splice variant 1a-7a [Caenorha...    65   8e-10
+gi|42406379|gb|AAH65980.1| Meis2.2 protein [Danio rerio]               64   1e-09
+gi|27502381|ref|NP_758526.1| homeobox protein Meis2 isoform g [H...    64   1e-09
+gi|6573175|gb|AAF17580.1| myeloid ecotropic viral insertion site...    64   1e-09
+gi|6573177|gb|AAF17581.1| myeloid ecotropic viral insertion site...    64   1e-09
+gi|14190148|gb|AAK55554.1| transcription factor Meis2.2 [Danio r...    64   1e-09
+gi|16306683|gb|AAH01516.1| Homeobox protein Meis2, isoform f [Ho...    64   1e-09
+gi|55725174|emb|CAH89453.1| hypothetical protein [Pongo pygmaeus]      64   1e-09
+gi|2275033|emb|CAA04140.1| Homeodomain protein Meis2c [Mus muscu...    64   1e-09
+gi|55641807|ref|XP_510290.1| PREDICTED: similar to homeobox prot...    64   1e-09
+gi|33991788|gb|AAH56515.1| Myeloid ecotropic viral integration s...    64   1e-09
+gi|6754734|ref|NP_034955.1| homeobox protein Meis2 [Mus musculus...    64   1e-09
+gi|45382203|ref|NP_990134.1| myeloid ecotropic viral insertion s...    64   1e-09
+gi|27694106|gb|AAH43503.1| MEIS1 protein [Homo sapiens] >gnl|BL_...    64   1e-09
+gi|2275029|emb|CAA04138.1| Meis2a homeodomain protein [Mus muscu...    64   1e-09
+gi|2275031|emb|CAA04139.1| Homeodomain protein Meis2b [Mus muscu...    64   1e-09
+gi|13124777|sp|O14770|MEIS2_HUMAN Homeobox protein Meis2 (Meis1-...    64   1e-09
+gi|29791510|gb|AAH50431.1| MEIS2 protein [Homo sapiens] >gnl|BL_...    64   1e-09
+gi|56206886|emb|CAI25395.1| myeloid ecotropic viral integration ...    64   1e-09
+gi|56206885|emb|CAI25394.1| myeloid ecotropic viral integration ...    64   1e-09
+gi|62645567|ref|XP_230449.3| PREDICTED: similar to Meis1-related...    64   1e-09
+gi|1724054|gb|AAC52948.1| Meis2                                        64   1e-09
+gi|55595992|ref|XP_515520.1| PREDICTED: hypothetical protein XP_...    64   1e-09
+gi|41944540|gb|AAH65977.1| Meis4.1a protein [Danio rerio]              64   1e-09
+gi|23959079|gb|AAH23689.1| Meis1 protein [Mus musculus]                64   1e-09
+gi|27502383|ref|NP_758527.1| homeobox protein Meis2 isoform h [H...    64   2e-09
+gi|67005921|gb|AAY62596.1| Pth12p [Magnaporthe grisea]                 64   2e-09
+gi|33352134|emb|CAD82908.1| homothorax protein [Glomeris marginata]    63   2e-09
+gi|58376258|ref|XP_308010.2| ENSANGP00000006317 [Anopheles gambi...    63   2e-09
+gi|56694848|gb|AAW23086.1| Meis-b [Oikopleura dioica]                  63   3e-09
+gi|61815828|ref|XP_585721.1| PREDICTED: similar to pre-B-cell le...    62   3e-09
+gi|50738942|ref|XP_419340.1| PREDICTED: similar to myeloid ecotr...    62   4e-09
+gi|14161625|gb|AAK54829.1| transcription factor Meis4.1a [Danio ...    62   5e-09
+gi|3874788|emb|CAB02816.1| Hypothetical protein C36F7.1 [Caenorh...    62   5e-09
+gi|1679680|gb|AAB19198.1| XMeis1-3 protein [Xenopus laevis]            61   7e-09
+gi|49526231|emb|CAG59855.1| unnamed protein product [Candida gla...    61   8e-09
+gi|33352132|emb|CAD82907.1| extradenticle protein [Glomeris marg...    61   8e-09
+gi|56694846|gb|AAW23085.1| Meis-a [Oikopleura dioica]                  61   8e-09
+gi|2394310|gb|AAB70270.1| homeobox protein MEIS2 [Homo sapiens]        61   9e-09
+gi|28797555|gb|AAO47087.1| homeodomain-containing protein [Ventu...    60   1e-08
+gi|56694844|gb|AAW23084.1| Prep [Oikopleura dioica]                    60   1e-08
+gi|1679678|gb|AAB19197.1| XMeis1-2 protein [Xenopus laevis]            60   1e-08
+gi|39582046|emb|CAE63689.1| Hypothetical protein CBG08197 [Caeno...    60   2e-08
+gi|42552449|gb|EAA75292.1| hypothetical protein FG05475.1 [Gibbe...    60   2e-08
+gi|39580157|emb|CAE56772.1| Hypothetical protein CBG24578 [Caeno...    60   2e-08
+gi|49650412|emb|CAG80147.1| unnamed protein product [Yarrowia li...    60   2e-08
+gi|16209577|gb|AAL14114.1| homeodomain transcription factor Prep...    59   3e-08
+gi|66850557|gb|EAL90884.1| homeobox and C2H2 transcription facto...    59   3e-08
+gi|55710037|gb|AAV58860.1| Uncoordinated protein 62, isoform g [...    59   3e-08
+gi|51703464|gb|AAH81024.1| MGC81646 protein [Xenopus laevis]           59   3e-08
+gi|18182387|gb|AAL65145.1| UNC-62 splice variant 1b-7b [Caenorha...    59   3e-08
+gi|18182383|gb|AAL65143.1| UNC-62 splice variant 1a-7b [Caenorha...    59   4e-08
+gi|32451815|gb|AAH54667.1| Pknox1.1 protein [Danio rerio]              59   5e-08
+gi|53749351|gb|AAU90210.1| putative homeodomain protein [Oryza s...    59   6e-08
+gi|44984421|gb|AAS53323.1| AFL049Cp [Ashbya gossypii ATCC 10895]...    58   7e-08
+gi|13752409|gb|AAK38646.1| homeodomain protein JUBEL2 [Hordeum v...    58   8e-08
+gi|57092983|ref|XP_531850.1| PREDICTED: similar to Homeobox prot...    58   8e-08
+gi|62660843|ref|XP_223643.3| PREDICTED: similar to myeloid ecotr...    58   8e-08
+gi|19352105|dbj|BAB85944.1| qSH-1 [Oryza sativa (indica cultivar...    58   9e-08
+gi|34908294|ref|NP_915494.1| putative homeodomain protein [Oryza...    58   9e-08
+gi|40747239|gb|EAA66395.1| hypothetical protein AN9328.2 [Asperg...    58   9e-08
+gi|2577977|emb|CAA04166.1| CEH-25 homeobox protein [Caenorhabdit...    58   9e-08
+gi|55846788|gb|AAV67398.1| transforming growth factor-beta-induc...    58   1e-07
+gi|50730013|ref|XP_416750.1| PREDICTED: similar to Homeobox prot...    57   1e-07
+gi|45383672|ref|NP_989557.1| PBX/knotted 1 homeobox 2 [Gallus ga...    57   1e-07
+gi|62321447|dbj|BAD94844.1| putative homeodomain transcription f...    57   1e-07
+gi|15215201|gb|AAH12700.1| Tgif protein [Mus musculus]                 57   1e-07
+gi|1495714|emb|CAA61896.1| mTGIF protein [Mus musculus]                57   1e-07
+gi|55657532|ref|XP_514925.1| PREDICTED: PBX/knotted 1 homeobox 1...    57   1e-07
+gi|57528478|ref|NP_001009815.1| TG-interacting factor [Pan trogl...    57   1e-07
+gi|13877517|gb|AAK43836.1| BEL1-like homeodomain 1 [Arabidopsis ...    57   2e-07
+gi|23495538|dbj|BAC20216.1| TALE homeodomain transcription facto...    57   2e-07
+gi|51703657|gb|AAH81037.1| MGC81734 protein [Xenopus laevis]           57   2e-07
+gi|60688321|gb|AAH91264.1| TG interacting factor (predicted) [Ra...    57   2e-07
+gi|31982825|ref|NP_033398.2| TG-interacting factor [Mus musculus...    57   2e-07
+gi|46095576|gb|EAK80809.1| hypothetical protein UM00489.1 [Ustil...    57   2e-07
+gi|30725518|gb|AAP37781.1| At2g35940 [Arabidopsis thaliana] >gnl...    57   2e-07
+gi|28178843|ref|NP_733796.2| TG-interacting factor isoform a [Ho...    57   2e-07
+gi|13752407|gb|AAK38645.1| homeodomain protein JUBEL1 [Hordeum v...    57   2e-07
+gi|55656119|ref|XP_531480.1| PREDICTED: hypothetical protein XP_...    57   2e-07
+gi|22658434|gb|AAH31268.1| TG-interacting factor, isoform a [Hom...    57   2e-07
+gi|28178857|ref|NP_777480.1| TG-interacting factor isoform d [Ho...    57   2e-07
+gi|28178845|ref|NP_775299.1| TG-interacting factor isoform b [Ho...    57   2e-07
+gi|47223435|emb|CAG04296.1| unnamed protein product [Tetraodon n...    57   2e-07
+gi|55637271|ref|XP_508845.1| PREDICTED: similar to Homeobox prot...    56   2e-07
+gi|42554443|gb|EAA77286.1| hypothetical protein FG07914.1 [Gibbe...    56   2e-07
+gi|26383465|dbj|BAC25531.1| unnamed protein product [Mus musculus]     56   3e-07
+gi|55731790|emb|CAH92599.1| hypothetical protein [Pongo pygmaeus]      56   3e-07
+gi|1150426|emb|CAA61897.1| TGIF protein [Homo sapiens] >gnl|BL_O...    56   3e-07
+gi|62646225|ref|XP_575274.1| PREDICTED: similar to TGFB-induced ...    56   3e-07
+gi|45382415|ref|NP_990710.1| homeodomain protein AKR [Gallus gal...    56   3e-07
+gi|7239157|gb|AAF43095.1| homeodomain protein [Malus x domestica]      56   3e-07
+gi|47496613|emb|CAG29329.1| TGIF [Homo sapiens] >gnl|BL_ORD_ID|1...    56   3e-07
+gi|60552173|gb|AAH91397.1| Pbx/knotted 1 homeobox (predicted) [R...    56   3e-07
+gi|40352841|gb|AAH64716.1| MGC75852 protein [Xenopus tropicalis]...    56   3e-07
+gi|40743909|gb|EAA63093.1| hypothetical protein AN2691.2 [Asperg...    56   3e-07
+gi|57089865|ref|XP_547659.1| PREDICTED: similar to TG-interactin...    56   3e-07
+gi|23495536|dbj|BAC20215.1| TALE homeodomain transcription facto...    56   3e-07
+gi|52545966|emb|CAH56146.1| hypothetical protein [Homo sapiens]        56   3e-07
+gi|62646227|ref|XP_575275.1| PREDICTED: similar to TGFB-induced ...    56   3e-07
+gi|34368580|ref|NP_057879.2| Pbx/knotted 1 homeobox [Mus musculu...    56   4e-07
+gi|16416147|emb|CAD01142.1| PREP2 protein [Homo sapiens] >gnl|BL...    56   4e-07
+gi|2190414|emb|CAA73934.1| Prep-1 [Homo sapiens]                       56   4e-07
+gi|33875797|gb|AAH00735.1| PKNOX1 protein [Homo sapiens]               56   4e-07
+gi|13124443|sp|O70477|PKNX1_MOUSE Homeobox protein PKNOX1 (PBX/k...    56   4e-07
+gi|28630897|gb|AAO45825.1| homeobox-containing protein PKNOX1 [H...    56   4e-07
+gi|62897343|dbj|BAD96612.1| PBX/knotted 1 homeobox 1 isoform 1 v...    56   4e-07
+gi|49524546|emb|CAG58148.1| unnamed protein product [Candida gla...    55   4e-07
+gi|22652119|gb|AAN03623.1| BEL1-related homeotic protein 13 [Sol...    55   4e-07
+gi|7768746|dbj|BAA95533.1| homeobox-containing protein [Homo sap...    55   4e-07
+gi|25527052|pir||JC7766 three-amino-acid loop extension(TALE) ho...    55   4e-07
+gi|22507365|ref|NP_683752.1| Pbx/knotted 1 homeobox 2 [Mus muscu...    55   4e-07
+gi|22652125|gb|AAN03626.1| BEL1-related homeotic protein 29 [Sol...    55   4e-07
+gi|27435580|gb|AAN34940.1| PKNOX1B [Homo sapiens] >gnl|BL_ORD_ID...    55   4e-07
+gi|2052385|gb|AAC51243.1| homeobox-containing protein [Homo sapi...    55   4e-07
+gi|13877513|gb|AAK43834.1| BEL1-like homeobox 4 [Arabidopsis tha...    55   4e-07
+gi|22655382|gb|AAM98283.1| At2g23760/F27L4.6 [Arabidopsis thalia...    55   4e-07
+gi|27696456|gb|AAH44016.1| Tgif-prov protein [Xenopus laevis]          55   5e-07
+gi|6983728|emb|CAB75368.1| TGIF2 [Homo sapiens] >gnl|BL_ORD_ID|2...    55   5e-07
+gi|32403140|ref|XP_322183.1| hypothetical protein [Neurospora cr...    55   5e-07
+gi|37362302|gb|AAQ91279.1| TGFB-induced factor [Danio rerio] >gn...    55   5e-07
+gi|1322631|emb|CAA96802.1| unnamed protein product [Saccharomyce...    55   5e-07
+gi|57104564|ref|XP_542981.1| PREDICTED: similar to TGFB-induced ...    55   5e-07
+gi|31433261|gb|AAP54799.1| putative homeodomain protein [Oryza s...    55   5e-07
+gi|53792801|dbj|BAD53835.1| putative H1 gene protein [Oryza sati...    55   6e-07
+gi|61815780|ref|XP_615740.1| PREDICTED: similar to TGFB-induced ...    55   6e-07
+gi|23397273|gb|AAN31918.1| putative homeodomain protein [Arabido...    55   6e-07
+gi|27734180|ref|NP_775572.1| TGFB-induced factor 2 [Mus musculus...    55   7e-07
+gi|33285288|emb|CAD58040.1| homeodomain protein vaamana [Arabido...    55   7e-07
+gi|33089289|gb|AAP93641.1| bellringer homeodomain protein [Arabi...    55   7e-07
+gi|31323443|gb|AAP47023.1| bell-like homeodomain protein 3 [Lyco...    55   8e-07
+gi|31323447|gb|AAP47025.1| bell-like homeodomain protein 2 [Lyco...    54   9e-07
+gi|61878815|ref|XP_587139.1| PREDICTED: similar to TG-interactin...    54   9e-07
+gi|67468564|ref|XP_650312.1| hypothetical protein 229.t00013 [En...    54   9e-07
+gi|57164488|gb|AAW34245.1| putative homeodomain protein [Oryza s...    54   9e-07
+gi|22652115|gb|AAN03621.1| BEL1-related homeotic protein 5 [Sola...    54   9e-07
+gi|30793766|tpg|DAA01310.1| TPA: TALE homeodomain protein EcHD-1...    54   1e-06
+gi|42554438|gb|EAA77281.1| hypothetical protein FG07909.1 [Gibbe...    54   1e-06
+gi|55775090|ref|XP_550471.1| putative homeotic protein BEL1 [Ory...    54   1e-06
+gi|47213294|emb|CAG12376.1| unnamed protein product [Tetraodon n...    54   1e-06
+gi|55652171|ref|XP_514619.1| PREDICTED: similar to TGFB-induced ...    54   1e-06
+gi|62663838|ref|XP_214487.2| PREDICTED: similar to TGFB-induced ...    54   1e-06
+gi|56694856|gb|AAW23090.1| Irx-b [Oikopleura dioica]                   54   1e-06
+gi|22652121|gb|AAN03624.1| BEL1-related homeotic protein 14 [Sol...    54   1e-06
+gi|56122228|gb|AAV74265.1| transforming growth factor-beta-induc...    54   1e-06
+gi|50906521|ref|XP_464749.1| putative homeobox protein [Oryza sa...    54   1e-06
+gi|51827389|ref|XP_486357.1| PREDICTED: similar to TGFB-induced ...    54   1e-06
+gi|67468548|ref|XP_650305.1| homeobox protein, putative [Entamoe...    54   2e-06
+gi|42528295|gb|AAS18416.1| benzothiadiazole-induced homeodomain ...    54   2e-06
+gi|34897010|ref|NP_909851.1| putative homeodomain protein [Oryza...    54   2e-06
+gi|34897808|ref|NP_910250.1| P0514G12.24 [Oryza sativa (japonica...    54   2e-06
+gi|1370373|emb|CAA97884.1| CUP9 [Saccharomyces cerevisiae] >gnl|...    54   2e-06
+gi|62896427|emb|CAD89693.1| BEL1-like homeodomain protein HB2 [O...    54   2e-06
+gi|63101785|gb|AAH95113.1| Irx6a protein [Danio rerio]                 54   2e-06
+gi|32307785|gb|AAP79289.1| iroquois [Saccoglossus kowalevskii]         54   2e-06
+gi|31746344|emb|CAC82981.1| putative BEL1-like protein [Gnetum g...    53   2e-06
+gi|34902566|ref|NP_912629.1| Putative homeodomain protein [Oryza...    53   2e-06
+gi|57090621|ref|XP_547841.1| PREDICTED: similar to Homeobox prot...    53   2e-06
+gi|9758050|dbj|BAB08513.1| homeotic protein BEL1 homolog [Arabid...    53   2e-06
+gi|66846803|gb|EAL87134.1| homeobox and C2H2 transcription facto...    53   2e-06
+gi|67633542|gb|AAY78695.1| homeodomain-containing protein [Arabi...    53   2e-06
+gi|2129613|pir||A57632 homeotic protein BEL1 - Arabidopsis thaliana    53   2e-06
+gi|66508690|ref|XP_396811.2| PREDICTED: similar to Six2 protein ...    53   2e-06
+gi|3243091|gb|AAC23943.1| homeoprotein Sail [Drosophila melanoga...    53   3e-06
+gi|23093572|gb|AAN11850.1| CG10601-PB, isoform B [Drosophila mel...    53   3e-06
+gi|50927148|gb|AAH79528.1| Sine oculis homeobox homolog 2.1 [Dan...    53   3e-06
+gi|22652123|gb|AAN03625.1| BEL1-related homeotic protein 22 [Sol...    53   3e-06
+gi|26453300|dbj|BAC43723.1| putative homeodomain transcription f...    53   3e-06
+gi|22652117|gb|AAN03622.1| BEL1-related homeotic protein 11 [Sol...    53   3e-06
+gi|17567261|ref|NP_509101.1| pre B-cell leukemia transcription f...    53   3e-06
+gi|66520561|ref|XP_396291.2| PREDICTED: similar to CG10601-PA, i...    52   3e-06
+gi|54642172|gb|EAL30921.1| GA10430-PA [Drosophila pseudoobscura]       52   3e-06
+gi|15215857|gb|AAK91472.1| AT4g36870/C7A10_490 [Arabidopsis thal...    52   3e-06
+gi|47218210|emb|CAF97074.1| unnamed protein product [Tetraodon n...    52   4e-06
+gi|31746350|emb|CAC82984.1| putative BEL1-like protein [Gnetum g...    52   4e-06
+gi|22652127|gb|AAN03627.1| BEL1-related homeotic protein 30 [Sol...    52   4e-06
+gi|19309907|emb|CAC86663.1| Six2 protein [Platynereis dumerilii]       52   4e-06
+gi|57093309|ref|XP_538478.1| PREDICTED: similar to Six2 [Canis f...    52   4e-06
+gi|28829609|gb|AAO52126.1| similar to Plasmodium falciparum. Hyp...    52   5e-06
+gi|62664909|ref|XP_226359.3| PREDICTED: similar to iroquois home...    52   5e-06
+gi|47223827|emb|CAF98597.1| unnamed protein product [Tetraodon n...    52   5e-06
+gi|57109840|ref|XP_545187.1| PREDICTED: similar to iroquois home...    52   5e-06
+gi|15450866|gb|AAK96704.1| homeotic protein BEL1 homolog [Arabid...    52   5e-06
+gi|5802260|gb|AAD51632.1| KNOX1 homeodomain protein [Acetabulari...    52   5e-06
+gi|57770516|ref|NP_001009904.1| zgc:92332 [Danio rerio] >gnl|BL_...    52   5e-06
+gi|57109786|ref|XP_535801.1| PREDICTED: similar to Iroquois-clas...    52   5e-06
+gi|49641127|emb|CAH02388.1| unnamed protein product [Kluyveromyc...    52   6e-06
+gi|55623866|ref|XP_517618.1| PREDICTED: similar to Iroquois-clas...    52   6e-06
+gi|55595642|ref|XP_515444.1| PREDICTED: hypothetical protein XP_...    52   6e-06
+gi|33356601|gb|AAQ16547.1| homeodomain protein IRXA3 [Homo sapie...    52   6e-06
+gi|21361246|ref|NP_071873.1| Iroquois related homeobox 6 [Mus mu...    52   6e-06
+gi|20198249|gb|AAM15481.1| putative homeodomain transcription fa...    52   6e-06
+gi|66803072|ref|XP_635379.1| homeodomain (HOX) containing protei...    52   7e-06
+gi|26343675|dbj|BAC35494.1| unnamed protein product [Mus musculu...    52   7e-06
+gi|7270108|emb|CAB79922.1| homeodomain containing protein 1 [Ara...    52   7e-06
+gi|57043816|ref|XP_544401.1| PREDICTED: similar to iroquois home...    51   7e-06
+gi|61809153|ref|XP_588692.1| PREDICTED: similar to Homeobox prot...    51   7e-06
+gi|15215913|emb|CAC51426.1| H1 gene [Arabidopsis thaliana]             51   7e-06
+gi|791086|emb|CAA56584.1| six2 [Mus musculus]                          51   7e-06
+gi|13242163|gb|AAK16581.1| SIX2 [Homo sapiens]                         51   7e-06
+gi|5678605|emb|CAB16801.2| BEL1-like homeobox 2 protein (BLH2) [...    51   7e-06
+gi|685234|emb|CAA56426.1| H1 [Arabidopsis thaliana] >gnl|BL_ORD_...    51   8e-06
+gi|2851595|sp|Q62232|SIX2_MOUSE Homeobox protein SIX2 (Sine ocul...    51   8e-06
+gi|55643875|ref|XP_510971.1| PREDICTED: matrix metalloproteinase...    51   8e-06
+gi|56694850|gb|AAW23087.1| Irx-c [Oikopleura dioica]                   51   8e-06
+gi|9256547|ref|NP_061373.1| Iroquois related homeobox 4 [Mus mus...    51   8e-06
+gi|61830840|ref|XP_587683.1| PREDICTED: similar to Six2 [Bos tau...    51   9e-06
+gi|42554280|gb|EAA77123.1| hypothetical protein FG09566.1 [Gibbe...    51   9e-06
+gi|31323449|gb|AAP47026.1| bell-like homeodomain protein 4 [Lyco...    51   9e-06
+gi|34873438|ref|XP_225068.2| PREDICTED: similar to iroquois home...    51   9e-06
+gi|55251053|emb|CAH69049.1| novel protein similar to vertebrate ...    51   9e-06
+gi|32408265|ref|XP_324614.1| hypothetical protein [Neurospora cr...    51   9e-06
+gi|47230132|emb|CAG10546.1| unnamed protein product [Tetraodon n...    51   9e-06
+gi|9652166|gb|AAF91422.1| homeobox protein SIX1 [Xenopus laevis]       51   9e-06
+gi|62650825|ref|XP_343080.2| PREDICTED: sine oculis homeobox hom...    51   1e-05
+gi|62650293|ref|XP_345631.2| PREDICTED: similar to Six2 [Rattus ...    51   1e-05
+gi|15223627|ref|NP_173400.1| homeobox-leucine zipper family prot...    51   1e-05
+gi|56694854|gb|AAW23089.1| Irx-e [Oikopleura dioica]                   51   1e-05
+gi|30585053|gb|AAP36799.1| Homo sapiens sine oculis homeobox hom...    51   1e-05
+gi|30583005|gb|AAP35746.1| sine oculis homeobox homolog 1 (Droso...    51   1e-05
+gi|957248|gb|AAB34685.1| homeodomain protein required for visual...    50   1e-05
+gi|7446245|pir||T02220 homeobox protein NTH23 - common tobacco >...    50   1e-05
+gi|21627408|gb|AAG22280.2| CG8821-PA, isoform A [Drosophila mela...    50   1e-05
+gi|4098244|gb|AAD09582.1| homeobox 1 protein [Lycopersicon escul...    50   1e-05
+gi|7294555|gb|AAF49896.1| CG10571-PA [Drosophila melanogaster] >...    50   1e-05
+gi|1212885|emb|CAA64486.1| araucan homeoprotein [Drosophila mela...    50   1e-05
+gi|66814032|ref|XP_641195.1| homeodomain (HOX) containing protei...    50   1e-05
+gi|1246761|emb|CAA62974.1| six1 [Homo sapiens] >gnl|BL_ORD_ID|23...    50   1e-05
+gi|7294554|gb|AAF49895.1| CG10605-PA [Drosophila melanogaster] >...    50   1e-05
+gi|54650584|gb|AAV36871.1| RE59515p [Drosophila melanogaster]          50   1e-05
+gi|54635383|gb|EAL24786.1| GA10770-PA [Drosophila pseudoobscura]       50   2e-05
+gi|54637038|gb|EAL26441.1| GA21345-PA [Drosophila pseudoobscura]       50   2e-05
+gi|58386878|ref|XP_315118.2| ENSANGP00000015275 [Anopheles gambi...    50   2e-05
+gi|55623870|ref|XP_526826.1| PREDICTED: similar to iroquois home...    50   2e-05
+gi|28316988|gb|AAO39514.1| RE30881p [Drosophila melanogaster] >g...    50   2e-05
+gi|18645178|gb|AAH24033.1| Sine oculis homeobox homolog 2 [Homo ...    50   2e-05
+gi|23273881|gb|AAH23304.1| Sine oculis homeobox homolog 1 [Mus m...    50   2e-05
+gi|1212887|emb|CAA64485.1| caupolican homeoprotein [Drosophila m...    50   2e-05
+gi|9055250|ref|NP_061296.1| Iroquois related homeobox 5 [Mus mus...    50   2e-05
+gi|34896838|ref|NP_909763.1| putative homeodomain protein [Oryza...    50   2e-05
+gi|57863281|ref|NP_064545.1| Meis1, myeloid ecotropic viral inte...    50   2e-05
+gi|11061685|emb|CAC14462.1| iroquois homeobox protein 5 [Mus mus...    50   2e-05
+gi|23197850|gb|AAN15452.1| Similar to homeodomain proteins [Arab...    50   2e-05
+gi|21553417|gb|AAM62510.1| homeodomain protein BELL1, putative [...    50   2e-05
+gi|7576706|gb|AAF63955.1| iroquois-class homeobox protein Irx5 [...    50   2e-05
+gi|57164996|gb|AAW34337.1| Iroquois 4a protein [Danio rerio]           50   2e-05
+gi|791084|emb|CAA56585.1| six1 [Mus musculus]                          50   2e-05
+gi|33859494|ref|NP_033215.1| sine oculis homeobox homolog 1 [Mus...    50   2e-05
+gi|28380865|gb|AAO41402.1| CG8821-PB, isoform B [Drosophila mela...    50   2e-05
+gi|62663683|ref|XP_214497.3| PREDICTED: similar to hypothetical ...    50   2e-05
+gi|41946909|gb|AAH65966.1| Iroquois homeobox protein 4a [Danio r...    50   2e-05
+gi|21627411|gb|AAM68695.1| CG8819-PC, isoform C [Drosophila mela...    50   2e-05
+gi|54642170|gb|EAL30919.1| GA10434-PA [Drosophila pseudoobscura]       50   2e-05
+gi|47215229|emb|CAF96727.1| unnamed protein product [Tetraodon n...    50   2e-05
+gi|33391193|gb|AAQ17211.1| paired and homeobox transcription fac...    50   2e-05
+gi|1899220|gb|AAB50002.1| iroquois-class homeodomain protein IRX...    50   3e-05
+gi|61865305|ref|XP_612112.1| PREDICTED: similar to iroquois home...    50   3e-05
+gi|54642169|gb|EAL30918.1| GA10403-PA [Drosophila pseudoobscura]       50   3e-05
+gi|61849637|ref|XP_587499.1| PREDICTED: similar to myeloid ecotr...    50   3e-05
+gi|62664911|ref|XP_574208.1| PREDICTED: similar to iroquois home...    50   3e-05
+gi|42555722|gb|EAA78528.1| hypothetical protein FG11416.1 [Gibbe...    49   3e-05
+gi|38110344|gb|EAA56079.1| hypothetical protein MG01730.4 [Magna...    49   3e-05
+gi|7688150|emb|CAB89806.1| iroquois homologue-1 [Gallus gallus]        49   3e-05
+gi|51890231|gb|AAU12854.1| Irx4 [Xenopus tropicalis]                   49   3e-05
+gi|33356611|gb|AAQ16552.1| homeodomain protein IRXB3 [Homo sapie...    49   3e-05
+gi|15383983|gb|AAK96065.1| iroquois-4 homeobox transcription fac...    49   3e-05
+gi|47229510|emb|CAF99498.1| unnamed protein product [Tetraodon n...    49   3e-05
+gi|50603901|gb|AAH74850.2| IRX5 protein [Homo sapiens]                 49   3e-05
+gi|57109838|ref|XP_545186.1| PREDICTED: similar to Iroquois-clas...    49   3e-05
+gi|34531018|dbj|BAC86033.1| unnamed protein product [Homo sapien...    49   3e-05
+gi|66520558|ref|XP_396292.2| PREDICTED: similar to GA10434-PA [A...    49   3e-05
+gi|33356609|gb|AAQ16551.1| homeodomain protein IRXB2 [Homo sapie...    49   3e-05
+gi|47778933|ref|NP_005844.3| iroquois homeobox protein 5 [Homo s...    49   3e-05
+gi|50736152|ref|XP_419063.1| PREDICTED: similar to iroquois homo...    49   3e-05
+gi|13022007|gb|AAK11607.1| homeobox protein SIX1 [Rattus norvegi...    49   3e-05
+gi|41327245|gb|AAS00124.1| X-linked TGIF-like protein [Lagothrix...    49   3e-05
+gi|22798992|emb|CAC87897.1| TGIF-like on the X [Pongo pygmaeus] ...    49   3e-05
+gi|57039460|ref|XP_544207.1| PREDICTED: similar to chromosome 10...    49   3e-05
+gi|6016226|sp|O22300|LET12_LYCES Homeobox protein knotted-1 like...    49   4e-05
+gi|7576708|gb|AAF63956.1| iroquois-class homeobox protein Irx6 [...    49   4e-05
+gi|47216629|emb|CAG05430.1| unnamed protein product [Tetraodon n...    49   4e-05
+gi|61862764|ref|XP_595851.1| PREDICTED: similar to iroquois home...    49   4e-05
+gi|48976089|ref|NP_001001744.1| iroquois homeobox protein 4 [Gal...    49   4e-05
+gi|42555254|gb|EAA78097.1| hypothetical protein FG09047.1 [Gibbe...    49   4e-05
+gi|42555250|gb|EAA78093.1| hypothetical protein FG09043.1 [Gibbe...    49   4e-05
+gi|62663079|ref|XP_225077.3| PREDICTED: similar to iroquois-clas...    49   4e-05
+gi|33356599|gb|AAQ16546.1| homeodomain protein IRXA2 [Homo sapie...    49   4e-05
+gi|30793770|tpg|DAA01300.1| TPA: TALE homeodomain protein EcHD-2...    49   4e-05
+gi|14149141|dbj|BAB55660.1| KNOX family class 2 homeodomain prot...    49   4e-05
+gi|46559370|ref|NP_034704.1| Iroquois related homeobox 2 [Mus mu...    49   4e-05
+gi|20269856|gb|AAM18073.1| TGF beta-induced transcription factor...    49   4e-05
+gi|57209318|emb|CAI41575.1| TGFB-induced factor 2-like, X-linked...    49   4e-05
+gi|55153956|gb|AAH85291.1| Irx2 protein [Mus musculus]                 49   4e-05
+gi|57164998|gb|AAW34338.1| Iroquois 4b protein [Danio rerio] >gn...    49   4e-05
+gi|37619799|emb|CAA88702.2| Hypothetical protein F27E5.2 [Caenor...    49   4e-05
+gi|33604051|gb|AAH56322.1| Similar to Iroquois related homeobox ...    49   5e-05
+gi|40949906|gb|AAR97576.1| iroquois homeobox protein 5b [Danio r...    49   5e-05
+gi|7270411|emb|CAB80178.1| Homeodomain-like protein [Arabidopsis...    49   5e-05
+gi|54650768|gb|AAV36963.1| LP02208p [Drosophila melanogaster]          49   5e-05
+gi|56694862|gb|AAW23093.1| Six12b [Oikopleura dioica]                  49   5e-05
+gi|41351450|gb|AAH65681.1| Similar to Iroquois related homeobox ...    49   5e-05
+gi|57164994|gb|AAW34336.1| Iroquois 2a protein [Danio rerio]           49   5e-05
+gi|17533499|ref|NP_496189.1| paired box (2K439) [Caenorhabditis ...    49   5e-05
+gi|62664914|ref|XP_226322.3| PREDICTED: similar to Iroquois rela...    49   5e-05
+gi|23094187|gb|AAN12144.1| CG3871-PB, isoform B [Drosophila mela...    49   5e-05
+gi|22798990|emb|CAC87896.2| TGIF-like on the X [Gorilla gorilla]...    49   5e-05
+gi|54641765|gb|EAL30515.1| GA17741-PA [Drosophila pseudoobscura]       49   5e-05
+gi|55649509|ref|XP_512781.1| PREDICTED: similar to MEIS3 protein...    49   5e-05
+gi|55741685|ref|NP_032419.2| Iroquois related homeobox 3 [Mus mu...    49   5e-05
+gi|1946222|emb|CAA96512.1| knotted1-like homeobox protein [Malus...    49   6e-05
+gi|2765438|emb|CAA75233.1| Iroquois homeobox protein 3 [Mus musc...    49   6e-05
+gi|21554222|gb|AAM63298.1| KNAT3 homeodomain protein [Arabidopsi...    49   6e-05
+gi|33356613|gb|AAQ16553.1| homeodomain protein IRXA1; irx1; irx-...    49   6e-05
+gi|57114005|ref|NP_001009067.1| TGFB-induced factor 2-like, X-li...    49   6e-05
+gi|23197862|gb|AAN15458.1| KNAT3 homeodomain protein [Arabidopsi...    48   6e-05
+gi|6018441|emb|CAB57948.1| iroquois homologue 2 [Gallus gallus]        48   6e-05
+gi|11463943|dbj|BAB18585.1| CRKNOX3 [Ceratopteris richardii]           48   6e-05
+gi|1045042|emb|CAA63130.1| KNAT3 homeobox protein [Arabidopsis t...    48   7e-05
+gi|58011289|gb|AAW62519.1| KNOTTED1-like protein [Selaginella kr...    48   7e-05
+gi|47228001|emb|CAF97630.1| unnamed protein product [Tetraodon n...    48   7e-05
+gi|62718753|ref|XP_576873.1| PREDICTED: similar to iroquois-clas...    48   7e-05
+gi|62663081|ref|XP_225101.3| PREDICTED: similar to iroquois-clas...    48   7e-05
+gi|58386876|ref|XP_315117.2| ENSANGP00000011481 [Anopheles gambi...    48   7e-05
+gi|46559404|ref|NP_034703.1| Iroquois related homeobox 1 [Mus mu...    48   7e-05
+gi|50736149|ref|XP_419062.1| PREDICTED: similar to iroquois homo...    48   7e-05
+gi|11863175|gb|AAD39894.2| homeobox protein SIX1 [Xenopus laevis]      48   7e-05
+gi|14764405|gb|AAK08651.1| iroquois homeobox protein Ziro5 [Dani...    48   7e-05
+gi|20809802|gb|AAH29160.1| Unknown (protein for IMAGE:5181034) [...    48   8e-05
+gi|15383985|gb|AAK96066.1| iroquois-5 homeobox transcription fac...    48   8e-05
+gi|61864853|ref|XP_593913.1| PREDICTED: similar to Iroquois rela...    48   8e-05
+gi|1805617|dbj|BAA08552.1| OSH45 [Oryza sativa (japonica cultiva...    48   8e-05
+gi|58394574|ref|XP_320814.2| ENSANGP00000004790 [Anopheles gambi...    48   8e-05
+gi|11359845|pir||JC7268 paired-type homeodomain protein Mtx2 - z...    48   8e-05
+gi|22798994|emb|CAC87898.1| TGIF-like protein on the X [Hylobate...    48   8e-05
+gi|55643869|ref|XP_510969.1| PREDICTED: similar to iroquois home...    48   8e-05
+gi|11863177|gb|AAD39895.2| homeobox protein SIX2 [Xenopus laevis]      48   9e-05
+gi|46443267|gb|EAL02550.1| hypothetical protein CaO19.6514 [Cand...    48   9e-05
+gi|47215232|emb|CAF96730.1| unnamed protein product [Tetraodon n...    48   9e-05
+gi|57043820|ref|XP_544403.1| PREDICTED: similar to Iroquois home...    48   9e-05
+gi|56694858|gb|AAW23091.1| Irx-d [Oikopleura dioica]                   48   9e-05
+gi|23272160|gb|AAH23667.1| Iroquois homeobox protein 3 [Homo sap...    48   1e-04
+gi|33356605|gb|AAQ16549.1| homeodomain protein IRXB1 [Homo sapie...    48   1e-04
+gi|56694852|gb|AAW23088.1| Irx-a [Oikopleura dioica]                   48   1e-04
+gi|1805618|dbj|BAA08553.1| OSH45 [Oryza sativa (japonica cultiva...    48   1e-04
+gi|41327243|gb|AAS00123.1| X-linked TGIF-like protein [Saimiri s...    48   1e-04
+gi|50253602|gb|AAT72003.1| iro1 [Xenopus tropicalis]                   47   1e-04
+gi|13272286|gb|AAK17070.1| homeodomain type 2 mating protein a2-...    47   1e-04
+gi|33356603|gb|AAQ16548.1| homeodomain protein IRXB1; irx3; irx-...    47   1e-04
+gi|4240539|gb|AAD13611.1| knotted class 1 homeodomain protein li...    47   1e-04
+gi|29243954|ref|NP_808263.1| hypothetical protein LOC210719 [Mus...    47   1e-04
+gi|18407708|ref|NP_564805.1| homeodomain transcription factor (K...    47   1e-04
+gi|26451690|dbj|BAC42940.1| putative homeodomain transcription f...    47   1e-04
+gi|54645800|gb|EAL34538.1| GA11100-PA [Drosophila pseudoobscura]       47   1e-04
+gi|30348875|gb|AAP31414.1| knotted1-like homeodomain protein lig...    47   1e-04
+gi|47155829|gb|AAT11862.1| iroquois-like protein [Tribolium cast...    47   1e-04
+gi|8493589|gb|AAF75812.1| Strong similarity to Homeobox Protein ...    47   1e-04
+gi|9795158|emb|CAC03454.1| HOMEOBOX PROTEIN KNOTTED-1 LIKE 4 (KN...    47   1e-04
+gi|58376632|ref|XP_308755.2| ENSANGP00000015112 [Anopheles gambi...    47   1e-04
+gi|21618231|gb|AAM67281.1| homeodomain-containing protein HD1, p...    47   1e-04
+gi|60100884|gb|AAK61308.2| class 1 KNOTTED1-like protein MKN2 [P...    47   1e-04
+gi|33333535|gb|AAQ11884.1| knotted 4 [Hordeum vulgare]                 47   1e-04
+gi|51704169|gb|AAH81317.1| Irx2-prov protein [Xenopus tropicalis...    47   1e-04
+gi|23308413|gb|AAN18176.1| At2g16400/F16F14.10 [Arabidopsis thal...    47   1e-04
+gi|4544389|gb|AAD22299.1| putative homeodomain transcription fac...    47   1e-04
+gi|2598958|gb|AAB84027.1| homeobox transcription factor iriquois...    47   1e-04
+gi|15146041|gb|AAK82937.1| pairberry 2 transcription factor [Sch...    47   1e-04
+gi|26451634|dbj|BAC42914.1| putative homeobox protein knotted-1 ...    47   1e-04
+gi|1045044|emb|CAA63131.1| KNAT4 homeobox protein [Arabidopsis t...    47   1e-04
+gi|49902920|gb|AAH76162.1| Irx6a protein [Danio rerio]                 47   1e-04
+gi|58011287|gb|AAW62518.1| KNOTTED1-like protein [Selaginella kr...    47   1e-04
+gi|47216631|emb|CAG05432.1| unnamed protein product [Tetraodon n...    47   1e-04
+gi|31746346|emb|CAC82982.1| putative BEL1-like protein [Gnetum g...    47   1e-04
+gi|47204030|emb|CAG14759.1| unnamed protein product [Tetraodon n...    47   1e-04
+gi|1899230|gb|AAB50007.1| iroquois-class homeodomain protein IRX...    47   2e-04
+gi|63101735|gb|AAH94996.1| Mxtx2 protein [Danio rerio]                 47   2e-04
+gi|13506820|gb|AAK28350.1| homeodomain-containing transcription ...    47   2e-04
+gi|18416569|ref|NP_567722.1| homeodomain protein (FWA) [Arabidop...    47   2e-04
+gi|24119199|ref|NP_571342.1| iroquois homeobox protein 3a [Danio...    47   2e-04
+gi|2980797|emb|CAA18173.1| putative homeodomain-protein [Arabido...    47   2e-04
+gi|453949|emb|CAA82314.1| homeodomain-containing protein [Brassi...    47   2e-04
+gi|14456343|gb|AAK62559.1| class 1 KNOTTED1-like protein MKN4 [P...    47   2e-04
+gi|50418016|gb|AAH77951.1| Irx2-A protein [Xenopus laevis]             47   2e-04
+
+>gi|57111599|ref|XP_545786.1| PREDICTED: similar to Pre-B-cell
+           leukemia transcription factor-1 (Homeobox protein PBX1)
+           [Canis familiaris]
+          Length = 1618
+
+ Score =  168 bits (426), Expect = 3e-41,   Method: Composition-based stats.
+ Identities = 80/81 (98%), Positives = 80/81 (98%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 903 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 962
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 963 KNIGKFQEEANIYAAKTAVTA 983
+
+
+>gi|57094790|ref|XP_538847.1| PREDICTED: similar to notch4 [Canis
+            familiaris]
+          Length = 2224
+
+ Score =  165 bits (417), Expect = 4e-40,   Method: Composition-based stats.
+ Identities = 75/80 (93%), Positives = 78/80 (97%)
+
+Query: 2    ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+            ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 2000 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 2059
+
+Query: 62   KNIGKFQEEANIYAAKTAVT 81
+            KNIGKFQEEANIYA KTAV+
+Sbjct: 2060 KNIGKFQEEANIYAVKTAVS 2079
+
+
+>gi|339895|gb|AAA36764.1| E2A/PRL fusion protein
+          Length = 550
+
+ Score =  164 bits (415), Expect = 6e-40,   Method: Composition-based stats.
+ Identities = 80/81 (98%), Positives = 80/81 (98%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 353 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 412
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 413 KNIGKFQEEANIYAAKTAVTA 433
+
+
+>gi|47220028|emb|CAG12176.1| unnamed protein product [Tetraodon
+           nigroviridis]
+          Length = 509
+
+ Score =  159 bits (401), Expect = 3e-38,   Method: Composition-based stats.
+ Identities = 76/81 (93%), Positives = 78/81 (96%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 231 ARRKRRNFNKQATEVLNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 290
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEAN+YA KTAV A
+Sbjct: 291 KNIGKFQEEANLYAVKTAVDA 311
+
+
+>gi|46048897|ref|NP_990077.1| PBX1A protein [Gallus gallus]
+ PBX1A [Gallus gallus]
+          Length = 430
+
+ Score =  155 bits (393), Expect = 2e-37,   Method: Composition-based stats.
+ Identities = 80/81 (98%), Positives = 80/81 (98%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 293 KNIGKFQEEANIYAAKTAVTA 313
+
+
+>gi|34365779|ref|NP_899198.1| pre B-cell leukemia transcription
+           factor 1 isoform a [Mus musculus]
+ PREDICTED: similar to Pre-B-cell leukemia transcription factor-1
+           (Homeobox protein PBX1) [Rattus norvegicus]
+ pre-B-cell leukemia transcription factor 1 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 1 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 1 [Homo sapiens]
+ Pre B-cell leukemia transcription factor 1, isoform a [Mus
+           musculus]
+ Pre-B-cell leukemia transcription factor-1 (Homeobox protein PBX1)
+ Pre-B-cell leukemia transcription factor-1 (Homeobox protein PBX1)
+           (Homeobox protein PRL)
+ PBX1 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 1 [Homo sapiens]
+ PBX1a [Mus musculus]
+ PBX1a
+          Length = 430
+
+ Score =  155 bits (392), Expect = 3e-37,   Method: Composition-based stats.
+ Identities = 80/81 (98%), Positives = 80/81 (98%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 293 KNIGKFQEEANIYAAKTAVTA 313
+
+
+>gi|50795297|ref|XP_423764.1| PREDICTED: similar to pre-B-cell
+           leukemia transcription factor 3 [Gallus gallus]
+          Length = 431
+
+ Score =  153 bits (386), Expect = 1e-36,   Method: Composition-based stats.
+ Identities = 76/81 (93%), Positives = 79/81 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 238 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKKGGITVSQVSNWFGNKRIRYK 297
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KN+GKFQEEANIYAAKTAV A
+Sbjct: 298 KNMGKFQEEANIYAAKTAVDA 318
+
+
+>gi|55588664|ref|XP_513961.1| PREDICTED: hypothetical protein
+           XP_513961 [Pan troglodytes]
+          Length = 351
+
+ Score =  152 bits (385), Expect = 2e-36,   Method: Composition-based stats.
+ Identities = 80/81 (98%), Positives = 80/81 (98%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 128 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 187
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 188 KNIGKFQEEANIYAAKTAVTA 208
+
+
+>gi|30584839|gb|AAP36672.1| Homo sapiens pre-B-cell leukemia
+           transcription factor 1 [synthetic construct]
+          Length = 348
+
+ Score =  152 bits (385), Expect = 2e-36,   Method: Composition-based stats.
+ Identities = 80/81 (98%), Positives = 80/81 (98%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 293 KNIGKFQEEANIYAAKTAVTA 313
+
+
+>gi|30582249|gb|AAP35351.1| pre-B-cell leukemia transcription factor
+           1 [Homo sapiens]
+ pre B-cell leukemia transcription factor 1 isoform b [Mus musculus]
+ pre-B-cell leukemia transcription factor 1 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 1 [Homo sapiens]
+ PBX1b [Mus musculus]
+ homeobox protein
+          Length = 347
+
+ Score =  152 bits (384), Expect = 3e-36,   Method: Composition-based stats.
+ Identities = 80/81 (98%), Positives = 80/81 (98%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 293 KNIGKFQEEANIYAAKTAVTA 313
+
+
+>gi|8096557|dbj|BAA96136.1| PBX1B [Gallus gallus]
+          Length = 347
+
+ Score =  151 bits (382), Expect = 4e-36,   Method: Composition-based stats.
+ Identities = 80/81 (98%), Positives = 80/81 (98%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 293 KNIGKFQEEANIYAAKTAVTA 313
+
+
+>gi|47507441|gb|AAH71048.1| MGC83856 protein [Xenopus laevis]
+          Length = 445
+
+ Score =  151 bits (381), Expect = 6e-36,   Method: Composition-based stats.
+ Identities = 74/80 (92%), Positives = 77/80 (96%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 237 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 296
+
+Query: 62  KNIGKFQEEANIYAAKTAVT 81
+           KNIGKFQEEANIYA KTAV+
+Sbjct: 297 KNIGKFQEEANIYAVKTAVS 316
+
+
+>gi|107390|pir||B33061 homeotic protein prl - human
+ homeobox-containing protein
+          Length = 342
+
+ Score =  151 bits (381), Expect = 7e-36,   Method: Composition-based stats.
+ Identities = 80/81 (98%), Positives = 80/81 (98%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 145 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 204
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 205 KNIGKFQEEANIYAAKTAVTA 225
+
+
+>gi|61868690|ref|XP_612645.1| PREDICTED: similar to Pre-B-cell
+           leukemia transcription factor-1 (Homeobox protein PBX1)
+           [Bos taurus]
+          Length = 333
+
+ Score =  151 bits (381), Expect = 7e-36,   Method: Composition-based stats.
+ Identities = 80/81 (98%), Positives = 80/81 (98%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 293 KNIGKFQEEANIYAAKTAVTA 313
+
+
+>gi|7160800|emb|CAB76458.1| Pbx4/Lazarus homeodomain protein [Danio
+           rerio]
+ Pbx4 homeodomain protein [Danio rerio]
+ pre-B-cell leukemia transcription factor 4 [Danio rerio]
+          Length = 343
+
+ Score =  150 bits (380), Expect = 7e-36,   Method: Composition-based stats.
+ Identities = 76/81 (93%), Positives = 78/81 (96%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 231 ARRKRRNFNKQATEVLNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 290
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEAN+YA KTAV A
+Sbjct: 291 KNIGKFQEEANLYAVKTAVDA 311
+
+
+>gi|47228232|emb|CAG07627.1| unnamed protein product [Tetraodon
+           nigroviridis]
+          Length = 338
+
+ Score =  149 bits (377), Expect = 2e-35,   Method: Composition-based stats.
+ Identities = 72/78 (92%), Positives = 77/78 (98%)
+
+Query: 5   KRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKKNI 64
+           +RRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITV+QVSNWFGNKRIRYKKNI
+Sbjct: 144 QRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVAQVSNWFGNKRIRYKKNI 203
+
+Query: 65  GKFQEEANIYAAKTAVTA 82
+           GKFQEEAN+YAA+TAV+A
+Sbjct: 204 GKFQEEANMYAARTAVSA 221
+
+
+>gi|56388825|gb|AAH87615.1| Pre B-cell leukemia transcription factor
+           2 [Mus musculus]
+          Length = 430
+
+ Score =  149 bits (377), Expect = 2e-35,   Method: Composition-based stats.
+ Identities = 75/80 (93%), Positives = 78/80 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 244 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 303
+
+Query: 62  KNIGKFQEEANIYAAKTAVT 81
+           KNIGKFQEEANIYA KTAV+
+Sbjct: 304 KNIGKFQEEANIYAVKTAVS 323
+
+
+>gi|8567384|ref|NP_059491.1| pre B-cell leukemia transcription
+           factor 2 [Mus musculus]
+ PBX2 [Mus musculus]
+ Pre B-cell leukemia transcription factor 2 [Mus musculus]
+ Pre B-cell leukemia transcription factor 2 [Mus musculus]
+ Pre-B-cell leukemia transcription factor-2 (Homeobox protein PBX2)
+ PBX2 [Mus musculus]
+          Length = 430
+
+ Score =  149 bits (377), Expect = 2e-35,   Method: Composition-based stats.
+ Identities = 75/80 (93%), Positives = 78/80 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 244 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 303
+
+Query: 62  KNIGKFQEEANIYAAKTAVT 81
+           KNIGKFQEEANIYA KTAV+
+Sbjct: 304 KNIGKFQEEANIYAVKTAVS 323
+
+
+>gi|50657366|ref|NP_001002828.1| pre-B-cell leukemia transcription
+           factor 2 [Rattus norvegicus]
+ pre-B-cell leukemia transcription factor 2 [Rattus norvegicus]
+          Length = 430
+
+ Score =  149 bits (376), Expect = 2e-35,   Method: Composition-based stats.
+ Identities = 75/80 (93%), Positives = 78/80 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 244 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 303
+
+Query: 62  KNIGKFQEEANIYAAKTAVT 81
+           KNIGKFQEEANIYA KTAV+
+Sbjct: 304 KNIGKFQEEANIYAVKTAVS 323
+
+
+>gi|20302859|gb|AAM18914.1| pre-B-cell leukemia transcription factor
+           1b [Xenopus laevis]
+          Length = 347
+
+ Score =  149 bits (375), Expect = 3e-35,   Method: Composition-based stats.
+ Identities = 78/81 (96%), Positives = 78/81 (96%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 233 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCAITVSQVSNWFGNKRIRYK 292
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAV A
+Sbjct: 293 KNIGKFQEEANIYAAKTAVNA 313
+
+
+>gi|55626238|ref|XP_518378.1| PREDICTED: similar to Pre-B-cell
+           leukemia transcription factor-2 (Homeobox protein PBX2)
+           (G17 protein) [Pan troglodytes]
+          Length = 413
+
+ Score =  148 bits (374), Expect = 4e-35,   Method: Composition-based stats.
+ Identities = 75/80 (93%), Positives = 78/80 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 227 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 286
+
+Query: 62  KNIGKFQEEANIYAAKTAVT 81
+           KNIGKFQEEANIYA KTAV+
+Sbjct: 287 KNIGKFQEEANIYAVKTAVS 306
+
+
+>gi|57209691|emb|CAI41814.1| pre-B-cell leukemia transcription
+           factor 2 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 2 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 2 [Homo sapiens]
+ PBX2 [Homo sapiens]
+ Pre-B-cell leukemia transcription factor 2 [Homo sapiens]
+ homeobox PBX2 gene [Homo sapiens]
+ Pre-B-cell leukemia transcription factor-2 (Homeobox protein PBX2)
+           (G17 protein)
+ HOX12 protein [Homo sapiens]
+ pre-B-cell leukemia transcription factor 2 [Homo sapiens]
+          Length = 430
+
+ Score =  147 bits (372), Expect = 7e-35,   Method: Composition-based stats.
+ Identities = 75/80 (93%), Positives = 78/80 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 244 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 303
+
+Query: 62  KNIGKFQEEANIYAAKTAVT 81
+           KNIGKFQEEANIYA KTAV+
+Sbjct: 304 KNIGKFQEEANIYAVKTAVS 323
+
+
+>gi|35313|emb|CAA42503.1| homeobox protein [Homo sapiens]
+          Length = 430
+
+ Score =  147 bits (372), Expect = 7e-35,   Method: Composition-based stats.
+ Identities = 75/80 (93%), Positives = 78/80 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 244 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 303
+
+Query: 62  KNIGKFQEEANIYAAKTAVT 81
+           KNIGKFQEEANIYA KTAV+
+Sbjct: 304 KNIGKFQEEANIYAVKTAVS 323
+
+
+>gi|18149007|dbj|BAB83538.1| pre-B-cell leukemia transcription
+           factor 1 [Macaca fascicularis]
+          Length = 325
+
+ Score =  147 bits (372), Expect = 7e-35,   Method: Composition-based stats.
+ Identities = 79/81 (97%), Positives = 79/81 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 128 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 187
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQE ANIYAAKTAVTA
+Sbjct: 188 KNIGKFQEGANIYAAKTAVTA 208
+
+
+>gi|7160792|emb|CAB76454.1| Pbx1a homeodomain protein [Danio rerio]
+ Pre-B-cell leukemia transcription factor 1a, isoform 1 [Danio
+           rerio]
+ pre-B-cell leukemia transcription factor 1a isoform 1 [Danio rerio]
+          Length = 428
+
+ Score =  147 bits (371), Expect = 9e-35,   Method: Composition-based stats.
+ Identities = 75/81 (92%), Positives = 77/81 (95%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 232 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 291
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEAN+YAA+TA  A
+Sbjct: 292 KNIGKFQEEANMYAARTAANA 312
+
+
+>gi|32879989|gb|AAP88825.1| pre-B-cell leukemia transcription factor
+           2 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 2 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 2 [Homo sapiens]
+          Length = 349
+
+ Score =  146 bits (368), Expect = 2e-34,   Method: Composition-based stats.
+ Identities = 75/80 (93%), Positives = 78/80 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 244 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 303
+
+Query: 62  KNIGKFQEEANIYAAKTAVT 81
+           KNIGKFQEEANIYA KTAV+
+Sbjct: 304 KNIGKFQEEANIYAVKTAVS 323
+
+
+>gi|47207112|emb|CAF95715.1| unnamed protein product [Tetraodon
+           nigroviridis]
+          Length = 343
+
+ Score =  146 bits (368), Expect = 2e-34,   Method: Composition-based stats.
+ Identities = 76/81 (93%), Positives = 80/81 (98%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITV+QVSNWFGNKRIRYK
+Sbjct: 146 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVAQVSNWFGNKRIRYK 205
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEAN+YAA+TAV+A
+Sbjct: 206 KNIGKFQEEANMYAARTAVSA 226
+
+
+>gi|55962077|emb|CAI17540.1| pre-B-cell leukemia transcription
+           factor 2 [Homo sapiens]
+          Length = 349
+
+ Score =  145 bits (367), Expect = 3e-34,   Method: Composition-based stats.
+ Identities = 75/80 (93%), Positives = 78/80 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 244 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 303
+
+Query: 62  KNIGKFQEEANIYAAKTAVT 81
+           KNIGKFQEEANIYA KTAV+
+Sbjct: 304 KNIGKFQEEANIYAVKTAVS 323
+
+
+>gi|62644969|ref|XP_231158.3| PREDICTED: similar to PBX3a [Rattus
+           norvegicus]
+          Length = 580
+
+ Score =  144 bits (364), Expect = 5e-34,   Method: Composition-based stats.
+ Identities = 72/76 (94%), Positives = 74/76 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 381 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 440
+
+Query: 62  KNIGKFQEEANIYAAK 77
+           KNIGKFQEEAN+YAAK
+Sbjct: 441 KNIGKFQEEANLYAAK 456
+
+
+>gi|15149472|ref|NP_079521.1| pre-B-cell leukemia transcription
+           factor 4 [Homo sapiens]
+          Length = 374
+
+ Score =  144 bits (364), Expect = 5e-34,   Method: Composition-based stats.
+ Identities = 68/79 (86%), Positives = 75/79 (94%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHL+NPYPSEEAKEELA+K G+T+SQVSNWFGNKRIRYK
+Sbjct: 210 ARRKRRNFSKQATEVLNEYFYSHLNNPYPSEEAKEELARKGGLTISQVSNWFGNKRIRYK 269
+
+Query: 62  KNIGKFQEEANIYAAKTAV 80
+           KN+GKFQEEA IY  KTAV
+Sbjct: 270 KNMGKFQEEATIYTGKTAV 288
+
+
+>gi|61845502|ref|XP_586515.1| PREDICTED: similar to Pbx1 protein,
+           partial [Bos taurus]
+          Length = 185
+
+ Score =  144 bits (364), Expect = 5e-34,   Method: Composition-based stats.
+ Identities = 80/81 (98%), Positives = 80/81 (98%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 85  ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 144
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 145 KNIGKFQEEANIYAAKTAVTA 165
+
+
+>gi|7160798|emb|CAB76457.1| pbxy homeodomain protein [Danio rerio]
+ pre-B-cell leukemia transcription factor y [Danio rerio]
+          Length = 403
+
+ Score =  144 bits (364), Expect = 6e-34,   Method: Composition-based stats.
+ Identities = 71/81 (87%), Positives = 77/81 (95%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAK+  ITVSQVSNWFGNKRIRYK
+Sbjct: 252 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKQCSITVSQVSNWFGNKRIRYK 311
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGK+QEEAN+YA KTA+ A
+Sbjct: 312 KNIGKYQEEANLYAMKTALGA 332
+
+
+>gi|7160794|emb|CAB76455.1| Pbx1b homeodomain protein [Danio rerio]
+ pre-B-cell leukemia transcription factor 1a isoform 2 [Danio rerio]
+          Length = 346
+
+ Score =  144 bits (364), Expect = 6e-34,   Method: Composition-based stats.
+ Identities = 75/81 (92%), Positives = 77/81 (95%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 232 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 291
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEAN+YAA+TA  A
+Sbjct: 292 KNIGKFQEEANMYAARTAANA 312
+
+
+>gi|57162414|emb|CAI40243.1| pre-B-cell leukemia transcription
+           factor 3 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 3 [Homo sapiens]
+ homeobox protein [Homo sapiens]
+ pre-B-cell leukemia transcription factor 3 [Homo sapiens]
+ Pre-B-cell leukemia transcription factor-3 (Homeobox protein PBX3)
+ Pre-B-cell leukemia transcription factor 3 [Homo sapiens]
+          Length = 434
+
+ Score =  144 bits (363), Expect = 6e-34,   Method: Composition-based stats.
+ Identities = 72/76 (94%), Positives = 74/76 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 235 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 294
+
+Query: 62  KNIGKFQEEANIYAAK 77
+           KNIGKFQEEAN+YAAK
+Sbjct: 295 KNIGKFQEEANLYAAK 310
+
+
+>gi|53129737|emb|CAG31410.1| hypothetical protein [Gallus gallus]
+          Length = 433
+
+ Score =  144 bits (363), Expect = 6e-34,   Method: Composition-based stats.
+ Identities = 72/76 (94%), Positives = 74/76 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 234 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 293
+
+Query: 62  KNIGKFQEEANIYAAK 77
+           KNIGKFQEEAN+YAAK
+Sbjct: 294 KNIGKFQEEANLYAAK 309
+
+
+>gi|37046738|gb|AAH57879.1| Pre B-cell leukemia transcription factor
+           3 [Mus musculus]
+ Pre-B-cell leukemia transcription factor-3 (Homeobox protein PBX3)
+ pre B-cell leukemia transcription factor 3 [Mus musculus]
+ PBX3a [Mus musculus]
+          Length = 434
+
+ Score =  144 bits (363), Expect = 7e-34,   Method: Composition-based stats.
+ Identities = 72/76 (94%), Positives = 74/76 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 235 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 294
+
+Query: 62  KNIGKFQEEANIYAAK 77
+           KNIGKFQEEAN+YAAK
+Sbjct: 295 KNIGKFQEEANLYAAK 310
+
+
+>gi|31228972|ref|XP_318146.1| ENSANGP00000020686 [Anopheles gambiae
+           str. PEST]
+ ENSANGP00000020686 [Anopheles gambiae str. PEST]
+          Length = 375
+
+ Score =  144 bits (362), Expect = 9e-34,   Method: Composition-based stats.
+ Identities = 72/81 (88%), Positives = 76/81 (93%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQA+EILNEYFYSHLSNPYPSEEAKEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 239 ARRKRRNFSKQASEILNEYFYSHLSNPYPSEEAKEELARKCGITVSQVSNWFGNKRIRYK 298
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGK QEEAN+YAAK A  A
+Sbjct: 299 KNIGKAQEEANLYAAKKAAGA 319
+
+
+>gi|12697318|emb|CAC28212.1| PBX4 protein [Homo sapiens]
+ Pre-B-cell leukemia transcription factor-4 (Homeobox protein PBX4)
+          Length = 330
+
+ Score =  144 bits (362), Expect = 1e-33,   Method: Composition-based stats.
+ Identities = 68/79 (86%), Positives = 75/79 (94%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHL+NPYPSEEAKEELA+K G+T+SQVSNWFGNKRIRYK
+Sbjct: 166 ARRKRRNFSKQATEVLNEYFYSHLNNPYPSEEAKEELARKGGLTISQVSNWFGNKRIRYK 225
+
+Query: 62  KNIGKFQEEANIYAAKTAV 80
+           KN+GKFQEEA IY  KTAV
+Sbjct: 226 KNMGKFQEEATIYTGKTAV 244
+
+
+>gi|61855540|ref|XP_584966.1| PREDICTED: similar to pre-B-cell
+           leukemia transcription factor 2, partial [Bos taurus]
+          Length = 253
+
+ Score =  143 bits (361), Expect = 1e-33,   Method: Composition-based stats.
+ Identities = 75/80 (93%), Positives = 78/80 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 148 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 207
+
+Query: 62  KNIGKFQEEANIYAAKTAVT 81
+           KNIGKFQEEANIYA KTAV+
+Sbjct: 208 KNIGKFQEEANIYAVKTAVS 227
+
+
+>gi|47207681|emb|CAF91499.1| unnamed protein product [Tetraodon
+           nigroviridis]
+          Length = 382
+
+ Score =  143 bits (361), Expect = 1e-33,   Method: Composition-based stats.
+ Identities = 71/81 (87%), Positives = 76/81 (93%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELAK+  ITVSQVSNWFGNKRIRYK
+Sbjct: 231 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELAKQCAITVSQVSNWFGNKRIRYK 290
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNI KFQEEAN+YA KTA+ A
+Sbjct: 291 KNISKFQEEANLYAMKTALGA 311
+
+
+>gi|12805535|gb|AAH02244.1| Pbx1 protein [Mus musculus]
+          Length = 242
+
+ Score =  143 bits (361), Expect = 1e-33,   Method: Composition-based stats.
+ Identities = 80/81 (98%), Positives = 80/81 (98%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 128 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 187
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGKFQEEANIYAAKTAVTA
+Sbjct: 188 KNIGKFQEEANIYAAKTAVTA 208
+
+
+>gi|2432017|gb|AAB71195.1| PBX3b [Mus musculus]
+          Length = 351
+
+ Score =  143 bits (360), Expect = 2e-33,   Method: Composition-based stats.
+ Identities = 72/76 (94%), Positives = 74/76 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 235 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 294
+
+Query: 62  KNIGKFQEEANIYAAK 77
+           KNIGKFQEEAN+YAAK
+Sbjct: 295 KNIGKFQEEANLYAAK 310
+
+
+>gi|57092097|ref|XP_537844.1| PREDICTED: similar to PBX3 protein
+           [Canis familiaris]
+          Length = 553
+
+ Score =  142 bits (359), Expect = 2e-33,   Method: Composition-based stats.
+ Identities = 70/74 (94%), Positives = 72/74 (97%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKKN 63
+           RKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYKKN
+Sbjct: 363 RKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYKKN 422
+
+Query: 64  IGKFQEEANIYAAK 77
+           IGKFQEEAN+YAAK
+Sbjct: 423 IGKFQEEANLYAAK 436
+
+
+>gi|38490438|emb|CAD57737.1| extradenticle 1 [Cupiennius salei]
+          Length = 453
+
+ Score =  141 bits (356), Expect = 5e-33,   Method: Composition-based stats.
+ Identities = 72/78 (92%), Positives = 75/78 (96%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 246 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELARKCGITVSQVSNWFGNKRIRYK 305
+
+Query: 62  KNIGKFQEEANIYAAKTA 79
+           KNIGK QEEAN+YAAK A
+Sbjct: 306 KNIGKAQEEANLYAAKKA 323
+
+
+>gi|38490440|emb|CAD57738.1| extradenticle 2 [Cupiennius salei]
+          Length = 329
+
+ Score =  141 bits (355), Expect = 5e-33,   Method: Composition-based stats.
+ Identities = 72/78 (92%), Positives = 75/78 (96%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 242 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELARKCGITVSQVSNWFGNKRIRYK 301
+
+Query: 62  KNIGKFQEEANIYAAKTA 79
+           KNIGK QEEAN+YAAK A
+Sbjct: 302 KNIGKAQEEANLYAAKKA 319
+
+
+>gi|24642379|ref|NP_727924.1| CG8933-PC, isoform C [Drosophila
+           melanogaster]
+ CG8933-PB, isoform B [Drosophila melanogaster]
+ CG8933-PA, isoform A [Drosophila melanogaster]
+ CG8933-PC, isoform C [Drosophila melanogaster]
+ CG8933-PB, isoform B [Drosophila melanogaster]
+ CG8933-PA, isoform A [Drosophila melanogaster]
+ LD03509p [Drosophila melanogaster]
+ Homeobox protein extradenticle
+ extradenticle
+ extradenticle
+          Length = 376
+
+ Score =  141 bits (355), Expect = 7e-33,   Method: Composition-based stats.
+ Identities = 72/81 (88%), Positives = 76/81 (93%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQA+EILNEYFYSHLSNPYPSEEAKEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 238 ARRKRRNFSKQASEILNEYFYSHLSNPYPSEEAKEELARKCGITVSQVSNWFGNKRIRYK 297
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGK QEEAN+YAAK A  A
+Sbjct: 298 KNIGKAQEEANLYAAKKAAGA 318
+
+
+>gi|38490515|emb|CAD57734.1| extradenticle [Tribolium castaneum]
+          Length = 361
+
+ Score =  140 bits (354), Expect = 7e-33,   Method: Composition-based stats.
+ Identities = 72/81 (88%), Positives = 76/81 (93%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQA+EILNEYFYSHLSNPYPSEEAKEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 230 ARRKRRNFSKQASEILNEYFYSHLSNPYPSEEAKEELARKCGITVSQVSNWFGNKRIRYK 289
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGK QEEAN+YAAK A  A
+Sbjct: 290 KNIGKAQEEANLYAAKKAAGA 310
+
+
+>gi|45709954|gb|AAH67737.1| Unknown (protein for IMAGE:5298595)
+           [Homo sapiens]
+          Length = 444
+
+ Score =  140 bits (354), Expect = 7e-33,   Method: Composition-based stats.
+ Identities = 70/80 (87%), Positives = 76/80 (95%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF++QATE+LNE+FYSHLSNPYPSEEAKEELAKK GITVSQVSN FGNK+IRYK
+Sbjct: 258 ARRKRRNFSRQATEVLNEFFYSHLSNPYPSEEAKEELAKKCGITVSQVSNRFGNKKIRYK 317
+
+Query: 62  KNIGKFQEEANIYAAKTAVT 81
+           KNIGKFQEEANIYA KT V+
+Sbjct: 318 KNIGKFQEEANIYAVKTGVS 337
+
+
+>gi|54640619|gb|EAL29404.1| GA21419-PA [Drosophila pseudoobscura]
+          Length = 376
+
+ Score =  140 bits (353), Expect = 1e-32,   Method: Composition-based stats.
+ Identities = 72/81 (88%), Positives = 76/81 (93%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQA+EILNEYFYSHLSNPYPSEEAKEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 238 ARRKRRNFSKQASEILNEYFYSHLSNPYPSEEAKEELARKCGITVSQVSNWFGNKRIRYK 297
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGK QEEAN+YAAK A  A
+Sbjct: 298 KNIGKAQEEANLYAAKKAAGA 318
+
+
+>gi|62662468|ref|XP_341419.2| PREDICTED: similar to Pre-B-cell
+           leukemia transcription factor-4 (Homeobox protein PBX4)
+           [Rattus norvegicus]
+          Length = 379
+
+ Score =  140 bits (352), Expect = 1e-32,   Method: Composition-based stats.
+ Identities = 67/78 (85%), Positives = 72/78 (92%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEE KEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 216 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEETKEELARKGGITVSQVSNWFGNKRIRYK 275
+
+Query: 62  KNIGKFQEEANIYAAKTA 79
+           KN GKFQEEA +Y  KT+
+Sbjct: 276 KNTGKFQEEATMYTGKTS 293
+
+
+>gi|66513785|ref|XP_392297.2| PREDICTED: similar to
+           ENSANGP00000020686 [Apis mellifera]
+          Length = 399
+
+ Score =  139 bits (351), Expect = 2e-32,   Method: Composition-based stats.
+ Identities = 72/81 (88%), Positives = 76/81 (93%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQA+EILNEYFYSHLSNPYPSEEAKEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 251 ARRKRRNFSKQASEILNEYFYSHLSNPYPSEEAKEELARKCGITVSQVSNWFGNKRIRYK 310
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGK QEEAN+YAAK A  A
+Sbjct: 311 KNIGKAQEEANLYAAKKAAGA 331
+
+
+>gi|7858|emb|CAA79313.1| Dpbx [Drosophila melanogaster]
+          Length = 365
+
+ Score =  139 bits (351), Expect = 2e-32,   Method: Composition-based stats.
+ Identities = 72/81 (88%), Positives = 76/81 (93%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQA+EILNEYFYSHLSNPYPSEEAKEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 238 ARRKRRNFSKQASEILNEYFYSHLSNPYPSEEAKEELARKCGITVSQVSNWFGNKRIRYK 297
+
+Query: 62  KNIGKFQEEANIYAAKTAVTA 82
+           KNIGK QEEAN+YAAK A  A
+Sbjct: 298 KNIGKAQEEANLYAAKKAAGA 318
+
+
+>gi|7160796|emb|CAB76456.1| Pbx3b homeodomain protein [Danio rerio]
+ pre-B-cell leukemia transcription factor 3b [Danio rerio]
+          Length = 350
+
+ Score =  139 bits (350), Expect = 2e-32,   Method: Composition-based stats.
+ Identities = 69/73 (94%), Positives = 71/73 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 234 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 293
+
+Query: 62  KNIGKFQEEANIY 74
+           KNIGKFQEEAN+Y
+Sbjct: 294 KNIGKFQEEANLY 306
+
+
+>gi|50757101|ref|XP_415379.1| PREDICTED: similar to pre-B-cell
+           leukemia transcription factor 3 [Gallus gallus]
+          Length = 373
+
+ Score =  139 bits (350), Expect = 2e-32,   Method: Composition-based stats.
+ Identities = 72/76 (94%), Positives = 74/76 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 174 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 233
+
+Query: 62  KNIGKFQEEANIYAAK 77
+           KNIGKFQEEAN+YAAK
+Sbjct: 234 KNIGKFQEEANLYAAK 249
+
+
+>gi|55632323|ref|XP_520261.1| PREDICTED: similar to PBX3b [Pan
+           troglodytes]
+          Length = 457
+
+ Score =  139 bits (350), Expect = 2e-32,   Method: Composition-based stats.
+ Identities = 72/76 (94%), Positives = 74/76 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 341 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 400
+
+Query: 62  KNIGKFQEEANIYAAK 77
+           KNIGKFQEEAN+YAAK
+Sbjct: 401 KNIGKFQEEANLYAAK 416
+
+
+>gi|15824803|gb|AAL09477.1| pre-B-cell leukemia transcription factor
+           3C [Homo sapiens]
+          Length = 253
+
+ Score =  136 bits (343), Expect = 1e-31,   Method: Composition-based stats.
+ Identities = 72/76 (94%), Positives = 74/76 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 54  ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 113
+
+Query: 62  KNIGKFQEEANIYAAK 77
+           KNIGKFQEEAN+YAAK
+Sbjct: 114 KNIGKFQEEANLYAAK 129
+
+
+>gi|37999763|sp|Q99NE9|PBX4_MOUSE Pre-B-cell leukemia transcription
+           factor-4 (Homeobox protein PBX4)
+          Length = 378
+
+ Score =  136 bits (343), Expect = 1e-31,   Method: Composition-based stats.
+ Identities = 65/78 (83%), Positives = 71/78 (91%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQAT++LNEYFYSHLSNPYPSEE KEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 215 ARRKRRNFSKQATDVLNEYFYSHLSNPYPSEETKEELARKGGITVSQVSNWFGNKRIRYK 274
+
+Query: 62  KNIGKFQEEANIYAAKTA 79
+           KN GKFQEEA +Y  K +
+Sbjct: 275 KNTGKFQEEATMYTGKAS 292
+
+
+>gi|57162416|emb|CAI40245.1| pre-B-cell leukemia transcription
+           factor 3 [Homo sapiens]
+          Length = 253
+
+ Score =  135 bits (341), Expect = 3e-31,   Method: Composition-based stats.
+ Identities = 72/76 (94%), Positives = 74/76 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 54  ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 113
+
+Query: 62  KNIGKFQEEANIYAAK 77
+           KNIGKFQEEAN+YAAK
+Sbjct: 114 KNIGKFQEEANLYAAK 129
+
+
+>gi|56752547|gb|AAW24487.1| unknown [Schistosoma japonicum]
+          Length = 414
+
+ Score =  134 bits (336), Expect = 1e-30,   Method: Composition-based stats.
+ Identities = 65/73 (89%), Positives = 70/73 (95%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+K+ATE+LNEYFYSHL+NPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 259 ARRKRRNFSKEATEVLNEYFYSHLANPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 318
+
+Query: 62  KNIGKFQEEANIY 74
+           KNI K QEEAN+Y
+Sbjct: 319 KNIVKAQEEANMY 331
+
+
+>gi|56694842|gb|AAW23083.1| Pbx [Oikopleura dioica]
+          Length = 275
+
+ Score =  133 bits (334), Expect = 1e-30,   Method: Composition-based stats.
+ Identities = 72/78 (92%), Positives = 76/78 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 177 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELARKCGITVSQVSNWFGNKRIRYK 236
+
+Query: 62  KNIGKFQEEANIYAAKTA 79
+           KNIGKFQEEAN+YAAK A
+Sbjct: 237 KNIGKFQEEANLYAAKNA 254
+
+
+>gi|57162413|emb|CAI40242.1| pre-B-cell leukemia transcription
+           factor 3 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 3 [Homo sapiens]
+          Length = 455
+
+ Score =  132 bits (332), Expect = 3e-30,   Method: Composition-based stats.
+ Identities = 72/97 (74%), Positives = 74/97 (76%), Gaps = 21/97 (21%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQ------------- 48
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQ             
+Sbjct: 235 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQSLVKDPKERGSKG 294
+
+Query: 49  --------VSNWFGNKRIRYKKNIGKFQEEANIYAAK 77
+                   VSNWFGNKRIRYKKNIGKFQEEAN+YAAK
+Sbjct: 295 SDIQPTSVVSNWFGNKRIRYKKNIGKFQEEANLYAAK 331
+
+
+>gi|23273080|gb|AAH32875.1| Pbx4 protein [Mus musculus]
+          Length = 200
+
+ Score =  132 bits (331), Expect = 4e-30,   Method: Composition-based stats.
+ Identities = 65/78 (83%), Positives = 71/78 (91%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQAT++LNEYFYSHLSNPYPSEE KEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 37  ARRKRRNFSKQATDVLNEYFYSHLSNPYPSEETKEELARKGGITVSQVSNWFGNKRIRYK 96
+
+Query: 62  KNIGKFQEEANIYAAKTA 79
+           KN GKFQEEA +Y  K +
+Sbjct: 97  KNTGKFQEEATMYTGKAS 114
+
+
+>gi|47213085|emb|CAF92220.1| unnamed protein product [Tetraodon
+           nigroviridis]
+          Length = 292
+
+ Score =  131 bits (329), Expect = 5e-30,   Method: Composition-based stats.
+ Identities = 74/87 (85%), Positives = 76/87 (87%), Gaps = 10/87 (11%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK----------SGITVSQVSN 51
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK          S ITVSQVSN
+Sbjct: 144 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQGVGSTITVSQVSN 203
+
+Query: 52  WFGNKRIRYKKNIGKFQEEANIYAAKT 78
+           WFGNKRIRYKKNIGKFQEEAN+YAAKT
+Sbjct: 204 WFGNKRIRYKKNIGKFQEEANLYAAKT 230
+
+
+>gi|39593950|emb|CAE70060.1| Hypothetical protein CBG16494
+           [Caenorhabditis briggsae]
+          Length = 338
+
+ Score =  130 bits (326), Expect = 1e-29,   Method: Composition-based stats.
+ Identities = 63/76 (82%), Positives = 71/76 (93%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFY HLSNPYPSEEAKE+LA++  ITVSQVSNWFGNKRIRYK
+Sbjct: 188 ARRKRRNFSKQATEVLNEYFYGHLSNPYPSEEAKEDLARQCNITVSQVSNWFGNKRIRYK 247
+
+Query: 62  KNIGKFQEEANIYAAK 77
+           KN+ K QEEA++YAAK
+Sbjct: 248 KNMAKAQEEASLYAAK 263
+
+
+>gi|44681645|gb|AAA81691.3| C.elegans homeobox protein 20
+           [Caenorhabditis elegans]
+ Homeobox protein ceh-20
+ Ceh-20
+ C.Elegans Homeobox, complex locus, required for postembryonic
+           mesoderm diversification; encodes a set of cAMP
+           dependent protein kinase C catalytic subunits, some of
+           which also contain the PBX atypical homeodomain (found
+           in Drosophila extradenticle and posterior bithorax genes
+           and acting as a transcription factor), as well as forms
+           containing the PBX homeobox but no kinase (38.2 kD)
+           (ceh-20C) [Caenorhabditis elegans]
+          Length = 338
+
+ Score =  129 bits (324), Expect = 3e-29,   Method: Composition-based stats.
+ Identities = 63/76 (82%), Positives = 71/76 (93%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFY HLSNPYPSEEAKE+LA++  ITVSQVSNWFGNKRIRYK
+Sbjct: 188 ARRKRRNFSKQATEVLNEYFYGHLSNPYPSEEAKEDLARQCNITVSQVSNWFGNKRIRYK 247
+
+Query: 62  KNIGKFQEEANIYAAK 77
+           KN+ K QEEA++YAAK
+Sbjct: 248 KNMAKAQEEASMYAAK 263
+
+
+>gi|12697320|emb|CAC28213.1| Pbx4 protein [Mus musculus]
+          Length = 273
+
+ Score =  129 bits (324), Expect = 3e-29,   Method: Composition-based stats.
+ Identities = 65/78 (83%), Positives = 71/78 (91%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQAT++LNEYFYSHLSNPYPSEE KEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 192 ARRKRRNFSKQATDVLNEYFYSHLSNPYPSEETKEELARKGGITVSQVSNWFGNKRIRYK 251
+
+Query: 62  KNIGKFQEEANIYAAKTA 79
+           KN GKFQEEA +Y  K +
+Sbjct: 252 KNTGKFQEEATMYTGKAS 269
+
+
+>gi|57162415|emb|CAI40244.1| pre-B-cell leukemia transcription
+           factor 3 [Homo sapiens]
+ pre-B-cell leukemia transcription factor 3D [Homo sapiens]
+          Length = 170
+
+ Score =  128 bits (322), Expect = 4e-29,   Method: Composition-based stats.
+ Identities = 72/76 (94%), Positives = 74/76 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQVSNWFGNKRIRYK
+Sbjct: 54  ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQVSNWFGNKRIRYK 113
+
+Query: 62  KNIGKFQEEANIYAAK 77
+           KNIGKFQEEAN+YAAK
+Sbjct: 114 KNIGKFQEEANLYAAK 129
+
+
+>gi|28373541|pdb|1LFU|P Chain P, Nmr Solution Stucture Of The
+          Extended Pbx Homeodomain Bound To Dna
+          Length = 82
+
+ Score =  127 bits (319), Expect = 1e-28,   Method: Composition-based stats.
+ Identities = 82/82 (100%), Positives = 82/82 (100%)
+
+Query: 1  MARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRY 60
+          MARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRY
+Sbjct: 1  MARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRY 60
+
+Query: 61 KKNIGKFQEEANIYAAKTAVTA 82
+          KKNIGKFQEEANIYAAKTAVTA
+Sbjct: 61 KKNIGKFQEEANIYAAKTAVTA 82
+
+
+>gi|20302758|gb|AAM18882.1| unknown [Branchiostoma floridae]
+          Length = 319
+
+ Score =  127 bits (318), Expect = 1e-28,   Method: Composition-based stats.
+ Identities = 66/73 (90%), Positives = 70/73 (95%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELA+K GITVSQVSNWFGNKRIR+K
+Sbjct: 148 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELARKCGITVSQVSNWFGNKRIRFK 207
+
+Query: 62  KNIGKFQEEANIY 74
+           KNIGK QEEAN Y
+Sbjct: 208 KNIGKAQEEANQY 220
+
+
+>gi|4558070|pdb|1B72|B Chain B, Pbx1, Homeobox Protein Hox-B1DNA
+          TERNARY COMPLEX
+          Length = 87
+
+ Score =  127 bits (318), Expect = 1e-28,   Method: Composition-based stats.
+ Identities = 80/81 (98%), Positives = 80/81 (98%)
+
+Query: 2  ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+          ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 1  ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 60
+
+Query: 62 KNIGKFQEEANIYAAKTAVTA 82
+          KNIGKFQEEANIYAAKTAVTA
+Sbjct: 61 KNIGKFQEEANIYAAKTAVTA 81
+
+
+>gi|57101702|ref|XP_541919.1| PREDICTED: similar to pre-B-cell
+           leukemia transcription factor 4 [Canis familiaris]
+          Length = 369
+
+ Score =  126 bits (316), Expect = 2e-28,   Method: Composition-based stats.
+ Identities = 70/107 (65%), Positives = 74/107 (69%), Gaps = 28/107 (26%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQ------------- 48
+           ARRKRRNF+KQATE+LNEYFYSHLSNPYPSEEAKEELA+K GITVSQ             
+Sbjct: 177 ARRKRRNFSKQATEVLNEYFYSHLSNPYPSEEAKEELARKGGITVSQEEEQCSSFHMSDI 236
+
+Query: 49  ---------------VSNWFGNKRIRYKKNIGKFQEEANIYAAKTAV 80
+                          VSNWFGNKRIRYKKN+GKFQEEA IY  K AV
+Sbjct: 237 LFPSSSFPSLFQQHVVSNWFGNKRIRYKKNMGKFQEEATIYTTKMAV 283
+
+
+>gi|16974777|gb|AAL32465.1| transcription factor Pbx3.2 [Danio
+           rerio]
+          Length = 238
+
+ Score =  125 bits (315), Expect = 2e-28,   Method: Composition-based stats.
+ Identities = 72/85 (84%), Positives = 74/85 (87%), Gaps = 10/85 (11%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK----------SGITVSQVSN 51
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK          S ITVSQVSN
+Sbjct: 154 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCAITVSQGKGSTITVSQVSN 213
+
+Query: 52  WFGNKRIRYKKNIGKFQEEANIYAA 76
+           WFGNKRIRYKKNIGKFQEEAN+YAA
+Sbjct: 214 WFGNKRIRYKKNIGKFQEEANMYAA 238
+
+
+>gi|48257122|gb|AAH16977.2| PBX3 protein [Homo sapiens]
+          Length = 367
+
+ Score =  125 bits (315), Expect = 2e-28,   Method: Composition-based stats.
+ Identities = 72/97 (74%), Positives = 74/97 (76%), Gaps = 21/97 (21%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQ------------- 48
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQ             
+Sbjct: 147 ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQSLVKDPKERGSKG 206
+
+Query: 49  --------VSNWFGNKRIRYKKNIGKFQEEANIYAAK 77
+                   VSNWFGNKRIRYKKNIGKFQEEAN+YAAK
+Sbjct: 207 SDIQPTSVVSNWFGNKRIRYKKNIGKFQEEANLYAAK 243
+
+
+>gi|34810087|pdb|1PUF|B Chain B, Crystal Structure Of Hoxa9 And
+          Pbx1 Homeodomains Bound To Dna
+          Length = 73
+
+ Score =  116 bits (290), Expect = 2e-25,   Method: Composition-based stats.
+ Identities = 72/73 (98%), Positives = 72/73 (98%)
+
+Query: 2  ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+          ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYK
+Sbjct: 1  ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYK 60
+
+Query: 62 KNIGKFQEEANIY 74
+          KNIGKFQEEANIY
+Sbjct: 61 KNIGKFQEEANIY 73
+
+
+>gi|33115076|gb|AAP95005.1| homeobox PBX2 [Tupaia belangeri]
+ homeobox PBX2 [Cynocephalus variegatus]
+ homeobox PBX2 [Lemur catta]
+ homeobox PBX2 [Tarsius syrichta]
+ homeobox PBX2 [Aotus azarai]
+ homeobox PBX2 [Macaca fascicularis]
+          Length = 59
+
+ Score = 99.0 bits (245), Expect = 3e-20,   Method: Composition-based stats.
+ Identities = 57/59 (96%), Positives = 58/59 (98%)
+
+Query: 13 ATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKKNIGKFQEEA 71
+          ATE+LNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYKKNIGKFQEEA
+Sbjct: 1  ATEVLNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYKKNIGKFQEEA 59
+
+
+>gi|4929896|pdb|1B8I|B Chain B, Structure Of The Homeotic
+          UbxEXDDNA TERNARY COMPLEX
+          Length = 63
+
+ Score = 98.2 bits (243), Expect = 6e-20,   Method: Composition-based stats.
+ Identities = 59/63 (93%), Positives = 62/63 (98%)
+
+Query: 2  ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+          ARRKRRNF+KQA+EILNEYFYSHLSNPYPSEEAKEELA+K GITVSQVSNWFGNKRIRYK
+Sbjct: 1  ARRKRRNFSKQASEILNEYFYSHLSNPYPSEEAKEELARKCGITVSQVSNWFGNKRIRYK 60
+
+Query: 62 KNI 64
+          KNI
+Sbjct: 61 KNI 63
+
+
+>gi|39583206|emb|CAE61424.1| Hypothetical protein CBG05292
+           [Caenorhabditis briggsae]
+          Length = 312
+
+ Score = 95.9 bits (237), Expect = 3e-19,   Method: Composition-based stats.
+ Identities = 45/78 (57%), Positives = 61/78 (78%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARR R+NF++Q+TEILN YF +H+++PYP+E+ KEELA++  I+V QVSNWFGNKRIRYK
+Sbjct: 184 ARRTRKNFSRQSTEILNNYFQAHITHPYPTEQEKEELARQCNISVGQVSNWFGNKRIRYK 243
+
+Query: 62  KNIGKFQEEANIYAAKTA 79
+           K + K + E    A + A
+Sbjct: 244 KMLSKEKSENERNAQRCA 261
+
+
+>gi|10120891|pdb|1DU6|A Chain A, Solution Structure Of The
+          Truncated Pbx Homeodomain
+          Length = 64
+
+ Score = 95.1 bits (235), Expect = 5e-19,   Method: Composition-based stats.
+ Identities = 54/57 (94%), Positives = 55/57 (96%)
+
+Query: 7  RNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKKN 63
+          R+ NKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQVSNWFGNKRIRYKKN
+Sbjct: 8  RHMNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQVSNWFGNKRIRYKKN 64
+
+
+>gi|61845091|ref|XP_597995.1| PREDICTED: similar to pre-B-cell
+           leukemia transcription factor 4, partial [Bos taurus]
+          Length = 277
+
+ Score = 93.6 bits (231), Expect = 2e-18,   Method: Composition-based stats.
+ Identities = 42/48 (87%), Positives = 47/48 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQV 49
+           ARRKR+NF+KQATE+LNEYFYSHLSNPYPSEEAKEELA++ GITVSQV
+Sbjct: 144 ARRKRQNFSKQATEVLNEYFYSHLSNPYPSEEAKEELARRGGITVSQV 191
+
+
+>gi|3876016|emb|CAA92154.1| Hypothetical protein F17A2.5
+           [Caenorhabditis elegans]
+ Homeobox protein ceh-40
+ C.Elegans Homeobox (ceh-40) [Caenorhabditis elegans]
+          Length = 329
+
+ Score = 90.9 bits (224), Expect = 8e-18,   Method: Composition-based stats.
+ Identities = 45/69 (65%), Positives = 59/69 (85%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           ARRKRRNF+K +TEILNEYF +++++PYPSEE K+ LA +  I+V+QVSNWFGNKRIRYK
+Sbjct: 187 ARRKRRNFSKTSTEILNEYFLANINHPYPSEEVKQALAMQCNISVAQVSNWFGNKRIRYK 246
+
+Query: 62  KNIGKFQEE 70
+           K + K ++E
+Sbjct: 247 KTMAKNEDE 255
+
+
+>gi|61813769|ref|XP_616126.1| PREDICTED: similar to Pre-B-cell
+           leukemia transcription factor-3 (Homeobox protein PBX3),
+           partial [Bos taurus]
+          Length = 400
+
+ Score = 89.7 bits (221), Expect = 2e-17,   Method: Composition-based stats.
+ Identities = 47/62 (75%), Positives = 50/62 (80%), Gaps = 6/62 (9%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQ------VSNWFGN 55
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQ         +FG 
+Sbjct: 84  ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQRTSLERTETYFGE 143
+
+Query: 56  KR 57
+           +R
+Sbjct: 144 RR 145
+
+
+
+ Score = 61.2 bits (147), Expect = 7e-09,   Method: Composition-based stats.
+ Identities = 29/35 (82%), Positives = 31/35 (88%)
+
+Query: 43  GITVSQVSNWFGNKRIRYKKNIGKFQEEANIYAAK 77
+           G   + VSNWFGNKRIRYKKNIGKFQEEAN+YAAK
+Sbjct: 272 GRMSTMVSNWFGNKRIRYKKNIGKFQEEANLYAAK 306
+
+
+>gi|50788332|ref|XP_423525.1| PREDICTED: similar to Pbx1 protein,
+           partial [Gallus gallus]
+          Length = 224
+
+ Score = 85.1 bits (209), Expect = 4e-16,   Method: Composition-based stats.
+ Identities = 46/47 (97%), Positives = 46/47 (97%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQ 48
+           ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKK GITVSQ
+Sbjct: 178 ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKCGITVSQ 224
+
+
+>gi|61828103|ref|XP_607077.1| PREDICTED: similar to Pre-B-cell
+           leukemia transcription factor-3 (Homeobox protein PBX3),
+           partial [Bos taurus]
+          Length = 172
+
+ Score = 83.2 bits (204), Expect = 2e-15,   Method: Composition-based stats.
+ Identities = 47/62 (75%), Positives = 50/62 (80%), Gaps = 6/62 (9%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQ------VSNWFGN 55
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPSEEAKEELAKK  ITVSQ         +FG 
+Sbjct: 84  ARRKRRNFSKQATEILNEYFYSHLSNPYPSEEAKEELAKKCSITVSQRTSLERTETYFGE 143
+
+Query: 56  KR 57
+           +R
+Sbjct: 144 RR 145
+
+
+>gi|62630053|gb|AAX88831.1| Hypothetical protein F22A3.5
+           [Caenorhabditis elegans]
+          Length = 272
+
+ Score = 77.8 bits (190), Expect = 8e-14,   Method: Composition-based stats.
+ Identities = 41/79 (51%), Positives = 54/79 (68%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKKN 63
+           RKRRNF+K  T+IL  +F+ H  NPYPS++ K ELAK+  I +SQV+NWFGN+RIR K+ 
+Sbjct: 141 RKRRNFDKNTTDILQNWFHDHRQNPYPSDQEKAELAKQCNIKISQVNNWFGNQRIRTKQQ 200
+
+Query: 64  IGKFQEEANIYAAKTAVTA 82
+             + QE+    AA  A  A
+Sbjct: 201 ALRMQEDERERAASMANEA 219
+
+
+>gi|39586707|emb|CAE65749.1| Hypothetical protein CBG10835
+           [Caenorhabditis briggsae]
+          Length = 378
+
+ Score = 76.3 bits (186), Expect = 2e-13,   Method: Composition-based stats.
+ Identities = 37/76 (48%), Positives = 51/76 (67%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKKN 63
+           RKRRNF+K  T+ L  +F+ H  NPYP+++ K ELAK+  I +SQV+NWFGN+RIR K+ 
+Sbjct: 182 RKRRNFDKNTTDTLQNWFHEHRQNPYPTDQEKAELAKQCNIKISQVNNWFGNQRIRSKQQ 241
+
+Query: 64  IGKFQEEANIYAAKTA 79
+             + +EE     A  A
+Sbjct: 242 ALRCEEEEKKRLAAVA 257
+
+
+>gi|40745696|gb|EAA64852.1| hypothetical protein AN2020.2
+           [Aspergillus nidulans FGSC A4]
+ hypothetical protein AN2020_2 [Aspergillus nidulans FGSC A4]
+ hypothetical protein AN2020.2 [Aspergillus nidulans FGSC A4]
+          Length = 280
+
+ Score = 70.5 bits (171), Expect = 1e-11,   Method: Composition-based stats.
+ Identities = 30/58 (51%), Positives = 43/58 (74%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRY 60
+           RR+R N  K  TEIL  +F++HL +PYPSEE K+ L  ++G+T++Q+SNWF N R R+
+Sbjct: 186 RRRRGNLPKPVTEILKAWFHAHLDHPYPSEEDKQMLMSRTGLTINQISNWFINARRRH 243
+
+
+>gi|46852187|gb|AAT02761.1| AhpA [Emericella nidulans]
+          Length = 293
+
+ Score = 70.1 bits (170), Expect = 2e-11,   Method: Composition-based stats.
+ Identities = 30/58 (51%), Positives = 43/58 (74%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRY 60
+           RR+R N  K  TEIL  +F++HL +PYPSEE K+ L  ++G+T++Q+SNWF N R R+
+Sbjct: 199 RRRRGNLPKPVTEILKAWFHAHLDHPYPSEEDKQMLMSRTGLTINQISNWFINARRRH 256
+
+
+>gi|4106792|gb|AAD02948.1| Meis3 homeoprotein [Xenopus laevis]
+          Length = 385
+
+ Score = 69.3 bits (168), Expect = 3e-11,   Method: Composition-based stats.
+ Identities = 30/56 (53%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           RKR  F K AT I+  + + HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 269 RKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 324
+
+
+>gi|57863279|ref|NP_001009813.1| Meis1, myeloid ecotropic viral
+           integration site 1 homolog 3 isoform 2 [Homo sapiens]
+ Meis1, myeloid ecotropic viral integration site 1 homolog 3,
+           isoform 2 [Homo sapiens]
+          Length = 358
+
+ Score = 68.2 bits (165), Expect = 7e-11,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 247 KKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 302
+
+
+>gi|59803105|sp|Q99687|MEIS3_HUMAN Homeobox protein Meis3
+           (Meis1-related protein 2)
+          Length = 375
+
+ Score = 68.2 bits (165), Expect = 7e-11,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 264 KKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 319
+
+
+>gi|62088490|dbj|BAD92692.1| Homeobox protein Meis3 variant [Homo
+           sapiens]
+          Length = 250
+
+ Score = 68.2 bits (165), Expect = 7e-11,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 139 KKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 194
+
+
+>gi|54673771|gb|AAH84920.1| Meis3 protein [Xenopus laevis]
+          Length = 453
+
+ Score = 68.2 bits (165), Expect = 7e-11,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 269 KKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 324
+
+
+>gi|51477057|emb|CAH18472.1| hypothetical protein [Homo sapiens]
+ hypothetical protein [Homo sapiens]
+          Length = 382
+
+ Score = 68.2 bits (165), Expect = 7e-11,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 271 KKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 326
+
+
+>gi|49523087|gb|AAH75589.1| Meis1, myeloid ecotropic viral
+           integration site 1 homolog [Xenopus tropicalis]
+ Meis1, myeloid ecotropic viral integration site 1 homolog [Xenopus
+           tropicalis]
+          Length = 453
+
+ Score = 68.2 bits (165), Expect = 7e-11,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 269 KKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 324
+
+
+>gi|27881708|gb|AAH44024.1| MGC52546 protein [Xenopus laevis]
+          Length = 451
+
+ Score = 68.2 bits (165), Expect = 7e-11,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 269 KKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 324
+
+
+>gi|6678936|ref|NP_032653.1| myeloid ecotropic viral integration
+           site-related gene 2 [Mus musculus]
+ Homeobox protein Meis3 (Meis1-related protein 2)
+ Meis3
+          Length = 378
+
+ Score = 67.8 bits (164), Expect = 8e-11,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 267 KKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 322
+
+
+>gi|57037761|ref|XP_541536.1| PREDICTED: similar to Homeobox protein
+           Meis3 (Meis1-related protein 2) [Canis familiaris]
+          Length = 446
+
+ Score = 67.8 bits (164), Expect = 9e-11,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 324 KKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 379
+
+
+>gi|62638964|ref|XP_341797.2| PREDICTED: similar to Meis3 [Rattus
+           norvegicus]
+          Length = 535
+
+ Score = 67.8 bits (164), Expect = 9e-11,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 424 KKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 479
+
+
+>gi|11877245|emb|CAC19011.1| meis2.1 protein [Danio rerio]
+ Myeloid ecotropic viral integration site 2.1 [Danio rerio]
+          Length = 393
+
+ Score = 67.4 bits (163), Expect = 1e-10,   Method: Composition-based stats.
+ Identities = 28/57 (49%), Positives = 42/57 (73%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++KR  F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 276 QKKRGIFPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 332
+
+
+>gi|38490426|emb|CAD57729.1| homothorax 2 [Cupiennius salei]
+          Length = 471
+
+ Score = 67.4 bits (163), Expect = 1e-10,   Method: Composition-based stats.
+ Identities = 28/57 (49%), Positives = 42/57 (73%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++KR  F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 306 QKKRGIFPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 362
+
+
+>gi|13277729|gb|AAH03762.1| Mrg2 protein [Mus musculus]
+          Length = 361
+
+ Score = 67.4 bits (163), Expect = 1e-10,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 250 KKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 305
+
+
+>gi|14861175|gb|AAK73546.1| homeobox transcription factor Meis3
+           [Danio rerio]
+ myeloid ecotropic viral integration site 3 [Danio rerio]
+          Length = 415
+
+ Score = 67.0 bits (162), Expect = 2e-10,   Method: Composition-based stats.
+ Identities = 28/56 (50%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HLS+PYPSEE K++L++ +G+T+ QV+NWF N R R
+Sbjct: 256 KKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLSQDTGLTILQVNNWFINARRR 311
+
+
+>gi|47207850|emb|CAF87244.1| unnamed protein product [Tetraodon
+           nigroviridis]
+          Length = 569
+
+ Score = 67.0 bits (162), Expect = 2e-10,   Method: Composition-based stats.
+ Identities = 30/62 (48%), Positives = 43/62 (69%), Gaps = 6/62 (9%)
+
+Query: 4   RKRRN------FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKR 57
+           R+RRN      F K AT IL  + + HL++PYPSEE K++L++ +G+T+ QV+NWF N R
+Sbjct: 399 RERRNNKKRGIFPKVATNILRAWLFQHLTHPYPSEEQKKQLSQDTGLTILQVNNWFINAR 458
+
+Query: 58  IR 59
+            R
+Sbjct: 459 RR 460
+
+
+>gi|2564942|gb|AAC47759.1| homothorax [Drosophila melanogaster]
+          Length = 458
+
+ Score = 66.6 bits (161), Expect = 2e-10,   Method: Composition-based stats.
+ Identities = 28/57 (49%), Positives = 42/57 (73%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++KR  F K AT IL  + + HL++PYPSE+ K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 337 QKKRGIFPKVATNILRAWLFQHLTHPYPSEDQKKQLAQDTGLTILQVNNWFINARRR 393
+
+
+>gi|23170916|gb|AAF54533.2| CG17117-PB, isoform B [Drosophila
+           melanogaster]
+ CG17117-PB, isoform B [Drosophila melanogaster]
+          Length = 471
+
+ Score = 66.6 bits (161), Expect = 2e-10,   Method: Composition-based stats.
+ Identities = 28/57 (49%), Positives = 42/57 (73%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++KR  F K AT IL  + + HL++PYPSE+ K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 350 QKKRGIFPKVATNILRAWLFQHLTHPYPSEDQKKQLAQDTGLTILQVNNWFINARRR 406
+
+
+>gi|61679324|gb|AAX52943.1| CG17117-PE, isoform E [Drosophila
+           melanogaster]
+ CG17117-PE, isoform E [Drosophila melanogaster]
+ homothorax homeoprotein [Drosophila melanogaster]
+          Length = 472
+
+ Score = 66.6 bits (161), Expect = 2e-10,   Method: Composition-based stats.
+ Identities = 28/57 (49%), Positives = 42/57 (73%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++KR  F K AT IL  + + HL++PYPSE+ K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 351 QKKRGIFPKVATNILRAWLFQHLTHPYPSEDQKKQLAQDTGLTILQVNNWFINARRR 407
+
+
+>gi|23170917|gb|AAN13474.1| CG17117-PC, isoform C [Drosophila
+           melanogaster]
+ CG17117-PC, isoform C [Drosophila melanogaster]
+ dorsotonals [Drosophila melanogaster]
+ homothorax [Drosophila melanogaster]
+          Length = 487
+
+ Score = 66.6 bits (161), Expect = 2e-10,   Method: Composition-based stats.
+ Identities = 28/57 (49%), Positives = 42/57 (73%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++KR  F K AT IL  + + HL++PYPSE+ K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 366 QKKRGIFPKVATNILRAWLFQHLTHPYPSEDQKKQLAQDTGLTILQVNNWFINARRR 422
+
+
+>gi|23170918|gb|AAN13475.1| CG17117-PA, isoform A [Drosophila
+           melanogaster]
+ CG17117-PA, isoform A [Drosophila melanogaster]
+          Length = 457
+
+ Score = 66.6 bits (161), Expect = 2e-10,   Method: Composition-based stats.
+ Identities = 28/57 (49%), Positives = 42/57 (73%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++KR  F K AT IL  + + HL++PYPSE+ K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 336 QKKRGIFPKVATNILRAWLFQHLTHPYPSEDQKKQLAQDTGLTILQVNNWFINARRR 392
+
+
+>gi|38490517|emb|CAD57735.1| homothorax [Tribolium castaneum]
+          Length = 456
+
+ Score = 66.6 bits (161), Expect = 2e-10,   Method: Composition-based stats.
+ Identities = 28/57 (49%), Positives = 42/57 (73%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++KR  F K AT IL  + + HL++PYPSE+ K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 335 QKKRGIFPKVATNILRAWLFQHLTHPYPSEDQKKQLAQDTGLTILQVNNWFINARRR 391
+
+
+>gi|38174542|gb|AAH60891.1| Myeloid ecotropic viral integration 1
+           [Danio rerio]
+ transcription factor Meis1.1 [Danio rerio]
+ myeloid ecotropic viral integration 1 [Danio rerio]
+          Length = 388
+
+ Score = 66.2 bits (160), Expect = 2e-10,   Method: Composition-based stats.
+ Identities = 28/56 (50%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 272 KKRGIFPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 327
+
+
+>gi|1679674|gb|AAB19195.1| Meis1-related protein 2 [Homo sapiens]
+          Length = 209
+
+ Score = 66.2 bits (160), Expect = 3e-10,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 41/56 (73%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 97  KKRGIFPKVATNIMRAWLFQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 152
+
+
+>gi|38490442|emb|CAD57739.1| homothorax 1 [Cupiennius salei]
+          Length = 505
+
+ Score = 65.9 bits (159), Expect = 3e-10,   Method: Composition-based stats.
+ Identities = 27/57 (47%), Positives = 42/57 (73%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++KR  F K AT I+  + + HL++PYPSE+ K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 329 QKKRGIFPKVATNIMRAWLFQHLTHPYPSEDQKKQLAQDTGLTILQVNNWFINARRR 385
+
+
+>gi|66849449|gb|EAL89777.1| homeobox transcription factor, putative
+           [Aspergillus fumigatus Af293]
+          Length = 274
+
+ Score = 65.9 bits (159), Expect = 3e-10,   Method: Composition-based stats.
+ Identities = 28/57 (49%), Positives = 40/57 (70%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +R+R N  K  T+IL  +F+ HL +PYPSEE K+    ++G+T+SQ+SNWF N R R
+Sbjct: 174 KRRRGNLPKPVTDILRAWFHEHLDHPYPSEEDKQMFMTRTGLTISQISNWFINARRR 230
+
+
+>gi|33604041|gb|AAH56317.1| Myeloid ecotropic viral integration site
+           4.1a [Danio rerio]
+ myeloid ecotropic viral integration site 4.1a [Danio rerio]
+          Length = 380
+
+ Score = 65.5 bits (158), Expect = 4e-10,   Method: Composition-based stats.
+ Identities = 27/56 (48%), Positives = 40/56 (71%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HL++PYPSEE K +L++ +G+T+ QV+NWF N R R
+Sbjct: 263 KKRGIFPKVATNIMRAWLFQHLTHPYPSEEQKRQLSQDTGLTILQVNNWFINARRR 318
+
+
+>gi|20147189|gb|AAM09846.1| MEIS1-related protein 2 [Homo sapiens]
+          Length = 267
+
+ Score = 65.1 bits (157), Expect = 5e-10,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 40/56 (71%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  +   HLS+PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 156 KKRGIFPKVATNIMRAWLVQHLSHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 211
+
+
+>gi|6671101|gb|AAF23096.1| meis2 [Danio rerio]
+ myeloid ecotropic viral integration site 2.1 [Danio rerio]
+          Length = 393
+
+ Score = 65.1 bits (157), Expect = 5e-10,   Method: Composition-based stats.
+ Identities = 28/57 (49%), Positives = 41/57 (71%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++KR  F K AT I+  + + HL++PYPSEE K++LA+ +G+T  QV+NWF N R R
+Sbjct: 276 QKKRGIFPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTNLQVNNWFINARRR 332
+
+
+>gi|18182385|gb|AAL65144.1| UNC-62 splice variant 1b-7a
+           [Caenorhabditis elegans]
+ Uncoordinated protein 62, isoform e [Caenorhabditis elegans]
+ C.Elegans Homeobox, UNCoordinated locomotion UNC-62, LEThal
+           LET-328, kNOB-like posterior, NO Backside NOB-5 (56.2
+           kD) (unc-62) [Caenorhabditis elegans]
+          Length = 523
+
+ Score = 65.1 bits (157), Expect = 6e-10,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 42/56 (75%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           R R  F KQAT  L ++ + +L++PYPSEE K++LAK++G+T+ QV+NWF N R R
+Sbjct: 353 RGRGIFPKQATNRLRQWLFQNLTHPYPSEEQKKQLAKETGLTILQVNNWFINARRR 408
+
+
+>gi|1679676|gb|AAB19196.1| XMeis1-1 protein [Xenopus laevis]
+ Homeobox protein Meis1 (XMeis1)
+          Length = 390
+
+ Score = 64.7 bits (156), Expect = 7e-10,   Method: Composition-based stats.
+ Identities = 29/58 (50%), Positives = 41/58 (70%), Gaps = 1/58 (1%)
+
+Query: 3   RRKRRN-FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           R K R  F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 272 RNKGRGIFPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 329
+
+
+>gi|18182381|gb|AAL65142.1| UNC-62 splice variant 1a-7a
+           [Caenorhabditis elegans]
+ Uncoordinated protein 62, isoform f [Caenorhabditis elegans]
+ C.Elegans Homeobox, UNCoordinated locomotion UNC-62, LEThal
+           LET-328, kNOB-like posterior, NO Backside NOB-5 (60.3
+           kD) (unc-62) [Caenorhabditis elegans]
+          Length = 560
+
+ Score = 64.7 bits (156), Expect = 8e-10,   Method: Composition-based stats.
+ Identities = 29/56 (51%), Positives = 42/56 (75%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           R R  F KQAT  L ++ + +L++PYPSEE K++LAK++G+T+ QV+NWF N R R
+Sbjct: 390 RGRGIFPKQATNRLRQWLFQNLTHPYPSEEQKKQLAKETGLTILQVNNWFINARRR 445
+
+
+>gi|42406379|gb|AAH65980.1| Meis2.2 protein [Danio rerio]
+          Length = 390
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 279 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 329
+
+
+>gi|27502381|ref|NP_758526.1| homeobox protein Meis2 isoform g [Homo
+           sapiens]
+          Length = 388
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 270 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 320
+
+
+>gi|6573175|gb|AAF17580.1| myeloid ecotropic viral insertion site-1a
+           protein [Gallus gallus]
+          Length = 386
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 275 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 325
+
+
+>gi|6573177|gb|AAF17581.1| myeloid ecotropic viral insertion site-2a
+           protein [Gallus gallus]
+          Length = 390
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 279 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 329
+
+
+>gi|14190148|gb|AAK55554.1| transcription factor Meis2.2 [Danio
+           rerio]
+          Length = 397
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 279 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 329
+
+
+>gi|16306683|gb|AAH01516.1| Homeobox protein Meis2, isoform f [Homo
+           sapiens]
+ Homeobox protein Meis2, isoform f [Homo sapiens]
+ homeobox protein Meis2 isoform f [Homo sapiens]
+          Length = 381
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 270 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 320
+
+
+>gi|55725174|emb|CAH89453.1| hypothetical protein [Pongo pygmaeus]
+          Length = 401
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 283 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 333
+
+
+>gi|2275033|emb|CAA04140.1| Homeodomain protein Meis2c [Mus
+           musculus]
+ Homeobox protein Meis2 (Meis1-related protein 1)
+          Length = 477
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 283 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 333
+
+
+>gi|55641807|ref|XP_510290.1| PREDICTED: similar to homeobox protein
+           Meis2; Cbp/p300-interacting transactivator with
+           Glu/Asp-rich carboxy-terminal domain 2 [Pan troglodytes]
+          Length = 482
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 341 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 391
+
+
+>gi|33991788|gb|AAH56515.1| Myeloid ecotropic viral integration site
+           2.2 [Danio rerio]
+ myeloid ecotropic viral integration site 2.2 [Danio rerio]
+          Length = 397
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 279 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 329
+
+
+>gi|6754734|ref|NP_034955.1| homeobox protein Meis2 [Mus musculus]
+ Homeodomain protein Meis2d [Mus musculus]
+ Homeobox protein Meis2 [Mus musculus]
+ Meis1-related protein 1b [Mus musculus]
+          Length = 470
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 283 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 333
+
+
+>gi|45382203|ref|NP_990134.1| myeloid ecotropic viral insertion
+           site-2a protein [Gallus gallus]
+ homeoprotein Meis2 [Gallus gallus]
+          Length = 401
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 283 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 333
+
+
+>gi|27694106|gb|AAH43503.1| MEIS1 protein [Homo sapiens]
+ Homeobox protein Meis1
+ leukemogenic homolog protein [Homo sapiens]
+ Meis1 homolog [Homo sapiens]
+          Length = 390
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 279 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 329
+
+
+>gi|2275029|emb|CAA04138.1| Meis2a homeodomain protein [Mus
+           musculus]
+ homeobox protein Meis2 isoform a [Homo sapiens]
+ TALE homeobox protein Meis2a [Homo sapiens]
+          Length = 401
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 283 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 333
+
+
+>gi|2275031|emb|CAA04139.1| Homeodomain protein Meis2b [Mus
+           musculus]
+ Meis1-related protein 1a [Mus musculus]
+ homeobox protein Meis2 isoform b [Homo sapiens]
+ TALE homeobox protein Meis2b [Homo sapiens]
+          Length = 394
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 283 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 333
+
+
+>gi|13124777|sp|O14770|MEIS2_HUMAN Homeobox protein Meis2
+           (Meis1-related protein 1)
+ homeobox protein Meis2 isoform c [Homo sapiens]
+ TALE homeobox protein Meis2c [Homo sapiens]
+          Length = 477
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 283 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 333
+
+
+>gi|29791510|gb|AAH50431.1| MEIS2 protein [Homo sapiens]
+ homeobox protein Meis2 isoform d [Homo sapiens]
+ TALE homeobox protein Meis2d [Homo sapiens]
+          Length = 470
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 283 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 333
+
+
+>gi|56206886|emb|CAI25395.1| myeloid ecotropic viral integration
+           site 1 [Mus musculus]
+ myeloid ecotropic viral integration site 1 [Mus musculus]
+ Homeobox protein Meis1 (Myeloid ecotropic viral integration site-1)
+ myeloid ecotropic viral integration site-1
+          Length = 390
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 279 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 329
+
+
+>gi|56206885|emb|CAI25394.1| myeloid ecotropic viral integration
+           site 1 [Mus musculus]
+ myeloid ecotropic viral integration site 1 [Mus musculus]
+ myeloid ecotropic viral integration site 1 [Mus musculus]
+ myeloid ecotropic viral integration site-1b
+          Length = 465
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 279 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 329
+
+
+>gi|62645567|ref|XP_230449.3| PREDICTED: similar to Meis1-related
+           protein 1a [Rattus norvegicus]
+          Length = 413
+
+ Score = 64.3 bits (155), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 302 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 352
+
+
+>gi|1724054|gb|AAC52948.1| Meis2
+          Length = 401
+
+ Score = 63.9 bits (154), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 283 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDAGLTILQVNNWFINARRR 333
+
+
+>gi|55595992|ref|XP_515520.1| PREDICTED: hypothetical protein
+           XP_515520 [Pan troglodytes]
+          Length = 514
+
+ Score = 63.9 bits (154), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 91  FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 141
+
+
+>gi|41944540|gb|AAH65977.1| Meis4.1a protein [Danio rerio]
+          Length = 380
+
+ Score = 63.9 bits (154), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/56 (46%), Positives = 39/56 (69%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HL++PYPSEE K + ++ +G+T+ QV+NWF N R R
+Sbjct: 263 KKRGIFPKVATNIMRAWLFQHLTHPYPSEEQKRQFSQDTGLTILQVNNWFINARRR 318
+
+
+>gi|23959079|gb|AAH23689.1| Meis1 protein [Mus musculus]
+          Length = 370
+
+ Score = 63.9 bits (154), Expect = 1e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 279 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 329
+
+
+>gi|27502383|ref|NP_758527.1| homeobox protein Meis2 isoform h [Homo
+           sapiens]
+          Length = 306
+
+ Score = 63.5 bits (153), Expect = 2e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 195 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 245
+
+
+>gi|67005921|gb|AAY62596.1| Pth12p [Magnaporthe grisea]
+          Length = 447
+
+ Score = 63.5 bits (153), Expect = 2e-09,   Method: Composition-based stats.
+ Identities = 26/57 (45%), Positives = 43/57 (75%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           R++R N  K+ T+ L  +F +HLS+PYP+E+ K+EL +++G+ ++Q+SNWF N R R
+Sbjct: 320 RKRRGNLPKETTDKLRAWFLAHLSHPYPTEDEKQELMRQTGLQMNQISNWFINARRR 376
+
+
+>gi|33352134|emb|CAD82908.1| homothorax protein [Glomeris marginata]
+          Length = 272
+
+ Score = 63.2 bits (152), Expect = 2e-09,   Method: Composition-based stats.
+ Identities = 27/57 (47%), Positives = 42/57 (73%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++KR  F K AT I+  + + HL++PYPSE+ K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 216 QKKRGIFPKVATNIMRAWLFQHLTHPYPSEDQKKQLAQDTGLTILQVNNWFINARRR 272
+
+
+>gi|58376258|ref|XP_308010.2| ENSANGP00000006317 [Anopheles gambiae
+           str. PEST]
+ ENSANGP00000006317 [Anopheles gambiae str. PEST]
+          Length = 178
+
+ Score = 62.8 bits (151), Expect = 2e-09,   Method: Composition-based stats.
+ Identities = 28/57 (49%), Positives = 42/57 (73%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++KR  F K AT IL  + + HL++PYPSE+ K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 59  QKKRGIFPKVATNILRAWLFQHLTHPYPSEDQKKQLAQDTGLTILQVNNWFINARRR 115
+
+
+>gi|56694848|gb|AAW23086.1| Meis-b [Oikopleura dioica]
+          Length = 378
+
+ Score = 62.8 bits (151), Expect = 3e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 39/51 (76%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           F KQAT IL  + + +L++PYPSEE K+ L++++G+T+ QV+NWF N R R
+Sbjct: 231 FPKQATNILRAWLFQNLTHPYPSEEQKKNLSQQTGLTILQVNNWFINARRR 281
+
+
+>gi|61815828|ref|XP_585721.1| PREDICTED: similar to pre-B-cell
+          leukemia transcription factor 3 [Bos taurus]
+          Length = 156
+
+ Score = 62.4 bits (150), Expect = 3e-09,   Method: Composition-based stats.
+ Identities = 30/32 (93%), Positives = 32/32 (100%)
+
+Query: 46 VSQVSNWFGNKRIRYKKNIGKFQEEANIYAAK 77
+          +SQVSNWFGNKRIRYKKNIGKFQEEAN+YAAK
+Sbjct: 1  MSQVSNWFGNKRIRYKKNIGKFQEEANLYAAK 32
+
+
+>gi|50738942|ref|XP_419340.1| PREDICTED: similar to myeloid ecotropic
+            viral integration site-1 [Gallus gallus]
+          Length = 1741
+
+ Score = 62.0 bits (149), Expect = 4e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9    FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+            F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 1630 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 1680
+
+
+>gi|14161625|gb|AAK54829.1| transcription factor Meis4.1a [Danio
+           rerio]
+          Length = 380
+
+ Score = 62.0 bits (149), Expect = 5e-09,   Method: Composition-based stats.
+ Identities = 26/56 (46%), Positives = 40/56 (71%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K A+ I+  + + HL++PYPSEE K +L++ +G+T+ QV+NWF N R R
+Sbjct: 263 KKRGIFPKVASTIMIPWVFQHLTHPYPSEEQKRQLSQDTGLTILQVNNWFINARRR 318
+
+
+>gi|3874788|emb|CAB02816.1| Hypothetical protein C36F7.1
+           [Caenorhabditis elegans]
+ Putative iroquois-class homeobox protein C36F7.1
+ homeobox protein (1K114) [Caenorhabditis elegans]
+          Length = 356
+
+ Score = 62.0 bits (149), Expect = 5e-09,   Method: Composition-based stats.
+ Identities = 28/58 (48%), Positives = 39/58 (67%)
+
+Query: 5   KRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKK 62
+           K+RN  ++AT  L ++ +SH  NPYPS+  K  LA  +G+T++QVS WF N R R KK
+Sbjct: 118 KKRNATREATAPLKDWLHSHRKNPYPSKADKVMLAVGTGMTLTQVSTWFANARRRLKK 175
+
+
+>gi|1679680|gb|AAB19198.1| XMeis1-3 protein [Xenopus laevis]
+          Length = 137
+
+ Score = 61.2 bits (147), Expect = 7e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9  FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 26 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 76
+
+
+>gi|49526231|emb|CAG59855.1| unnamed protein product [Candida
+           glabrata CBS138]
+ unnamed protein product [Candida glabrata]
+          Length = 259
+
+ Score = 61.2 bits (147), Expect = 8e-09,   Method: Composition-based stats.
+ Identities = 29/58 (50%), Positives = 41/58 (70%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           A +KR N  K+  +ILNE+ Y H++NPYP+ + K EL+ K+G+T  Q+SNWF N R R
+Sbjct: 161 AVKKRANLPKETVKILNEWLYDHINNPYPTPQEKMELSLKTGLTKIQLSNWFINVRRR 218
+
+
+>gi|33352132|emb|CAD82907.1| extradenticle protein [Glomeris
+           marginata]
+          Length = 176
+
+ Score = 61.2 bits (147), Expect = 8e-09,   Method: Composition-based stats.
+ Identities = 29/30 (96%), Positives = 30/30 (100%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPS 31
+           ARRKRRNF+KQATEILNEYFYSHLSNPYPS
+Sbjct: 147 ARRKRRNFSKQATEILNEYFYSHLSNPYPS 176
+
+
+>gi|56694846|gb|AAW23085.1| Meis-a [Oikopleura dioica]
+          Length = 176
+
+ Score = 61.2 bits (147), Expect = 8e-09,   Method: Composition-based stats.
+ Identities = 28/58 (48%), Positives = 43/58 (74%)
+
+Query: 2  ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          + +KR  F KQAT IL  + + +L++PYPSEE K+ L++++G+T+ QV+NWF N R R
+Sbjct: 26 SNKKRGLFPKQATNILRAWLFQNLTHPYPSEEQKKHLSQQTGLTILQVNNWFINARRR 83
+
+
+>gi|2394310|gb|AAB70270.1| homeobox protein MEIS2 [Homo sapiens]
+          Length = 124
+
+ Score = 61.2 bits (147), Expect = 9e-09,   Method: Composition-based stats.
+ Identities = 26/51 (50%), Positives = 38/51 (74%)
+
+Query: 9  FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NWF N R R
+Sbjct: 13 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNWFINARRR 63
+
+
+>gi|28797555|gb|AAO47087.1| homeodomain-containing protein [Venturia
+           canescens]
+          Length = 456
+
+ Score = 60.5 bits (145), Expect = 1e-08,   Method: Composition-based stats.
+ Identities = 25/58 (43%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+            R+KR    KQAT I+  + + HL +PYP+E+ K ++A ++ +T+ QV+NWF N R R
+Sbjct: 306 GRQKRGVLPKQATSIMRAWLFHHLVHPYPTEDEKRQIASQTNLTLLQVNNWFINARRR 363
+
+
+>gi|56694844|gb|AAW23084.1| Prep [Oikopleura dioica]
+          Length = 214
+
+ Score = 60.5 bits (145), Expect = 1e-08,   Method: Composition-based stats.
+ Identities = 27/57 (47%), Positives = 39/57 (68%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           R KR    +QAT+ L  + + HL +PYPSE+ K  LA+++G+T+ QV+NWF N R R
+Sbjct: 155 RLKRGLLPRQATDTLRGWLFQHLVHPYPSEDEKRNLAQQTGLTLLQVNNWFINARRR 211
+
+
+>gi|1679678|gb|AAB19197.1| XMeis1-2 protein [Xenopus laevis]
+          Length = 464
+
+ Score = 60.5 bits (145), Expect = 1e-08,   Method: Composition-based stats.
+ Identities = 27/56 (48%), Positives = 40/56 (71%), Gaps = 1/56 (1%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +KR  F K AT I+  + + HL++PYPSEE K++LA+ +G+ + QV+NWF N R R
+Sbjct: 274 KKRGIFPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGL-ILQVNNWFINARRR 328
+
+
+>gi|39582046|emb|CAE63689.1| Hypothetical protein CBG08197
+           [Caenorhabditis briggsae]
+          Length = 341
+
+ Score = 60.1 bits (144), Expect = 2e-08,   Method: Composition-based stats.
+ Identities = 27/58 (46%), Positives = 39/58 (67%)
+
+Query: 5   KRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKK 62
+           K+RN  ++AT  L ++ ++H  NPYPS+  K  LA  +G+T++QVS WF N R R KK
+Sbjct: 107 KKRNATREATAPLKDWLHAHRKNPYPSKNDKLMLAVGTGMTLTQVSTWFANARRRLKK 164
+
+
+>gi|42552449|gb|EAA75292.1| hypothetical protein FG05475.1
+           [Gibberella zeae PH-1]
+ hypothetical protein FG05475.1 [Gibberella zeae PH-1]
+          Length = 443
+
+ Score = 59.7 bits (143), Expect = 2e-08,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 42/57 (73%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           R++R N  K+ T+ L  +F +HL +PYP+E+ K++L +++G+ ++Q+SNWF N R R
+Sbjct: 313 RKRRGNLPKETTDKLRAWFVAHLQHPYPTEDEKQDLMRQTGLQMNQISNWFINARRR 369
+
+
+>gi|39580157|emb|CAE56772.1| Hypothetical protein CBG24578
+           [Caenorhabditis briggsae]
+          Length = 733
+
+ Score = 59.7 bits (143), Expect = 2e-08,   Method: Composition-based stats.
+ Identities = 25/57 (43%), Positives = 41/57 (71%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           R+  + F+K+A      + + +L++PYPSEE K++LAK++G+T+ QV+NWF N R R
+Sbjct: 561 RKVPKVFSKEAITKFRAWLFQNLAHPYPSEEQKKQLAKETGLTILQVNNWFINARRR 617
+
+
+>gi|49650412|emb|CAG80147.1| unnamed protein product [Yarrowia
+           lipolytica CLIB99]
+ hypothetical protein [Yarrowia lipolytica]
+          Length = 510
+
+ Score = 59.7 bits (143), Expect = 2e-08,   Method: Composition-based stats.
+ Identities = 28/57 (49%), Positives = 39/57 (68%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           +R+R N  K  T IL E+   H+S+PYPSE  K  L +++G+T+SQ+SNWF N R R
+Sbjct: 427 KRRRGNLPKSVTSILREWLNDHISHPYPSEYEKSLLLQQTGLTMSQLSNWFINARRR 483
+
+
+>gi|16209577|gb|AAL14114.1| homeodomain transcription factor Prep1
+           [Danio rerio]
+ pbx/knotted-1 homeobox Prep1.1 [Danio rerio]
+ pbx/knotted 1 homeobox 1.1 [Danio rerio]
+          Length = 433
+
+ Score = 59.3 bits (142), Expect = 3e-08,   Method: Composition-based stats.
+ Identities = 23/57 (40%), Positives = 40/57 (70%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           + KR    KQAT ++  + + H+++PYP+EE K+++A ++ +T+ QV+NWF N R R
+Sbjct: 267 KNKRGVLPKQATNVMRSWLFQHIAHPYPTEEEKKQIATQTNLTLLQVNNWFINARRR 323
+
+
+>gi|66850557|gb|EAL90884.1| homeobox and C2H2 transcription factor,
+           putative [Aspergillus fumigatus Af293]
+          Length = 870
+
+ Score = 59.3 bits (142), Expect = 3e-08,   Method: Composition-based stats.
+ Identities = 25/60 (41%), Positives = 36/60 (60%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+            R+     ++ A  IL  +   HL +PYPSE+ K+EL K++G+  SQ+SNW  N R R K
+Sbjct: 166 GRKSSSRLSRDAVRILKTWLLEHLDHPYPSEQEKDELKKRTGLKRSQISNWLANARRRGK 225
+
+
+>gi|55710037|gb|AAV58860.1| Uncoordinated protein 62, isoform g
+           [Caenorhabditis elegans]
+          Length = 490
+
+ Score = 59.3 bits (142), Expect = 3e-08,   Method: Composition-based stats.
+ Identities = 25/57 (43%), Positives = 41/57 (71%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           R+  + F+K+A      + + +L++PYPSEE K++LAK++G+T+ QV+NWF N R R
+Sbjct: 319 RKVPKVFSKEAITKFRAWLFHNLTHPYPSEEQKKQLAKETGLTILQVNNWFINARRR 375
+
+
+>gi|51703464|gb|AAH81024.1| MGC81646 protein [Xenopus laevis]
+          Length = 256
+
+ Score = 58.9 bits (141), Expect = 3e-08,   Method: Composition-based stats.
+ Identities = 28/59 (47%), Positives = 39/59 (66%), Gaps = 1/59 (1%)
+
+Query: 2  ARRKRR-NFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          A+RKRR N  K+A +IL ++ Y H  N YPSE+ K  L+ ++ +TV Q+ NWF N R R
+Sbjct: 23 AKRKRRGNLPKEAVKILRDWLYEHRFNAYPSEQEKLSLSGQTNLTVLQICNWFINARRR 81
+
+
+>gi|18182387|gb|AAL65145.1| UNC-62 splice variant 1b-7b
+           [Caenorhabditis elegans]
+ Uncoordinated protein 62, isoform b [Caenorhabditis elegans]
+ C.Elegans Homeobox, UNCoordinated locomotion UNC-62, LEThal
+           LET-328, kNOB-like posterior, NO Backside NOB-5 (56.7
+           kD) (unc-62) [Caenorhabditis elegans]
+          Length = 527
+
+ Score = 58.9 bits (141), Expect = 3e-08,   Method: Composition-based stats.
+ Identities = 25/57 (43%), Positives = 41/57 (71%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           R+  + F+K+A      + + +L++PYPSEE K++LAK++G+T+ QV+NWF N R R
+Sbjct: 356 RKVPKVFSKEAITKFRAWLFHNLTHPYPSEEQKKQLAKETGLTILQVNNWFINARRR 412
+
+
+>gi|18182383|gb|AAL65143.1| UNC-62 splice variant 1a-7b
+           [Caenorhabditis elegans]
+ Uncoordinated protein 62, isoform a [Caenorhabditis elegans]
+ C.Elegans Homeobox, UNCoordinated locomotion UNC-62, LEThal
+           LET-328, kNOB-like posterior, NO Backside NOB-5 (60.9
+           kD) (unc-62) [Caenorhabditis elegans]
+          Length = 564
+
+ Score = 58.9 bits (141), Expect = 4e-08,   Method: Composition-based stats.
+ Identities = 25/57 (43%), Positives = 41/57 (71%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           R+  + F+K+A      + + +L++PYPSEE K++LAK++G+T+ QV+NWF N R R
+Sbjct: 393 RKVPKVFSKEAITKFRAWLFHNLTHPYPSEEQKKQLAKETGLTILQVNNWFINARRR 449
+
+
+>gi|32451815|gb|AAH54667.1| Pknox1.1 protein [Danio rerio]
+          Length = 377
+
+ Score = 58.5 bits (140), Expect = 5e-08,   Method: Composition-based stats.
+ Identities = 23/57 (40%), Positives = 40/57 (70%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           + KR    KQAT ++  + + H+++PYP+EE K+++A ++ +T+ QV+NWF N R R
+Sbjct: 267 KNKRGVLPKQATNVMRSWLFQHIAHPYPTEEEKKQIATQTNLTLLQVNNWFINARRR 323
+
+
+>gi|53749351|gb|AAU90210.1| putative homeodomain protein [Oryza
+           sativa (japonica cultivar-group)]
+          Length = 580
+
+ Score = 58.5 bits (140), Expect = 6e-08,   Method: Composition-based stats.
+ Identities = 24/59 (40%), Positives = 39/59 (66%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKK 62
+           R +R   ++A  +L  + + H  +PYP++  K+ LAK++G+T +QVSNWF N R+R  K
+Sbjct: 340 RPQRGLPERAVSVLRAWLFEHFLHPYPTDSDKQMLAKQTGLTRNQVSNWFINARVRLWK 398
+
+
+>gi|44984421|gb|AAS53323.1| AFL049Cp [Ashbya gossypii ATCC 10895]
+ AFL049Cp [Eremothecium gossypii]
+          Length = 257
+
+ Score = 58.2 bits (139), Expect = 7e-08,   Method: Composition-based stats.
+ Identities = 26/57 (45%), Positives = 38/57 (66%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           + +R N  K+  +ILNE+  +H  NPYPS + K+EL K++G+   Q+SNWF N R R
+Sbjct: 132 QHRRSNLPKETVDILNEWLRNHYDNPYPSPQEKKELLKQTGLNPVQLSNWFINVRRR 188
+
+
+>gi|13752409|gb|AAK38646.1| homeodomain protein JUBEL2 [Hordeum
+           vulgare]
+          Length = 611
+
+ Score = 57.8 bits (138), Expect = 8e-08,   Method: Composition-based stats.
+ Identities = 23/59 (38%), Positives = 39/59 (66%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKK 62
+           R +R   +++  +L  + + H  +PYP++  K+ LAK++G+T +QVSNWF N R+R  K
+Sbjct: 346 RPQRGLPERSVTVLRAWLFEHFLHPYPTDGDKQMLAKQTGLTRNQVSNWFINARVRLWK 404
+
+
+>gi|57092983|ref|XP_531850.1| PREDICTED: similar to Homeobox protein
+            Meis1 [Canis familiaris]
+          Length = 1072
+
+ Score = 57.8 bits (138), Expect = 8e-08,   Method: Composition-based stats.
+ Identities = 22/44 (50%), Positives = 34/44 (77%)
+
+Query: 9    FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNW 52
+            F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NW
+Sbjct: 1029 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNW 1072
+
+
+>gi|62660843|ref|XP_223643.3| PREDICTED: similar to myeloid
+           ecotropic viral integration site-1b [Rattus norvegicus]
+          Length = 1300
+
+ Score = 57.8 bits (138), Expect = 8e-08,   Method: Composition-based stats.
+ Identities = 22/44 (50%), Positives = 34/44 (77%)
+
+Query: 9   FNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNW 52
+           F K AT I+  + + HL++PYPSEE K++LA+ +G+T+ QV+NW
+Sbjct: 916 FPKVATNIMRAWLFQHLTHPYPSEEQKKQLAQDTGLTILQVNNW 959
+
+
+>gi|19352105|dbj|BAB85944.1| qSH-1 [Oryza sativa (indica
+           cultivar-group)]
+ qSH-1 [Oryza sativa (indica cultivar-group)]
+          Length = 612
+
+ Score = 57.8 bits (138), Expect = 9e-08,   Method: Composition-based stats.
+ Identities = 24/59 (40%), Positives = 39/59 (66%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKK 62
+           R +R   ++A  +L  + + H  +PYP++  K+ LAK++G+T +QVSNWF N R+R  K
+Sbjct: 372 RPQRGLPERAVSVLRAWLFEHFLHPYPTDGDKQMLAKQTGLTRNQVSNWFINARVRLWK 430
+
+
+>gi|34908294|ref|NP_915494.1| putative homeodomain protein [Oryza
+           sativa (japonica cultivar-group)]
+ qSH-1 [Oryza sativa (japonica cultivar-group)]
+ qSH-1 [Oryza sativa (japonica cultivar-group)]
+ qSH-1 [Oryza sativa (japonica cultivar-group)]
+          Length = 612
+
+ Score = 57.8 bits (138), Expect = 9e-08,   Method: Composition-based stats.
+ Identities = 24/59 (40%), Positives = 39/59 (66%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKK 62
+           R +R   ++A  +L  + + H  +PYP++  K+ LAK++G+T +QVSNWF N R+R  K
+Sbjct: 372 RPQRGLPERAVSVLRAWLFEHFLHPYPTDGDKQMLAKQTGLTRNQVSNWFINARVRLWK 430
+
+
+>gi|40747239|gb|EAA66395.1| hypothetical protein AN9328.2
+           [Aspergillus nidulans FGSC A4]
+ hypothetical protein AN9328_2 [Aspergillus nidulans FGSC A4]
+ hypothetical protein AN9328.2 [Aspergillus nidulans FGSC A4]
+          Length = 670
+
+ Score = 57.8 bits (138), Expect = 9e-08,   Method: Composition-based stats.
+ Identities = 24/46 (52%), Positives = 32/46 (69%)
+
+Query: 16  ILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           IL ++F  H   PYPS+E K ELA +SG+T++Q+S WF N R R K
+Sbjct: 114 ILKKWFDQHCDKPYPSKEEKTELASRSGLTLTQISTWFANTRRRRK 159
+
+
+>gi|2577977|emb|CAA04166.1| CEH-25 homeobox protein [Caenorhabditis
+           elegans]
+          Length = 265
+
+ Score = 57.8 bits (138), Expect = 9e-08,   Method: Composition-based stats.
+ Identities = 25/57 (43%), Positives = 41/57 (71%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           R+  + F+K+A      + + +L++PYPSEE K++LAK++G+T+ QV+NWF N R R
+Sbjct: 94  RKVPKVFSKEAITKFRAWLFHNLTHPYPSEEQKKQLAKETGLTILQVNNWFINARRR 150
+
+
+>gi|55846788|gb|AAV67398.1| transforming growth
+          factor-beta-induced factor [Macaca fascicularis]
+          Length = 245
+
+ Score = 57.8 bits (138), Expect = 1e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 20 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSQQTHLSTLQVCNWFINARRR 76
+
+
+>gi|50730013|ref|XP_416750.1| PREDICTED: similar to Homeobox protein
+           PKNOX1 (PBX/knotted homeobox 1) (Homeobox protein
+           PREP-1) [Gallus gallus]
+          Length = 942
+
+ Score = 57.4 bits (137), Expect = 1e-07,   Method: Composition-based stats.
+ Identities = 21/58 (36%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT ++  + + H+ +PYP+E+ K+++A ++ +T+ QV+NWF N R R
+Sbjct: 765 SKNKRGVLPKHATNVMRSWLFQHIGHPYPTEDEKKQIAAQTNLTLLQVNNWFINARRR 822
+
+
+>gi|45383672|ref|NP_989557.1| PBX/knotted 1 homeobox 2 [Gallus
+           gallus]
+ TALE homeodomain transcription factor Prep2 [Gallus gallus]
+          Length = 477
+
+ Score = 57.4 bits (137), Expect = 1e-07,   Method: Composition-based stats.
+ Identities = 23/58 (39%), Positives = 38/58 (65%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT I+  + + HL +PYP+E+ K ++A ++ +T+ QV+NWF N R R
+Sbjct: 287 SKNKRGVLPKHATNIMRSWLFQHLMHPYPTEDEKRQIAAQTNLTLLQVNNWFINARRR 344
+
+
+>gi|62321447|dbj|BAD94844.1| putative homeodomain transcription
+          factor [Arabidopsis thaliana]
+          Length = 208
+
+ Score = 57.4 bits (137), Expect = 1e-07,   Method: Composition-based stats.
+ Identities = 25/61 (40%), Positives = 39/61 (63%)
+
+Query: 2  ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+          A R +R   +++  IL  + + H  NPYPS+  K  LA+++G++ +QVSNWF N R+R  
+Sbjct: 5  AWRPQRGLPERSVNILRAWLFEHFLNPYPSDADKHLLARQTGLSRNQVSNWFINARVRLW 64
+
+Query: 62 K 62
+          K
+Sbjct: 65 K 65
+
+
+>gi|15215201|gb|AAH12700.1| Tgif protein [Mus musculus]
+          Length = 252
+
+ Score = 57.4 bits (137), Expect = 1e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 16 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSQQTHLSTLQVCNWFINARRR 72
+
+
+>gi|1495714|emb|CAA61896.1| mTGIF protein [Mus musculus]
+          Length = 272
+
+ Score = 57.0 bits (136), Expect = 1e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 36 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSQQTHLSTLQVCNWFINARRR 92
+
+
+>gi|55657532|ref|XP_514925.1| PREDICTED: PBX/knotted 1 homeobox 1
+           [Pan troglodytes]
+          Length = 485
+
+ Score = 57.0 bits (136), Expect = 1e-07,   Method: Composition-based stats.
+ Identities = 21/58 (36%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT ++  + + H+ +PYP+E+ K+++A ++ +T+ QV+NWF N R R
+Sbjct: 308 SKNKRGVLPKHATNVMRSWLFQHIGHPYPTEDEKKQIAAQTNLTLLQVNNWFINARRR 365
+
+
+>gi|57528478|ref|NP_001009815.1| TG-interacting factor [Pan
+           troglodytes]
+ transforming growth factor-beta-induced factor [Pan troglodytes]
+ 5'-TG-3' interacting factor (Homeobox protein TGIF)
+          Length = 401
+
+ Score = 57.0 bits (136), Expect = 1e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 165 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSQQTHLSTLQVCNWFINARRR 221
+
+
+>gi|13877517|gb|AAK43836.1| BEL1-like homeodomain 1 [Arabidopsis
+           thaliana]
+          Length = 680
+
+ Score = 57.0 bits (136), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 26/61 (42%), Positives = 38/61 (62%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           A R +R   ++A  +L  + + H  +PYP +  K  LAK++G+T SQVSNWF N R+R  
+Sbjct: 385 AWRPQRGLPERAVSVLRAWLFEHFLHPYPKDSDKHMLAKQTGLTRSQVSNWFINARVRLW 444
+
+Query: 62  K 62
+           K
+Sbjct: 445 K 445
+
+
+>gi|23495538|dbj|BAC20216.1| TALE homeodomain transcription factor
+           Prep2 [Danio rerio]
+ TALE homeodomain transcription factor Prep2 [Danio rerio]
+          Length = 474
+
+ Score = 57.0 bits (136), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 23/58 (39%), Positives = 38/58 (65%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT I+  + + HL +PYP+E+ K ++A ++ +T+ QV+NWF N R R
+Sbjct: 288 SKNKRGVLPKHATNIMRSWLFQHLMHPYPTEDEKRQIAAQTNLTLLQVNNWFINARRR 345
+
+
+>gi|51703657|gb|AAH81037.1| MGC81734 protein [Xenopus laevis]
+          Length = 269
+
+ Score = 57.0 bits (136), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 27/59 (45%), Positives = 39/59 (66%), Gaps = 1/59 (1%)
+
+Query: 2  ARRKRR-NFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          A+RKRR N  KQ+ +IL ++ + H  N YPSE+ K  L+ ++ +TV Q+ NWF N R R
+Sbjct: 36 AKRKRRGNLPKQSVKILRDWLFEHRFNAYPSEQEKLCLSGQTNLTVLQICNWFINARRR 94
+
+
+>gi|60688321|gb|AAH91264.1| TG interacting factor (predicted)
+           [Rattus norvegicus]
+ TG interacting factor (predicted) [Rattus norvegicus]
+          Length = 287
+
+ Score = 57.0 bits (136), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 51  RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSQQTHLSTLQVCNWFINARRR 107
+
+
+>gi|31982825|ref|NP_033398.2| TG-interacting factor [Mus musculus]
+ TG-interacting factor [Mus musculus]
+ 5'-TG-3' interacting factor (Homeobox protein TGIF)
+          Length = 272
+
+ Score = 57.0 bits (136), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 36 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSQQTHLSTLQVCNWFINARRR 92
+
+
+>gi|46095576|gb|EAK80809.1| hypothetical protein UM00489.1 [Ustilago
+           maydis 521]
+ hypothetical protein UM00489.1 [Ustilago maydis 521]
+          Length = 957
+
+ Score = 57.0 bits (136), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 25/56 (44%), Positives = 35/56 (62%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           R+R    K  T++L  +   H S+PYP+E+ K  L   +G+T+SQVSNWF N R R
+Sbjct: 870 RRRGKLPKPVTDLLKTWLLEHASHPYPTEDEKRSLCSMTGLTLSQVSNWFINARRR 925
+
+
+>gi|30725518|gb|AAP37781.1| At2g35940 [Arabidopsis thaliana]
+ putative homeodomain transcription factor [Arabidopsis thaliana]
+ putative homeodomain transcription factor [Arabidopsis thaliana]
+ putative homeodomain transcription factor [Arabidopsis thaliana]
+ putative homeodomain transcription factor [Arabidopsis thaliana]
+ probable homeodomain transcription factor [imported] - Arabidopsis
+           thaliana
+ homeodomain-containing protein [Arabidopsis thaliana]
+ homeodomain-containing protein [Arabidopsis thaliana]
+          Length = 680
+
+ Score = 56.6 bits (135), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 26/61 (42%), Positives = 38/61 (62%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           A R +R   ++A  +L  + + H  +PYP +  K  LAK++G+T SQVSNWF N R+R  
+Sbjct: 385 AWRPQRGLPERAVSVLRAWLFEHFLHPYPKDSDKHMLAKQTGLTRSQVSNWFINARVRLW 444
+
+Query: 62  K 62
+           K
+Sbjct: 445 K 445
+
+
+>gi|28178843|ref|NP_733796.2| TG-interacting factor isoform a [Homo
+           sapiens]
+          Length = 401
+
+ Score = 56.6 bits (135), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 165 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSQQTHLSTLQVCNWFINARRR 221
+
+
+>gi|13752407|gb|AAK38645.1| homeodomain protein JUBEL1 [Hordeum
+           vulgare]
+          Length = 759
+
+ Score = 56.6 bits (135), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 24/61 (39%), Positives = 39/61 (63%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           A R +R   +++  IL  + + H  +PYPS+  K  LA+++G++ +QVSNWF N R+R  
+Sbjct: 533 AWRPQRGLPERSVSILRSWLFEHFLHPYPSDADKHLLARQTGLSRNQVSNWFINARVRLW 592
+
+Query: 62  K 62
+           K
+Sbjct: 593 K 593
+
+
+>gi|55656119|ref|XP_531480.1| PREDICTED: hypothetical protein
+           XP_531480 [Pan troglodytes]
+          Length = 375
+
+ Score = 56.6 bits (135), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 21/58 (36%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT ++  + + H+ +PYP+E+ K+++A ++ +T+ QV+NWF N R R
+Sbjct: 198 SKNKRGVLPKHATNVMRSWLFQHIGHPYPTEDEKKQIAAQTNLTLLQVNNWFINARRR 255
+
+
+>gi|22658434|gb|AAH31268.1| TG-interacting factor, isoform a [Homo
+           sapiens]
+ 5'-TG-3' interacting factor (Homeobox protein TGIF)
+          Length = 401
+
+ Score = 56.6 bits (135), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 165 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSQQTHLSTLQVCNWFINARRR 221
+
+
+>gi|28178857|ref|NP_777480.1| TG-interacting factor isoform d
+          [Homo sapiens]
+ TG-interacting factor isoform d [Homo sapiens]
+ TG-interacting factor isoform d [Homo sapiens]
+ TG-interacting factor isoform d [Homo sapiens]
+          Length = 252
+
+ Score = 56.6 bits (135), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 16 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSQQTHLSTLQVCNWFINARRR 72
+
+
+>gi|28178845|ref|NP_775299.1| TG-interacting factor isoform b [Homo
+           sapiens]
+          Length = 286
+
+ Score = 56.6 bits (135), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 50  RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSQQTHLSTLQVCNWFINARRR 106
+
+
+>gi|47223435|emb|CAG04296.1| unnamed protein product [Tetraodon
+          nigroviridis]
+          Length = 287
+
+ Score = 56.6 bits (135), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          R++R N  K++ +IL ++ Y H  N YPSE+ K  L+K++ ++  QV NWF N R R
+Sbjct: 32 RKRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSKQTQLSTLQVCNWFINARRR 88
+
+
+>gi|55637271|ref|XP_508845.1| PREDICTED: similar to Homeobox protein
+           PKNOX2 (PBX/knotted homeobox 2) (Homeobox protein
+           PREP-2) [Pan troglodytes]
+          Length = 812
+
+ Score = 56.2 bits (134), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 23/58 (39%), Positives = 38/58 (65%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT I+  + + HL +PYP+E+ K ++A ++ +T+ QV+NWF N R R
+Sbjct: 628 SKNKRGVLPKHATNIMRSWLFQHLMHPYPTEDEKRQIAAQTNLTLLQVNNWFINARRR 685
+
+
+>gi|42554443|gb|EAA77286.1| hypothetical protein FG07914.1
+           [Gibberella zeae PH-1]
+ hypothetical protein FG07914.1 [Gibberella zeae PH-1]
+          Length = 605
+
+ Score = 56.2 bits (134), Expect = 2e-07,   Method: Composition-based stats.
+ Identities = 27/58 (46%), Positives = 39/58 (67%), Gaps = 1/58 (1%)
+
+Query: 5   KRRNFNK-QATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           KR N    + T +L  ++ S+L +PYPSEE K  LA++SG++ SQV NWF N R R++
+Sbjct: 232 KRTNTRSVRKTRVLRNWYLSNLDHPYPSEEEKVGLAQQSGLSRSQVVNWFANSRRRHR 289
+
+
+>gi|26383465|dbj|BAC25531.1| unnamed protein product [Mus
+          musculus]
+          Length = 157
+
+ Score = 56.2 bits (134), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 23/57 (40%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          R++R N  K++ +IL ++ Y H  N YPSE+ K  L+ ++ ++V Q+ NWF N R R
+Sbjct: 19 RKRRGNLPKESVKILRDWLYLHRYNAYPSEQEKLSLSGQTNLSVLQICNWFINARRR 75
+
+
+>gi|55731790|emb|CAH92599.1| hypothetical protein [Pongo pygmaeus]
+          Length = 472
+
+ Score = 56.2 bits (134), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 23/58 (39%), Positives = 38/58 (65%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT I+  + + HL +PYP+E+ K ++A ++ +T+ QV+NWF N R R
+Sbjct: 288 SKNKRGVLPKHATNIMRSWLFQHLMHPYPTEDEKRQIAAQTNLTLLQVNNWFVNARRR 345
+
+
+>gi|1150426|emb|CAA61897.1| TGIF protein [Homo sapiens]
+ TG-interacting factor, isoform c [Homo sapiens]
+ TG-interacting factor isoform c [Homo sapiens]
+ TG-interacting factor isoform c [Homo sapiens]
+          Length = 272
+
+ Score = 56.2 bits (134), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 36 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSQQTHLSTLQVCNWFINARRR 92
+
+
+>gi|62646225|ref|XP_575274.1| PREDICTED: similar to TGFB-induced
+          factor 2 [Rattus norvegicus]
+          Length = 334
+
+ Score = 56.2 bits (134), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 23/57 (40%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          R++R N  K++ +IL ++ Y H  N YPSE+ K  L+ ++ ++V Q+ NWF N R R
+Sbjct: 19 RKRRGNLPKESVKILRDWLYLHRYNAYPSEQEKLSLSGQTNLSVLQICNWFINARRR 75
+
+
+>gi|45382415|ref|NP_990710.1| homeodomain protein AKR [Gallus
+          gallus]
+ Homeodomain protein AKR (Avian knotted-related protein)
+ homeodomain protein AKR
+          Length = 269
+
+ Score = 56.2 bits (134), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 36 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKVLLSRQTHLSTLQVCNWFINARRR 92
+
+
+>gi|7239157|gb|AAF43095.1| homeodomain protein [Malus x domestica]
+          Length = 809
+
+ Score = 56.2 bits (134), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 28/73 (38%), Positives = 47/73 (64%), Gaps = 2/73 (2%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           A R +R   +++  IL  + + H  +PYPS+  K  LA+++G++ +QVSNWF N R+R  
+Sbjct: 556 AWRPQRGLPERSVNILRAWLFEHFLHPYPSDADKHLLARQTGLSRNQVSNWFINARVRLW 615
+
+Query: 62  KNIGK--FQEEAN 72
+           K + +  +Q+EAN
+Sbjct: 616 KPMVEEMYQQEAN 628
+
+
+>gi|47496613|emb|CAG29329.1| TGIF [Homo sapiens]
+ TALE homeobox TG-interacting factor [Homo sapiens]
+          Length = 272
+
+ Score = 56.2 bits (134), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 36 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSQQTHLSTLQVCNWFINARRR 92
+
+
+>gi|60552173|gb|AAH91397.1| Pbx/knotted 1 homeobox (predicted)
+           [Rattus norvegicus]
+ Pbx/knotted 1 homeobox (predicted) [Rattus norvegicus]
+          Length = 436
+
+ Score = 55.8 bits (133), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 21/58 (36%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT ++  + + H+ +PYP+E+ K+++A ++ +T+ QV+NWF N R R
+Sbjct: 259 SKNKRGVLPKHATNVMRSWLFQHIGHPYPTEDEKKQIAAQTNLTLLQVNNWFINARRR 316
+
+
+>gi|40352841|gb|AAH64716.1| MGC75852 protein [Xenopus tropicalis]
+ hypothetical protein LOC395014 [Xenopus tropicalis]
+          Length = 272
+
+ Score = 55.8 bits (133), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 36 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSRQTHLSTLQVCNWFINARRR 92
+
+
+>gi|40743909|gb|EAA63093.1| hypothetical protein AN2691.2 [Aspergillus
+            nidulans FGSC A4]
+ hypothetical protein AN2691_2 [Aspergillus nidulans FGSC A4]
+ hypothetical protein AN2691.2 [Aspergillus nidulans FGSC A4]
+          Length = 1352
+
+ Score = 55.8 bits (133), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 21/59 (35%), Positives = 37/59 (62%)
+
+Query: 4    RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKK 62
+            ++ + F ++   +L ++FY +   PYPSEE K  LA ++G +  ++S WF N R R+K+
+Sbjct: 979  KESKQFVRKGARVLRDWFYQNEHCPYPSEEEKARLAAETGFSRQRISTWFANARRRHKQ 1037
+
+
+>gi|57089865|ref|XP_547659.1| PREDICTED: similar to TG-interacting
+           factor isoform a [Canis familiaris]
+          Length = 940
+
+ Score = 55.8 bits (133), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3   RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 704 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSQQTHLSTLQVCNWFINARRR 760
+
+
+>gi|23495536|dbj|BAC20215.1| TALE homeodomain transcription factor
+           Prep2 [Mus musculus]
+ unnamed protein product [Mus musculus]
+          Length = 474
+
+ Score = 55.8 bits (133), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 23/58 (39%), Positives = 38/58 (65%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT I+  + + HL +PYP+E+ K ++A ++ +T+ QV+NWF N R R
+Sbjct: 288 SKNKRGVLPKHATNIMRSWLFQHLMHPYPTEDEKRQIAAQTNLTLLQVNNWFINARRR 345
+
+
+>gi|52545966|emb|CAH56146.1| hypothetical protein [Homo sapiens]
+          Length = 472
+
+ Score = 55.8 bits (133), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 23/58 (39%), Positives = 38/58 (65%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT I+  + + HL +PYP+E+ K ++A ++ +T+ QV+NWF N R R
+Sbjct: 288 SKNKRGVLPKHATNIMRSWLFQHLMHPYPTEDEKRQIAAQTNLTLLQVNNWFINARRR 345
+
+
+>gi|62646227|ref|XP_575275.1| PREDICTED: similar to TGFB-induced
+          factor 2 [Rattus norvegicus]
+          Length = 334
+
+ Score = 55.8 bits (133), Expect = 3e-07,   Method: Composition-based stats.
+ Identities = 23/57 (40%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          R++R N  K++ +IL ++ Y H  N YPSE+ K  L+ ++ ++V Q+ NWF N R R
+Sbjct: 19 RKRRGNLPKESVKILRDWLYLHRYNAYPSEQEKLSLSGQTNLSVLQICNWFINARRR 75
+
+
+>gi|34368580|ref|NP_057879.2| Pbx/knotted 1 homeobox [Mus musculus]
+ Pbx/knotted 1 homeobox [Mus musculus]
+          Length = 436
+
+ Score = 55.8 bits (133), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 21/58 (36%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT ++  + + H+ +PYP+E+ K+++A ++ +T+ QV+NWF N R R
+Sbjct: 259 SKNKRGVLPKHATNVMRSWLFQHIGHPYPTEDEKKQIAAQTNLTLLQVNNWFINARRR 316
+
+
+>gi|16416147|emb|CAD01142.1| PREP2 protein [Homo sapiens]
+ Homeobox protein PKNOX2 (PBX/knotted homeobox 2) (Homeobox protein
+           PREP-2)
+ PKNOX2 [Homo sapiens]
+          Length = 460
+
+ Score = 55.8 bits (133), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 23/58 (39%), Positives = 38/58 (65%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT I+  + + HL +PYP+E+ K ++A ++ +T+ QV+NWF N R R
+Sbjct: 276 SKNKRGVLPKHATNIMRSWLFQHLMHPYPTEDEKRQIAAQTNLTLLQVNNWFINARRR 333
+
+
+>gi|2190414|emb|CAA73934.1| Prep-1 [Homo sapiens]
+          Length = 436
+
+ Score = 55.8 bits (133), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 21/58 (36%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT ++  + + H+ +PYP+E+ K+++A ++ +T+ QV+NWF N R R
+Sbjct: 259 SKNKRGVLPKHATNVMRSWLFQHIGHPYPTEDEKKQIAAQTNLTLLQVNNWFINARRR 316
+
+
+>gi|33875797|gb|AAH00735.1| PKNOX1 protein [Homo sapiens]
+          Length = 336
+
+ Score = 55.8 bits (133), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 21/58 (36%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT ++  + + H+ +PYP+E+ K+++A ++ +T+ QV+NWF N R R
+Sbjct: 259 SKNKRGVLPKHATNVMRSWLFQHIGHPYPTEDEKKQIAAQTNLTLLQVNNWFINARRR 316
+
+
+>gi|13124443|sp|O70477|PKNX1_MOUSE Homeobox protein PKNOX1
+           (PBX/knotted homeobox 1)
+ homeobox protein PKNOX1 [Mus musculus]
+          Length = 435
+
+ Score = 55.8 bits (133), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 21/58 (36%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT ++  + + H+ +PYP+E+ K+++A ++ +T+ QV+NWF N R R
+Sbjct: 258 SKNKRGVLPKHATNVMRSWLFQHIGHPYPTEDEKKQIAAQTNLTLLQVNNWFINARRR 315
+
+
+>gi|28630897|gb|AAO45825.1| homeobox-containing protein PKNOX1 [Homo
+           sapiens]
+ PBX/knotted 1 homeobox 1, isoform 1 [Homo sapiens]
+ PBX/knotted 1 homeobox 1 isoform 1 [Homo sapiens]
+          Length = 436
+
+ Score = 55.8 bits (133), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 21/58 (36%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT ++  + + H+ +PYP+E+ K+++A ++ +T+ QV+NWF N R R
+Sbjct: 259 SKNKRGVLPKHATNVMRSWLFQHIGHPYPTEDEKKQIAAQTNLTLLQVNNWFINARRR 316
+
+
+>gi|62897343|dbj|BAD96612.1| PBX/knotted 1 homeobox 1 isoform 1
+           variant [Homo sapiens]
+          Length = 436
+
+ Score = 55.8 bits (133), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 21/58 (36%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT ++  + + H+ +PYP+E+ K+++A ++ +T+ QV+NWF N R R
+Sbjct: 259 SKNKRGVLPKHATNVMRSWLFQHIGHPYPTEDEKKQIAAQTNLTLLQVNNWFINARRR 316
+
+
+>gi|49524546|emb|CAG58148.1| unnamed protein product [Candida
+           glabrata CBS138]
+ unnamed protein product [Candida glabrata]
+          Length = 221
+
+ Score = 55.5 bits (132), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 27/60 (45%), Positives = 39/60 (65%), Gaps = 1/60 (1%)
+
+Query: 1   MARRKRR-NFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           M + KRR N  K   +ILN++   H+ NPYP+++ K +L  K+G+T  Q+SNWF N R R
+Sbjct: 73  MKKSKRRSNLPKDTIQILNQWLLDHIHNPYPTQQEKRDLLIKTGLTKIQLSNWFINVRRR 132
+
+
+>gi|22652119|gb|AAN03623.1| BEL1-related homeotic protein 13
+           [Solanum tuberosum]
+          Length = 567
+
+ Score = 55.5 bits (132), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 27/72 (37%), Positives = 46/72 (63%), Gaps = 2/72 (2%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           A R +R   +++  IL  + + H  +PYPS+  K  LA+++G++ +QVSNWF N R+R  
+Sbjct: 341 AWRPQRGLPERSVNILRAWLFEHFLHPYPSDADKHLLARQTGLSRNQVSNWFINARVRLW 400
+
+Query: 62  KNIGK--FQEEA 71
+           K + +  +Q+EA
+Sbjct: 401 KPMVEDMYQQEA 412
+
+
+>gi|7768746|dbj|BAA95533.1| homeobox-containing protein [Homo
+           sapiens]
+ Homeobox protein PKNOX1 (PBX/knotted homeobox 1) (Homeobox protein
+           PREP-1)
+          Length = 435
+
+ Score = 55.5 bits (132), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 21/58 (36%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT ++  + + H+ +PYP+E+ K+++A ++ +T+ QV+NWF N R R
+Sbjct: 258 SKNKRGVLPKHATNVMRSWLFQHIGHPYPTEDEKKQIAAQTNLTLLQVNNWFINARRR 315
+
+
+>gi|25527052|pir||JC7766 three-amino-acid loop extension(TALE)
+           homeodomain protein, PKNOX2 - human
+          Length = 460
+
+ Score = 55.5 bits (132), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 23/58 (39%), Positives = 38/58 (65%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT I+  + + HL +PYP+E+ K ++A ++ +T+ QV+NWF N R R
+Sbjct: 276 SKNKRGVLPKHATNIMRSWLFQHLMHPYPTEDEKRQIAAQTNLTLLQVNNWFINARRR 333
+
+
+>gi|22507365|ref|NP_683752.1| Pbx/knotted 1 homeobox 2 [Mus
+           musculus]
+ Pbx/knotted 1 homeobox 2 [Mus musculus]
+ homeodomain containing transcription factor PREP2 [Mus musculus]
+          Length = 461
+
+ Score = 55.5 bits (132), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 23/58 (39%), Positives = 38/58 (65%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT I+  + + HL +PYP+E+ K ++A ++ +T+ QV+NWF N R R
+Sbjct: 275 SKNKRGVLPKHATNIMRSWLFQHLMHPYPTEDEKRQIAAQTNLTLLQVNNWFINARRR 332
+
+
+>gi|22652125|gb|AAN03626.1| BEL1-related homeotic protein 29
+           [Solanum tuberosum]
+          Length = 567
+
+ Score = 55.5 bits (132), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 26/61 (42%), Positives = 38/61 (62%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           A R +R   ++A  +L  + + H  +PYP +  K  LAK++G+T SQVSNWF N R+R  
+Sbjct: 236 AWRPQRGLPERAVSVLRAWLFEHFLHPYPKDSDKMMLAKQTGLTRSQVSNWFINARVRLW 295
+
+Query: 62  K 62
+           K
+Sbjct: 296 K 296
+
+
+>gi|27435580|gb|AAN34940.1| PKNOX1B [Homo sapiens]
+ PBX/knotted 1 homeobox 1 isoform 2 [Homo sapiens]
+          Length = 405
+
+ Score = 55.5 bits (132), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 21/58 (36%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT ++  + + H+ +PYP+E+ K+++A ++ +T+ QV+NWF N R R
+Sbjct: 259 SKNKRGVLPKHATNVMRSWLFQHIGHPYPTEDEKKQIAAQTNLTLLQVNNWFINARRR 316
+
+
+>gi|2052385|gb|AAC51243.1| homeobox-containing protein [Homo
+           sapiens]
+          Length = 435
+
+ Score = 55.5 bits (132), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 21/58 (36%), Positives = 39/58 (67%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+           ++ KR    K AT ++  + + H+ +PYP+E+ K+++A ++ +T+ QV+NWF N R R
+Sbjct: 258 SKNKRGVLPKHATNVMRSWLFQHIGHPYPTEDEKKQIAAQTNLTLLQVNNWFINARRR 315
+
+
+>gi|13877513|gb|AAK43834.1| BEL1-like homeobox 4 [Arabidopsis
+           thaliana]
+          Length = 627
+
+ Score = 55.5 bits (132), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 25/61 (40%), Positives = 39/61 (63%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           A R +R   +++  IL  + + H  NPYPS+  K  LA+++G++ +QVSNWF N R+R  
+Sbjct: 424 AWRPQRGLPERSVNILRAWLFEHFLNPYPSDADKHLLARQTGLSRNQVSNWFINARVRLW 483
+
+Query: 62  K 62
+           K
+Sbjct: 484 K 484
+
+
+>gi|22655382|gb|AAM98283.1| At2g23760/F27L4.6 [Arabidopsis thaliana]
+ putative homeodomain transcription factor [Arabidopsis thaliana]
+ At2g23760/F27L4.6 [Arabidopsis thaliana]
+ probable homeodomain transcription factor [imported] - Arabidopsis
+           thaliana
+ BEL1-like homeobox 4 protein (BLH4) [Arabidopsis thaliana]
+ BEL1-like homeobox 4 protein (BLH4) [Arabidopsis thaliana]
+          Length = 627
+
+ Score = 55.5 bits (132), Expect = 4e-07,   Method: Composition-based stats.
+ Identities = 25/61 (40%), Positives = 39/61 (63%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           A R +R   +++  IL  + + H  NPYPS+  K  LA+++G++ +QVSNWF N R+R  
+Sbjct: 424 AWRPQRGLPERSVNILRAWLFEHFLNPYPSDADKHLLARQTGLSRNQVSNWFINARVRLW 483
+
+Query: 62  K 62
+           K
+Sbjct: 484 K 484
+
+
+>gi|27696456|gb|AAH44016.1| Tgif-prov protein [Xenopus laevis]
+          Length = 272
+
+ Score = 55.5 bits (132), Expect = 5e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          RR+R N  K++ +IL ++ Y H  N YPSE+ K  L++++ ++  QV NWF N R R
+Sbjct: 36 RRRRGNLPKESVQILRDWLYEHRYNAYPSEQEKALLSRQTHLSTLQVCNWFINARRR 92
+
+
+>gi|6983728|emb|CAB75368.1| TGIF2 [Homo sapiens]
+ TGFB-induced factor 2 [Homo sapiens]
+ TGFB-induced factor 2 [Homo sapiens]
+ unnamed protein product [Homo sapiens]
+ Homeobox protein TGIF2 (TGFB-induced factor 2) (5'-TG-3'
+          interacting factor 2) (TGF(beta)-induced transcription
+          factor 2)
+ TGIF2 [Homo sapiens]
+ TGFB-induced factor 2 [Homo sapiens]
+          Length = 237
+
+ Score = 55.5 bits (132), Expect = 5e-07,   Method: Composition-based stats.
+ Identities = 23/57 (40%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          R++R N  K++ +IL ++ Y H  N YPSE+ K  L+ ++ ++V Q+ NWF N R R
+Sbjct: 19 RKRRGNLPKESVKILRDWLYLHRYNAYPSEQEKLSLSGQTNLSVLQICNWFINARRR 75
+
+
+>gi|32403140|ref|XP_322183.1| hypothetical protein [Neurospora
+           crassa]
+ hypothetical protein [Neurospora crassa]
+          Length = 395
+
+ Score = 55.5 bits (132), Expect = 5e-07,   Method: Composition-based stats.
+ Identities = 28/74 (37%), Positives = 48/74 (64%), Gaps = 1/74 (1%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKKN 63
+           ++R N  K+ TE L  + Y HL++PYP+E+ K+++ +++ + ++Q+SNWF N R R K  
+Sbjct: 218 KRRGNLPKEVTEKLYAWLYGHLNHPYPTEDEKQKMMRETNMQMNQISNWFINAR-RRKVP 276
+
+Query: 64  IGKFQEEANIYAAK 77
+           +   Q +A   AAK
+Sbjct: 277 LLIEQAKAETEAAK 290
+
+
+>gi|37362302|gb|AAQ91279.1| TGFB-induced factor [Danio rerio]
+ TG interacting factor [Danio rerio]
+ TG interacting factor [Danio rerio]
+          Length = 273
+
+ Score = 55.1 bits (131), Expect = 5e-07,   Method: Composition-based stats.
+ Identities = 24/57 (42%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          R++R N  K++ +IL ++ Y H  N YPSE+ K  L+K++ ++  QV NWF N R R
+Sbjct: 37 RKRRGNLPKESVQILRDWLYQHRYNAYPSEQEKALLSKQTHLSTLQVCNWFINARRR 93
+
+
+>gi|1322631|emb|CAA96802.1| unnamed protein product [Saccharomyces
+           cerevisiae]
+ Target of SBF; Tos8p [Saccharomyces cerevisiae]
+ Homeobox protein TOS8 (Target of SBF 8)
+ YGL096W [Saccharomyces cerevisiae]
+          Length = 276
+
+ Score = 55.1 bits (131), Expect = 5e-07,   Method: Composition-based stats.
+ Identities = 31/76 (40%), Positives = 45/76 (59%), Gaps = 3/76 (3%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           A  KR N  K    ILN++ + H++NPYP+ + K EL  K+G+T  Q+SNWF N R   +
+Sbjct: 194 AHGKRSNLPKATVSILNKWLHEHVNNPYPTVQEKRELLAKTGLTKLQISNWFINAR---R 250
+
+Query: 62  KNIGKFQEEANIYAAK 77
+           + I   Q +AN +  K
+Sbjct: 251 RKIFSGQNDANNFRRK 266
+
+
+>gi|57104564|ref|XP_542981.1| PREDICTED: similar to TGFB-induced
+          factor 2 [Canis familiaris]
+          Length = 237
+
+ Score = 55.1 bits (131), Expect = 5e-07,   Method: Composition-based stats.
+ Identities = 23/57 (40%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          R++R N  K++ +IL ++ Y H  N YPSE+ K  L+ ++ ++V Q+ NWF N R R
+Sbjct: 19 RKRRGNLPKESVKILRDWLYLHRYNAYPSEQEKLSLSGQTNLSVLQICNWFINARRR 75
+
+
+>gi|31433261|gb|AAP54799.1| putative homeodomain protein [Oryza
+           sativa (japonica cultivar-group)]
+ putative homeodomain protein [Oryza sativa (japonica
+           cultivar-group)]
+ putative homeodomain protein [Oryza sativa (japonica
+           cultivar-group)]
+          Length = 586
+
+ Score = 55.1 bits (131), Expect = 5e-07,   Method: Composition-based stats.
+ Identities = 24/59 (40%), Positives = 38/59 (64%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKK 62
+           R +R   ++A  IL  + + H  +PYPS+  K  LA+++G++ SQV+NWF N R+R  K
+Sbjct: 326 RPQRGLPERAVSILRAWLFEHFLHPYPSDVDKHILARQTGLSRSQVANWFINARVRLWK 384
+
+
+>gi|53792801|dbj|BAD53835.1| putative H1 gene protein [Oryza sativa
+           (japonica cultivar-group)]
+ putative H1 gene protein [Oryza sativa (japonica cultivar-group)]
+          Length = 573
+
+ Score = 55.1 bits (131), Expect = 6e-07,   Method: Composition-based stats.
+ Identities = 25/68 (36%), Positives = 40/68 (58%), Gaps = 1/68 (1%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR-YKK 62
+           R +R   +++  +L  + + +   PYP +  K+ LA +SG++ SQVSNWF N R+R +K 
+Sbjct: 479 RPQRGLPEKSVAVLKAWMFENFLRPYPKDSEKDMLAARSGLSRSQVSNWFINARVRLWKP 538
+
+Query: 63  NIGKFQEE 70
+            I    EE
+Sbjct: 539 MIEDMYEE 546
+
+
+>gi|61815780|ref|XP_615740.1| PREDICTED: similar to TGFB-induced
+          factor 2 [Bos taurus]
+          Length = 237
+
+ Score = 55.1 bits (131), Expect = 6e-07,   Method: Composition-based stats.
+ Identities = 23/57 (40%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          R++R N  K++ +IL ++ Y H  N YPSE+ K  L+ ++ ++V Q+ NWF N R R
+Sbjct: 19 RKRRGNLPKESVKILRDWLYLHRYNAYPSEQEKLSLSGQTNLSVLQICNWFINARRR 75
+
+
+>gi|23397273|gb|AAN31918.1| putative homeodomain protein
+           [Arabidopsis thaliana]
+          Length = 575
+
+ Score = 55.1 bits (131), Expect = 6e-07,   Method: Composition-based stats.
+ Identities = 23/59 (38%), Positives = 37/59 (62%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKK 62
+           R  R   ++A  +L  + + H  +PYP++  K  LAK++G++ +QVSNWF N R+R  K
+Sbjct: 350 RPHRGLPERAVTVLRAWLFDHFLHPYPTDTDKLMLAKQTGLSRNQVSNWFINARVRVWK 408
+
+
+>gi|27734180|ref|NP_775572.1| TGFB-induced factor 2 [Mus musculus]
+ Homeobox protein TGIF2 (TGFB-induced factor 2) (5'-TG-3'
+          interacting factor 2) (TGF(beta)-induced transcription
+          factor 2)
+ unnamed protein product [Mus musculus]
+          Length = 237
+
+ Score = 54.7 bits (130), Expect = 7e-07,   Method: Composition-based stats.
+ Identities = 23/57 (40%), Positives = 37/57 (64%)
+
+Query: 3  RRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIR 59
+          R++R N  K++ +IL ++ Y H  N YPSE+ K  L+ ++ ++V Q+ NWF N R R
+Sbjct: 19 RKRRGNLPKESVKILRDWLYLHRYNAYPSEQEKLSLSGQTNLSVLQICNWFINARRR 75
+
+
+>gi|33285288|emb|CAD58040.1| homeodomain protein vaamana
+           [Arabidopsis thaliana]
+ putative homeodomain protein [Arabidopsis thaliana]
+          Length = 575
+
+ Score = 54.7 bits (130), Expect = 7e-07,   Method: Composition-based stats.
+ Identities = 23/59 (38%), Positives = 37/59 (62%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKK 62
+           R  R   ++A  +L  + + H  +PYP++  K  LAK++G++ +QVSNWF N R+R  K
+Sbjct: 350 RPHRGLPERAVTVLRAWLFDHFLHPYPTDTDKLMLAKQTGLSRNQVSNWFINARVRVWK 408
+
+
+>gi|33089289|gb|AAP93641.1| bellringer homeodomain protein
+           [Arabidopsis thaliana]
+ putative homeodomain protein [Arabidopsis thaliana]
+ homeodomain protein (BELLRINGER) [Arabidopsis thaliana]
+ At5g02030 [Arabidopsis thaliana]
+ probable homeodomain protein - Arabidopsis thaliana
+          Length = 575
+
+ Score = 54.7 bits (130), Expect = 7e-07,   Method: Composition-based stats.
+ Identities = 23/59 (38%), Positives = 37/59 (62%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKK 62
+           R  R   ++A  +L  + + H  +PYP++  K  LAK++G++ +QVSNWF N R+R  K
+Sbjct: 350 RPHRGLPERAVTVLRAWLFDHFLHPYPTDTDKLMLAKQTGLSRNQVSNWFINARVRVWK 408
+
+
+>gi|31323443|gb|AAP47023.1| bell-like homeodomain protein 3
+           [Lycopersicon esculentum]
+          Length = 523
+
+ Score = 54.7 bits (130), Expect = 8e-07,   Method: Composition-based stats.
+ Identities = 23/59 (38%), Positives = 38/59 (64%)
+
+Query: 4   RKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYKK 62
+           R +R   +++  +L  + + H  +PYPS+  K  LA+++G++ SQVSNWF N R+R  K
+Sbjct: 276 RPQRGLPERSVSVLRAWLFEHFLHPYPSDVDKHILARQTGLSRSQVSNWFINARVRLWK 334
+
+
+>gi|31323447|gb|AAP47025.1| bell-like homeodomain protein 2
+           [Lycopersicon esculentum]
+          Length = 699
+
+ Score = 54.3 bits (129), Expect = 9e-07,   Method: Composition-based stats.
+ Identities = 26/61 (42%), Positives = 38/61 (62%)
+
+Query: 2   ARRKRRNFNKQATEILNEYFYSHLSNPYPSEEAKEELAKKSGITVSQVSNWFGNKRIRYK 61
+           A R +R   ++A  +L  + + H  +PYP +  K  LAK++G+T SQVSNWF N R+R  
+Sbjct: 404 AWRPQRGLPERAVSVLRAWLFEHFLHPYPKDSDKIMLAKQTGLTRSQVSNWFINARVRLW 463
+
+Query: 62  K 62
+           K
+Sbjct: 464 K 464
+
+
+  Database: nr27062005
+    Posted date:  Jul 25, 2005  2:03 PM
+  Number of letters in database: 863,360,394
+  Number of sequences in database:  2,540,612
+  
+Lambda     K      H
+   0.312    0.125    0.348 
+
+Lambda     K      H
+   0.267   0.0410    0.140 
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Number of Hits to DB: 127,620,825
+Number of Sequences: 2540612
+Number of extensions: 4300079
+Number of successful extensions: 17949
+Number of sequences better than 10.0: 500
+Number of HSP's better than 10.0 without gapping: 2884
+Number of HSP's successfully gapped in prelim test: 1522
+Number of HSP's that attempted gapping in prelim test: 14767
+Number of HSP's gapped (non-prelim): 4672
+length of query: 82
+length of database: 863,360,394
+effective HSP length: 53
+effective length of query: 29
+effective length of database: 728,707,958
+effective search space: 21132530782
+effective search space used: 21132530782
+T: 11
+A: 40
+X1: 16 ( 7.2 bits)
+X2: 38 (14.6 bits)
+X3: 64 (24.7 bits)
+S1: 42 (21.9 bits)
+S2: 69 (31.2 bits)
