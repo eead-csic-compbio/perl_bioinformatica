@@ -40,20 +40,20 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation">
-<A NAME="tex2html987"
+<A NAME="tex2html990"
   HREF="node62.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html993"
+<A NAME="tex2html996"
   HREF="node61.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html995"
+<A NAME="tex2html998"
   HREF="node64.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html996"
-  HREF="node64.html">Creaci&#243;n de paquetes y m&#243;dulos</A></b>  Arriba: <b><A NAME="tex2html994"
-  HREF="node61.html">Paquetes y m&#243;dulos</A></b>  Anterior: <b><A NAME="tex2html988"
+ SRC="./icons//next.png"></A><div><fieldset>Siguiente: <b><A NAME="tex2html999"
+  HREF="node64.html">Creaci&#243;n de paquetes y m&#243;dulos</A></b>  Arriba: <b><A NAME="tex2html997"
+  HREF="node61.html">Paquetes y m&#243;dulos</A></b>  Anterior: <b><A NAME="tex2html991"
   HREF="node62.html">Paquetes y m&#243;dulos del int&#233;rprete</A></b></fieldset></div></DIV>
 <!--End of Navigation Panel-->
 
@@ -72,10 +72,31 @@ para un sinf&#237;n de aplicaciones distintas. Este repositorio es sin duda uno 
 los mayores atractivos de Perl. 
 
 <P>
-Una vez que hay&#225;is encontrado un paquete que os interese, lo descarg&#225;is y tendr&#233;is un archivo
-<code>modulo.tar.gz</code> 
-que deber&#233;is descomprimir con 
-<code>tar xvfz modulo.tar.gz</code>.
+Una vez que hay&#225;is encontrado un paquete que os interese, hay varias maneras de instalarlo:
+
+<P>
+
+<UL>
+<LI>Con prilegios de administrador, en <code>/usr/local/</code>, con el instalador por defecto  <i> cpan  </i>: 
+<code>$ sudo cpan -i 'Familia::Modulo'</code>
+
+<P>
+</LI>
+<LI>Es posible instalar modulos en otras localizaciones, como se explica en las 
+<A NAME="tex2html64"
+  HREF="http://learn.perl.org/faq/perlfaq8.html#How-do-I-keep-my-own-module-library-directory">perl FAQS</A>
+<P>
+</LI>
+<LI>Instalando el instalador  <i> cpanminus  </i>, que simplifica el proceso y no asume un proceso interactivo: <code>$ cpan -i App::cpanminus</code>
+
+<P>
+</LI>
+<LI>Se puede instalar tambi&#233;n con <code>$ perlbrew install-cpanm</code>.
+
+<P>
+</LI>
+<LI>Descargando el archivo <code>modulo.tar.gz</code>, 
+que deber&#233;is descomprimir con <code>tar xvfz modulo.tar.gz</code>.
 En el subdirectorio creado ten&#233;is un archivo 
 <code>README</code> 
 donde se explican los pasos para instalar
@@ -87,24 +108,24 @@ ya podr&#233;is usarlo.
 
 <P>
 Si ten&#233;is privilegios de administrador, la manera m&#225;s f&#225;cil es teclear:
-<BR><code>sudo perl -MCPAN -e "install 'Modulo'"</code>
+<BR><code>$ sudo perl -MCPAN -e "install 'Modulo'"</code>
 <BR>
 <P>
-O alternativamente:
-<BR><code>sudo cpan -i 'Familia::Modulo'</code>
+</LI>
+</UL>
 
 <P>
 
 <DIV CLASS="navigation"><hr> 
-<A NAME="tex2html987"
+<A NAME="tex2html990"
   HREF="node62.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="./icons//prev.png"></A> 
-<A NAME="tex2html993"
+<A NAME="tex2html996"
   HREF="node61.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="./icons//up.png"></A> 
-<A NAME="tex2html995"
+<A NAME="tex2html998"
   HREF="node64.html">
 <IMG  ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="./icons//next.png"></A></DIV>
